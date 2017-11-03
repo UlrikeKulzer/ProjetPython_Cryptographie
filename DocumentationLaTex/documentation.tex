@@ -1,0 +1,368 @@
+\documentclass[a4paper,12pt,abstracton,titlepage]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % Umlaute, evtl. vom Betriebssystem abhaengig
+\usepackage{lmodern}
+\usepackage{pgfgantt}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{floatflt}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{tabularx,url}
+
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+
+%\titlehead{Ulm University}
+%\title{Title}
+%\subject{Subject}
+%\author{Author}
+%\publishers{%
+	%\rule{\textwidth}{0.4pt} \\
+	%\vspace{0.5cm}
+    %\normalfont\normalsize%
+    %\parbox{0.9\linewidth}{%
+    %    Abstract or Introduction
+    %} \\
+    %\vspace{0.5cm}
+   	%\rule{\textwidth}{0.4pt}
+%}
+
+\begin{document}
+%\maketitle
+
+%%% begin costom title
+{\Large\noindent \emph{ESIEE Paris}}
+
+{\Large\noindent \emph{IGI-3008}}
+\begin{center}
+	{\large Cryptographie	 \\ \large Léa , Fathima , Ulrike KULZER \\ \today}
+\end{center}
+%%% end custom title
+
+\setcounter{page}{1} % reset page counter to one for the first page, leave the title page out
+
+\section*{Zusammenfassung}
+In der folgenden Arbeit werden einige Farbmodelle für digitale Bilder vorgestellt und erklärt, wofür sie verwendet werden. Außerdem wird über deren Konvertierungen und mögliche Probleme, die dabei auftreten können, berichtet.
+
+\section{Einleitung}
+Mit der Erstellung digitaler Bilder wird versucht, die reale Welt so originalgetreu wie möglich abzubilden. Dabei stößt man farblich sehr schnell an seine Grenzen, da es viele Geräte gibt, die die Originalfarben eines Objekts o. Ä. nicht darstellen können. Aufgrund dessen haben sich Organisationen wie z. B. die Internationale Beleuchtungskommission (CIE\footnote{CIE = Commission internationale de l’éclairage}) Farbmodelle überlegt, die einen bestimmten Farbbereich abdecken und sich beispielsweise durch Veränderung der Helligkeitswerte gegenseitig erweitern. Im Folgenden werde ich kurz allgemein über Farbmodelle berichten, dann genauer auf die Modelle RGB, HSV und YUV, YPbPr und YCbCr eingehen und erklären, wie eine Farbraumkonvertierung berechnet und mithilfe des Programms "`Inviwo"'\footnote{Interactive Visualization Workshop} umgesetzt wird. Abschließend gehe ich auf dabei entstehende Probleme und mögliche Limitierungen ein und fasse das Ergebnis kurz zusammen.
+
+\section{Grundlagen} %alles am 31. Januar 2017 aufgerufen
+\begin{floatingfigure}[r]{6cm}
+%	\includegraphics[width=0.3\textwidth]{./Bilder/1cie.png}
+	\caption{CIE"=Normvalenzsystem}
+	\label{cie}
+\end{floatingfigure}
+
+Bevor man sich mit dem Thema Farbkonvertierung näher beschäftigen kann, müssen einige wichtige Begriffe erklärt werden.
+
+In einem Farbmodell werden die Farben digitaler Bilder nach einer bestimmten Methode beschrieben. Jeder Farbe ist ein Farbort zugeordnet, welcher ein Punkt mit dazugehörigem Vektor in einem drei- oder vierdimensionalen Farbraum ist und die Farbe eindeutig beschreibt. Der Betrag dieses Vektors wird als Farbwert bezeichnet.
+%Farbmodell/-raum: https://helpx.adobe.com/de/photoshop/using/color.html
+%https://kompendium.infotip.de/farbraeume-und-farbmodelle.html#a1
+%Farbort: http://mazet.de/de/mazet/glossar/farbort#.WJCEMWXJ-M8
+%Farbwert: https://de.wikipedia.org/wiki/Farbwert
+Ein Farbraum, auch Gamut genannt, wird über einem Farbmodell aufgespannt und umfasst eine Teilmenge der Farben, die der Mensch wahrnehmen kann. Daher kann ein Farbmodell mehrere Farbräume enthalten. Jedes Gerät, das zur Bildverarbeitung genutzt wird, beispielsweise Drucker oder Digitalkameras, besitzt einen eigenen Farbraum. Mit diesem können sie nur die gewünschten Farben darstellen, die in ihrem Farbraum enthalten sind, wodurch sich die Farben eines Bildes beim Übertragen von einem Gerät zum Anderen wesentlich ändern können. Farbräume werden häufig in Form von Diagrammen (meist im CIE"=Normvalenzsystem) oder verschiedenen Farbkörpern, z. B. Würfel oder Kegeln, dargestellt. Als Beispiel sieht man in Abbildung \ref{cie} eine Darstellung des Standard"=RGB"=Farbraums (sRGB) im CIE"=Normvalenzsystem, wobei das eingezeichnete Dreieck den Farbraum beschreibt. Das CIE-Normvalenzsystem stellt den XYZ"=Farbraum dar, der alle vom Menschen registrierbaren Farben umfasst. Dementsprechend werden andere Farbräume meist in den XYZ"=Farbraum gezeichnet.
+
+
+\begin{floatingfigure}[l]{5.3cm}
+%	\includegraphics[width=0.25\textwidth]{./Bilder/2venn.png}
+	\caption{Prinzip der additiven Farbmischung}
+	\label{venn}
+\end{floatingfigure}
+
+\par
+
+Farbräume werden außerdem in additive und subtraktive Farbmischung unterteilt.
+Bei der additiven Farbmischung wird rotes, grünes und blaues Licht, die Primärfarben des Lichts, auf einen Punkt gebündelt, wodurch weißes Licht reflektiert wird (s. Abb. \ref{venn}). Entfernt man alle Lichter, erhält man Schwarz.  Um andere Farbtöne, sogenannte Mischfarben, zu erzeugen, werden zum weißen Licht zwei der Primärfarben hinzuaddiert. Beispielsweise erhält man durch Addition von Rot und Grün als Reflexion Gelb. Die additive Farbmischung entspricht der Farbwahrnehmung des Menschen und wird bei vielen Farbmodellen verwendet, u. a. beim RGB"=Farbmodell.
+
+
+\vspace{2em}
+\section{Farbmodell, Konvertierung und Implementierung}
+\subsection{Vorstellung der Farbmodelle}
+\subsubsection{Das Farbmodell RGB} 
+Das menschliche Auge nimmt Farben mittels Rezeptoren wahr, die die sichtbaren Farben in Rot, Grün und Blau aufteilen. Daher stellt das Rot"=Grün"=Blau"=Farbmodell (RGB"=Farbmodell) die Farben des menschlichen Sehens am genauesten dar. Zum RGB"=Modell gibt es verschiedene Farbräume, die alle den sRGB"=Farbraum erweitern (für Genaueres siehe \cite{kompendium}). Die einzelnen Werte der RGB"=Komponenten liegen zwischen 0 und 255, wobei, wenn alle Werte 0 sind, schwarz und wenn alle Werte 255 sind, weiß erzeugt wird (s. Abb. \ref{venn}). Dementsprechend erhält man die reine Form einer der drei Farben, indem die gewünschte Farbe auf 255 und die anderen beiden auf 0 gesetzt werden. Wie hoch die Werte sind, hängt von den verwendeten Geräten ab. Am Computer wird meistens das RGB"=Modell verwendet, da der Großteil der Computer RGB"=Farbräume unterstützen. Durch die Aufteilung auf die Farben Rot"=Grün"=Blau und die Multiplikation aller möglicher Farbwerte ist es theoretisch möglich, 16,7 Millionen verschiedene Farben zu erzeugen.
+%https://kompendium.infotip.de/farbraeume-und-farbmodelle.html#a1
+%http://www.vhs-seminar.de/farbmodelle.html
+%http://wisotop.de/Farbmodelle-RGB-CMYK-HSS-HSL.php (13.02.17)
+
+\subsubsection{Das Farbmodell HSV} %alles am 07.02.2017 aufgerufen
+% ? Verwendung bzw besonders beliebt bei ?
+\begin{floatingfigure}[r]{8.3cm}
+	%\includegraphics[width=0.5\textwidth]{./Bilder/hsvKegel.png}
+	\caption{HSV-Farbkörper}
+	\label{hsv}
+\end{floatingfigure} 
+%Bild hsvKegel: http://de.mathworks.com/help/images/convert-from-hsv-to-rgb-color-space.html?requestedDomain=www.mathworks.com
+
+Das Hue"=Saturation"=Value"=Farbmodell, kurz HSV"=Modell, ist ein Farbmodell, das dem Benutzer eine intuitive Farbauswahl ermöglichen soll. Dabei werden die Farben so gut wie möglich der  menschlichen Beschreibung von Farben nachempfunden, wobei sie in Farbton (hue), Sättigung (saturation) und Helligkeit (value) eingeteilt werden und damit das RGB"=Modell erweitern. Der dazugehörige Farbkörper wird oft als um 180 Grad gedrehter Kegel dargestellt (s. Abb. \ref{hsv}): Die Grundfläche beschreibt die Farben des RGB"=Farbraums, die in Winkeln angegeben werden (rot ist 0 Grad), die Tiefe oder Höhe des Kegels legt die Helligkeit fest (die Spitze ist schwarz, der Mittelpunkt der Grundfläche weiß) und der Radius von innen (0) nach außen (1) die Sättigung.
+Da beim HSV"=Modell die Farben durch das Mischen von Primärfarben mit anderen Farbteilen entstehen und den vom Menschen wahrgenommenen Farben sehr nahe kommen, wird das HSV"=Modell oft bei Grafikdesign verwendet.
+%http://wisotop.de/hsv-und-hsl-farbmodell.php
+%http://olli.informatik.uni-oldenburg.de/Grafiti3/grafiti/flow12/page5.html
+
+\vspace{1em}
+\subsubsection{Die Farbmodelle YUV, YPbPr und YCbCr}
+Das YUV"=Farbmodell wurde zur Bildübertragung beim analogen Farbfernsehen nach den Normen des NTSC\footnote{für Details siehe \cite{linkfangNTSC}} und des PAL-Verfahrens\footnote{für Details siehe \cite{linkfangPAL}} entwickelt und basiert auf dem RGB"= Farbmodell. Die Darstellung einer Farbe im YUV-Modell setzt sich aus der Luminanz (Y), d.h. dem Helligkeitsanteil, und der Chrominanz (UV), der Farbinformation, der Farbe zusammen. Die Chrominanz unterteilt sich hierbei in die Farbdifferenzen zwischen der Helligkeit und dem Blau"= (U = B - Y) bzw. Rotanteil (V = R - Y). Die Farbdifferenz beim Grünanteil (G - Y) wird aus dem YUV-Wert berechnet. Da das menschliche Auge Helligkeit etwa zehnmal intensiver wahrnimmt als Farbe, erfolgt die Bildaufbereitung durch Kolorierung: Farbinformationen in niedriger Auflösung werden über ein voll aufgelöstes Schwarz"=Weiß"=Bild gelegt. Dadurch benötigt man zur Bildübertragung im RGB"=Format nur noch einen Kanal für die Luminanzinformationen.
+
+
+Das YPbPr-Modell gründet sich ebenfalls auf das RGB"=Modell und wird bei der analogen Bildübertragung verwendet, wobei die YPbPr-Werte mit den RGB"=Werten vor der Gammakorrektur\footnote{für Details siehe \cite{linkfangGamma}} berechnet werden. Dabei sind die Pb"= und Pr"=Werte nicht wie beim YUV"=Modell die Differenzen zwischen Helligkeit und Farbanteil, sondern die Abweichung von Grau zu den Farbanteilen: Pb ist der Wert der Differenz zwischen Grau und Blau (+0,5) und Gelb (-0,5), Pr gibt den Unterschied zu Rot (+0,5) und Cyan (-0,5) an. Gelb und Cyan sind hierbei die Komplementärfarben.
+
+
+Äquivalent zum YPbPr"=Modell ist bei der digitalen Bildübertragung das YCbCr"=Modell: Der Cb"=Wert entspricht dem des Pb"=Wertes (Grau"=Abweichung zu Blau und Gelb) und der Cr"=Wert dem des Pr"=Wertes (Grau"=Abweichung zu Rot und Cyan). Das YCbCr"=Modell wird mittlerweile zusätzlich zur Fernsehbildübertragung auch für Videoaufzeichnungen (DVDs o. Ä.) und Einzelbilder, z. B. im JPEG"=Format, verwendet.
+
+
+
+
+\subsection{Umrechnung und Implementierung}
+\subsubsection{Allgemein}
+Umgesetzt wurden folgende Farbmodell"=Konvertierungen: RGB nach HSV und RGB nach YCbCr. Da Inwivo die eingelesenen Bilder nach der Konvertierung wieder im RGB-Farbraum anzeigt, wurden zur Überprüfung auch die Rück"=Konvertierungen HSV nach RGB und YCbCr nach RGB implementiert. Zur genauen Betrachtung der einzelnen Komponenten des Bildes im YCbCR"=Farbraum gibt es zusätzlich die Möglichkeit, das importierte Bild so auszugeben, dass alle Komponenten des Vektors gleich sind (Y"=, Cb"= oder Cr"=Wert). Die einzelnen Konvertierungen wurden zur Übersicht jeweils in eigene Methoden über die main"=Methode in der Shader"=Datei ausgelagert und in der main"=Methode aufgerufen. Außerdem sind die Abfragen verschiedener Fälle, die eintreten können (ref{RGB nach HSV und umgekehrt}), als if"=Abfragen formuliert, da man in der Shader"=Datei keine switch"=cases verwenden kann. Die bei den HSV"=Rechnungen verwendeten Datentypen sind überwiegend floats, bei der YCbCr"=Matrizenmultiplikation Matrizen und Vektoren des dreidimensionalen Vektorraums der reellen Zahlen; über"= und zurückgegebene Parameter sind ebenfalls dreidimensionale Vektoren (vec3), aus denen die RGB"=Werte herausgelesen werden.
+Alle Variablen werden mit 0.0 initialisiert, damit Fehler, bei denen Parameter nicht existieren oder falsch berechnet werden, sofort erkannt werden können.
+In Inwivo gibt es für jede Konvertierung bzw. Bilddarstellung eine Auswahloption im Dropdownmenü. Öffnet man die Datei, sind daher sieben Prozessoren mit Bildausgaben (Canvas) eingerichtet, wobei jedem Prozessor eine Option zugeordnet ist.
+
+
+\subsubsection{RGB nach HSV}
+Die RGB"=Werte r, g und b erhält man durch die Funktionen VektorName.r bzw. VektorName.g und VektorName.b als Werte zwischen 0 und 1. Von diesen bestimmt man für die weiteren Rechnungen das Maximum max\_value und Minimum min\_value mit der entsprechenden Funktion. Dabei muss man zwei Funktionen ineinander verschachteln, da die Funktionen nur das Maximum bzw. Minimum von zwei Zahlen bestimmen können. Mit dem Ergebnis erhält man direkt den value"=Wert, der auf das Maximum der RGB"=Werte gesetzt wird. Der hue"=Wert wird in Abhängigkeit von dem zuvor bestimmten Minimum und Maximum berechnet und in Grad zwischen 0 und 360 angegeben:
+\[    hue := \left\{\begin{array}{lr}
+        0.0, & \text{for }\; max\_value = min\_value\\
+        60.0 \cdot \left( 0.0 + \frac {g - b} {max\_value - min\_value} \right), & \text{for }\; max\_value = r\\
+        60.0 \cdot \left( 2.0 + \frac {b - r} {max\_value - min\_value} \right), & \text{for }\; max\_value = g\\
+        60.0 \cdot \left( 4.0 + \frac {r - g} {max\_value - min\_value} \right), & \text{for }\; max\_value = b
+        \end{array}\right.
+  \]  
+Durch diese Rechnungen könnte der Fall eintreten, dass hue kleiner als 0 wird, was durch eine if-Abfrage abgefangen und in der zu hue 360.0 hinzuaddiert wird. Anschließend teilt man den hue"=Wert durch 360.0, damit man wieder einen Wert zwischen 0 und 1 bekommt.
+Der saturation"=Wert ist ebenfalls von den Maximum"= und Minimumwerten abhängig:
+\[
+    satVal := \left\{\begin{array}{lr}
+        0.0, & \text{for }\; max\_value = 0.0\\
+        \frac {max\_value - min\_value} {max\_value}), & \text{otherwise }\; \\
+        \end{array}\right.
+  \]  
+Die Methode rgb2hsv(vec3 rgbVal) bekommt also einen dreidimensionalen Vektor, der die RGB"=Werte als Einträge hat, und gibt einen dreidimensionalen Vektor mit den HSV"=Werten zurück, die dann als RGB"=Werte interpretiert und dargestellt werden:
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/original.jpg}
+    \caption{Originalbild}
+    \label{originalScot}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.52\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2hsv_cut.png}
+    \caption{Bild nach der Konvertierung}
+    \label{rgb2hsv}
+  \end{center}
+\end{minipage}
+\end{figure}
+
+%http://wisotop.de/rgb-nach-hsv.php
+%https://de.wikipedia.org/wiki/HSV-Farbraum
+
+\subsubsection{HSV nach RGB}
+Die HSV"=Werte hue, sat und val erhält man, wie oben erklärt, durch den übergebenen Vektor als Werte zwischen 0 und 1. Da der hue"=Wert in bei den Umrechnungen in Grad angegeben wird, multipliziert man ihn mit 360.0. Falls der saturation"=Wert gleich 0 ist, sind die RGB"=Werte gleich dem value"=Wert und die Methode gibt einen dreidimensionalen Vektor aus, bei dem jede Komponente gleich dem value"=Wert ist. Falls nicht, wird der hue"=Wert durch 60.0 geteilt und als Hilfsvariable ein Integer "`i"' eingeführt, das mit dem abgerundeten Wert von hue initialisiert wird. Dabei wird die floor()"=Funktion verwendet, die äquivalent zu den Gaußklammern nach unten ist. Zusätzlich zu i werden vier weitere Hilfsvariablen definiert: \[f := hue - i,\qquad p := val \cdot (1.0 - sat),\qquad q := val \cdot (1.0 - (sat \cdot f))\] und \[t := val \cdot (1.0 - sat \cdot (1.0 - f))\].
+% woher kommen diese Hilfsvariablen??
+% nach Gaußklammern: \[i := \lfloor hue \rfloor\]
+Die Bestimmung der RGB"=Werte erfolgt nun anhand einer if-Abfrage in Abhängigkeit von i, die den Vektor mit den RGB"=Werten direkt zurückgibt:
+\[
+  (r,g,b)^T := \left\{\begin{array}{lr}
+        (val,t,p)^T, & \text{for }\; i = 0\\
+        (q,val,p)^T, & \text{for }\; i = 1\\
+        (p,val,t)^T, & \text{for }\; i = 2\\
+        (p,q,val)^T, & \text{for }\; i = 3\\
+        (t,p,val)^T, & \text{for }\; i = 4\\
+        (val,p,q)^T, & \text{for }\; i = 5\\
+        \end{array}\right.
+  \]
+Die Methode hsv2rgb(vec3 hsvVal) bekommt also den dreidimensionalen Vektor, der die zuvor berechneten HSV"=Werte enthält, und gibt einen dreidimensionalen Vektor mit den zurückgerechneten RGB"=Werten zurück. So erhält man wieder das Originalbild:
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+   % \includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2hsv_cut.png}
+    \caption{Bild im HSV"=Farbraum}
+    \label{hsvVorher}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.52\textwidth}
+  \begin{center}
+   % \includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_hsv2rgb_cut.png}
+    \caption{Bild nach der Konvertierung}
+    \label{hsv2rgb}
+  \end{center}
+\end{minipage}
+\end{figure}
+
+
+\subsubsection{RGB nach full-range YCbCr}
+Die Konvertierung vom RGB"=Farbraum zum YCbCr"=Farbraum erfolgt durch Matrizenmultiplikation und ist vom Umfang des YCbCR"=Farbraums abhängig, weshalb man zwischen SDTV, HDTV und full"=range unterscheidet. SDTV steht für "`Standard Definition Television"', HDTV für "`High Definition Television'". Dabei umfasst der YCbCr"=Farbraum Y"=Werte von 16 bis 235 und Cb/Cr"=Werte im Bereich von 16 bis 240; bei der full"=range Konvertierung sind die Farben des gesamten YCbCR"=Farbraums, also mit Werten von 0 bis 255, möglich. Für jede Berechnung sind eine Matrix und ein sogenannter "`offset"'"= Vektor vorgegeben, mit denen man zwischen RGB und YCbCr konvertieren kann. Im Folgenden wird nur die Formel für die full-range Konvertierung betrachtet. 
+
+Die Werte des YCbCr"=Vektors ergeben sich, indem man auf den vorgegebenen RGB"=Vektor von links die Konvertierungsmatrix hinzu multipliziert und den offset"=Vektor dazu addiert: 
+
+\[
+    \left(\begin{array}{c} y \\ cb \\ cr \end{array}\right) =
+    \left(\begin{array}{c} 0 \\ 128 \\ 128 \end{array}\right)
+    +
+    \begin{pmatrix} 0.299 & 0.587 & 0.114 \\ -0.169 & -0.331 & 0.500 \\ 0.500 & -0.419 & -0.081
+    \end{pmatrix} \cdot \left(\begin{array}{c} r \\ g \\ b \end{array}\right)
+\]
+  
+Da die RGB"=Werte am Computer zwischen 0 und 1 liegen, müssen die Komponenten des offset"=Vektors durch 256 geteilt werden. Nach der Konvertierung entsteht folgendes Bild:
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/original.jpg}
+    \caption{Originalbild}
+    \label{originalY}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.52\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2ycbcr_cut.png}
+    \caption{Bild nach der Konvertierung}
+    \label{rgb2ycbcr}
+  \end{center}
+\end{minipage}
+\end{figure}
+Zur Übersicht sind in den Abbildungen 14 bis 16 die einzelnen Farbkomponenten getrennt dargestellt (s. Abb. \ref{Y}, Abb. \ref{Cb}, Abb. \ref{Cr}).
+
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.31\textwidth}
+  \begin{center}
+    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_y_cut.png}
+    \caption{nur Y}
+    \label{Y}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.31\textwidth}
+  \begin{center}
+    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_cb_cut.png}
+    \caption{nur Cb}
+    \label{Cb}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.31\textwidth}
+  \begin{center}
+    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_cr_cut.png}
+    \caption{nur Cr}
+    \label{Cr}
+  \end{center}
+\end{minipage}
+\end{figure}
+
+
+\subsubsection{Full-range YCbCr nach RGB}
+Bei der Rück"=Konvertierung berechnet man die RGB"=Werte ein bisschen anders: Die Konvertierungsmatrix wird zwar von links auf den übergebenen YCbCr"=Vektor hinzu multipliziert, allerdings werden vorher von der Cb"= und Cr"=Komponente des Vektors 128.0 (am Computer wieder 0.5) abgezogen und es gibt keinen offset"=Vektor. 
+\[
+    \left(\begin{array}{c} r \\ g \\ b \end{array}\right) =
+    \begin{pmatrix} 1.000 & 1.000 & 1.000 \\ 0.000 & -0.343 & -0.419 \\ 1.400 & -0.711 & 0.000
+    
+    \end{pmatrix}
+    \cdot \left(\begin{array}{c} y \\ cb - 128 \\ cr - 128 \end{array}\right)
+\]
+
+ 
+Nach der Konvertierung erhält man wieder das Originalbild:
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2ycbcr_cut.png}
+    \caption{Bild im YCbCr"=Farbraum}
+    \label{ycbcr}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.52\textwidth}
+  \begin{center}
+    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_ycbcr2rgb_cut.png}
+    \caption{Bild nach der Konvertierung}
+    \label{ycbcr2rgb}
+  \end{center}
+\end{minipage}
+\end{figure}
+
+%http://www.equasys.de/colorconversion.html
+
+
+\subsection{Limitierungen}
+% Fehler bei bereits komprimierten Bildern
+Das Farbraum"=Konvertierverfahren ist bezüglich der Qualität der Bilder sehr eingeschränkt. Bei den obigen Beispielen hat die Konvertierung hervorragend funktioniert, da das Bild in Originalauflösung eingespeist wurde. Wird das Bild allerdings komprimiert, wodurch viele Farbinformationen verloren gehen, und  dann konvertiert, treten Fehler auf: Beim konvertierten Bild kann man einzelne Pixelblöcke erkennen und an manchen Stellen schlägt die Konvertierung fehl, wodurch schwarze Flecken auf dem Bild zu sehen sind (s. Abb. \ref{errorBall}). Dadurch gibt es auch Probleme bei der Rück"=Konvertierung (s. Abb. \ref{errorBallRGB}). Die hier gezeigten Bilder wurden zuerst komprimiert und dann konvertiert.
+% Bildquelle balloons: https://www.tutorialspoint.com/java_dip/color_space_conversion.htm (13.02.17)
+\newpage
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+    %\includegraphics[height=5cm]{./Bilder/bilderKonv/balloons_fehlerhaft/rgb2hsv_cut.png}
+    \caption{RGB nach HSV}
+    \label{errorBall}
+    \begin{small}
+    Quelle: w.hsv
+    \end{small}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{center}
+    %\includegraphics[height=5cm]{./Bilder/bilderKonv/balloons_fehlerhaft/testGes.png}
+    \caption{HSV nach RGB mit vergrößertem Ausschnitt}
+    \label{errorBallRGB}
+  \end{center}
+\end{minipage}
+\end{figure}
+
+
+\section{Fazit und Ausblick}
+Die digitale Abbildung der Realität ist durch die vorhandenen Farbmodellen schon sehr fortgeschritten, doch leider sind die technischen Einschränkungen im Moment noch sehr hoch: Da fast alle Computer nur Farben im RGB"=Farbmodell darstellen, können sich andere Farbmodelle, die der menschlichen Wahrnehmung mehr entsprechen, beispielsweise das HSV"=Modell, nicht durchsetzen. Außerdem treten, wie oben beschrieben, bei komprimierten Bildern noch gravierende Fehler auf. Ein weiteres Problem ist, dass die Auflösungen der Bildschirme kontinuierlich verbessert werden; zurzeit sogar schon von 4K (4096 x 2160 Pixel) auf 8K (7680 x 4320 Pixel). Die dadurch erhöhte Pixelanzahl und deren Darstellung fordert von den Geräten enorme Leistungen, die bisher nur von wenigen gewährleistet werden können. Für genauere Informationen siehe \cite{aufloesung}.
+
+
+
+
+\section{Referenzen}
+\nocite{*} 
+%\renewcommand{\bibname}{\section{Sources}} % Redefine bibname
+\bibliographystyle{IEEEtran} % Set any options you want
+\bibliography{bibliography} % Build the bibliography
+
+\subsection*{Bildquellen}
+
+\begin{tabularx}{0.95\linewidth}{@{}>{\bfseries}l@{\hspace{0.5em}}X@{}}
+    Abb. \ref{cie}   &     \url{http://www.itwissen.info/definition/lexikon/Standard-RGB-sRGB-standard-RGB.html} (31.01.2017)
+    \\
+    Abb. \ref{venn}   &	   \url{https://www.saxoprint.de/blog/der-farbraum-rgb-und-cmyk-im-vergleich/} (31.01.2017)
+    \\
+    Abb. \ref{hsv}   &     \url{http://de.mathworks.com/help/images/convert-from-hsv-to-rgb-color-space.html?requestedDomain=www.mathworks.com} (07.02.2017)
+    \\
+    Abb. \ref{originalScot}   &     Ulrike Kulzer
+    \\
+    Abb. \ref{errorBall}   &     Originalbild:
+    \url{https://www.tutorialspoint.com/java_dip/color_space_conversion.htm} (08.02.2017)
+    \\
+\end{tabularx}
+
+
+
+
+
+\end{document}
+
+
+% für die Präsentation inviwo Screenshots einbinden?
+% Zusammenfassung überarbeiten
+% Implementierungstext überarbeiten
+% Beispielbilder einfügen, Framework
+% Limitierungen (komprimierte Bilder, 4K-8K)
+% Fazit
+% Quellen
+
+
+% LABEL UNTER CAPTION
+
