@@ -1,0 +1,45 @@
+Hello. Welcome to the cryptography program.\nPlease select your language: 'f' for Francais, 'e' for English.
+
+
+
+
+
+Bonjour. Bienvenue sur le programme de cryptographie.
+Qu'est-ce que vous voulez faire - crypter ou décrypter un message?
+Insérez 'c' pour crypter ou 'd' pour décrypter.
+---------------
+CRYPTER/DECRYPTER
+
+De quelle manière voulez vous (dé)crypter votre texte?
+Insérez 'c' pour le (dé)cryptage par le chiffre de César,
+insérez 'v' pour le (dé)cryptage par le chiffre de Vigenère
+ou insérez 'e' pour le (dé)cryptage par la machine Enigma.
+
+----------------
+CRYPTER
+
+CÉSAR
+Insérez votre clé (un nombre compris entre 1 et 25).
+
+VIGENÈRE
+Insérez votre clé (un mot).
+
+ENIGMA
+Insérez votre clé (composé de trois lettres en majuscule).
+-----------------
+DÉCRYPTER
+
+""
+ENIGMA
+Insérez votre texte avec l'en-tête ou votre clé (composé de trois lettres en majuscule).
+-----------------
+
+Insérez votre texte.
+
+---------------
+
+Voici votre texte (dé)crypté:
+....
+
+Merci d'avoir utilisé notre programme.
+Bonne journée, au revoir.
