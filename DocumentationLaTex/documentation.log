@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  18 OCT 2017 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  3 NOV 2017 19:43
 entering extended mode
 **./documentation.tex
 (documentation.tex
@@ -1122,155 +1122,123 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 Package scrbase Info: activating ngerman \figurename on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 57.
+
+
+Package floatflt Warning: Floating figures 1 and 2 colliding.
+
+
+Package floatflt Warning: Floating figures 2 and 3 colliding.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 117.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 117.
+
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 117
+.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 117
+.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 57.
+(Font)              <12> on input line 117.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 57.
+(Font)              <8> on input line 117.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 57.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 57.
-
-Package floatflt Message: Floating figure 1 set on page 1
-
-Overfull \vbox (24.47897pt too high) has occurred while \output is active []
-
-
-[1
+(Font)              <6> on input line 117.
+ [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package floatflt Message: Floating figure 2 set on page 2
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 135--149
+[][] [] 
+ []
 
-LaTeX Warning: Citation `kompendium' on page 2 undefined on input line 92.
+
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 170--184
+[][] [] 
+ []
 
 
-Package floatflt Warning: Floating figures 2 and 3 colliding.
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 198--212
+[][] [] 
+ []
 
-Package floatflt Message: Floating figure 3 set on page 2
 
-Overfull \hbox (10.27472pt too wide) in paragraph at lines 106--110
-[]|\T1/lmr/m/n/12 Das Hue-Sa-tu-ra-ti-on-Va-lue-Farb-mo-dell,
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 253--267
+[][] [] 
  []
 
 [2]
-
-LaTeX Warning: Citation `linkfangNTSC' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `linkfangPAL' on page 3 undefined on input line 113.
-
-
-LaTeX Warning: Citation `linkfangGamma' on page 3 undefined on input line 116.
-
-[3] [4]
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 151--165
-[][] [] 
- []
-
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 188--202
-[][] [] 
- []
-
-[5]
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 221--235
-[][] [] 
- []
-
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 278--292
-[][] [] 
- []
-
-[6] [7]
-
-LaTeX Warning: Citation `aufloesung' on page 8 undefined on input line 324.
-
 No file documentation.bbl.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd")
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 []|$\T1/lmtt/m/n/12 http : / / www . itwissen . info / definition / lexikon /
  []
 
 
-Overfull \hbox (56.1711pt too wide) in paragraph at lines 349--349
+Overfull \hbox (56.1711pt too wide) in paragraph at lines 313--313
 []|$\T1/lmtt/m/n/12 https : / / www . saxoprint . de / blog / der-[]farbraum-[]
 rgb-[]und-[]cmyk-[]im-[]vergleich/$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 []|$\T1/lmtt/m/n/12 http : / / de . mathworks . com / help / images /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 \T1/lmtt/m/n/12 convert-[]from-[]hsv-[]to-[]rgb-[]color-[]space . html ? reques
 tedDomain =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 []|\T1/lmr/m/n/12 Originalbild: $\T1/lmtt/m/n/12 https : / / www . tutorialspoi
 nt . com / java _ dip / color _
  []
 
-[8] (documentation.aux)
+[3] (documentation.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 17825 strings out of 493323
- 353996 string characters out of 3139062
+ 17790 strings out of 493323
+ 353588 string characters out of 3139062
  506846 words of memory out of 3000000
- 20987 multiletter control sequences out of 15000+200000
- 64049 words of font info for 48 fonts, out of 3000000 for 9000
+ 20962 multiletter control sequences out of 15000+200000
+ 44286 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,11n,69p,8826b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
 nc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
 thex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on documentation.pdf (8 pages, 246778 bytes).
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/lm/lmtt12.pfb>
+Output written on documentation.pdf (3 pages, 161874 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
