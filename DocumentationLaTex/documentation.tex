@@ -53,21 +53,54 @@
 \section{Contexte}
 \subsection{En général}
 La cryptographie est une technique utilisée pour rendre incompréhensible à autrui un message entre un expéditeur et un destinataire. Ce procédé a notamment été utilisé en période de guerre pour permettre des attaques surprises. 
-Le principe est le suivant : L’expéditeur à partir d’une clé crypte son message et l’envoie au destinataire. Celui-ci possède aussi la clé qui va lui permettre ainsi de décrypter le message.
+Le principe est le suivant : L'expéditeur à partir d'une clé crypte son message et l'envoie au destinataire. Celui-ci possède aussi la clé qui va lui permettre ainsi de décrypter le message.
 
 \subsection{Histoire}
-La cryptographie est utilisée depuis l’Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que
+La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que
+
+\begin{itemize}
+\item \textit{le chiffre de César :}
+\begin{floatingfigure}[r]{8.3cm}
+	\includegraphics[width=0.5\textwidth]{./Pictures/chiffreCesar.png}
+	%\caption{principe du chiffre de César}
+	\label{cesar}
+\end{floatingfigure}
+Ce procédé a été inventé lors de l'époque romaine par Jules César pour ses communications secrètes. En décalant l'alphabet par un entier donné chaque lettre est associée à une nouvelle lettre, ainsi on peut crypter le message initiale en remplaçant chaque lettre par la nouvelle lettre attribuée.
+\item \textit{le chiffre de Vigenère :}
+\begin{floatingfigure}[r]{8.3cm}
+	\includegraphics[width=0.5\textwidth]{./Pictures/tableauVigenere.png}
+	%\caption{tableau de Vigenère}
+	\label{vigenere}
+\end{floatingfigure}
+Il a été inventé au 16e siècle par Blaise de Vigenère et est basé sur le tableau à droite. Une clé (un mot) est répétée et mis sous le message et de cette manière on peut trouver les lettres correspondantes à partir du tableau.\\
+
+Exemple:
+Clé : musique\\
+Texte : J'adore écouter la radio toute la journée.\\
+Texte en claire : 	j'adore ecouter la radio toute la journee\\
+Clé répétée     : 	M USIQU EMUSIQU EM USIQU EMUSI QU EMUSIQU\\
+					\textasciicircum \textasciicircum\textasciicircum\textasciicircum\\
+					| ||Colonne O, ligne I : on obtient la lettre W.\\
+					| |Colonne D, ligne S : on obtient la lettre V.\\
+					| Colonne A, ligne U : on obtient la lettre U.\\
+                  	Colonne J, ligne M : on obtient la lettre V.%\footnote{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
+
+
+
+
+
+\end{itemize}
 
 
 \section{Fonctionnalité}
 \subsection{En général}
-Lorem ipsum
+\blindtext
 
 \subsection{En détail et coupé en modules}
-
+\blindtext
 
 \section{Interfaces utilisateurs}
-
+\blindtext
 
 
 
@@ -153,18 +186,7 @@ Lorem ipsum
 % woher kommen diese Hilfsvariablen??
 % nach Gaußklammern: \[i := \lfloor hue \rfloor\]
 
-
-\[
-  (r,g,b)^T := \left\{\begin{array}{lr}
-        (val,t,p)^T, & \text{for }\; i = 0\\
-        (q,val,p)^T, & \text{for }\; i = 1\\
-        (p,val,t)^T, & \text{for }\; i = 2\\
-        (p,q,val)^T, & \text{for }\; i = 3\\
-        (t,p,val)^T, & \text{for }\; i = 4\\
-        (val,p,q)^T, & \text{for }\; i = 5\\
-        \end{array}\right.
-  \]
-  
+ 
 
 \begin{figure}[htbp]
 \begin{minipage}[t]{0.48\textwidth}
@@ -184,88 +206,6 @@ Lorem ipsum
 \end{figure}
 
 % "`Standard Definition Television"', HDTV für "`High Definition Television'".
-
-\[
-    \left(\begin{array}{c} y \\ cb \\ cr \end{array}\right) =
-    \left(\begin{array}{c} 0 \\ 128 \\ 128 \end{array}\right)
-    +
-    \begin{pmatrix} 0.299 & 0.587 & 0.114 \\ -0.169 & -0.331 & 0.500 \\ 0.500 & -0.419 & -0.081
-    \end{pmatrix} \cdot \left(\begin{array}{c} r \\ g \\ b \end{array}\right)
-\]
-
-
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/original.jpg}
-    \caption{Originalbild}
-    \label{originalY}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.52\textwidth}
-  \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2ycbcr_cut.png}
-    \caption{Bild nach der Konvertierung}
-    \label{rgb2ycbcr}
-  \end{center}
-\end{minipage}
-\end{figure}
-Zur Übersicht sind in den Abbildungen 14 bis 16 die einzelnen Farbkomponenten getrennt dargestellt (s. Abb. \ref{Y}, Abb. \ref{Cb}, Abb. \ref{Cr}).
-
-
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.31\textwidth}
-  \begin{center}
-    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_y_cut.png}
-    \caption{nur Y}
-    \label{Y}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.31\textwidth}
-  \begin{center}
-    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_cb_cut.png}
-    \caption{nur Cb}
-    \label{Cb}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.31\textwidth}
-  \begin{center}
-    %\includegraphics[height=3.7cm]{./Bilder/bilderKonv/original/canvas_cr_cut.png}
-    \caption{nur Cr}
-    \label{Cr}
-  \end{center}
-\end{minipage}
-\end{figure}
-
- 
-\[
-    \left(\begin{array}{c} r \\ g \\ b \end{array}\right) =
-    \begin{pmatrix} 1.000 & 1.000 & 1.000 \\ 0.000 & -0.343 & -0.419 \\ 1.400 & -0.711 & 0.000
-    
-    \end{pmatrix}
-    \cdot \left(\begin{array}{c} y \\ cb - 128 \\ cr - 128 \end{array}\right)
-\]
-
- 
-
-
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2ycbcr_cut.png}
-    \caption{Bild im YCbCr"=Farbraum}
-    \label{ycbcr}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.52\textwidth}
-  \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_ycbcr2rgb_cut.png}
-    \caption{Bild nach der Konvertierung}
-    \label{ycbcr2rgb}
-  \end{center}
-\end{minipage}
-\end{figure}
-
 
 \newpage
 \begin{figure}[htbp]
@@ -314,6 +254,26 @@ Zur Übersicht sind in den Abbildungen 14 bis 16 die einzelnen Farbkomponenten g
 
 
 
+\begin{tabular}[t]{lr}
+Naher Osten & 65\%\\
+Lateinamerika & 13\%\\
+\end{tabular}\\
+
+%\begin{itemize}
+%\item \blindtext
+%\item \blindtext
+%\end{itemize}
+%\begin{enumerate}
+%\item \blindtext
+%\item \blindtext
+%\end{enumerate}
+%\begin{description}
+%\item [Ant] \blindtext
+%\item [Elephant] \blindtext
+
+%\textbf{greatest} 
+%\underline{science} 
+%\textbf{\textit{accident}}.
 
 
 \end{document}
