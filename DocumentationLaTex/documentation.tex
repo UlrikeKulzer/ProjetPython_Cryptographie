@@ -56,48 +56,56 @@ La cryptographie est une technique utilisée pour rendre incompréhensible à au
 Le principe est le suivant : L'expéditeur à partir d'une clé crypte son message et l'envoie au destinataire. Celui-ci possède aussi la clé qui va lui permettre ainsi de décrypter le message.
 
 \subsection{Histoire}
-La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que
+La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que le chiffre de César, le chiffre de Vigenère et celui de la machine Enigma.
 
-\begin{itemize}
-\item \textit{le chiffre de César :}
+\subsubsection{Le chiffre de César :}
 \begin{floatingfigure}[r]{8.3cm}
 	\includegraphics[width=0.5\textwidth]{./Pictures/chiffreCesar.png}
 	%\caption{principe du chiffre de César}
 	\label{cesar}
 \end{floatingfigure}
 Ce procédé a été inventé lors de l'époque romaine par Jules César pour ses communications secrètes. En décalant l'alphabet par un entier donné chaque lettre est associée à une nouvelle lettre, ainsi on peut crypter le message initiale en remplaçant chaque lettre par la nouvelle lettre attribuée.
-\item \textit{le chiffre de Vigenère :}
+
+\newpage
+\subsubsection{Le chiffre de Vigenère :}
 \begin{floatingfigure}[r]{8.3cm}
 	\includegraphics[width=0.5\textwidth]{./Pictures/tableauVigenere.png}
 	%\caption{tableau de Vigenère}
 	\label{vigenere}
 \end{floatingfigure}
 Il a été inventé au 16e siècle par Blaise de Vigenère et est basé sur le tableau à droite. Une clé (un mot) est répétée et mis sous le message et de cette manière on peut trouver les lettres correspondantes à partir du tableau.\\
-
 Exemple:
 Clé : musique\\
 Texte : J'adore écouter la radio toute la journée.\\
-Texte en claire : 	j'adore ecouter la radio toute la journee\\
-Clé répétée     : 	M USIQU EMUSIQU EM USIQU EMUSI QU EMUSIQU\\
-					\textasciicircum \textasciicircum\textasciicircum\textasciicircum\\
-					| ||Colonne O, ligne I : on obtient la lettre W.\\
-					| |Colonne D, ligne S : on obtient la lettre V.\\
-					| Colonne A, ligne U : on obtient la lettre U.\\
-                  	Colonne J, ligne M : on obtient la lettre V.%\footnote{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
+Texte en claire et en dessous la clé répétée:\\
+j'adore ecouter la radio\\
+M USIQU EMUSIQU EM USIQU\\
+\textasciicircum\ \ \\textasciicircum\textasciicircum\textasciicircum\\
+| ||Colonne O, ligne I : on obtient la lettre W.\\
+| |Colonne D, ligne S : on obtient la lettre V.\\
+| Colonne A, ligne U : on obtient la lettre U.\\
+Colonne J, ligne M : on obtient la lettre V.%\footnote{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
 
-
-
-
-
-\end{itemize}
-
+\subsubsection{La machine Enigma :}
+L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication secrète entre les différentes unités de l’armée allemande.
+La machine est constituée de cinq rotors dont un réflecteur, d’un clavier, d’un tableau de permutation et de lampes pour chaque lettre. Pour l’allumer il faut une batterie de 4,5 Volt.
+Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un courant électrique va être envoyé au tableau de permutation dans lequel la lettre entrée est échangée avec une autre lettre si elles sont connectées. Puis il passera la première fois par les quatre rotors : Dans chacun des trois rotors au milieu il y a un décalage des lettres qui s’opère. À la fin les lettres sont permutées encore une fois dans le réflecteur qui les renvoie par les rotors au tableau de permutation ce qui permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour chaque lettre on relève la lettre codée, on obtient alors notre message crypté.
 
 \section{Fonctionnalité}
+\subsection{Différents états du programme}
+\begin{figure}[tpbh]
+	\centering
+  \includegraphics[width=\textwidth, trim=25mm 10mm 10mm 8mm, clip]{./Diagrammes/diagrammeDesEtats.pdf}
+  %\caption{Différents états du programme}
+	\label{img:etats}
+\end{figure}
+
 \subsection{En général}
 \blindtext
 
 \subsection{En détail et coupé en modules}
 \blindtext
+
 
 \section{Interfaces utilisateurs}
 \blindtext
@@ -146,45 +154,25 @@ Clé répétée     : 	M USIQU EMUSIQU EM USIQU EMUSI QU EMUSIQU\\
 \subsubsection{Die Farbmodelle YUV, YPbPr und YCbCr}
 % NTSC\footnote{für Details siehe \cite{linkfangNTSC}} und des PAL-Verfahrens\footnote{für Details siehe \cite{linkfangPAL}} entwickelt und basiert auf dem RGB"= Farbmodell. 
 
-%Von diesen bestimmt man für die weiteren Rechnungen das Maximum max\_value und Minimum min\_value mit der entsprechenden Funktion.
-\[    hue := \left\{\begin{array}{lr}
-        0.0, & \text{for }\; max\_value = min\_value\\
-        60.0 \cdot \left( 0.0 + \frac {g - b} {max\_value - min\_value} \right), & \text{for }\; max\_value = r\\
-        60.0 \cdot \left( 2.0 + \frac {b - r} {max\_value - min\_value} \right), & \text{for }\; max\_value = g\\
-        60.0 \cdot \left( 4.0 + \frac {r - g} {max\_value - min\_value} \right), & \text{for }\; max\_value = b
-        \end{array}\right.
-  \]  
-
-
-\[
-    satVal := \left\{\begin{array}{lr}
-        0.0, & \text{for }\; max\_value = 0.0\\
-        \frac {max\_value - min\_value} {max\_value}), & \text{otherwise }\; \\
-        \end{array}\right.
-  \]  
 
 
 \begin{figure}[htbp]
 \begin{minipage}[t]{0.48\textwidth}
   \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/original.jpg}
+    \includegraphics[height=5.6cm]{./Pictures/tableauVigenere.png}
     \caption{Originalbild}
     \label{originalScot}
   \end{center}
 \end{minipage}
 \begin{minipage}[t]{0.52\textwidth}
   \begin{center}
-    %\includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2hsv_cut.png}
+    \includegraphics[height=5.6cm]{./Pictures/tableauVigenere.png}
     \caption{Bild nach der Konvertierung}
     \label{rgb2hsv}
   \end{center}
 \end{minipage}
 \end{figure}
 
-
-%e floor()"=Funktion verwendet, die äquivalent zu den Gaußklammern nach unten ist. Zusätzlich zu i werden vier weitere Hilfsvariablen definiert: \[f := hue - i,\qquad p := val \cdot (1.0 - sat),\qquad q := val \cdot (1.0 - (sat \cdot f))\] und \[t := val \cdot (1.0 - sat \cdot (1.0 - f))\].
-% woher kommen diese Hilfsvariablen??
-% nach Gaußklammern: \[i := \lfloor hue \rfloor\]
 
  
 
