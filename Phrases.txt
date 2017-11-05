@@ -1,7 +1,44 @@
-Hello. Welcome to the cryptography program.\nPlease select your language: 'f' for Francais, 'e' for English.
+Hello. Welcome to the cryptography program.\nPlease select your language:
+'f' for Francais, 'e' for English.
+
+***************************
+
+What do you want to do - encrypt  or decrypt a message?
+Enter 'c' for encrypting
+or 'd' for decrypting.
+
+---------------
+
+How do you want to encrypt/decrypt your text?
+Enter 'c' for Cesar's cypher,
+enter 'v' for Vigenère's cypher
+or enter 'e' for the encryption/decryption by the Enigma machine.
+Enter 'r' to go back to the previous menu
+or 'm' to go back to the main menu.
+
+---------------
+
+CESAR
+Please enter your key (a number between 1 and 25 included).
+
+VIGENERE
+Please enter your key (a word).
+
+ENIGMA
+Please enter your key (composed of three upper case letters).
+
+---------------
+
+Here is your encrypted/decrypted text:
+...
+
+---------------
+
+Thank you for using our program.
+Good bye and have a nice day.
 
 
-
+**************************************
 
 
 Bonjour. Bienvenue sur le programme de cryptographie.
@@ -25,7 +62,7 @@ VIGENÈRE
 Insérez votre clé (un mot).
 
 ENIGMA
-Insérez votre clé (composé de trois lettres en majuscule).
+Insérez votre clé (composée de trois lettres en majuscule).
 -----------------
 DÉCRYPTER
 
@@ -43,3 +80,12 @@ Voici votre texte (dé)crypté:
 
 Merci d'avoir utilisé notre programme.
 Bonne journée, au revoir.
+
+
+
+How do you want to encrypt/decrypt your text?
+Enter 'c' for Cesar's cypher,
+enter 'v' for Vigenère's cypher
+or enter 'e' for the encryption/decryption by the Enigma machine.
+Enter 'r' to go back to the previous menu
+or 'm' to go back to the main menu.
