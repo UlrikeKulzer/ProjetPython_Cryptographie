@@ -4,8 +4,9 @@ Hello. Welcome to the cryptography program.\nPlease select your language:
 ***************************
 
 What do you want to do - encrypt  or decrypt a message?
-Enter 'c' for encrypting
-or 'd' for decrypting.
+Enter 'c' for encrypting or 'd' for decrypting.
+Enter 's' to change settings (language)
+or 'q' to exit :(
 
 ---------------
 
@@ -13,19 +14,33 @@ How do you want to encrypt/decrypt your text?
 Enter 'c' for Cesar's cypher,
 enter 'v' for Vigenère's cypher
 or enter 'e' for the encryption/decryption by the Enigma machine.
-Enter 'r' to go back to the previous menu
-or 'm' to go back to the main menu.
+Enter 'm' to go back to the main menu.
 
 ---------------
 
 CESAR
+You chose "Cesar":
 Please enter your key (a number between 1 and 25 included).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
 
 VIGENERE
+You chose "Vigenère":
 Please enter your key (a word).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
 
 ENIGMA
+You chose "Enigma":
 Please enter your key (composed of three upper case letters).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
+
+---------------
+
+Please enter your text.
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
 
 ---------------
 
