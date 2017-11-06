@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,abstracton,titlepage]{scrartcl}
 
-\usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+%\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} % Umlaute, evtl. vom Betriebssystem abhaengig
 \usepackage{lmodern}
 \usepackage{pgfgantt}
@@ -11,6 +11,8 @@
 \usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{tabularx,url}
+\usepackage[a4paper, left=2cm, textwidth=17cm, top=1.5cm]{geometry}
+\usepackage{hyperref}
 
 
 \titleformat*{\section}{\large\bfseries}
@@ -19,7 +21,7 @@
 \titleformat*{\paragraph}{\large\bfseries}
 \titleformat*{\subparagraph}{\large\bfseries}
 
-\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcaptionname{french}{\figurename}{Fig.}
 
 %\titlehead{Ulm University}
 %\title{Title}
@@ -56,55 +58,109 @@ La cryptographie est une technique utilisée pour rendre incompréhensible à au
 Le principe est le suivant : L'expéditeur à partir d'une clé crypte son message et l'envoie au destinataire. Celui-ci possède aussi la clé qui va lui permettre ainsi de décrypter le message.
 
 \subsection{Histoire}
-La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que le chiffre de César, le chiffre de Vigenère et celui de la machine Enigma.
+La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthodes les plus abouties datent du 20e siècle. Il existe différents principes de cryptage plus ou moins compliqués tels que\\
+\\
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{itemize}
+    \item \textit{le chiffre de César :}\\
+    Ce procédé a été inventé lors de l'époque romaine par Jules César pour ses communications secrètes. En décalant l'alphabet par un entier donné chaque lettre est associée à une nouvelle lettre, ainsi on peut crypter le message initiale en remplaçant chaque lettre par la nouvelle lettre attribuée.
+    \paragraph{}
+    \item \textit{le chiffre de Vigenère :}\\
+    Il a été inventé au 16e siècle par Blaise de Vigenère et est basé sur le tableau à droite. Une clé (un mot) est répétée et mis sous le message et de cette manière on peut trouver les lettres correspondantes à partir du tableau.\\
+    Exemple:
+%\footnote{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
+    \end{itemize}
+    \begin{center}
+    \raggedleft
+ 	\includegraphics[height=3.4cm]{./Pictures/exempleVigenere_neuf.png}
+ 	%\caption{exemple du cryptage de Vigenère}
+ 	\label{exVig}
+    \end{center} 
+	
+  \end{minipage} 
+  \begin{minipage}[t]{0.4\linewidth}
+    \raggedleft
+    \strut\vspace*{-\baselineskip}\newline\includegraphics[width=0.9\linewidth]{./Pictures/chiffreCesar.png}
+    %\caption{décalage de l'alphabet}
+    \label{cesar}
+    \paragraph{}
+    \strut\vspace*{-\baselineskip}\newline\includegraphics[width=0.9\linewidth]{./Pictures/tableauVigenere.png}
+    %\caption{tableau de Vigenère}
+    \label{tabVig}
+  \end{minipage}
 
-\subsubsection{Le chiffre de César :}
-\begin{floatingfigure}[r]{8.3cm}
-	\includegraphics[width=0.5\textwidth]{./Pictures/chiffreCesar.png}
-	%\caption{principe du chiffre de César}
-	\label{cesar}
-\end{floatingfigure}
-Ce procédé a été inventé lors de l'époque romaine par Jules César pour ses communications secrètes. En décalant l'alphabet par un entier donné chaque lettre est associée à une nouvelle lettre, ainsi on peut crypter le message initiale en remplaçant chaque lettre par la nouvelle lettre attribuée.
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{itemize}
+    \item \textit{celui de la machine Enigma :}\\
+    L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication secrète entre les différentes unités de l’armée allemande.
+La machine est constituée de cinq rotors dont un réflecteur, d’un clavier, d’un tableau de permutation et de lampes pour chaque lettre. Pour l’allumer il faut une batterie de 4,5 Volt.
+Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un courant électrique va être envoyé au tableau de permutation dans lequel la lettre entrée est échangée avec une autre lettre si elles sont connectées. Puis il passera la première fois par les quatre rotors : Dans chacun des trois rotors au milieu il y a un décalage des lettres qui s’opère. À la fin les lettres sont permutées encore une fois dans le réflecteur qui les renvoie par les rotors au tableau de permutation ce qui permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour chaque lettre on relève la lettre codée, on obtient alors notre message crypté.\\
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}[t]{0.5\linewidth}
+    \raggedleft
+    \strut\vspace*{-\baselineskip}\newline\newline\newline\includegraphics[width=0.9\linewidth]{./Pictures/enigma.jpg}
+    %\caption{La machine Enigma}
+    \label{enigma}
+  \end{minipage}
+  
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+
+\textit{Sites de référence :}
+\begin{itemize}
+\item \url{https://fr.wikipedia.org/wiki/Cryptographie}
+\item \url{http://www.bibmath.net/crypto/}
+\item \url{https://fr.wikipedia.org/wiki/Chiffrement_par_d\%C3\%A9calage}
+\item \url{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
+\item \url{https://fr.wikipedia.org/wiki/Enigma_(machine)}
+\item photo d’Enigma:
+Von William Warby from London, England - Enigma, CC BY 2.0,\\\url{https://commons.wikimedia.org/w/index.php?curid=46848023}\\
+\end{itemize}
+
+
 
 \newpage
-\subsubsection{Le chiffre de Vigenère :}
-\begin{floatingfigure}[r]{8.3cm}
-	\includegraphics[width=0.5\textwidth]{./Pictures/tableauVigenere.png}
-	%\caption{tableau de Vigenère}
-	\label{vigenere}
-\end{floatingfigure}
-Il a été inventé au 16e siècle par Blaise de Vigenère et est basé sur le tableau à droite. Une clé (un mot) est répétée et mis sous le message et de cette manière on peut trouver les lettres correspondantes à partir du tableau.\\
-Exemple:
-Clé : musique\\
-Texte : J'adore écouter la radio toute la journée.\\
-Texte en claire et en dessous la clé répétée:\\
-j'adore ecouter la radio\\
-M USIQU EMUSIQU EM USIQU\\
-\textasciicircum\ \ \\textasciicircum\textasciicircum\textasciicircum\\
-| ||Colonne O, ligne I : on obtient la lettre W.\\
-| |Colonne D, ligne S : on obtient la lettre V.\\
-| Colonne A, ligne U : on obtient la lettre U.\\
-Colonne J, ligne M : on obtient la lettre V.%\footnote{https://fr.wikipedia.org/wiki/Chiffre_de_Vigen\%C3\%A8re}
-
-\subsubsection{La machine Enigma :}
-L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication secrète entre les différentes unités de l’armée allemande.
-La machine est constituée de cinq rotors dont un réflecteur, d’un clavier, d’un tableau de permutation et de lampes pour chaque lettre. Pour l’allumer il faut une batterie de 4,5 Volt.
-Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un courant électrique va être envoyé au tableau de permutation dans lequel la lettre entrée est échangée avec une autre lettre si elles sont connectées. Puis il passera la première fois par les quatre rotors : Dans chacun des trois rotors au milieu il y a un décalage des lettres qui s’opère. À la fin les lettres sont permutées encore une fois dans le réflecteur qui les renvoie par les rotors au tableau de permutation ce qui permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour chaque lettre on relève la lettre codée, on obtient alors notre message crypté.
-
 \section{Fonctionnalité}
 \subsection{Différents états du programme}
+Les différents états du programme sont représentés dans le diagramme ci-dessous. Dès que le programme est lancé, il est généralement toujours dans un état en attendant des saisies de l'utilisateur. La seule exception est l'état en cryptant ou décryptant.
+Sur les flèches on peut voir ce qu'il faut faire pour accéder à un autre état, soit le précédent, soit le suivant.
+Avant que le programme est fermé, il affichera un petit message de remerciement.\\
+
 \begin{figure}[tpbh]
 	\centering
-  \includegraphics[width=\textwidth, trim=25mm 10mm 10mm 8mm, clip]{./Diagrammes/diagrammeDesEtats.pdf}
+  \includegraphics[width=\textwidth, trim=20mm 38mm 25mm 13mm, clip]{./Diagrammes/diagrammeDesEtats.pdf}
+  %TRIM = LINKS UNTEN RECHTS OBEN
   %\caption{Différents états du programme}
 	\label{img:etats}
 \end{figure}
 
 \subsection{En général}
-\blindtext
+\begin{itemize}
+\item Quand l’utilisateur lance le programme on lui demande de choisir la langue, soit français, soit anglais.
+\item Notre programme va proposer à l’utilisateur trois façons différentes de (dé)crypter un texte de complexité croissante et demander une clé.
+\item Les différentes manières sont le principe du chiffre de César, du chiffre de Vigenère et de la machine Enigma.
+\end{itemize}
 
+\newpage
 \subsection{En détail et coupé en modules}
-\blindtext
+\begin{itemize}
+\item \textit{Avant de commencer le (de)cryptage :}\\
+On va créer une méthode qui formatera le texte (enlever les accents, les caractères spéciaux, les signes de ponctuation et les espaces, puis mettre tout en majuscule).\\
+\item \textit{(Dé)Cryptage César :}\\
+On compte transformer les lettres du texte en nombres par le système unicode, ensuite on additionne la clé (nombre) aux nombres obtenus par le système.On reconvertit alors les lettres en caractères et retourne le texte.
+Pour le décryptage, il suffit de soustraire au lieu d'additionner.\\
+\item \textit{(Dé)Cryptage Vigenère :}\\
+Dans un premier temps on crée une matrice de 26 x 26 lettres contenant l’alphabet représentant le tableau de Vigenère et une matrice à deux lignes pour le texte et la clé. Dans un deuxième temps on prend le texte et on insère tour à tour les caractères individuels dans la première ligne de la matrice et la clé dans la deuxième. Chaque lettre du texte doit être attribuée à un caractère de la clé (mot) ce qui est permis en répétant le mot tant qu’ils restent des lettres du texte.
+Le cryptage est fait caractère par un caractère. Pour trouver la lettre cryptée on regarde en premier la lettre du texte et on cherche la colonne de la matrice qui appartient à la lettre et on la mémorise. Par la suite on considère le caractère de la clé auquel la lettre du texte est attribuée et on cherche la ligne de la matrice qui appartient au caractère. Dès qu’on a trouvé les deux, la lettre de la matrice qui est enregistré sur cette case est la lettre cryptée laquelle est mémorisée dans une chaîne de caractère. Lorsqu’on a crypté toutes les lettres du texte, on retourne la chaîne de caractère qui est le texte crypté.
+Pour le décryptage, on possède la matrice à deux lignes avec le texte crypté sur une ligne et la clé répétée sur l’autre. Pour chaque lettre du texte crypté, on parcourt dans le tableau de Vigenère (matrice) la ligne correspondant à la lettre de la clé répétée et lorsqu’on  trouve la lettre cryptée cherchée on remonte la ligne pour obtenir le caractère décrypté correspondant à cette lettre. De la même manière que pour le cryptage on mémorise les lettres obtenues dans une chaîne de caractère ce qui permet d’avoir au final le message décrypté.\\
+\item \textit{(Dé)Cryptage Enigma :}\\
+Pour commencer nous créons cinq listes : La première correspond au tableau de permutation, les trois suivantes aux rotors au milieu et la dernière au réflecteur. Au début de la programmation on choisit un décalage fixe ; si possible on essayera plus tard de changer le décalage automatiquement.
+Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
+On appelle ensuite des fonctions qui exécutent les décalages au niveau des trois rotors et après on utilise la fonction correspondant au réflecteur pour permuter les lettres. On repasse finalement à nouveau par les rotors et on obtient une certaine lettre. Si la lettre est connectée à une autre, on retourne l’autre lettre, sinon on garde la même, celle-ci est alors la lettre (dé)cryptée.\\
+\end{itemize}
 
 
 \section{Interfaces utilisateurs}
@@ -113,16 +169,14 @@ Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un couran
 
 
 
-% (CIE\footnote{CIE = Commission internationale de l’éclairage})  "`Inviwo"'\footnote{Interactive Visualization Workshop}
 
-%\section{Grundlagen}
 \begin{floatingfigure}[r]{6cm}
 %	\includegraphics[width=0.3\textwidth]{./Bilder/1cie.png}
 	\caption{CIE"=Normvalenzsystem}
 	\label{cie}
 \end{floatingfigure}
 
-%(meist im CIE"=Normvalenzsystem) oder verschiedenen Farbkörpern, z. B. Würfel oder Kegeln, dargestellt. Als Beispiel sieht man in Abbildung \ref{cie} eine Darstellung des Standard"=RGB"=Farbraums
+%(meist im CIE"=Normvalenzsystem)
 
 
 \begin{floatingfigure}[l]{5.3cm}
@@ -133,7 +187,7 @@ Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un couran
 
 \par
 
-% wodurch weißes Licht reflektiert wird (s. Abb. \ref{venn}). 
+
 
 
 \vspace{2em}
@@ -142,17 +196,8 @@ Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un couran
 %\subsubsection{Das Farbmodell RGB} 
 %(für Genaueres siehe \cite{kompendium}).
 
-\subsubsection{Das Farbmodell HSV}
-\begin{floatingfigure}[r]{8.3cm}
-	%\includegraphics[width=0.5\textwidth]{./Bilder/hsvKegel.png}
-	\caption{HSV-Farbkörper}
-	\label{hsv}
-\end{floatingfigure} 
-
-
 \vspace{1em}
-\subsubsection{Die Farbmodelle YUV, YPbPr und YCbCr}
-% NTSC\footnote{für Details siehe \cite{linkfangNTSC}} und des PAL-Verfahrens\footnote{für Details siehe \cite{linkfangPAL}} entwickelt und basiert auf dem RGB"= Farbmodell. 
+
 
 
 
@@ -174,71 +219,8 @@ Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un couran
 \end{figure}
 
 
- 
-
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-   % \includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_rgb2hsv_cut.png}
-    \caption{Bild im HSV"=Farbraum}
-    \label{hsvVorher}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.52\textwidth}
-  \begin{center}
-   % \includegraphics[height=5.6cm]{./Bilder/bilderKonv/original/canvas_hsv2rgb_cut.png}
-    \caption{Bild nach der Konvertierung}
-    \label{hsv2rgb}
-  \end{center}
-\end{minipage}
-\end{figure}
 
 % "`Standard Definition Television"', HDTV für "`High Definition Television'".
-
-\newpage
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-    %\includegraphics[height=5cm]{./Bilder/bilderKonv/balloons_fehlerhaft/rgb2hsv_cut.png}
-    \caption{RGB nach HSV}
-    \label{errorBall}
-    \begin{small}
-    Quelle: w.hsv
-    \end{small}
-  \end{center}
-\end{minipage}
-\begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-    %\includegraphics[height=5cm]{./Bilder/bilderKonv/balloons_fehlerhaft/testGes.png}
-    \caption{HSV nach RGB mit vergrößertem Ausschnitt}
-    \label{errorBallRGB}
-  \end{center}
-\end{minipage}
-\end{figure}
-
-
-
-\section{Referenzen}
-\nocite{*} 
-%\renewcommand{\bibname}{\section{Sources}} % Redefine bibname
-\bibliographystyle{IEEEtran} % Set any options you want
-\bibliography{bibliography} % Build the bibliography
-
-\subsection*{Bildquellen}
-
-\begin{tabularx}{0.95\linewidth}{@{}>{\bfseries}l@{\hspace{0.5em}}X@{}}
-    Abb. \ref{cie}   &     \url{http://www.itwissen.info/definition/lexikon/Standard-RGB-sRGB-standard-RGB.html} (31.01.2017)
-    \\
-    Abb. \ref{venn}   &	   \url{https://www.saxoprint.de/blog/der-farbraum-rgb-und-cmyk-im-vergleich/} (31.01.2017)
-    \\
-    Abb. \ref{hsv}   &     \url{http://de.mathworks.com/help/images/convert-from-hsv-to-rgb-color-space.html?requestedDomain=www.mathworks.com} (07.02.2017)
-    \\
-    Abb. \ref{originalScot}   &     Ulrike Kulzer
-    \\
-    Abb. \ref{errorBall}   &     Originalbild:
-    \url{https://www.tutorialspoint.com/java_dip/color_space_conversion.htm} (08.02.2017)
-    \\
-\end{tabularx}
 
 
 
