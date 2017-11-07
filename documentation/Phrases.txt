@@ -1,5 +1,5 @@
 Hello. Welcome to the cryptography program.\nPlease select your language:
-'f' for Francais, 'e' for English.
+'f' for Français, 'e' for English.
 
 ***************************
 
@@ -7,6 +7,13 @@ What do you want to do - encrypt  or decrypt a message?
 Enter 'c' for encrypting or 'd' for decrypting.
 Enter 's' to change settings (language)
 or 'q' to exit :(
+
+
+---------------
+
+SETTINGS:
+Please select your language:
+'f' for Français, 'e' for English.
 
 ---------------
 
@@ -59,7 +66,15 @@ Good bye and have a nice day.
 Bonjour. Bienvenue sur le programme de cryptographie.
 Qu'est-ce que vous voulez faire - crypter ou décrypter un message?
 Insérez 'c' pour crypter ou 'd' pour décrypter.
+
 ---------------
+
+PARAMÈTRES:
+Please select your language:
+'f' for Français, 'e' for English.
+
+---------------
+
 CRYPTER/DECRYPTER
 
 De quelle manière voulez vous (dé)crypter votre texte?
@@ -68,6 +83,7 @@ insérez 'v' pour le (dé)cryptage par le chiffre de Vigenère
 ou insérez 'e' pour le (dé)cryptage par la machine Enigma.
 
 ----------------
+
 CRYPTER
 
 CÉSAR
