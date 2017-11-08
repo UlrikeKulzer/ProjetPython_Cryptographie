@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  7 NOV 2017 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  8 NOV 2017 15:18
 entering extended mode
 **./documentation.tex
 (documentation.tex
@@ -1394,7 +1394,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--121
  []
 
 [2 <./Pictures/enigma.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 128--131
+Underfull \hbox (badness 10000) in paragraph at lines 136--139
 
  []
 
@@ -1407,25 +1407,25 @@ File: ./Diagrammes/diagrammeDesEtats.pdf Graphic file (type pdf)
 
 <use ./Diagrammes/diagrammeDesEtats.pdf>
 Package pdftex.def Info: ./Diagrammes/diagrammeDesEtats.pdf used on input line 
-134.
+142.
 (pdftex.def)             Requested size: 483.69684pt x 305.00685pt.
  [3 <./Diagrammes/diagrammeDesEtats.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--159
+Underfull \hbox (badness 10000) in paragraph at lines 157--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 161--165
 
  []
 
@@ -1435,7 +1435,7 @@ File: ./Pictures/interface/01_startScreen.png Graphic file (type png)
 
 <use ./Pictures/interface/01_startScreen.png>
 Package pdftex.def Info: ./Pictures/interface/01_startScreen.png used on input 
-line 169.
+line 171.
 (pdftex.def)             Requested size: 296.60739pt x 39.14615pt.
 
 <./Pictures/interface/english/02_english_mainMenu.png, id=102, 380.17032pt x 54
@@ -1444,7 +1444,7 @@ File: ./Pictures/interface/english/02_english_mainMenu.png Graphic file (type p
 ng)
  <use ./Pictures/interface/english/02_english_mainMenu.png>
 Package pdftex.def Info: ./Pictures/interface/english/02_english_mainMenu.png u
-sed on input line 176.
+sed on input line 178.
 (pdftex.def)             Requested size: 380.16939pt x 54.20236pt.
 
 <./Pictures/interface/settingsDialogue.png, id=103, 230.36063pt x 27.10126pt>
@@ -1452,7 +1452,7 @@ File: ./Pictures/interface/settingsDialogue.png Graphic file (type png)
 
 <use ./Pictures/interface/settingsDialogue.png>
 Package pdftex.def Info: ./Pictures/interface/settingsDialogue.png used on inpu
-t line 180.
+t line 182.
 (pdftex.def)             Requested size: 230.36005pt x 27.10118pt.
 
 <./Pictures/interface/english/03_english_cryptage.png, id=104, 443.40656pt x 64
@@ -1461,7 +1461,7 @@ File: ./Pictures/interface/english/03_english_cryptage.png Graphic file (type p
 ng)
  <use ./Pictures/interface/english/03_english_cryptage.png>
 Package pdftex.def Info: ./Pictures/interface/english/03_english_cryptage.png u
-sed on input line 183.
+sed on input line 185.
 (pdftex.def)             Requested size: 443.40547pt x 64.74171pt.
 
 <./Pictures/interface/english/03_english_decryptage.png, id=105, 443.40656pt x 
@@ -1470,7 +1470,7 @@ File: ./Pictures/interface/english/03_english_decryptage.png Graphic file (type
  png)
  <use ./Pictures/interface/english/03_english_decryptage.png>
 Package pdftex.def Info: ./Pictures/interface/english/03_english_decryptage.png
- used on input line 186.
+ used on input line 188.
 (pdftex.def)             Requested size: 443.40547pt x 63.23608pt.
 
 <./Pictures/interface/english/04_english_cesar.png, id=106, 401.24907pt x 50.43
@@ -1479,7 +1479,7 @@ File: ./Pictures/interface/english/04_english_cesar.png Graphic file (type png)
 
  <use ./Pictures/interface/english/04_english_cesar.png>
 Package pdftex.def Info: ./Pictures/interface/english/04_english_cesar.png used
- on input line 189.
+ on input line 191.
 (pdftex.def)             Requested size: 401.24808pt x 50.4383pt.
 
 <./Pictures/interface/english/04_english_vigenere.png, id=107, 268.00125pt x 51
@@ -1488,7 +1488,7 @@ File: ./Pictures/interface/english/04_english_vigenere.png Graphic file (type p
 ng)
  <use ./Pictures/interface/english/04_english_vigenere.png>
 Package pdftex.def Info: ./Pictures/interface/english/04_english_vigenere.png u
-sed on input line 192.
+sed on input line 194.
 (pdftex.def)             Requested size: 268.00058pt x 51.19112pt.
  [5 <./Pictures/interface/01_startScreen.png> <./Pictures/interface/english/02_
 english_mainMenu.png> <./Pictures/interface/settingsDialogue.png> <./Pictures/i
@@ -1500,7 +1500,7 @@ File: ./Pictures/interface/english/04_english_enigma.png Graphic file (type png
 )
  <use ./Pictures/interface/english/04_english_enigma.png>
 Package pdftex.def Info: ./Pictures/interface/english/04_english_enigma.png use
-d on input line 195.
+d on input line 197.
 (pdftex.def)             Requested size: 417.0571pt x 49.6855pt.
 
 <./Pictures/interface/english/05_english_insertText.png, id=125, 270.25969pt x 
@@ -1509,7 +1509,7 @@ File: ./Pictures/interface/english/05_english_insertText.png Graphic file (type
  png)
  <use ./Pictures/interface/english/05_english_insertText.png>
 Package pdftex.def Info: ./Pictures/interface/english/05_english_insertText.png
- used on input line 198.
+ used on input line 200.
 (pdftex.def)             Requested size: 270.25902pt x 39.14615pt.
 
 <./Pictures/interface/english/06_english_cryptage_showText.png, id=126, 191.967
@@ -1519,7 +1519,7 @@ e (type png)
 
 <use ./Pictures/interface/english/06_english_cryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/english/06_english_cryptage_showT
-ext.png used on input line 201.
+ext.png used on input line 203.
 (pdftex.def)             Requested size: 191.96672pt x 24.08992pt.
 
 <./Pictures/interface/english/06_english_decryptage_showText.png, id=127, 191.9
@@ -1529,7 +1529,7 @@ ile (type png)
 
 <use ./Pictures/interface/english/06_english_decryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/english/06_english_decryptage_sho
-wText.png used on input line 204.
+wText.png used on input line 206.
 (pdftex.def)             Requested size: 191.96672pt x 24.84274pt.
 
 <./Pictures/interface/english/07_english_quitMessage.png, id=128, 219.06844pt x
@@ -1538,7 +1538,7 @@ File: ./Pictures/interface/english/07_english_quitMessage.png Graphic file (typ
 e png)
  <use ./Pictures/interface/english/07_english_quitMessage.png>
 Package pdftex.def Info: ./Pictures/interface/english/07_english_quitMessage.pn
-g used on input line 207.
+g used on input line 209.
 (pdftex.def)             Requested size: 219.06789pt x 25.59555pt.
 
 [6 <./Pictures/interface/english/04_english_vigenere.png> <./Pictures/interface
@@ -1552,13 +1552,13 @@ File: ./Pictures/interface/french/02_french_mainMenu.png Graphic file (type png
 )
  <use ./Pictures/interface/french/02_french_mainMenu.png>
 Package pdftex.def Info: ./Pictures/interface/french/02_french_mainMenu.png use
-d on input line 214.
+d on input line 216.
 (pdftex.def)             Requested size: 454.69763pt x 65.4945pt.
 File: ./Pictures/interface/settingsDialogue.png Graphic file (type png)
 
 <use ./Pictures/interface/settingsDialogue.png>
 Package pdftex.def Info: ./Pictures/interface/settingsDialogue.png used on inpu
-t line 218.
+t line 220.
 (pdftex.def)             Requested size: 230.36005pt x 27.10118pt.
 
 <./Pictures/interface/french/03_french_cryptage.png, id=146, 379.4175pt x 63.23
@@ -1567,7 +1567,7 @@ File: ./Pictures/interface/french/03_french_cryptage.png Graphic file (type png
 )
  <use ./Pictures/interface/french/03_french_cryptage.png>
 Package pdftex.def Info: ./Pictures/interface/french/03_french_cryptage.png use
-d on input line 221.
+d on input line 223.
 (pdftex.def)             Requested size: 379.41656pt x 63.23608pt.
 
 <./Pictures/interface/french/03_french_decryptage.png, id=147, 391.4625pt x 64.
@@ -1576,7 +1576,7 @@ File: ./Pictures/interface/french/03_french_decryptage.png Graphic file (type p
 ng)
  <use ./Pictures/interface/french/03_french_decryptage.png>
 Package pdftex.def Info: ./Pictures/interface/french/03_french_decryptage.png u
-sed on input line 224.
+sed on input line 226.
 (pdftex.def)             Requested size: 391.46153pt x 64.74171pt.
 
 <./Pictures/interface/french/04_french_cesar.png, id=148, 356.0803pt x 52.69687
@@ -1584,7 +1584,7 @@ pt>
 File: ./Pictures/interface/french/04_french_cesar.png Graphic file (type png)
  <use ./Pictures/interface/french/04_french_cesar.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_cesar.png used o
-n input line 227.
+n input line 229.
 (pdftex.def)             Requested size: 356.07944pt x 52.69673pt.
 
 <./Pictures/interface/french/04_french_vigenere.png, id=149, 303.38344pt x 51.1
@@ -1593,7 +1593,7 @@ File: ./Pictures/interface/french/04_french_vigenere.png Graphic file (type png
 )
  <use ./Pictures/interface/french/04_french_vigenere.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_vigenere.png use
-d on input line 230.
+d on input line 232.
 (pdftex.def)             Requested size: 303.38269pt x 51.19112pt.
 
 <./Pictures/interface/french/04_french_enigma.png, id=150, 404.26031pt x 51.944
@@ -1601,7 +1601,7 @@ d on input line 230.
 File: ./Pictures/interface/french/04_french_enigma.png Graphic file (type png)
  <use ./Pictures/interface/french/04_french_enigma.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_enigma.png used 
-on input line 233.
+on input line 235.
 (pdftex.def)             Requested size: 404.25932pt x 51.94392pt.
  [7 <./Pictures/interface/french/02_french_mainMenu.png> <./Pictures/interface/
 french/03_french_cryptage.png> <./Pictures/interface/french/03_french_decryptag
@@ -1613,7 +1613,7 @@ File: ./Pictures/interface/french/05_french_insertText.png Graphic file (type p
 ng)
  <use ./Pictures/interface/french/05_french_insertText.png>
 Package pdftex.def Info: ./Pictures/interface/french/05_french_insertText.png u
-sed on input line 236.
+sed on input line 238.
 (pdftex.def)             Requested size: 303.38269pt x 38.39333pt.
 
 <./Pictures/interface/french/06_french_cryptage_showText.png, id=168, 173.89969
@@ -1623,7 +1623,7 @@ File: ./Pictures/interface/french/06_french_cryptage_showText.png Graphic file
 
 <use ./Pictures/interface/french/06_french_cryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/french/06_french_cryptage_showTex
-t.png used on input line 239.
+t.png used on input line 241.
 (pdftex.def)             Requested size: 173.89925pt x 23.33711pt.
 
 <./Pictures/interface/french/06_french_decryptage_showText.png, id=169, 187.450
@@ -1633,7 +1633,7 @@ e (type png)
 
 <use ./Pictures/interface/french/06_french_decryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/french/06_french_decryptage_showT
-ext.png used on input line 242.
+ext.png used on input line 244.
 (pdftex.def)             Requested size: 187.44984pt x 24.08992pt.
 
 <./Pictures/interface/french/07_french_quitMessage.png, id=170, 262.73157pt x 2
@@ -1642,26 +1642,36 @@ File: ./Pictures/interface/french/07_french_quitMessage.png Graphic file (type
 png)
  <use ./Pictures/interface/french/07_french_quitMessage.png>
 Package pdftex.def Info: ./Pictures/interface/french/07_french_quitMessage.png 
-used on input line 245.
+used on input line 247.
 (pdftex.def)             Requested size: 262.73091pt x 25.59555pt.
  [8 <./Pictures/interface/french/04_french_enigma.png> <./Pictures/interface/fr
 ench/05_french_insertText.png> <./Pictures/interface/french/06_french_cryptage_
 showText.png> <./Pictures/interface/french/06_french_decryptage_showText.png> <
 ./Pictures/interface/french/07_french_quitMessage.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
  (documentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
-Package rerunfilecheck Info: File `documentation.out' has not changed.
-(rerunfilecheck)             Checksum: A41B0F2A326532CEA3A83CC6C9CF3F47;645.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
+
+
+Package rerunfilecheck Warning: File `documentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `documentation.out':
+(rerunfilecheck)             Before: A41B0F2A326532CEA3A83CC6C9CF3F47;645
+(rerunfilecheck)             After:  950D0D533394A759663E2CED45EF5976;645.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 296.
  ) 
 Here is how much of TeX's memory you used:
- 22276 strings out of 493323
- 428176 string characters out of 3139062
+ 22275 strings out of 493323
+ 428168 string characters out of 3139062
  607178 words of memory out of 3000000
- 25348 multiletter control sequences out of 15000+200000
+ 25347 multiletter control sequences out of 15000+200000
  32566 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,7n,69p,8826b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1670,7 +1680,7 @@ Here is how much of TeX's memory you used:
 e1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr1
 2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on documentation.pdf (8 pages, 8202703 bytes).
+Output written on documentation.pdf (8 pages, 8202788 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  48 named destinations out of 1000 (max. 500000)

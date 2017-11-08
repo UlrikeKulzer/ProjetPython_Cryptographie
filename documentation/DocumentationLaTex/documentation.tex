@@ -124,6 +124,14 @@ Von William Warby from London, England - Enigma, CC BY 2.0,\\\url{https://common
 
 \newpage
 \section{Fonctionnalité}
+
+\subsection{En général}
+\begin{itemize}
+\item Quand l’utilisateur lance le programme on lui demande de choisir la langue, soit français, soit anglais.
+\item Notre programme va proposer à l’utilisateur trois façons différentes de (dé)crypter un texte de complexité croissante et demander une clé.
+\item Les différentes manières sont le principe du chiffre de César, du chiffre de Vigenère et de la machine Enigma.
+\end{itemize}
+
 \subsection{Différents états du programme}
 Les différents états du programme sont représentés dans le diagramme ci-dessous. Dès que le programme est lancé, il est généralement toujours dans un état en attendant des saisies de l'utilisateur. La seule exception est l'état en cryptant ou décryptant.
 Sur les flèches on peut voir ce qu'il faut faire pour accéder à un autre état, soit le précédent, soit le suivant.
@@ -137,12 +145,6 @@ Avant que le programme est fermé, il affichera un petit message de remerciement
 	\label{img:etats}
 \end{figure}
 
-\subsection{En général}
-\begin{itemize}
-\item Quand l’utilisateur lance le programme on lui demande de choisir la langue, soit français, soit anglais.
-\item Notre programme va proposer à l’utilisateur trois façons différentes de (dé)crypter un texte de complexité croissante et demander une clé.
-\item Les différentes manières sont le principe du chiffre de César, du chiffre de Vigenère et de la machine Enigma.
-\end{itemize}
 
 \newpage
 \subsection{En détail et coupé en modules}
@@ -161,6 +163,21 @@ Pour commencer nous créons cinq listes : La première correspond au tableau de 
 Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
 On appelle ensuite des fonctions qui exécutent les décalages au niveau des trois rotors et après on utilise la fonction correspondant au réflecteur pour permuter les lettres. On repasse finalement à nouveau par les rotors et on obtient une certaine lettre. Si la lettre est connectée à une autre, on retourne l’autre lettre, sinon on garde la même, celle-ci est alors la lettre (dé)cryptée.\\
 \end{itemize}
+
+%insérer diagramme de classe
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \section{Interfaces utilisateurs}
