@@ -139,9 +139,9 @@ Avant que le programme est fermé, il affichera un petit message de remerciement
 
 \begin{figure}[tpbh]
 	\centering
-  \includegraphics[width=\textwidth, trim=20mm 38mm 25mm 13mm, clip]{./Diagrammes/diagrammeDesEtats.pdf}
+  \includegraphics[width=\textwidth, trim=20mm 25mm 25mm 13mm, clip]{./Diagrammes/diagrammeDesEtats.pdf}
   %TRIM = LINKS UNTEN RECHTS OBEN
-  %\caption{Différents états du programme}
+  \captionof{figure}{Diagramme états-transitions du programme}
 	\label{img:etats}
 \end{figure}
 
@@ -163,6 +163,89 @@ Pour commencer nous créons cinq listes : La première correspond au tableau de 
 Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
 On appelle ensuite des fonctions qui exécutent les décalages au niveau des trois rotors et après on utilise la fonction correspondant au réflecteur pour permuter les lettres. On repasse finalement à nouveau par les rotors et on obtient une certaine lettre. Si la lettre est connectée à une autre, on retourne l’autre lettre, sinon on garde la même, celle-ci est alors la lettre (dé)cryptée.\\
 \end{itemize}
+
+\newpage
+%Klassendiagramm
+\subsection{Structure du programme}
+\subsubsection{Diagramme de classes}
+\begin{figure}[tpbh]
+	\centering
+  \includegraphics[width=\textwidth, trim=25mm 60mm 35mm 35mm, clip]{./Diagrammes/diagrammeDeClasses.pdf}
+  %TRIM = LINKS UNTEN RECHTS OBEN
+  \captionof{figure}{Diagramme de classes}
+	\label{img:etats}
+\end{figure}
+
+\subsubsection{Explication du diagramme}
+\vspace{0.5cm}
+\begin{itemize}
+\item \textit{La classe \textbf{Main}}\vspace{0.3cm}
+\begin{itemize}
+\item \textit{Les variables}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \vspace{0.5cm}
+\item \textit{Les méthodes}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \end{itemize}
+\vspace{0.7cm}
+
+\item \textit{La classe \textbf{Text}}
+\vspace{0.3cm}
+\begin{itemize}
+\item \textit{Les variables}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \vspace{0.5cm}
+\item \textit{Les méthodes}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \end{itemize}
+\vspace{0.7cm}
+
+\item \textit{La classe \textbf{Screen}}\vspace{0.3cm}
+\begin{itemize}
+\item \textit{Les variables}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor
+   test \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \vspace{0.5cm}
+\item \textit{Les méthodes}\vspace{0.3cm}\\
+\begin{tabular}{ll} %l/c/r
+   \textbf{Lehrstuhl} & Professor \\ 
+   \textbf{Lehrstuhl} & Maier \\ 
+   \textbf{Lehrstuhl} & M"uller \\ 
+   \textbf{Lehrstuhl} & Schmidt \\ 
+ \end{tabular}
+ \end{itemize}
+\vspace{0.7cm}
+\end{itemize}
+
+
+\subsubsection{Diagramme de communication}
+%insert Kommunikationsdiagramm!!
+
 
 
 \newpage
