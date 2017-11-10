@@ -120,3 +120,30 @@ enter 'v' for Vigenère's cypher
 or enter 'e' for the encryption/decryption by the Enigma machine.
 Enter 'r' to go back to the previous menu
 or 'm' to go back to the main menu.
+
+
+
+
+
+########### HELP MENU #########
+"""************** HELP **************
+
+These are explanations of the different encryption and decryption principles.
+
+- Caesar's cypher:
+This principle was invented by Julius Caesar for his private correspondence.
+It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+
+- Vigenère's cypher:
+
+
+- The Enigma machine:
+
+
+"""
+
+------------------------
+
+
+
+
