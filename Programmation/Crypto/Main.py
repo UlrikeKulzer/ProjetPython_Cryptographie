@@ -1,4 +1,4 @@
-class Screen():
+#class Screen():
 
 
 
@@ -9,7 +9,7 @@ class Main:
     caesar = False
     vigenere = False
     enigma = False
-    keyCaesar = 'abc'
+    keyCaesar = 0
     keyVigenere = 'abc'
     keyEnigma = 'abc'
 
