@@ -179,9 +179,9 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 \subsubsection{Explication du diagramme}
 \vspace{0.3cm}
 \begin{itemize}
-\item \textit{La classe \textbf{Main}}\vspace{0.3cm}
+\item \textit{Le module \textbf{Main}}\vspace{0.3cm}
 \begin{itemize}
-\item \textbf{main()}:
+\item \textbf{module}:
 démarre le programme et contrôle son déroulement\\
 \end{itemize}\vspace{0.4cm}
 \item \textit{La classe \textbf{Text}}
@@ -190,38 +190,36 @@ démarre le programme et contrôle son déroulement\\
 \item \textbf{format(text: Text)}:
 formate le texte pour avoir un texte en majuscule sans virgules, espaces, chiffres, symboles, ...\\
 \item \textbf{encrypt(text: Text)}:
-appelle l’un des trois principes choisi par l’utilisateur pour crypter le texte\\
+appelle l'un des trois principes choisi par l'utilisateur pour crypter le texte\\
 \item \textbf{decrypt(text: Text)}:
-appelle l’un des trois principes choisi par l’utilisateur pour décrypter le texte\\
-\item \textbf{encryptCesar(text: Text, key: int)}:
+appelle l'un des trois principes choisi par l'utilisateur pour décrypter le texte\\
+\item \textbf{encrypt\_caesar(text: Text, key: int)}:
 crypte le texte formaté par la méthode César\\
-\item \textbf{decryptCesar(text: Text, key: int)}:
+\item \textbf{decrypt\_caesar(text: Text, key: int)}:
 décrypte le texte formaté par la méthode César\\
-\item \textbf{encryptVigenere(text: Text, key: string)}:
+\item \textbf{encrypt\_vigenere(text: Text, key: string)}:
 crypte le texte formaté par la méthode Vigenère\\
-\item \textbf{decryptVigenere(text: Text, key: string)}:
+\item \textbf{decrypt\_vigenere(text: Text, key: string)}:
 décrypte le texte formaté par la méthode Vigenère\\
-\item \textbf{encryptEnigma(text: Text, key: string)}:
+\item \textbf{encrypt\_enigma(text: Text, key: string)}:
 crypte le texte formaté par la méthode Enigma\\
-decryptEnigma() 
-\item \textbf{decryptEnigma(text: Text, key: string)}:
+\item \textbf{decrypt\_enigma(text: Text, key: string)}:
 décrypte le texte formaté par la méthode Enigma\\
-decryptEnigma()
 \vspace{0.5cm}
 \item \textit{méthodes utilisées pour le (dé)cryptage par <<Enigma>>:}
 \vspace{0.3cm}
 \begin{itemize}
-\item \textbf{searchIndex(letter: char, alphabeth: list)}:
+\item \textbf{search\_index(letter: char, alphabeth: list)}:
 cherche l'indice d'une lettre donnée dans une liste donnée\\
 \item \textbf{plugboard(letter: char)}:
 modélise le tableau de permutation, 10 lettres sont associées à dix autres lettres. Si la lettre donnée est associée à une autre lettre celle-ci va être retournée. Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-\item \textbf{shiftFirstRotor(letter: char)}:
+\item \textbf{shift\_first\_rotor(letter: char)}:
 modélise le premier rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shiftSecondRotor(letter: char)}:
+\item \textbf{shift\_second\_rotor(letter: char)}:
 modélise le deuxième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shiftThirdRotor(letter: char)}:
+\item \textbf{shift\_third\_rotor(letter: char)}:
 modélise le troisième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{permutationReflecctor(letter: char)}:
+\item \textbf{permutation\_reflector(letter: char)}:
 modélise le réflecteur ; même principe que plugboard(letter), mais cette fois-ci toutes les lettres sont associées à une autre lettre\\
  \end{itemize}
  \end{itemize}
@@ -229,23 +227,23 @@ modélise le réflecteur ; même principe que plugboard(letter), mais cette fois
 
 \item \textit{La classe \textbf{Screen}}\vspace{0.3cm}
 \begin{itemize}
-\item \textbf{showStartAskLanguage()}:
+\item \textbf{show\_start\_ask\_language()}:
 affiche le dialogue de démarrage (voir fig. \ref{SP})\\
-\item \textbf{showMainMenu()}:
+\item \textbf{show\_main\_menu()}:
 affiche le menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
-\item \textbf{showPrinciples()}:
+\item \textbf{show\_principles()}:
 affiche le dialogue de sélection du principe (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
-\item \textbf{showAskKey()}:
+\item \textbf{show\_ask\_key()}:
 affiche le dialogue de demande de la clé pour (dé)crypter ce qui dépend de la choix du principe (César, Vigenère ou Enigma ; voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
-\item \textbf{showAskText()}:
+\item \textbf{show\_ask\_text()}:
 affiche le dialogue de demande du text à (dé)crypter\\(voir fig. \ref{EIT} et \ref{FIT})\\
-\item \textbf{showTreatedText()}:
+\item \textbf{show\_treated\_text()}:
 affiche le texte (dé)crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
-\item \textbf{showLanguageSettings()}:
+\item \textbf{show\_language\_settings()}:
 affiche les paramètres (voir fig. \ref{ESD} et \ref{FSD})\\
-\item \textbf{showHelpPrinciples()}:
+\item \textbf{show\_help\_principles()}:
 affiche le dialogue de démarrage (voir fig. \ref{FHM})\\
-\item \textbf{showQuitMessage()}:
+\item \textbf{show\_quit\_message()}:
 affiche le message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
 \end{itemize}
 \end{itemize}
