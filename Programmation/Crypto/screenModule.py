@@ -1,4 +1,4 @@
-class ScreenClass(object):
+class Screen(object):
 
     def __init__(self):
         print("You successfully created a screen!")

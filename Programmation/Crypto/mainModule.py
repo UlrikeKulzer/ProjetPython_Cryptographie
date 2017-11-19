@@ -1,7 +1,7 @@
-from screen import ScreenClass
+from screenModule import Screen
 
 
-screen = ScreenClass()
+screen = Screen()
 english = True
 encryption = False
 caesar = False

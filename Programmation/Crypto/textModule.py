@@ -1,4 +1,4 @@
-class TextClass:
+class Text:
     return_path = False
     #vigenereTable = MATRIX
     initial_list = []
