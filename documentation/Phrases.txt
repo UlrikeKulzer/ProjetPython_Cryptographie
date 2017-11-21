@@ -1,0 +1,149 @@
+Hello. Welcome to the cryptography program.\nPlease select your language:
+'f' for Français, 'e' for English.
+
+***************************
+
+What do you want to do - encrypt  or decrypt a message?
+Enter 'c' for encrypting or 'd' for decrypting.
+Enter 's' to change settings (language)
+or 'q' to exit :(
+
+
+---------------
+
+SETTINGS:
+Please select your language:
+'f' for Français, 'e' for English.
+
+---------------
+
+How do you want to encrypt/decrypt your text?
+Enter 'c' for Cesar's cypher,
+enter 'v' for Vigenère's cypher
+or enter 'e' for the encryption/decryption by the Enigma machine.
+Enter 'm' to go back to the main menu.
+
+---------------
+
+CESAR
+You chose "Cesar":
+Please enter your key (a number between 1 and 25 included).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
+
+VIGENERE
+You chose "Vigenère":
+Please enter your key (a word).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
+
+ENIGMA
+You chose "Enigma":
+Please enter your key (composed of three upper case letters).
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
+
+---------------
+
+Please enter your text.
+Enter 'm' to go back to the main menu
+or 'r' to go back to the previous menu.
+
+---------------
+
+Here is your encrypted/decrypted text:
+...
+
+---------------
+
+Thank you for using our program.
+Good bye and have a nice day.
+
+
+**************************************
+
+
+Bonjour. Bienvenue sur le programme de cryptographie.
+Qu'est-ce que vous voulez faire - crypter ou décrypter un message?
+Insérez 'c' pour crypter ou 'd' pour décrypter.
+
+---------------
+
+PARAMÈTRES:
+Please select your language:
+'f' for Français, 'e' for English.
+
+---------------
+
+CRYPTER/DECRYPTER
+
+De quelle manière voulez vous (dé)crypter votre texte?
+Insérez 'c' pour le (dé)cryptage par le chiffre de César,
+insérez 'v' pour le (dé)cryptage par le chiffre de Vigenère
+ou insérez 'e' pour le (dé)cryptage par la machine Enigma.
+
+----------------
+
+CRYPTER
+
+CÉSAR
+Insérez votre clé (un nombre compris entre 1 et 25).
+
+VIGENÈRE
+Insérez votre clé (un mot).
+
+ENIGMA
+Insérez votre clé (composée de trois lettres en majuscule).
+-----------------
+DÉCRYPTER
+
+""
+ENIGMA
+Insérez votre texte avec l'en-tête ou votre clé (composé de trois lettres en majuscule).
+-----------------
+
+Insérez votre texte.
+
+---------------
+
+Voici votre texte (dé)crypté:
+....
+
+Merci d'avoir utilisé notre programme.
+Bonne journée, au revoir.
+
+
+
+How do you want to encrypt/decrypt your text?
+Enter 'c' for Cesar's cypher,
+enter 'v' for Vigenère's cypher
+or enter 'e' for the encryption/decryption by the Enigma machine.
+Enter 'r' to go back to the previous menu
+or 'm' to go back to the main menu.
+
+
+
+
+
+########### HELP MENU #########
+"""************** HELP **************
+
+These are explanations of the different encryption and decryption principles.
+
+- Caesar's cypher:
+This principle was invented by Julius Caesar for his private correspondence.
+It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+
+- Vigenère's cypher:
+
+
+- The Enigma machine:
+
+
+"""
+
+------------------------
+
+
+
+
