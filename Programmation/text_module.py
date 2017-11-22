@@ -4,6 +4,12 @@
 
 
     def encrypt_caesar(text, key):
+        """
+
+        :param text:
+        :param key: 
+        :return:
+        """
         crypted_text = ''
         for i in text:
             if ord(i) + key > 90:
