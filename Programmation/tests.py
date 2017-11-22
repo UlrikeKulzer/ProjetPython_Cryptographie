@@ -1,4 +1,7 @@
 import main_module
+import text_module
+import screen_module
+import screen_constants
 
 
 def test_format_and_normalise():

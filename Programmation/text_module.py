@@ -2,17 +2,6 @@
 
 
 
-    def format(text): # in Main -> run-Funktion in Main aufrufen (1 Zeile)
-
-
-
-    def encrypt(text): # raus damit
-
-
-
-    def decrypt(text): # das auch
-
-
 
     def encrypt_caesar(text, key):
         crypted_text = ''
