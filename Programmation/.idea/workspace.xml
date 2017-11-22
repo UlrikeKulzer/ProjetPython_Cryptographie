@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="71b882f1-105a-450c-b337-9ba47e4cbd2c" name="Default" comment="" />
+=======
+    <list default="true" id="71b882f1-105a-450c-b337-9ba47e4cbd2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_module.py" afterPath="$PROJECT_DIR$/main_module.py" />
+    </list>
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,28 +25,71 @@
       <file leaf-file-name="main_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_module.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="15">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+=======
+            <state relative-caret-position="493">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <element signature="e#134#709#0" expanded="false" />
+                <element signature="e#739#1446#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text_module.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/text_module.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="text_module.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/text_module.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
               <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+=======
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="screen_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screen_module.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
+=======
+      <file leaf-file-name="screen_module.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/screen_module.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-321">
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen_constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screen_constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="662" lean-forward="false" selection-start-line="23" selection-start-column="662" selection-end-line="23" selection-end-column="662" />
               <folding />
             </state>
           </provider>
@@ -76,6 +126,7 @@
         <option value="$PROJECT_DIR$/Cryptographie/main_module.py" />
         <option value="$PROJECT_DIR$/screen_module.py" />
         <option value="$PROJECT_DIR$/main_module.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
       </list>
     </option>
   </component>
@@ -109,6 +160,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,8 +173,11 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,7 +305,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screen_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -281,7 +359,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -304,7 +385,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -327,7 +411,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -343,7 +430,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -366,7 +456,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -397,18 +490,57 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/screen_module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screen_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="662" lean-forward="false" selection-start-line="23" selection-start-column="662" selection-end-line="23" selection-end-column="662" />
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_module.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+=======
+        <state relative-caret-position="493">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#709#0" expanded="false" />
+            <element signature="e#739#1446#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screen_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-321">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+>>>>>>> 82a31dfca5e91b81b03b155b85658349e3c2de9c
           <folding />
         </state>
       </provider>
