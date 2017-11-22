@@ -7,7 +7,7 @@ start_ask_language = "Hello. Welcome to the cryptography program.\nPlease select
 language_settings = "Please select your language:\n'f' for Francais, 'e' for English."
 
 # English user interface
-english_main_menu = ""
+english_main_menu = "What do you want to do-encrypt or decrypt a message?\nEnter c for encrypting or d for decrypting.\nEnter s to change settings(language)\nor q to exit:("
 english_principles = ""
 english_ask_key = ""
 english_ask_text = ""
@@ -16,7 +16,7 @@ english_help_principles = "THIS TEXT IS STILL MISSING"
 english_quit_message = "Thank you for using our program.\nGood bye and have a nice day."
 
 # French user interface
-french_main_menu = ""
+french_main_menu = "Bonjour.Bienvenue sur le programme de cryptographie.\nQue voulez vous faire-crypter ou décrypter un message?\nInsérez c pour crypter ou d pour décrypter.\nInsérez s pour changer les paramètres(langue)\nou q pour quitter le programme:("
 french_principles = ""
 french_ask_key = ""
 french_ask_text = ""
