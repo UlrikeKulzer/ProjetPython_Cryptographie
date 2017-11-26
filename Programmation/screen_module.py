@@ -13,19 +13,19 @@ def show_start_ask_language():
 
 
 def show_main_menu():
-
+    return 0
 
 def show_principles():
-
+    return 0
 
 def show_ask_key():
-
+    return 0
 
 def show_ask_text():
-
+    return 0
 
 def show_treated_text():
-
+    return 0
 
 def show_language_settings():
     """
