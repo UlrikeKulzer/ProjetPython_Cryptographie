@@ -21,11 +21,6 @@ ENGLISH_ASK_TEXT = "Please enter your text.\nEnter 'm' to go back to the main me
 ENGLISH_ENCRYPTED_TEXT = "Here is your encrypted text:"
 ENGLISH_DECRYPTED_TEXT = "Here is your decrypted text:"
 =======
-ENGLISH_PRINCIPLES = ""
-ENGLISH_ASK_KEY_CAESAR = ""
-ENGLISH_ASK_KEY_VIGENERE = ""
-ENGLISH_ASK_KEY_ENIGMA = ""
-ENGLISH_ASK_TEXT = ""
 =======
 ENGLISH_PRINCIPLES = "Please select your language: \n 'f' for Français, 'e' for English."
 ENGLISH_ASK_KEY_CAESAR = "You chose 'César': \n Please enter your key (a number between 1 and 25 included).\n Enter 'm' to go back to the main menu or 'r' to go back to the previous menu."
