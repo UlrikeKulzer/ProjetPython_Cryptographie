@@ -3,8 +3,8 @@ This module is responsible for the program flow.
 """
 
 
-import screen_module
-import text_module
+# import screen_module
+# import text_module
 
 
 def normalise_letter(x):
@@ -13,7 +13,7 @@ def normalise_letter(x):
     :param: x is the given letter
     :return: chr
     """
-    if 'a' <= x <= 'z':
+    if ('a' <= x <= 'z') or ('A' <= x <= 'Z'):
         return x
     elif x in "àâ":
         return 'a'
@@ -73,8 +73,6 @@ def run():
     key_caesar = 0
     key_vigenere = 'abc'
     key_enigma = 'abc'
-
-
 
 
 run()
