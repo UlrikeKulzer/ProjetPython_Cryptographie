@@ -61,8 +61,7 @@ def create_table_text_key(text, key):
     :param key: string
     :return: table
     """
-    table = [(x, key) for x in text]  # NOT FINISHED
-    return table
+    return 0
 
 
 # *** ENCRYPTION *** #
@@ -174,7 +173,6 @@ def encrypt_enigma(text, key):
     :param key:
     :return: text
     """
-    return_path = False
     initial_list = create_initial_list()
     offset_first_rotor = 0
     offset_second_rotor = 0
@@ -183,7 +181,7 @@ def encrypt_enigma(text, key):
 
     for x in text:
         x = plugboard(x)
-        x = shift_first_rotor(initial_list, return_path, x)
+        x = shift_first_rotor(initial_list, x)
 
         # change offset variables
         offset_first_rotor += 1
@@ -202,15 +200,16 @@ def encrypt_enigma(text, key):
         else:
             pass
 
-        x = shift_second_rotor(initial_list, return_path, x)
-        x = shift_third_rotor(initial_list, return_path, x)
+        x = shift_second_rotor(initial_list, x)
+        x = shift_third_rotor(initial_list, x)
         x = permutation_reflector(x)
-        return_path = True
-        x = shift_third_rotor(initial_list, return_path, x)
-        x = shift_second_rotor(initial_list, return_path, x)
-        x = shift_first_rotor(initial_list, return_path, x)
+
+        # return
+        x = shift_third_rotor(initial_list, x)
+        x = shift_second_rotor(initial_list, x)
+        x = shift_first_rotor(initial_list, x)
         x = plugboard(x)
-        return_path = False
+
         encrypted_text = encrypted_text + x
     return encrypted_text
 
