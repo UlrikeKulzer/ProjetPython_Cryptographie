@@ -19,6 +19,10 @@ def show_principles():
     return 0
 
 def show_ask_key():
+    if cesar = true and english = true:
+        return ENGLISH_ASK_KEY_CAESAR
+
+
     return 0
 
 def show_ask_text():
