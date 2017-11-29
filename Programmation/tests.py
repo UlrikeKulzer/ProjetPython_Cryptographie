@@ -17,4 +17,10 @@ def test_caesar_encryption():
     print("***DEBUG*** result: ", text_module.encrypt_caesar(text, key))
 
 
+def test_create_table_of_vigenere():
+    print(text_module.create_table_of_vigenere())
+
+
 test_caesar_encryption()
+# test_create_table_of_vigenere()
+# print(text_module.create_initial_list())
