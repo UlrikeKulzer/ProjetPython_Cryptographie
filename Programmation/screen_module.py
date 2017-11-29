@@ -5,18 +5,41 @@ This module is in charge of the user interface, i.e. it shows the right text in 
 import screen_constants
 
 
-def show_start_ask_language():
-    """
-
-    :return:
-    """
-
-
 def show_main_menu():
-    return 0
+    if showStartAskLanguage() == 'e':
+        main_menu = input(ENGLISH_MAIN_MENU)
+    elif showStartAskLanguage() == 'f':
+        main_menu = input(FRENCH_MAIN_MENU)
+    return main_menu
+
 
 def show_principles():
-    return 0
+    if show_main_menu() == 'c':
+        crypting = input(ENGLISH_PRINCIPLES_ENCRYPTING)
+        return crypting
+    elif show_main_menu() == 'd':
+        decrypting = input(ENGLISH_PRINCIPLES_DECRYPTING)
+        return decrypting
+    elif show_main_menu() == 's':
+        language = input(LANGUAGE_SETTINGS)
+        return language
+
+
+def show_ask_key():
+    if show_principles() == 'c'
+        key = input(ENGLISH_ASK_KEY_CAESAR)
+        return key
+    elif show_principles() == 'v'
+        key = input(ENGLISH_ASK_KEY_VIGENERE)
+        return key
+    elif show_principles() == 'e'
+        key = input(ENGLISH_ASK_KEY_ENIGMA)
+        return key
+    elif show_principles() == 'm'
+        main_menu = input(ENGLISH_MAIN_MENU)
+        return main_menu
+
+
 
 def show_ask_key():
     if cesar = true and english = true:
@@ -46,7 +69,7 @@ def show_help_principles(english):
     :return: None
     """
     if english:
-        print(screen_constants.english_help_principles)
+        main_menu
     else:
         print(screen_constants.french_help_principles)
 
