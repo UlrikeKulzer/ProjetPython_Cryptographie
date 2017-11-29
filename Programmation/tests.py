@@ -1,7 +1,7 @@
 import main_module
 import text_module
-import screen_module
-import screen_constants
+# import screen_module
+# import screen_constants
 
 
 def test_format_and_normalise():
@@ -13,8 +13,9 @@ def test_format_and_normalise():
 def test_caesar_encryption():
     key = 4
     text = "Hello world"
-    print("***DEBUG***\nstart test from 'text_module' caesar encryption.\nTest key: ", key, ", test text:", text)
-    print("***DEBUG*** result: ", text_module.encrypt_caesar(text, key))
+    text2 = main_module.format_text(text)
+    print("***DEBUG***\nstart test from 'text_module' caesar encryption.\nTest key: ", key, ", test text:", text2)
+    print("***DEBUG*** result: ", text_module.encrypt_caesar(text2, key))
 
 
 def test_create_table_of_vigenere():
