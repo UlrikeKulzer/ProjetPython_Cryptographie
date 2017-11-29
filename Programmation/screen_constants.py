@@ -69,9 +69,4 @@ FRENCH_HELP_PRINCIPLES = "************** AIDE **************\n\nVoici les explic
 >>>>>>> bf56656971247be95282db5fe0fc98077018fbaf
 FRENCH_QUIT_MESSAGE = "Merci d'avoir utilisé notre programme.\nBonne journée, au revoir."
 
-<<<<<<< HEAD
-# teste :     éoidh fzefrg
-=======
-# teste : hiohvd
->>>>>>> 02bdb821b52e8da88c7e8ba9fa8b7615e8e70023
-# teste :
+
