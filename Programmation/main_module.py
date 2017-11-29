@@ -1,10 +1,10 @@
 """
-This module is responsable for the program flow.
+This module is responsible for the program flow.
 """
 
 
-# import screen_module
-# import text_module
+import screen_module
+import text_module
 
 
 def normalise_letter(x):
