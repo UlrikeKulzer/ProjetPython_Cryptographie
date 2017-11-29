@@ -121,23 +121,22 @@ def plugboard(letter):
         return "This should never happen"
 
 
-def shift_first_rotor(initial_list, return_path, letter):
+def shift_first_rotor(initial_list, index):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
     :param initial_list: list on which the function operates to
-    :param return_path: indicates if the letter already passed the reflector
-    :param letter: the given letter (char)
+    :param index: the index of the actual letter
     :return: letter
     """
 
     return 0
 
 
-def shift_second_rotor(initial_list, return_path, letter):
+def shift_second_rotor(initial_list, index):
     return 0
 
 
-def shift_third_rotor(initial_list, return_path, letter):
+def shift_third_rotor(initial_list, index):
     return 0
 
 
@@ -199,7 +198,7 @@ def encrypt_enigma(text, key):
                 pass
         else:
             pass
-
+# ajouter calcul de l'indice + offset
         x = shift_second_rotor(initial_list, x)
         x = shift_third_rotor(initial_list, x)
         x = permutation_reflector(x)
