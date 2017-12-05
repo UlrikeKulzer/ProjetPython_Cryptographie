@@ -128,6 +128,20 @@ def shift_first_rotor(initial_list, index):
     :param index: the index of the actual letter
     :return: letter
     """
+    for k in range(6):
+        if k == 0:
+            initial_list[k] = initial_list[k + 4]
+        elif k == 1:
+            initial_list[k] = initial_list[k + 2]
+        elif k == 2:
+            initial_list[k] = initial_list[k + 3]
+        elif k == 3:
+            initial_list[k] = initial_list[k - 2]
+        elif k == 4:
+            initial_list[k] = initial_list[k - 2]
+        elif k == 5:
+            initial_list[k] = initial_list[k - 5]
+
 
     return 0
 
