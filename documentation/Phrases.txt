@@ -1,3 +1,10 @@
+
+test format_text
+ав test1t!? ж test2test,. з test3test;+ ийкл test4test-% оп t5t$& ф test6test\"/ щыь t7t{} я t8t[] њ t9t= 
+
+
+
+
 Hello. Welcome to the cryptography program.\nPlease select your language:
 'f' for Franзais, 'e' for English.
 

@@ -61,8 +61,7 @@ def create_table_text_key(text, key):
     :param key: string
     :return: table
     """
-    table = [(x, key) for x in text]  # NOT FINISHED
-    return table
+    return 0
 
 
 # *** ENCRYPTION *** #
@@ -122,23 +121,22 @@ def plugboard(letter):
         return "This should never happen"
 
 
-def shift_first_rotor(initial_list, return_path, letter):
+def shift_first_rotor(initial_list, index):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
     :param initial_list: list on which the function operates to
-    :param return_path: indicates if the letter already passed the reflector
-    :param letter: the given letter (char)
+    :param index: the index of the actual letter
     :return: letter
     """
 
     return 0
 
 
-def shift_second_rotor(initial_list, return_path, letter):
+def shift_second_rotor(initial_list, index):
     return 0
 
 
-def shift_third_rotor(initial_list, return_path, letter):
+def shift_third_rotor(initial_list, index):
     return 0
 
 
@@ -174,7 +172,6 @@ def encrypt_enigma(text, key):
     :param key:
     :return: text
     """
-    return_path = False
     initial_list = create_initial_list()
     offset_first_rotor = 0
     offset_second_rotor = 0
@@ -183,7 +180,7 @@ def encrypt_enigma(text, key):
 
     for x in text:
         x = plugboard(x)
-        x = shift_first_rotor(initial_list, return_path, x)
+        x = shift_first_rotor(initial_list, x)
 
         # change offset variables
         offset_first_rotor += 1
@@ -201,16 +198,17 @@ def encrypt_enigma(text, key):
                 pass
         else:
             pass
-
-        x = shift_second_rotor(initial_list, return_path, x)
-        x = shift_third_rotor(initial_list, return_path, x)
+# ajouter calcul de l'indice + offset
+        x = shift_second_rotor(initial_list, x)
+        x = shift_third_rotor(initial_list, x)
         x = permutation_reflector(x)
-        return_path = True
-        x = shift_third_rotor(initial_list, return_path, x)
-        x = shift_second_rotor(initial_list, return_path, x)
-        x = shift_first_rotor(initial_list, return_path, x)
+
+        # return
+        x = shift_third_rotor(initial_list, x)
+        x = shift_second_rotor(initial_list, x)
+        x = shift_first_rotor(initial_list, x)
         x = plugboard(x)
-        return_path = False
+
         encrypted_text = encrypted_text + x
     return encrypted_text
 
@@ -225,3 +223,4 @@ def decrypt_enigma(text, key):
     return 0
 
 # ********** end ENIGMA ********** #
+
