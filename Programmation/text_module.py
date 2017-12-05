@@ -95,7 +95,20 @@ def create_initial_list():
 
 
 def search_index(initial_list, letter):
-    return 0
+    """
+    searches the index of a given letter in the given list
+    :param initial_list: list for searching
+    :param letter: index of this letter is wanted
+    :return: index of the letter
+    """
+    i = 0
+    while i < len(initial_list):
+        if initial_list[i] == letter:
+            return i
+        else:
+            i += 1
+    else:
+        return "This should never happen"
 
 
 def plugboard(letter):
@@ -126,7 +139,7 @@ def shift_first_rotor(initial_list, index):
     represents the letter shift of the first rotor and returns the corresponding letter
     :param initial_list: list on which the function operates to
     :param index: the index of the actual letter
-    :return: letter
+    :return letter: letter
     """
     for k in range(6):
         if k == 0:
@@ -183,18 +196,26 @@ def encrypt_enigma(text, key):
     """
     encrypts and returns the given text by using the principle of the Enigma machine
     :param text: user's text (string)
-    :param key:
-    :return: text
+    :param key: user's key (string composed of three letter)
+    :return text: encrypted text
     """
+    # ##################### KEY ??? ###############
     initial_list = create_initial_list()
     offset_first_rotor = 0
     offset_second_rotor = 0
     offset_third_rotor = 0
     encrypted_text = ""
+    index_of_letter = 0
 
-    for x in text:
-        x = plugboard(x)
-        x = shift_first_rotor(initial_list, x)
+    for letter in text:
+        # ** forward path **
+        # plugboard
+        letter = plugboard(letter)
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_first_rotor
+        # first rotor
+        letter = shift_first_rotor(initial_list, index_of_letter)
 
         # change offset variables
         offset_first_rotor += 1
@@ -212,29 +233,50 @@ def encrypt_enigma(text, key):
                 pass
         else:
             pass
-# ajouter calcul de l'indice + offset
-        x = shift_second_rotor(initial_list, x)
-        x = shift_third_rotor(initial_list, x)
-        x = permutation_reflector(x)
 
-        # return
-        x = shift_third_rotor(initial_list, x)
-        x = shift_second_rotor(initial_list, x)
-        x = shift_first_rotor(initial_list, x)
-        x = plugboard(x)
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_second_rotor
+        # second rotor
+        letter = shift_second_rotor(initial_list, index_of_letter)
 
-        encrypted_text = encrypted_text + x
-    return encrypted_text
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_third_rotor
+        # third rotor
+        letter = shift_third_rotor(initial_list, index_of_letter)
 
+        # permutation reflector
+        letter = permutation_reflector(letter)
 
-# *** DECRYPTION *** #
-def decrypt_enigma(text, key):
-    return_path = False
-    initial_list = create_initial_list()
-    first_rotor = []
-    second_rotor = []
-    third_rotor = []
-    return 0
+        # ** return path **
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_third_rotor
+        # third rotor
+        letter = shift_third_rotor(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_second_rotor
+        # second rotor
+        letter = shift_second_rotor(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter)
+        index_of_letter += offset_first_rotor
+        # first rotor
+        letter = shift_first_rotor(initial_list, index_of_letter)
+
+        # plugboard
+        letter = plugboard(letter)
+
+        encrypted_text = encrypted_text + letter
+        return encrypted_text
+
+    # *** DECRYPTION *** #
+    def decrypt_enigma(text, key):
+
+        return 0
 
 # ********** end ENIGMA ********** #
-
