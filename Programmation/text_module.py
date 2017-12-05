@@ -45,7 +45,7 @@ def create_table_of_vigenere():
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
                 'v', 'w', 'x', 'y', 'z']
     table = []
-    for k in range(25):
+    for k in range(26):
         table += [alphabet[k:] + alphabet[:k]]
     return table
 
