@@ -89,13 +89,13 @@ def show_ask_text():
 
 def show_treated_text():
     if showStartAskLanguage() == 'e' and show_principles() == "crypting":
-        return ENGLISH_ENCRYPTED_TEXT
+        return screen_constants.ENGLISH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'e' and show_principles() == "decrypting":
-        return ENGLISH_DECRYPTED_TEXT
+        return screen_constants.ENGLISH_DECRYPTED_TEXT
     elif showStartAskLanguage() == 'f' and show_principles() == "crypting":
-        return FRENCH_ENCRYPTED_TEXT
+        return screen_constants.FRENCH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'f' and show_principles() == "decrypting":
-        return FRENCH_DECRYPTED_TEXT
+        return screen_constants.FRENCH_DECRYPTED_TEXT
     return 0
 
 def show_language_settings():
