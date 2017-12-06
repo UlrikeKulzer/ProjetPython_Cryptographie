@@ -7,10 +7,10 @@ This module contains all functions with which the user's text can be treated.
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
     """
-
-    :param text:
-    :param key:
-    :return:
+    encrypts and returns the given text by using the principle of Caesar
+    :param text: user's text (string)
+    :param key: user's key (number)
+    :return: text: encrypted text
     """
     crypted_text = ''
     for i in text:
