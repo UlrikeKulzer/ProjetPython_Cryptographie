@@ -74,7 +74,6 @@ def run():
     key_enigma = 'abc'
 
     screen_module.show_main_menu()
-    
 
 
 run()
