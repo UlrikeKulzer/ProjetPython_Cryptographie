@@ -23,6 +23,8 @@ def test_caesar_encryption():
 def test_create_table_of_vigenere():
     print(text_module.create_table_of_vigenere())
 
+def test_vigenere_encryptation():
+
 
 test_caesar_encryption()
 # test_format_and_normalise()
