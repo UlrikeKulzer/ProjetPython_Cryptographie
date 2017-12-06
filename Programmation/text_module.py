@@ -152,29 +152,51 @@ def shift_first_rotor(initial_list, index):
     :param index: the index of the actual letter
     :return letter: letter
     """
-    for k in range(6):
-        if k == 0:
-            initial_list[k] = initial_list[k + 4]
-        elif k == 1:
-            initial_list[k] = initial_list[k + 2]
-        elif k == 2:
-            initial_list[k] = initial_list[k + 3]
-        elif k == 3:
-            initial_list[k] = initial_list[k - 2]
-        elif k == 4:
-            initial_list[k] = initial_list[k - 2]
-        elif k == 5:
-            initial_list[k] = initial_list[k - 5]
 
-
+    if index == 0:
+        initial_list[index] = initial_list[index + 4]
+    elif index == 1:
+        initial_list[index] = initial_list[index + 2]
+    elif index == 2:
+        initial_list[index] = initial_list[index + 3]
+    elif index == 3:
+        initial_list[index] = initial_list[index - 2]
+    elif index == 4:
+        initial_list[index] = initial_list[index - 2]
+    elif index == 5:
+        initial_list[index] = initial_list[index - 5]
     return 0
 
 
 def shift_second_rotor(initial_list, index):
+    if index == 0:
+        initial_list[index] = initial_list[index + 3]
+    elif index == 1:
+        initial_list[index] = initial_list[index + 1]
+    elif index == 2:
+        initial_list[index] = initial_list[index - 1]
+    elif index == 3:
+        initial_list[index] = initial_list[index + 1]
+    elif index == 4:
+        initial_list[index] = initial_list[index + 1]
+    elif index == 5:
+        initial_list[index] = initial_list[index - 5]
     return 0
 
 
 def shift_third_rotor(initial_list, index):
+    if index == 0:
+        initial_list[index] = initial_list[index + 4]
+    elif index == 1:
+        initial_list[index] = initial_list[index - 1]
+    elif index == 2:
+        initial_list[index] = initial_list[index + 1]
+    elif index == 3:
+        initial_list[index] = initial_list[index + 2]
+    elif index == 4:
+        initial_list[index] = initial_list[index - 3]
+    elif index == 5:
+        initial_list[index] = initial_list[index - 3]
     return 0
 
 

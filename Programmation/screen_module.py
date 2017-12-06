@@ -30,26 +30,46 @@ def show_principles():
 
 
 def show_ask_key():
-    if show_principles() == 'c'
+    if show_principles() == 'c':
         key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
         return key
-    elif show_principles() == 'v'
+    elif show_principles() == 'v':
         key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
         return key
-    elif show_principles() == 'e'
+    elif show_principles() == 'e':
         key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
         return key
-    elif show_principles() == 'm'
+    elif show_principles() == 'm':
         main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
         return main_menu
 
 
 
 def show_ask_key():
-    if cesar = true and english = true:
-        return screen_constants.ENGLISH_ASK_KEY_CAESAR
-
-
+    if show_principles() == 'c' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
+        return key
+    elif show_principles() == 'v' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
+        return key
+    elif show_principles() == 'e' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
+        return key
+    elif show_principles() == 'm'and showStartAskLanguage() == 'e':
+        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
+        return main_menu
+    elif show_principles() == 'c' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
+        return key
+    elif show_principles() == 'v' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_VIGENERE)
+        return key
+    elif show_principles() == 'e' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_ENIGMA)
+        return key
+    elif show_principles() == 'm' and showStartAskLanguage() == 'f':
+        main_menu = input(screen_constants.FRENCH_MAIN_MENU)
+        return main_menu
     return 0
 
 def show_ask_text():
