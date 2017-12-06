@@ -129,7 +129,7 @@ def search_index(initial_list, letter, offset):
             # break
         i += 1
     else:
-        # print("*** DEBUG *** while ended, index = ", index)
+        print("*** DEBUG *** while ended, index = ", index)
         index += offset
         if (index < 0) or (index > len(initial_list)):
             index %= index
@@ -330,7 +330,8 @@ def encrypt_enigma(text, key):
         print("*** DEBUG *** after plugboard: actual letter =", letter)
 
         encrypted_text = encrypted_text + letter
-        return encrypted_text
+        print("***************************** DEBUG *** after all: actual text =", encrypted_text)
+    return encrypted_text
 
     # *** DECRYPTION *** #
     def decrypt_enigma(text, key):
@@ -341,4 +342,4 @@ def encrypt_enigma(text, key):
 # ********** end ENIGMA ********** #
 
 
-encrypt_enigma("A", "")
+encrypt_enigma("ADEC", "")

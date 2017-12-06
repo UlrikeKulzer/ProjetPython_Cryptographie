@@ -6,8 +6,8 @@ import screen_constants
 
 
 def showStartAskLanguage():
-    langue_choisie = input(screen_constants.START_ASK_LANGUAGE)
-    return langue_choisie
+    chosen_language = input(screen_constants.START_ASK_LANGUAGE)
+    return chosen_language
 
 
 def show_main_menu():
@@ -20,8 +20,8 @@ def show_main_menu():
 
 def show_principles():
     if show_main_menu() == 'c':
-        crypting = input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
-        return crypting
+        encrypting = input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
+        return encrypting
     elif show_main_menu() == 'd':
         decrypting = input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
         return decrypting
@@ -90,11 +90,11 @@ def show_ask_text():
 
 
 def show_treated_text():
-    if showStartAskLanguage() == 'e' and show_principles() == "crypting":
+    if showStartAskLanguage() == 'e' and show_principles() == "encrypting":
         return screen_constants.ENGLISH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'e' and show_principles() == "decrypting":
         return screen_constants.ENGLISH_DECRYPTED_TEXT
-    elif showStartAskLanguage() == 'f' and show_principles() == "crypting":
+    elif showStartAskLanguage() == 'f' and show_principles() == "encrypting":
         return screen_constants.FRENCH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'f' and show_principles() == "decrypting":
         return screen_constants.FRENCH_DECRYPTED_TEXT
