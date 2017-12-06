@@ -2,9 +2,8 @@
 This module is responsible for the program flow.
 """
 
-
-# import screen_module
-# import text_module
+import screen_module
+import text_module
 
 
 def normalise_letter(x):
@@ -73,6 +72,9 @@ def run():
     key_caesar = 0
     key_vigenere = 'abc'
     key_enigma = 'abc'
+
+    screen_module.show_main_menu()
+    
 
 
 run()
