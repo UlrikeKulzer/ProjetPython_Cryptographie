@@ -50,9 +50,6 @@ def create_table_of_vigenere():
     return table
 
 
-def repeat_key(key):
-    return
-
 
 def create_table_text_key(text, key):
     """
