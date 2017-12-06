@@ -76,4 +76,4 @@ def run():
     screen_module.show_main_menu()
 
 
-run()
+# run()
