@@ -6,8 +6,9 @@ import screen_constants
 
 
 def showStartAskLanguage():
-    langue_choisie=input(screen_constants.START_ASK_LANGUAGE)
+    langue_choisie = input(screen_constants.START_ASK_LANGUAGE)
     return langue_choisie
+
 
 def show_main_menu():
     if showStartAskLanguage() == 'e':
@@ -44,7 +45,6 @@ def show_ask_key():
         return main_menu
 
 
-
 def show_ask_key():
     if show_principles() == 'c' and showStartAskLanguage() == 'e':
         key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
@@ -55,7 +55,7 @@ def show_ask_key():
     elif show_principles() == 'e' and showStartAskLanguage() == 'e':
         key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
         return key
-    elif show_principles() == 'm'and showStartAskLanguage() == 'e':
+    elif show_principles() == 'm' and showStartAskLanguage() == 'e':
         main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
         return main_menu
     elif show_principles() == 'c' and showStartAskLanguage() == 'f':
@@ -72,6 +72,7 @@ def show_ask_key():
         return main_menu
     return 0
 
+
 def show_ask_text():
     if showStartAskLanguage() == 'e':
         text = input(screen_constants.ENGLISH_ASK_TEXT)
@@ -87,6 +88,7 @@ def show_ask_text():
             return text
     return 0
 
+
 def show_treated_text():
     if showStartAskLanguage() == 'e' and show_principles() == "crypting":
         return screen_constants.ENGLISH_ENCRYPTED_TEXT
@@ -98,13 +100,13 @@ def show_treated_text():
         return screen_constants.FRENCH_DECRYPTED_TEXT
     return 0
 
+
 def show_language_settings():
     """
     prints the settings dialogue
     :return: None
     """
     print(screen_constants.language_settings)
-
 
 
 def show_help_principles(english):
