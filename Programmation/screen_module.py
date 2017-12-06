@@ -74,10 +74,30 @@ def show_ask_key():
 
 
 def show_ask_text():
+    if showStartAskLanguage() == 'e':
+        text = input(screen_constants.ENGLISH_ASK_TEXT)
+        if texte == 'm':
+            return screen_constants.ENGLISH_MAIN_MENU
+        else:
+            return text
+    elif showStartAskLanguage() == 'f':
+        text = input(screen_constants.FRENCH_ASK_TEXT)
+        if texte == 'm':
+            return screen_constants.FRENCH_MAIN_MENU
+        else:
+            return text
     return 0
 
 
 def show_treated_text():
+    if showStartAskLanguage() == 'e' and show_principles() == "crypting":
+        return ENGLISH_ENCRYPTED_TEXT
+    elif showStartAskLanguage() == 'e' and show_principles() == "decrypting":
+        return ENGLISH_DECRYPTED_TEXT
+    elif showStartAskLanguage() == 'f' and show_principles() == "crypting":
+        return FRENCH_ENCRYPTED_TEXT
+    elif showStartAskLanguage() == 'f' and show_principles() == "decrypting":
+        return FRENCH_DECRYPTED_TEXT
     return 0
 
 
