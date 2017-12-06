@@ -61,15 +61,29 @@ def create_table_text_key(text, key):
     :param key: string
     :return: table
     """
-    return 0
+    repeted_key=""
+    while len(repeted_key)<len(text):
+        repeted_key+=key
+    list_key=[]
+    for i in range (len(text)):
+        list=[text[i],repeted_key[i]]
+        list_key.append(list)
+    return list_key
+
 
 
 # *** ENCRYPTION *** #
 def encrypt_vigenere(text, key):
     table_of_vigenere = create_table_of_vigenere()
     repeated_key_table = create_table_text_key(text, key)
+    encrypted_text = ""
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
+    for i in range (len(text)):
+        lettre_texte=repeated_key_table[i][0]
+        lettre_cle=repeated_key_table[i][1]
+        encrypted_text+=table_of_vigenere[alphabet.index(lettre_texte)][alphabet.index(lettre_cle)]
+    return encrypted_text
 
-    return text
 
 
 # *** DECRYPTION *** #
