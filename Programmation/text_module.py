@@ -25,6 +25,12 @@ def encrypt_caesar(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_caesar(text, key):
+    """
+
+    :param text:
+    :param key:
+    :return:
+    """
     decrypted_text = ''
     for i in text:
         if ord(i) - key < 65:
@@ -42,16 +48,17 @@ def decrypt_caesar(text, key):
 # ********** begin VIGENERE ********** #
 # *** HELP FUNCTIONS *** #
 def create_table_of_vigenere():
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-                'v', 'w', 'x', 'y', 'z']
+    """
+
+    :return:
+    """
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+                'V', 'W', 'X', 'Y', 'Z']
     table = []
     for k in range(26):
         table += [alphabet[k:] + alphabet[:k]]
     return table
 
-
-def repeat_key(key):
-    return
 
 
 def create_table_text_key(text, key):
@@ -61,6 +68,7 @@ def create_table_text_key(text, key):
     :param key: string
     :return: table
     """
+    key=key.upper()
     repeted_key=""
     while len(repeted_key)<len(text):
         repeted_key+=key
@@ -77,7 +85,7 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_table_of_vigenere()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U','V', 'W', 'X', 'Y', 'Z']
     for i in range (len(text)):
         lettre_texte=repeated_key_table[i][0]
         lettre_cle=repeated_key_table[i][1]
