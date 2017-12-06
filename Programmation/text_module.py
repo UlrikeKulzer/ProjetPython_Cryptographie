@@ -131,10 +131,10 @@ def search_index(initial_list, letter, offset):
     else:
         print("*** DEBUG *** while ended, index = ", index)
         index += offset
+        print("*** DEBUG *** index after offset = ", index)
         if (index < 0) or (index > len(initial_list)):
-            index %= index
-            if index < 0:
-                index *= (-1)
+            index %= len(initial_list)
+
         print("*** DEBUG *** final index = ", index)
         return index
 
@@ -162,7 +162,7 @@ def plugboard(letter):
         return "This should never happen"
 
 
-def shift_first_rotor(initial_list, index):
+def shift_first_rotor_encryption(initial_list, index):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
     :param initial_list: list on which the function operates to
@@ -186,7 +186,7 @@ def shift_first_rotor(initial_list, index):
         return "This should never happen"
 
 
-def shift_second_rotor(initial_list, index):
+def shift_second_rotor_encryption(initial_list, index):
     if index == 0:
         return initial_list[index + 3]
     elif index == 1:
@@ -203,7 +203,7 @@ def shift_second_rotor(initial_list, index):
         return "This should never happen"
 
 
-def shift_third_rotor(initial_list, index):
+def shift_third_rotor_encryption(initial_list, index):
     if index == 0:
         return initial_list[index + 4]
     elif index == 1:
@@ -267,28 +267,12 @@ def encrypt_enigma(text, key):
         # plugboard
         letter = plugboard(letter)
         print("*** DEBUG *** after plugboard: actual letter =", letter)
+
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_first_rotor)
         # first rotor
         letter = shift_first_rotor(initial_list, index_of_letter)
         print("*** DEBUG *** after first rotor: actual letter =", letter)
-
-        # change offset variables
-        offset_first_rotor -= 1
-        if offset_first_rotor == ((-1) * len(initial_list)):
-            offset_first_rotor = 0
-            offset_second_rotor -= 1
-            if offset_second_rotor == ((-1) * len(initial_list)):
-                offset_second_rotor = 0
-                offset_third_rotor -= 1
-                if offset_third_rotor == ((-1) * len(initial_list)):
-                    offset_third_rotor = 0
-                else:
-                    pass
-            else:
-                pass
-        else:
-            pass
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_second_rotor)
@@ -331,15 +315,32 @@ def encrypt_enigma(text, key):
 
         encrypted_text = encrypted_text + letter
         print("***************************** DEBUG *** after all: actual text =", encrypted_text)
+
+        # change offset variables
+        offset_first_rotor -= 1
+        if offset_first_rotor == ((-1) * len(initial_list)):
+            offset_first_rotor = 0
+            offset_second_rotor -= 1
+            if offset_second_rotor == ((-1) * len(initial_list)):
+                offset_second_rotor = 0
+                offset_third_rotor -= 1
+                if offset_third_rotor == ((-1) * len(initial_list)):
+                    offset_third_rotor = 0
+                else:
+                    pass
+            else:
+                pass
+        else:
+            pass
     return encrypted_text
 
     # *** DECRYPTION *** #
     def decrypt_enigma(text, key):
-
         return 0
 
 
 # ********** end ENIGMA ********** #
 
 
-encrypt_enigma("ADEC", "")
+encrypt_enigma("ADECADECADEC", "")
+encrypt_enigma("FBDBBDACDECE", "")
