@@ -61,15 +61,14 @@ def create_table_text_key(text, key):
     :param key: string
     :return: table
     """
-    repeted_key=""
-    while len(repeted_key)<len(text):
-        repeted_key+=key
-    list_key=[]
-    for i in range (len(text)):
-        list=[text[i],repeted_key[i]]
-        list_key.append(list)
+    repeated_key = ""
+    while len(repeated_key) < len(text):
+        repeated_key += key
+    list_key = []
+    for i in range(len(text)):
+        list_temp = [text[i], repeated_key[i]]
+        list_key.append(list_temp)
     return list_key
-
 
 
 # *** ENCRYPTION *** #
@@ -77,13 +76,13 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_table_of_vigenere()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
-    for i in range (len(text)):
-        lettre_texte=repeated_key_table[i][0]
-        lettre_cle=repeated_key_table[i][1]
-        encrypted_text+=table_of_vigenere[alphabet.index(lettre_texte)][alphabet.index(lettre_cle)]
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+                'v', 'w', 'x', 'y', 'z']
+    for i in range(len(text)):
+        text_letter = repeated_key_table[i][0]
+        key_letter = repeated_key_table[i][1]
+        encrypted_text += table_of_vigenere[alphabet.index(text_letter)][alphabet.index(key_letter)]
     return encrypted_text
-
 
 
 # *** DECRYPTION *** #
@@ -245,13 +244,16 @@ def encrypt_enigma(text, key):
 
     for letter in text:
         # ** forward path **
+        print("*** DEBUG *** encryption started: actual letter =", letter)
         # plugboard
         letter = plugboard(letter)
+        print("*** DEBUG *** after plugboard: actual letter =", letter)
         # determine index
         index_of_letter = search_index(initial_list, letter)
         index_of_letter += offset_first_rotor
         # first rotor
         letter = shift_first_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after first rotor: actual letter =", letter)
 
         # change offset variables
         offset_first_rotor += 1
@@ -275,15 +277,18 @@ def encrypt_enigma(text, key):
         index_of_letter += offset_second_rotor
         # second rotor
         letter = shift_second_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after second rotor: actual letter =", letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter)
         index_of_letter += offset_third_rotor
         # third rotor
         letter = shift_third_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after third rotor: actual letter =", letter)
 
         # permutation reflector
         letter = permutation_reflector(letter)
+        print("*** DEBUG *** after reflector: actual letter =", letter)
 
         # ** return path **
         # determine index
@@ -291,21 +296,25 @@ def encrypt_enigma(text, key):
         index_of_letter += offset_third_rotor
         # third rotor
         letter = shift_third_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after third rotor: actual letter =", letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter)
         index_of_letter += offset_second_rotor
         # second rotor
         letter = shift_second_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after second rotor: actual letter =", letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter)
         index_of_letter += offset_first_rotor
         # first rotor
         letter = shift_first_rotor(initial_list, index_of_letter)
+        print("*** DEBUG *** after first rotor: actual letter =", letter)
 
         # plugboard
         letter = plugboard(letter)
+        print("*** DEBUG *** after plugboard: actual letter =", letter)
 
         encrypted_text = encrypted_text + letter
         return encrypted_text
