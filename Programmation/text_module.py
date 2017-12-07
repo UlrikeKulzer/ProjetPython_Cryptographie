@@ -94,8 +94,22 @@ def encrypt_vigenere(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_vigenere(text, key):
-    return text
+    """
 
+    :param text:
+    :param key:
+    :return:
+    """
+    table_of_vigenere = create_table_of_vigenere()
+    repeated_key_table = create_table_text_key(text, key)
+    decrypted_text=""
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U','V', 'W', 'X', 'Y', 'Z']
+    for i in range (len(text)):
+        letter_text=repeated_key_table[i][0]
+        letter_key=repeated_key_table[i][1]
+        list_temp=table_of_vigenere[alphabet.index(lettre_cle)]
+        decrypted_text+=alphabet[list_temp.index(lettre_texte)]
+    return decrypted_text
 
 # ****** end VIGENERE ****** #
 

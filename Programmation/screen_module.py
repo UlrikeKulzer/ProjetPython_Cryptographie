@@ -6,11 +6,19 @@ import screen_constants
 
 
 def showStartAskLanguage():
+    """
+
+    :return:
+    """
     chosen_language = input(screen_constants.START_ASK_LANGUAGE)
     return chosen_language
 
 
 def show_main_menu():
+    """
+
+    :return:
+    """
     if showStartAskLanguage() == 'e':
         main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
     elif showStartAskLanguage() == 'f':
@@ -19,11 +27,23 @@ def show_main_menu():
 
 
 def show_principles():
-    if show_main_menu() == 'c':
+    """
+
+    :return:
+    """
+    #if language chosen is english
+    if show_main_menu() == 'c' and showStartAskLanguage() == 'e':
         encrypting = input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
         return encrypting
-    elif show_main_menu() == 'd':
+    elif show_main_menu() == 'd' and showStartAskLanguage() == 'e':
         decrypting = input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
+        return decrypting
+    # if language chosen is french
+    elif show_main_menu() == 'c' and showStartAskLanguage() == 'f':
+        encrypting = input(screen_constants.FRENCH_PRINCIPLES_ENCRYPTING)
+        return encrypting
+    elif show_main_menu() == 'd' and showStartAskLanguage() == 'f':
+        decrypting = input(screen_constants.FRENCH_PRINCIPLES_DECRYPTING)
         return decrypting
     elif show_main_menu() == 's':
         language = input(screen_constants.LANGUAGE_SETTINGS)
@@ -31,21 +51,11 @@ def show_principles():
 
 
 def show_ask_key():
-    if show_principles() == 'c':
-        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v':
-        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm':
-        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menu
+    """
 
-
-def show_ask_key():
+    :return:
+    """
+    # if language chosen is english
     if show_principles() == 'c' and showStartAskLanguage() == 'e':
         key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
         return key
@@ -57,7 +67,41 @@ def show_ask_key():
         return key
     elif show_principles() == 'm' and showStartAskLanguage() == 'e':
         main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menuf
+        return main_menu
+    # if language chosen is french
+    elif show_principles() == 'c' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
+        return key
+    elif show_principles() == 'v' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_VIGENERE)
+        return key
+    elif show_principles() == 'e' and showStartAskLanguage() == 'f':
+        key = input(screen_constants.FRENCH_ASK_KEY_ENIGMA)
+        return key
+    elif show_principles() == 'm' and showStartAskLanguage() == 'f':
+        main_menu = input(screen_constants.FRENCH_MAIN_MENU)
+        return main_menu
+
+
+def show_ask_key():
+    """
+
+    :return:
+    """
+    # if language chosen is english
+    if show_principles() == 'c' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
+        return key
+    elif show_principles() == 'v' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
+        return key
+    elif show_principles() == 'e' and showStartAskLanguage() == 'e':
+        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
+        return key
+    elif show_principles() == 'm' and showStartAskLanguage() == 'e':
+        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
+        return main_menu
+    # if language chosen is french
     elif show_principles() == 'c' and showStartAskLanguage() == 'f':
         key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
         return key
@@ -74,12 +118,18 @@ def show_ask_key():
 
 
 def show_ask_text():
+    """
+
+    :return:
+    """
+    # if language chosen is english
     if showStartAskLanguage() == 'e':
         text = input(screen_constants.ENGLISH_ASK_TEXT)
         if texte == 'm':
             return screen_constants.ENGLISH_MAIN_MENU
         else:
             return text
+    # if language chosen is french
     elif showStartAskLanguage() == 'f':
         text = input(screen_constants.FRENCH_ASK_TEXT)
         if texte == 'm':
@@ -90,10 +140,16 @@ def show_ask_text():
 
 
 def show_treated_text():
+    """
+
+    :return:
+    """
+    # if language chosen is english
     if showStartAskLanguage() == 'e' and show_principles() == "encrypting":
         return screen_constants.ENGLISH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'e' and show_principles() == "decrypting":
         return screen_constants.ENGLISH_DECRYPTED_TEXT
+    # if language chosen is french
     elif showStartAskLanguage() == 'f' and show_principles() == "encrypting":
         return screen_constants.FRENCH_ENCRYPTED_TEXT
     elif showStartAskLanguage() == 'f' and show_principles() == "decrypting":
