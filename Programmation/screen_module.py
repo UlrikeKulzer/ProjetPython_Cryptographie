@@ -57,7 +57,7 @@ def show_ask_key():
         return key
     elif show_principles() == 'm' and showStartAskLanguage() == 'e':
         main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menu
+        return main_menuf
     elif show_principles() == 'c' and showStartAskLanguage() == 'f':
         key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
         return key
