@@ -1,6 +1,7 @@
 import main_module
 import text_module
 
+
 # import screen_module
 # import screen_constants
 
@@ -23,10 +24,17 @@ def test_caesar_encryption():
 def test_create_table_of_vigenere():
     print(text_module.create_table_of_vigenere())
 
+
 def test_vigenere_encryptation():
+    test = ""
 
 
-test_caesar_encryption()
+def test_encrypt_enigma():
+    text_module.encrypt_enigma("A", "")
+
+
+# test_caesar_encryption()
 # test_format_and_normalise()
 # test_create_table_of_vigenere()
 # print(text_module.create_initial_list())
+test_encrypt_enigma()
