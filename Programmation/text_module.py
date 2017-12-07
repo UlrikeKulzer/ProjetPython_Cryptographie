@@ -338,6 +338,61 @@ def encrypt_enigma(text, key):
     def decrypt_enigma(text, key):
         return 0
 
+ def shift_first_rotor_decryption(initial_list, index):
+    """
+    represents the letter shift of the first rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates to
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+
+    if index == 0:
+        return initial_list[index - 4]
+    elif index == 1:
+        return initial_list[index - 2]
+    elif index == 2:
+        return initial_list[index - 3]
+    elif index == 3:
+        return initial_list[index + 2]
+    elif index == 4:
+        return initial_list[index + 2]
+    elif index == 5:
+        return initial_list[index + 5]
+    else:
+        return "This should never happen"
+
+def shift_second_rotor_decryption(initial_list, index):
+    if index == 0:
+        return initial_list[index - 3]
+    elif index == 1:
+        return initial_list[index - 1]
+    elif index == 2:
+        return initial_list[index + 1]
+    elif index == 3:
+        return initial_list[index - 1]
+    elif index == 4:
+        return initial_list[index - 1]
+    elif index == 5:
+        return initial_list[index + 5]
+    else:
+        return "This should never happen"
+
+def shift_third_rotor_decryption(initial_list, index):
+    if index == 0:
+        return initial_list[index - 4]
+    elif index == 1:
+        return initial_list[index + 1]
+    elif index == 2:
+        return initial_list[index - 1]
+    elif index == 3:
+        return initial_list[index - 2]
+    elif index == 4:
+        return initial_list[index + 3]
+    elif index == 5:
+        return initial_list[index + 3]
+    else:
+        return "This should never happen"
+
 
 # ********** end ENIGMA ********** #
 
