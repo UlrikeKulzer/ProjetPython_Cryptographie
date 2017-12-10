@@ -2,6 +2,10 @@
 This module is responsible for the program flow.
 """
 
+
+# TODO: COMMENT CODE!!!
+
+
 import screen_module
 import text_module
 
@@ -64,16 +68,7 @@ def run():
     starts the program
     :return: None
     """
-    english = True
-    encryption = False
-    caesar = False
-    vigenere = False
-    enigma = False
-    key_caesar = 0
-    key_vigenere = 'abc'
-    key_enigma = 'abc'
-
-    screen_module.show_main_menu()
+    # TODO: discuss execution oder
 
 
 # run()

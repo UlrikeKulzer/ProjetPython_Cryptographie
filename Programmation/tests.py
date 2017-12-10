@@ -1,12 +1,22 @@
+"""
+This module contains all functions which are used to test the program code.
+"""
+
+# TODO: COMMENT CODE!!!
+
+
 import main_module
 import text_module
-
-
-# import screen_module
-# import screen_constants
+import screen_module
+import screen_constants
 
 
 def test_format_and_normalise():
+    # TODO add description
+    """
+
+    :return:
+    """
     text = "àâ test1t!? æ test2test,. ç test3test;+ èéêë test4test-% îï t5t$& ô test6test\"/ ùûü t7t{} ÿ t8t[] œ t9t= "
     print("***DEBUG***\nstart test from 'main_module' the functions 'format' and 'normalise'.\nTest text: ", text)
     print(main_module.format_text(text))
@@ -14,6 +24,11 @@ def test_format_and_normalise():
 
 
 def test_caesar_encryption():
+    # TODO add description
+    """
+
+    :return:
+    """
     key = 4
     text = "Hello world"
     text2 = main_module.format_text(text)
@@ -22,19 +37,40 @@ def test_caesar_encryption():
 
 
 def test_create_table_of_vigenere():
-    print(text_module.create_table_of_vigenere())
+    # TODO add description
+    """
+
+    :return:
+    """
+    print(text_module.create_vigenere_table())
 
 
 def test_vigenere_encryptation():
+    # TODO add description
+    """
+
+    :return:
+    """
     test = ""
 
 
 def test_encrypt_enigma():
+    # TODO add description
+    """
+
+    :return:
+    """
     text_module.encrypt_enigma("A", "")
 
 
-# test_caesar_encryption()
-# test_format_and_normalise()
-# test_create_table_of_vigenere()
-# print(text_module.create_initial_list())
-test_encrypt_enigma()
+def run_all_tests():
+    # TODO add description
+    """
+
+    :return:
+    """
+    test_caesar_encryption()
+    test_format_and_normalise()
+    test_create_table_of_vigenere()
+    print(text_module.create_initial_list())
+    test_encrypt_enigma()
