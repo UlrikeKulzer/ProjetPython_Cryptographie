@@ -7,7 +7,7 @@ START_ASK_LANGUAGE = "Hello. Welcome to the cryptography program.\nPlease select
 LANGUAGE_SETTINGS = "Please select your language:\n'f' for Francais, 'e' for English."
 
 # English user interface
-ENGLISH_MAIN_MENU = "What do you want to do -encrypt or decrypt a message?\nEnter c for encrypting or d for decrypting.\nEnter s to change settings(language)\nor q to exit:("
+ENGLISH_MAIN_MENU = "What do you want to do - encrypt or decrypt a message?\nEnter 'c' for encrypting or 'd' for decrypting.\nEnter 's' to change settings(language)\nor 'q' to exit :("
 ENGLISH_PRINCIPLES_ENCRYPTING = "How do you want to encrypt your text?\nEnter 'c' for Caesar's cypher,\nenter 'v' for Vigenere's cypher\nor enter 'e' for the encryptation by the Enigma machine.\nEnter 'm' to go back to the main menu."
 ENGLISH_PRINCIPLES_DECRYPTING = "How do you want to decrypt your text?\nEnter 'c' for Caesar's cypher,\nenter 'v' for Vigenere's cypher\nor enter 'e' for the decryptation by the Enigma machine.\nEnter 'm' to go back to the main menu."
 ENGLISH_ASK_KEY_CAESAR = "You chose <<Caesar>>:\nPlease enter your key (a number between 1 and 25 included).\nEnter 'm' to go back to the main menu\nor 'r' to go back to the previous menu."
@@ -16,6 +16,7 @@ ENGLISH_ASK_KEY_ENIGMA="You chose <<Enigma>>:\nPlease enter your key (composed o
 ENGLISH_ASK_TEXT = "Please enter your text.\nEnter 'm' to go back to the main menu\nor 'r' to go back to the previous menu."
 ENGLISH_ENCRYPTED_TEXT = "Here is your encrypted text:"
 ENGLISH_DECRYPTED_TEXT = "Here is your decrypted text:"
+# TODO add English help text
 ENGLISH_HELP_PRINCIPLES = "THIS TEXT IS STILL MISSING"
 ENGLISH_QUIT_MESSAGE = "Thank you for using our program.\nGood bye and have a nice day."
 
