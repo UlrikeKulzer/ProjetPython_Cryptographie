@@ -182,7 +182,7 @@ def plugboard(letter):
     :return: letter: either the plugged or the given letter (char)
     """
     # In this case the plugboard's setting is the one of the 31th of a month,
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     # the plug combination is:
     # A-H, B-L, C-X, D-I, E-R, F-K, G-U, N-P, O-Q, T-Y
     # (J, M, S, V, W and Z not plugged)
@@ -219,7 +219,7 @@ def permutation_reflector(letter):
     :return: letter: char
     """
     # In this case the reflector's setting is the one of roller 'A',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Machine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     # the permutation is the following:
     # A-E, B-J, C-M, D-Z, F-L, G-Y, H-X, I-V, K-W, N-R, O-Q, P-U, S-T (and in the other direction)
     if letter in "A":
@@ -288,7 +288,7 @@ def shift_first_rotor_encryption(initial_list, index):
     :return letter: letter
     """
     # In this case the rotor's shift is the one of roller 'I',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
         return initial_list[index + 4]
     elif index in (1, 7, 13):
@@ -396,7 +396,7 @@ def shift_third_rotor_encryption(initial_list, index):
     :return letter: letter
     """
     # In this case the rotor's shift is the one of roller 'III',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
         return initial_list[index + 1]
     elif index == 1:
@@ -450,7 +450,7 @@ def shift_first_rotor_decryption(initial_list, index):
     :return letter: letter
     """
     # In this case the rotor's shift is the one of roller 'I',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
         return initial_list[index - 4]
     elif index in (1, 7, 13):
@@ -503,7 +503,7 @@ def shift_second_rotor_decryption(initial_list, index):
     :return letter: letter
     """
     # In this case the rotor's shift is the one of roller 'II',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index in (0, 16):
         return initial_list[index]
     elif index == 1:
@@ -558,7 +558,7 @@ def shift_third_rotor_decryption(initial_list, index):
     :return letter: letter
     """
     # In this case the rotor's shift is the one of roller 'III',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
         return initial_list[index - 1]
     elif index == 1:
