@@ -6,7 +6,7 @@ This module contains all functions with which the user's text can be treated.
 # TODO: COMMENT CODE!!!
 
 
-# ********** begin CAESAR ********** #
+# ************************************* begin CAESAR ***********************************************************s****** #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
     """
@@ -30,10 +30,10 @@ def encrypt_caesar(text, key):
 def decrypt_caesar(text, key):
     # TODO add description
     """
-
-    :param text:
-    :param key:
-    :return:
+    decrypts and returns the given text by using the principle of Caesar
+    :param text: user's text (string)
+    :param key: user's key (number)
+    :return: text: decrypted text
     """
     decrypted_text = ''
     for i in text:
@@ -46,10 +46,10 @@ def decrypt_caesar(text, key):
     return decrypted_text
 
 
-# ****** end CAESAR ****** #
+# ************************************ end CAESAR ******************************************************** #
 
 
-# ********** begin VIGENERE ********** #
+# ********************************** begin VIGENERE ****************************************************** #
 # *** HELP FUNCTIONS *** #
 def create_vigenere_table():
     # TODO: add description
@@ -88,10 +88,10 @@ def create_table_text_key(text, key):
 def encrypt_vigenere(text, key):
     # TODO add description
     """
-
-    :param text:
-    :param key:
-    :return:
+    encrypts and returns the given text by using the principle of Vigenere
+    :param text: user's text (string)
+    :param key: user's key (string)
+    :return: text: encrypted text
     """
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
@@ -222,7 +222,7 @@ def permutation_reflector(letter):
     :return: letter: char
     """
     # In this case the reflector's setting is the one of roller 'A',
-    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Machine)'
     # the permutation is the following:
     # A-E, B-J, C-M, D-Z, F-L, G-Y, H-X, I-V, K-W, N-R, O-Q, P-U, S-T (and in the other direction)
     if letter in "A":

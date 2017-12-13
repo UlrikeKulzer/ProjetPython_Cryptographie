@@ -58,6 +58,7 @@ def show_principles():
 
 
 # TODO: verify @Fathima as-tu inséré la fonction "show_ask_key" deux fois? :D
+# yupp je viens de coriger ça
 
 def show_ask_key():
     # TODO add description
@@ -93,37 +94,6 @@ def show_ask_key():
         return main_menu
 
 
-def show_ask_key():
-    """
-
-    :return:
-    """
-    # if language chosen is english
-    if show_principles() == 'c' and show_start_ask_language() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v' and show_start_ask_language() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e' and show_start_ask_language() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm' and show_start_ask_language() == 'e':
-        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menu
-    # if language chosen is french
-    elif show_principles() == 'c' and show_start_ask_language() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v' and show_start_ask_language() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e' and show_start_ask_language() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm' and show_start_ask_language() == 'f':
-        main_menu = input(screen_constants.FRENCH_MAIN_MENU)
-        return main_menu
 
 
 def show_ask_text():
@@ -173,7 +143,8 @@ def show_language_settings():
     shows the settings dialogue
     :return: None
     """
-    print(screen_constants.LANGUAGE_SETTINGS)
+    language=input(screen_constants.LANGUAGE_SETTINGS)
+    return language
 
 
 def show_help_principles(english):
@@ -181,7 +152,7 @@ def show_help_principles(english):
     shows the help dialogue
     :return: None
     """
-    if english:
+    if show_start_ask_language() == 'e':
         print(screen_constants.ENGLISH_HELP_PRINCIPLES)
     else:
         print(screen_constants.FRENCH_HELP_PRINCIPLES)
@@ -192,7 +163,7 @@ def show_quit_message(english):
     shows the quit message
     :return: None
     """
-    if english:
+    if show_start_ask_language() == 'e':
         print(screen_constants.ENGLISH_QUIT_MESSAGE)
     else:
         print(screen_constants.FRENCH_QUIT_MESSAGE)
