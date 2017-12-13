@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910a01c2-23a3-490f-b050-434034950424" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programmation/screen_module.py" afterPath="$PROJECT_DIR$/Programmation/screen_module.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programmation/tests.py" afterPath="$PROJECT_DIR$/Programmation/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programmation/text_module.py" afterPath="$PROJECT_DIR$/Programmation/text_module.py" />
-    </list>
+    <list default="true" id="910a01c2-23a3-490f-b050-434034950424" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +30,8 @@
       <file leaf-file-name="screen_constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Programmation/screen_constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="90">
+              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -44,8 +40,8 @@
       <file leaf-file-name="screen_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Programmation/screen_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+            <state relative-caret-position="2460">
+              <caret line="164" column="7" lean-forward="true" selection-start-line="164" selection-start-column="7" selection-end-line="164" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -66,7 +62,7 @@
       <file leaf-file-name="text_module.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Programmation/text_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3435">
+            <state relative-caret-position="780">
               <caret line="229" column="23" lean-forward="true" selection-start-line="229" selection-start-column="23" selection-end-line="229" selection-end-column="23" />
               <folding />
             </state>
@@ -214,7 +210,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="27" width="1440" height="811" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="811" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16736111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -314,16 +310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Programmation/screen_constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Programmation/screen_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state relative-caret-position="90">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -338,9 +326,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Programmation/screen_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="164" column="7" lean-forward="true" selection-start-line="164" selection-start-column="7" selection-end-line="164" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Programmation/text_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3435">
+        <state relative-caret-position="780">
           <caret line="229" column="23" lean-forward="true" selection-start-line="229" selection-start-column="23" selection-end-line="229" selection-end-column="23" />
           <folding />
         </state>
