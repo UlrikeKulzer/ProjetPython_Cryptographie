@@ -3,11 +3,16 @@ This module contains all screen constants, i. e. all texts of the user interface
 """
 
 # constants for both languages
-START_ASK_LANGUAGE = "Hello. Welcome to the cryptography program.\nPlease select your language:\n'f' for Francais, 'e' for English."
-LANGUAGE_SETTINGS = "Please select your language:\n'f' for Francais, 'e' for English."
+START_ASK_LANGUAGE = """Hello. Welcome to the cryptography program.
+Please select your language:
+'f' for Francais, 'e' for English."""
+LANGUAGE_SETTINGS = """Please select your language:
+'f' for Francais, 'e' for English."""
 
 # English user interface
-ENGLISH_MAIN_MENU = "What do you want to do - encrypt or decrypt a message?\nEnter 'c' for encrypting or 'd' for decrypting.\nEnter 's' to change settings(language)\nor 'q' to exit :("
+ENGLISH_MAIN_MENU = """What do you want to do - encrypt or decrypt a message?Enter 'c' for encrypting or 'd' for decrypting.
+Enter 's' to change settings(language)
+or 'q' to exit :("""
 ENGLISH_PRINCIPLES_ENCRYPTING = "How do you want to encrypt your text?\nEnter 'c' for Caesar's cypher,\nenter 'v' for Vigenere's cypher\nor enter 'e' for the encryptation by the Enigma machine.\nEnter 'm' to go back to the main menu."
 ENGLISH_PRINCIPLES_DECRYPTING = "How do you want to decrypt your text?\nEnter 'c' for Caesar's cypher,\nenter 'v' for Vigenere's cypher\nor enter 'e' for the decryptation by the Enigma machine.\nEnter 'm' to go back to the main menu."
 ENGLISH_ASK_KEY_CAESAR = "You chose <<Caesar>>:\nPlease enter your key (a number between 1 and 25 included).\nEnter 'm' to go back to the main menu\nor 'r' to go back to the previous menu."
@@ -17,7 +22,21 @@ ENGLISH_ASK_TEXT = "Please enter your text.\nEnter 'm' to go back to the main me
 ENGLISH_ENCRYPTED_TEXT = "Here is your encrypted text:"
 ENGLISH_DECRYPTED_TEXT = "Here is your decrypted text:"
 # TODO add English help text
-ENGLISH_HELP_PRINCIPLES = "THIS TEXT IS STILL MISSING"
+ENGLISH_HELP_PRINCIPLES = """************** HELP **************
+
+These are explanations of the different encryption and decryption principles.
+
+- Caesar's cypher:
+This principle was invented by Julius Caesar for his private correspondence.
+It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+
+- Vigenère's cypher:
+
+
+- The Enigma machine:
+
+
+"""
 ENGLISH_QUIT_MESSAGE = "Thank you for using our program.\nGood bye and have a nice day."
 
 # French user interface

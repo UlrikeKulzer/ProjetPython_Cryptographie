@@ -140,10 +140,7 @@ def create_initial_list():
     creates a list filled with the alphabet (capital letters)
     :return: list
     """
-    # real list:
-    # initial_list = [chr(x) for x in range(65, 91)]
-    # for test purpose used letters are only "A - F"
-    initial_list = [chr(x) for x in range(65, 71)]
+    initial_list = [chr(x) for x in range(65, 91)]
     return initial_list
 
 
@@ -627,11 +624,13 @@ def encrypt_enigma(text, key):
         # ** forward path **
         # plugboard
         letter = plugboard(letter)
-
+        print("*** DEBUG *** after plugboard: actual letter =", letter)
+        
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_first_rotor)
         # first rotor
         letter = shift_first_rotor_encryption(initial_list, index_of_letter)
+        print("*** DEBUG *** after first rotor: actual letter =", letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_second_rotor)
@@ -685,6 +684,7 @@ def encrypt_enigma(text, key):
         else:
             pass
 
+    print("***************************** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text
 
 

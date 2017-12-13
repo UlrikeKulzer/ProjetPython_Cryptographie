@@ -7,7 +7,8 @@ This module is responsible for the program flow.
 
 
 import screen_module
-import text_module
+import screen_constants
+# import text_module
 
 
 def normalise_letter(x):
@@ -68,7 +69,12 @@ def run():
     starts the program
     :return: None
     """
+    english = True
+    if input(screen_constants.LANGUAGE_SETTINGS) == 'f':
+        english = False
+
+    screen_module.show_quit_message(english)
     # TODO: discuss execution oder
 
 
-# run()
+run()

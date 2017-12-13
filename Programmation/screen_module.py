@@ -2,7 +2,6 @@
 This module is in charge of the user interface, i.e. it shows the right text in the chosen language.
 """
 
-
 # TODO: COMMENT CODE!!!
 
 
@@ -94,8 +93,6 @@ def show_ask_key():
         return main_menu
 
 
-
-
 def show_ask_text():
     # TODO add description
     """
@@ -143,7 +140,7 @@ def show_language_settings():
     shows the settings dialogue
     :return: None
     """
-    language=input(screen_constants.LANGUAGE_SETTINGS)
+    language = input(screen_constants.LANGUAGE_SETTINGS)
     return language
 
 
@@ -152,7 +149,7 @@ def show_help_principles(english):
     shows the help dialogue
     :return: None
     """
-    if show_start_ask_language() == 'e':
+    if english:
         print(screen_constants.ENGLISH_HELP_PRINCIPLES)
     else:
         print(screen_constants.FRENCH_HELP_PRINCIPLES)
@@ -163,7 +160,9 @@ def show_quit_message(english):
     shows the quit message
     :return: None
     """
-    if show_start_ask_language() == 'e':
+    if english:
         print(screen_constants.ENGLISH_QUIT_MESSAGE)
     else:
         print(screen_constants.FRENCH_QUIT_MESSAGE)
+
+
