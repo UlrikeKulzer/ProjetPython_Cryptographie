@@ -6,7 +6,7 @@ This module contains all functions with which the user's text can be treated.
 # TODO: COMMENT CODE!!!
 
 
-# ************************************* begin CAESAR ***********************************************************s****** #
+# ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
     """
@@ -46,10 +46,10 @@ def decrypt_caesar(text, key):
     return decrypted_text
 
 
-# ************************************ end CAESAR ******************************************************** #
+# ********************************** end CAESAR ********************************* #
 
 
-# ********************************** begin VIGENERE ****************************************************** #
+# ********************************** begin VIGENERE ********************************* #
 # *** HELP FUNCTIONS *** #
 def create_vigenere_table():
     # TODO: add description
@@ -129,10 +129,10 @@ def decrypt_vigenere(text, key):
     return decrypted_text
 
 
-# ****** end VIGENERE ****** #
+# ********************************* end VIGENERE ********************************* #
 
 
-# ********** begin ENIGMA ********** #
+# ********************************* begin ENIGMA ********************************* #
 # *** HELP FUNCTIONS *** #
 # * General functions * #
 def create_initial_list():
@@ -470,45 +470,45 @@ def shift_first_rotor_decryption(initial_list, index):
     # In this case the rotor's shift is the one of roller 'I',
     # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
-        return initial_list[(index - 4) % len(initial_list)]
-    elif index in (1, 7, 13):
-        return initial_list[(index - 9) % len(initial_list)]
-    elif index in (2, 14):
-        return initial_list[(index - 10) % len(initial_list)]
-    elif index in (3, 12):
-        return initial_list[(index - 2) % len(initial_list)]
-    elif index in (4, 16):
-        return initial_list[(index - 7) % len(initial_list)]
-    elif index == 5:
-        return initial_list[(index - 1) % len(initial_list)]
-    elif index == 6:
+        return initial_list[(index + 20) % len(initial_list)]
+    elif index == 1:
+        return initial_list[(index + 21) % len(initial_list)]
+    elif index == 2:
+        return initial_list[(index + 22) % len(initial_list)]
+    elif index == 3:
         return initial_list[(index + 3) % len(initial_list)]
-    elif index == 8:
-        return initial_list[(index - 13) % len(initial_list)]
-    elif index == 9:
-        return initial_list[(index - 16) % len(initial_list)]
-    elif index in (10, 17):
-        return initial_list[(index - 3) % len(initial_list)]
-    elif index == 11:
-        return initial_list[(index - 8) % len(initial_list)]
-    elif index == 15:
+    elif index == 4:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index in (5, 14):
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 7:
         return initial_list[(index + 8) % len(initial_list)]
+    elif index == 8:
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index == 9:
+        return initial_list[(index + 16) % len(initial_list)]
+    elif index in (10, 16, 22):
+        return initial_list[(index - 9) % len(initial_list)]
+    elif index in (11, 23):
+        return initial_list[(index - 7) % len(initial_list)]
+    elif index in (12, 24):
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index in (13, 20):
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index + 6) % len(initial_list)]
     elif index == 18:
         return initial_list[index % len(initial_list)]
     elif index == 19:
-        return initial_list[(index + 4) % len(initial_list)]
-    elif index == 20:
-        return initial_list[(index + 20) % len(initial_list)]
+        return initial_list[(index - 8) % len(initial_list)]
     elif index == 21:
-        return initial_list[(index + 13) % len(initial_list)]
-    elif index == 22:
-        return initial_list[(index + 21) % len(initial_list)]
-    elif index == 23:
-        return initial_list[(index + 6) % len(initial_list)]
-    elif index == 24:
-        return initial_list[(index + 22) % len(initial_list)]
+        return initial_list[(index - 13) % len(initial_list)]
     elif index == 25:
-        return initial_list[(index + 16) % len(initial_list)]
+        return initial_list[(index - 16) % len(initial_list)]
     else:
         return "This should never happen"
 
@@ -525,45 +525,45 @@ def shift_second_rotor_decryption(initial_list, index):
     if index in (0, 16):
         return initial_list[index % len(initial_list)]
     elif index == 1:
-        return initial_list[(index - 8) % len(initial_list)]
-    elif index in (2, 10):
         return initial_list[(index - 1) % len(initial_list)]
-    elif index in (3, 18):
-        return initial_list[(index - 7) % len(initial_list)]
-    elif index == 4:
-        return initial_list[(index - 14) % len(initial_list)]
-    elif index in (5, 21):
-        return initial_list[(index - 3) % len(initial_list)]
-    elif index == 6:
-        return initial_list[(index - 11) % len(initial_list)]
-    elif index == 7:
-        return initial_list[(index - 13) % len(initial_list)]
-    elif index == 8:
-        return initial_list[(index + 8) % len(initial_list)]
-    elif index == 9:
-        return initial_list[(index - 1) % len(initial_list)]
-    elif index == 11:
-        return initial_list[(index + 4) % len(initial_list)]
-    elif index == 12:
-        return initial_list[(index - 10) % len(initial_list)]
-    elif index == 13:
-        return initial_list[(index - 6) % len(initial_list)]
-    elif index in (14, 23):
-        return initial_list[(index + 2) % len(initial_list)]
-    elif index == 15:
+    elif index == 2:
         return initial_list[(index + 13) % len(initial_list)]
-    elif index == 17:
-        return initial_list[(index + 11) % len(initial_list)]
-    elif index == 19:
-        return initial_list[(index + 6) % len(initial_list)]
-    elif index == 20:
-        return initial_list[(index + 5) % len(initial_list)]
-    elif index == 22:
-        return initial_list[(index + 17) % len(initial_list)]
-    elif index == 24:
-        return initial_list[(index + 10) % len(initial_list)]
-    elif index == 25:
+    elif index in (3, 11):
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 4:
         return initial_list[(index + 21) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index + 17) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index + 11) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index in (8, 24):
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 9:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index in (10, 25):
+        return initial_list[(index - 7) % len(initial_list)]
+    elif index in (12, 21):
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index == 13:
+        return initial_list[(index + 6) % len(initial_list)]
+    elif index == 14:
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index + 5) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index - 11) % len(initial_list)]
+    elif index == 18:
+        return initial_list[(index - 14) % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index - 13) % len(initial_list)]
+    elif index == 22:
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 23:
+        return initial_list[(index + 8) % len(initial_list)]
     else:
         return "This should never happen"
 
@@ -578,45 +578,45 @@ def shift_third_rotor_decryption(initial_list, index):
     # In this case the rotor's shift is the one of roller 'III',
     # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     if index == 0:
-        return initial_list[(index - 1) % len(initial_list)]
+        return initial_list[(index + 19) % len(initial_list)]
     elif index == 1:
-        return initial_list[(index - 2) % len(initial_list)]
+        return initial_list[(index - 1) % len(initial_list)]
     elif index == 2:
-        return initial_list[(index - 3) % len(initial_list)]
-    elif index == 3:
-        return initial_list[(index - 4) % len(initial_list)]
-    elif index in (4, 17):
-        return initial_list[(index - 5) % len(initial_list)]
-    elif index == 5:
-        return initial_list[(index - 6) % len(initial_list)]
-    elif index == 6:
         return initial_list[(index + 4) % len(initial_list)]
+    elif index == 3:
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index in (4, 14):
+        return initial_list[(index + 11) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index + 12) % len(initial_list)]
     elif index == 7:
-        return initial_list[(index - 8) % len(initial_list)]
-    elif index == 8:
-        return initial_list[(index - 9) % len(initial_list)]
-    elif index in (9, 11, 14):
-        return initial_list[(index - 10) % len(initial_list)]
-    elif index in (10, 12):
-        return initial_list[(index - 13) % len(initial_list)]
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index in (8, 16):
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index in (9, 22):
+        return initial_list[(index - 5) % len(initial_list)]
+    elif index == 10:
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index == 11:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 12:
+        return initial_list[(index + 9) % len(initial_list)]
     elif index == 13:
         return initial_list[index % len(initial_list)]
-    elif index in (15, 25):
-        return initial_list[(index + 11) % len(initial_list)]
-    elif index in (16, 24):
-        return initial_list[(index + 8) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index - 9) % len(initial_list)]
     elif index == 18:
-        return initial_list[(index + 12) % len(initial_list)]
-    elif index == 19:
-        return initial_list[(index + 19) % len(initial_list)]
-    elif index == 20:
-        return initial_list[(index + 10) % len(initial_list)]
-    elif index == 21:
-        return initial_list[(index + 9) % len(initial_list)]
-    elif index == 22:
-        return initial_list[(index + 2) % len(initial_list)]
-    elif index == 23:
         return initial_list[(index + 5) % len(initial_list)]
+    elif index in (19, 21, 24):
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index in (23, 25):
+        return initial_list[(index - 13) % len(initial_list)]
     else:
         return "This should never happen"
 
@@ -630,11 +630,14 @@ def encrypt_enigma(text, key):
     :return text: encrypted text
     """
     initial_list = create_initial_list()
+    offset_first_rotor = 0
+    offset_second_rotor = 0
+    offset_third_rotor = 0
 
     # set the rotors according to the key
-    offset_first_rotor = - search_index(initial_list, key[0])
-    offset_second_rotor = - search_index(initial_list, key[1])
-    offset_third_rotor = - search_index(initial_list, key[2])
+    offset_first_rotor = (-1) * search_index(initial_list, key[0], offset_first_rotor)
+    offset_second_rotor = (-1) * search_index(initial_list, key[1], offset_second_rotor)
+    offset_third_rotor = (-1) * search_index(initial_list, key[2], offset_third_rotor)
     encrypted_text = ""
     index_of_letter = 0
 
@@ -700,7 +703,7 @@ def encrypt_enigma(text, key):
         else:
             pass
 
-    print("***************************** DEBUG *** after all: actual text =", encrypted_text)
+    print("***** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text
 
 
@@ -713,11 +716,14 @@ def decrypt_enigma(text, key):
     :return text: decrypted text
     """
     initial_list = create_initial_list()
+    offset_first_rotor = 0
+    offset_second_rotor = 0
+    offset_third_rotor = 0
 
     # set the rotors according to the key
-    offset_first_rotor = - search_index(initial_list, key[0])
-    offset_second_rotor = - search_index(initial_list, key[1])
-    offset_third_rotor = - search_index(initial_list, key[2])
+    offset_first_rotor = (-1) * search_index(initial_list, key[0], offset_first_rotor)
+    offset_second_rotor = (-1) * search_index(initial_list, key[1], offset_second_rotor)
+    offset_third_rotor = (-1) * search_index(initial_list, key[2], offset_third_rotor)
     decrypted_text = ""
     index_of_letter = 0
 
@@ -782,13 +788,12 @@ def decrypt_enigma(text, key):
                 pass
         else:
             pass
-    print("***************************** DEBUG *** after all: actual text =", decrypted_text)
+    print("***** DEBUG *** after all: actual text =", decrypted_text)
     return decrypted_text
 
 
-# ********** end ENIGMA ********** #
+# ********************************* end ENIGMA ********************************* #
 
 
-# encrypt_enigma("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ", "")
-decrypt_enigma("LFV", "")
-# decrypt_enigma("LFVYHDQJMUIGMZICGKGAYAJTUVUGCSUDHVGBCBTORZIJXZIHYMTW", "")
+encrypt_enigma("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ", "AAA")
+decrypt_enigma("LFVYHDQJMUIGMZICGKGAYAJTUVUGCSUDHVGBCBTORZIJXZIHYMTW", "AAA")
