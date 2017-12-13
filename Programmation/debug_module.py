@@ -6,11 +6,13 @@ yes, I am lazy, but I'm a programmer.
 # ##### text_module #####
 
 # ### search_index ###
+# print("*** DEBUG *** found index, index = ", index)
 # print("*** DEBUG *** while ended, index = ", index)
 # print("*** DEBUG *** index after offset = ", index)
 # print("*** DEBUG *** final index = ", index)
 
 # ### encrypt_enigma ###
+# print("*** DEBUG *** index = ", index_of_letter)
 # print("*** DEBUG *** encryption started: actual letter =", letter)
 # print("*** DEBUG *** after plugboard: actual letter =", letter)
 # print("*** DEBUG *** after first rotor: actual letter =", letter)
