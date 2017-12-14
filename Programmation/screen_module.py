@@ -56,8 +56,6 @@ def show_principles():
         return language
 
 
-# TODO: verify @Fathima as-tu inséré la fonction "show_ask_key" deux fois? :D
-# yupp je viens de coriger ça
 
 def show_ask_key():
     # TODO add description
