@@ -377,7 +377,7 @@ def shift_second_rotor_encryption(initial_list, index):
     elif index == 7:
         return initial_list[(index + 13) % len(initial_list)]
     elif index == 8:
-        return initial_list[(index - 8) % len(initial_list)]
+        return initial_list[(index - 8) % len(initial_list)] #PB ici I donne A alors que A donne déjà A et et I devrait donner X
     elif index == 9:
         return initial_list[(index + 1) % len(initial_list)]
     elif index == 11:
