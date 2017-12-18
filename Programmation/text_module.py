@@ -28,7 +28,6 @@ def encrypt_caesar(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_caesar(text, key):
-    # TODO add description
     """
     decrypts and returns the given text by using the principle of Caesar
     :param text: user's text (string)
@@ -57,7 +56,6 @@ def create_vigenere_table():
 
     :return:
     """
-    # TODO voluntarily: change to range
     alphabet = [chr(x) for x in range(65, 91)]
     table = []
     for k in range(26):
@@ -66,6 +64,8 @@ def create_vigenere_table():
 
 
 def create_table_text_key(text, key):
+
+    # TODO : comment
     """
     creates a table with the user's text in the first line and the repeated key in the second
     :param text: string
@@ -85,7 +85,7 @@ def create_table_text_key(text, key):
 
 # *** ENCRYPTION *** #
 def encrypt_vigenere(text, key):
-    # TODO add description
+   # TODO : comment
     """
     encrypts and returns the given text by using the principle of Vigenere
     :param text: user's text (string)
@@ -95,7 +95,6 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    # TODO voluntarily: change to range
     alphabet = [chr(x) for x in range(65, 91)]
     for i in range(len(text)):
         text_letter = repeated_key_table[i][0]
@@ -116,7 +115,6 @@ def decrypt_vigenere(text, key):
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
-    # TODO voluntarily: change to range
     alphabet = [chr(x) for x in range(65, 91)]
     for i in range(len(text)):
         letter_text = repeated_key_table[i][0]
