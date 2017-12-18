@@ -2,8 +2,6 @@
 This module is in charge of the user interface, i.e. it shows the right text in the chosen language.
 """
 
-# TODO: COMMENT CODE!!!
-
 
 import screen_constants
 
@@ -18,7 +16,7 @@ def show_start_ask_language():
 
 def show_language_settings():
     """
-
+    asks the language the user wants to use in the program : french or english
     :return:
     """
     return input(screen_constants.LANGUAGE_SETTINGS)
@@ -26,8 +24,8 @@ def show_language_settings():
 
 def show_main_menu(english):
     """
-
-    :param english:
+    asks the user if he wants to use the fonction encryption or decryption of the program
+    :param english: means that the user wants the interface in english
     :return:
     """
     if english:
@@ -40,9 +38,9 @@ def show_main_menu(english):
 
 def show_principles(english, encrypting):
     """
-
-    :param english:
-    :param encrypting:
+    asks what type of method the user wants to use to encrypt or decrypt his text
+    :param english: means that the user wants the interface in english
+    :param encrypting: means the user wants ti use the encryption fonction of the program
     :return:
     """
     if english:
@@ -61,8 +59,8 @@ def show_principles(english, encrypting):
 
 def show_ask_key(english):
     """
-
-    :param english:
+    asks the key the user wants to use for the method his has chosen
+    :param english: means that the user wants the interface in english
     :return:
     """
     if english:
@@ -87,8 +85,8 @@ def show_ask_key(english):
 
 def show_ask_text(english):
     """
-
-    :param english:
+    asks the text that the user wants to decrypt/encrypt
+    :param english: means that the user wants the interface in english
     :return:
     """
     if english:
@@ -101,10 +99,10 @@ def show_ask_text(english):
 
 def show_treated_text(english, encrypting):
     """
-
-    :param english:
-    :param encrypting:
-    :return:
+    shows the decrypt/encrypt text
+    :param english: means that the user wants the interface in english
+    :param encrypting: means the user chosen the encrypt fonction to treat his text
+    :return: text
     """
     if english:
         if encrypting:
@@ -120,9 +118,9 @@ def show_treated_text(english, encrypting):
 
 def show_help_principles(english):
     """
-
-    :param english:
-    :return:
+    shows the help screen which give explanations on the different encryption methods
+    :param english: means that the user wants the interface in english
+    :return: text
     """
     if english:
         print(screen_constants.ENGLISH_HELP_PRINCIPLES)
@@ -132,9 +130,9 @@ def show_help_principles(english):
 
 def show_quit_message(english):
     """
-
-    :param english:
-    :return:
+    shows the exit message of the program
+    :param english: means that the user wants the interface in english
+    :return: text
     """
     if english:
         print(screen_constants.ENGLISH_QUIT_MESSAGE)
