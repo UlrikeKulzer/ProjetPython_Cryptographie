@@ -17,12 +17,11 @@ def encrypt_caesar(text, key):
     """
     encrypted_text = ''
     for i in text:
-        if ord(i) + key > 90:
-            i = chr(ord('A') - 1 + (key - (ord('Z') - ord(i))))
-            encrypted_text += i
-        else:
-            i = chr(ord(i) + key)
-            encrypted_text += i
+        # if by adding the key to the number of the letter,we go beyond the numbers between A and Z
+        # we must go back to the beginning of the alphabet by using a modulo (26)
+        # ord('A') because each letter got a number starting 65=ord('A')
+        i = chr((ord(i) + key)%26+ord('A'))
+        encrypted_text += i
     return encrypted_text
 
 
@@ -36,12 +35,11 @@ def decrypt_caesar(text, key):
     """
     decrypted_text = ''
     for i in text:
-        if ord(i) - key < 65:
-            i = chr(ord('Z') + 1 - (key - (ord(i) - ord('A'))))
-            decrypted_text += i
-        else:
-            i = chr(ord(i) - key)
-            decrypted_text += i
+    # if by removing the key to the number of the letter, we go beyond the numbers between A and Z
+    # we must go back to the beginning of the alphabet by using a modulo (26)
+    # ord('A') because each letter got a number starting 65=ord('A')
+        i = chr((ord(i) - key)%26+ord('A'))
+        decrypted_text += i
     return decrypted_text
 
 
@@ -51,9 +49,8 @@ def decrypt_caesar(text, key):
 # ********************************** begin VIGENERE ********************************* #
 # *** HELP FUNCTIONS *** #
 def create_vigenere_table():
-    # TODO: add description
     """
-
+    creates a table 26x26 with the alphabet that recreates the Vigenere table
     :return:
     """
     alphabet = [chr(x) for x in range(65, 91)]
@@ -64,8 +61,6 @@ def create_vigenere_table():
 
 
 def create_table_text_key(text, key):
-
-    # TODO : comment
     """
     creates a table with the user's text in the first line and the repeated key in the second
     :param text: string
@@ -74,9 +69,11 @@ def create_table_text_key(text, key):
     """
     key = key.upper()
     repeated_key = ""
+    #we repeat the key until its length is bigger than the length of the text
     while len(repeated_key) < len(text):
         repeated_key += key
     list_key = []
+    # in a table of two lines, we add in the first line 
     for i in range(len(text)):
         list_temp = [text[i], repeated_key[i]]
         list_key.append(list_temp)
@@ -160,7 +157,7 @@ def search_index(initial_list, letter, offset):
         index += offset
         if (index < 0) or (index > len(initial_list)):
             index %= len(initial_list)
-        # check if sth went wrong before
+        # check if something went wrong before
         if index > len(initial_list):
             return "This should never happen"
         else:
