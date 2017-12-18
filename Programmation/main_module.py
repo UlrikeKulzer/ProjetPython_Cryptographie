@@ -2,8 +2,13 @@
 This module is responsible for the program flow.
 """
 
+
+# TODO: COMMENT CODE!!!
+
+
 import screen_module
-import text_module
+import screen_constants
+# import text_module
 
 
 def normalise_letter(x):
@@ -65,15 +70,11 @@ def run():
     :return: None
     """
     english = True
-    encryption = False
-    caesar = False
-    vigenere = False
-    enigma = False
-    key_caesar = 0
-    key_vigenere = 'abc'
-    key_enigma = 'abc'
+    if input(screen_constants.LANGUAGE_SETTINGS) == 'f':
+        english = False
 
-    screen_module.show_main_menu()
+    screen_module.show_quit_message(english)
+    # TODO: discuss execution oder
 
 
-# run()
+run()

@@ -2,130 +2,142 @@
 This module is in charge of the user interface, i.e. it shows the right text in the chosen language.
 """
 
+# TODO: COMMENT CODE!!!
+
+
 import screen_constants
 
 
-def showStartAskLanguage():
-    chosen_language = input(screen_constants.START_ASK_LANGUAGE)
-    return chosen_language
-
-
-def show_main_menu():
-    if showStartAskLanguage() == 'e':
-        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-    elif showStartAskLanguage() == 'f':
-        main_menu = input(screen_constants.FRENCH_MAIN_MENU)
-    return main_menu
-
-
-def show_principles():
-    if show_main_menu() == 'c':
-        encrypting = input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
-        return encrypting
-    elif show_main_menu() == 'd':
-        decrypting = input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
-        return decrypting
-    elif show_main_menu() == 's':
-        language = input(screen_constants.LANGUAGE_SETTINGS)
-        return language
-
-
-def show_ask_key():
-    if show_principles() == 'c':
-        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v':
-        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm':
-        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menu
-
-
-def show_ask_key():
-    if show_principles() == 'c' and showStartAskLanguage() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v' and showStartAskLanguage() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e' and showStartAskLanguage() == 'e':
-        key = input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm' and showStartAskLanguage() == 'e':
-        main_menu = input(screen_constants.ENGLISH_MAIN_MENU)
-        return main_menuf
-    elif show_principles() == 'c' and showStartAskLanguage() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_CAESAR)
-        return key
-    elif show_principles() == 'v' and showStartAskLanguage() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_VIGENERE)
-        return key
-    elif show_principles() == 'e' and showStartAskLanguage() == 'f':
-        key = input(screen_constants.FRENCH_ASK_KEY_ENIGMA)
-        return key
-    elif show_principles() == 'm' and showStartAskLanguage() == 'f':
-        main_menu = input(screen_constants.FRENCH_MAIN_MENU)
-        return main_menu
-    return 0
-
-
-def show_ask_text():
-    if showStartAskLanguage() == 'e':
-        text = input(screen_constants.ENGLISH_ASK_TEXT)
-        if texte == 'm':
-            return screen_constants.ENGLISH_MAIN_MENU
-        else:
-            return text
-    elif showStartAskLanguage() == 'f':
-        text = input(screen_constants.FRENCH_ASK_TEXT)
-        if texte == 'm':
-            return screen_constants.FRENCH_MAIN_MENU
-        else:
-            return text
-    return 0
-
-
-def show_treated_text():
-    if showStartAskLanguage() == 'e' and show_principles() == "encrypting":
-        return screen_constants.ENGLISH_ENCRYPTED_TEXT
-    elif showStartAskLanguage() == 'e' and show_principles() == "decrypting":
-        return screen_constants.ENGLISH_DECRYPTED_TEXT
-    elif showStartAskLanguage() == 'f' and show_principles() == "encrypting":
-        return screen_constants.FRENCH_ENCRYPTED_TEXT
-    elif showStartAskLanguage() == 'f' and show_principles() == "decrypting":
-        return screen_constants.FRENCH_DECRYPTED_TEXT
-    return 0
+def show_start_ask_language():
+    """
+    asks the language the user wants to use at the beginning:french or english
+    :return:
+    """
+    return input(START_ASK_LANGUAGE)
 
 
 def show_language_settings():
     """
-    prints the settings dialogue
-    :return: None
+
+    :return:
     """
-    print(screen_constants.language_settings)
+    return input(LANGUAGE_SETTINGS)
+
+
+def show_main_menu(english):
+    """
+
+    :param english:
+    :return:
+    """
+    if english:
+        return input(ENGLISH_MAIN_MENU)
+    elif english == False:
+        return input(FRENCH_MAIN_MENU)
+    else:
+        return "this should never happen"
+
+
+def show_principles(english, encrypting):
+    """
+
+    :param english:
+    :param encrypting:
+    :return:
+    """
+    if english:
+        if encrypting:
+            return input(ENGLISH_PRINCIPLES_ENCRYPTING)
+        if encrypting == false:
+            return input(ENGLISH_PRINCIPLES_DECRYPTING)
+    elif english == False:
+        if encrypting:
+            return input(NGLISH_PRINCIPLES_ENCRYPTING)
+        if encrypting == false:
+            return input(ENGLISH_PRINCIPLES_DECRYPTING)
+    else:
+        return "this should never happen"
+
+
+def show_ask_key(english):
+    """
+
+    :param english:
+    :return:
+    """
+    if english:
+        if caesar:
+            return input(ENGLISH_ASK_KEY_CAESAR)
+        elif vigenere:
+            return input(ENGLISH_ASK_KEY_VIGENERE)
+        elif enigma:
+            return input(ENGLISH_ASK_KEY_ENIGMA)
+        else:
+            return "this should never happen"
+    elif english == False:
+        if caesar:
+            return input(FRENCH_ASK_KEY_CAESAR)
+        elif vigenere:
+            return input(FRENCH_ASK_KEY_VIGENERE)
+        elif enigma:
+            return input(FRENCH_ASK_KEY_ENIGMA)
+        else:
+            return "this should never happen"
+
+
+def show_ask_text(english):
+    """
+
+    :param english:
+    :return:
+    """
+    if english:
+        return input(ENGLISH_ASK_TEXT)
+    elif english == False:
+        return input(FRENCH_ASK_TEXT)
+    else:
+        return "this should never happen"
+
+
+def show_treated_text(english, encrypting):
+    """
+
+    :param english:
+    :param encrypting:
+    :return:
+    """
+    if english:
+        if encrypting:
+            print(ENGLISH_ENCRYPTED_TEXT)
+        elif encrypting == False:
+            print(ENGLISH_DECRYPTED_TEXT)
+    if english == False:
+        if encrypting:
+            print(FRENCH_ENCRYPTED_TEXT)
+        elif encrypting == False:
+            print(FRENCH_DECRYPTED_TEXT)
 
 
 def show_help_principles(english):
     """
-    prints the help dialogue
-    :return: None
+
+    :param english:
+    :return:
     """
     if english:
-        main_menu
+        print(ENGLISH_HELP_PRINCIPLES)
     else:
-        print(screen_constants.french_help_principles)
+        print(FRENCH_HELP_PRINCIPLES)
 
 
 def show_quit_message(english):
     """
-    prints the quit message
-    :return: None
+
+    :param english:
+    :return:
     """
     if english:
-        print(screen_constants.english_quit_message)
+        print(ENGLISH_QUIT_MESSAGE)
     else:
-        print(screen_constants.french_quit_message)
+        print(FRENCH_QUIT_MESSAGE)
+

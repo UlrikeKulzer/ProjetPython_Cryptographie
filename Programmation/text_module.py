@@ -3,7 +3,10 @@ This module contains all functions with which the user's text can be treated.
 """
 
 
-# ********** begin CAESAR ********** #
+# TODO: COMMENT CODE!!!
+
+
+# ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
     """
@@ -12,24 +15,25 @@ def encrypt_caesar(text, key):
     :param key: user's key (number)
     :return: text: encrypted text
     """
-    crypted_text = ''
+    encrypted_text = ''
     for i in text:
         if ord(i) + key > 90:
             i = chr(ord('A') - 1 + (key - (ord('Z') - ord(i))))
-            crypted_text += i
+            encrypted_text += i
         else:
             i = chr(ord(i) + key)
-            crypted_text += i
-    return crypted_text
+            encrypted_text += i
+    return encrypted_text
 
 
 # *** DECRYPTION *** #
 def decrypt_caesar(text, key):
+    # TODO add description
     """
-
-    :param text:
-    :param key:
-    :return:
+    decrypts and returns the given text by using the principle of Caesar
+    :param text: user's text (string)
+    :param key: user's key (number)
+    :return: text: decrypted text
     """
     decrypted_text = ''
     for i in text:
@@ -42,16 +46,18 @@ def decrypt_caesar(text, key):
     return decrypted_text
 
 
-# ****** end CAESAR ****** #
+# ********************************** end CAESAR ********************************* #
 
 
-# ********** begin VIGENERE ********** #
+# ********************************** begin VIGENERE ********************************* #
 # *** HELP FUNCTIONS *** #
-def create_table_of_vigenere():
+def create_vigenere_table():
+    # TODO: add description
     """
 
     :return:
     """
+    # TODO voluntarily: change to range
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
                 'V', 'W', 'X', 'Y', 'Z']
     table = []
@@ -80,9 +86,17 @@ def create_table_text_key(text, key):
 
 # *** ENCRYPTION *** #
 def encrypt_vigenere(text, key):
-    table_of_vigenere = create_table_of_vigenere()
+    # TODO add description
+    """
+    encrypts and returns the given text by using the principle of Vigenere
+    :param text: user's text (string)
+    :param key: user's key (string)
+    :return: text: encrypted text
+    """
+    table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
+    # TODO voluntarily: change to range
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
                 'V', 'W', 'X', 'Y', 'Z']
     for i in range(len(text)):
@@ -94,49 +108,68 @@ def encrypt_vigenere(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_vigenere(text, key):
-    return text
+    # TODO add description
+    """
+
+    :param text:
+    :param key:
+    :return:
+    """
+    table_of_vigenere = create_vigenere_table()
+    repeated_key_table = create_table_text_key(text, key)
+    decrypted_text = ""
+    # TODO voluntarily: change to range
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+                'V', 'W', 'X', 'Y', 'Z']
+    for i in range(len(text)):
+        letter_text = repeated_key_table[i][0]
+        letter_key = repeated_key_table[i][1]
+        list_temp = table_of_vigenere[alphabet.index(letter_key)]
+        decrypted_text += alphabet[list_temp.index(letter_text)]
+    return decrypted_text
 
 
-# ****** end VIGENERE ****** #
+# ********************************* end VIGENERE ********************************* #
 
 
-# ********** begin ENIGMA ********** #
+# ********************************* begin ENIGMA ********************************* #
 # *** HELP FUNCTIONS *** #
+# * General functions * #
 def create_initial_list():
     """
-    creates a list filled with the alphabet
+    creates a list filled with the alphabet (capital letters)
     :return: list
     """
-    # real list:
-    # initial_list = [chr(x) for x in range(65, 91)]
-    # for test purpose used letters are only "A - F"
-    initial_list = [chr(x) for x in range(65, 71)]
+    initial_list = [chr(x) for x in range(65, 91)]
     return initial_list
 
 
 def search_index(initial_list, letter, offset):
     """
     searches the index of a given letter in the given list
+    :param offset: the rotor's offset of the enigma machine
     :param initial_list: list for searching
     :param letter: index of this letter is wanted
     :return: index of the letter
     """
-    print("*** DEBUG *** search_index started, offset =", offset)
     i = 0
+    # index initialized with 999 because
+    # if something goes wrong in the loop the program stops after the execution of this function
+    index = 999
+
     while i < len(initial_list):
         if initial_list[i] == letter:
             index = i
-            # break
         i += 1
     else:
-        print("*** DEBUG *** while ended, index = ", index)
         index += offset
-        print("*** DEBUG *** index after offset = ", index)
         if (index < 0) or (index > len(initial_list)):
             index %= len(initial_list)
-
-        print("*** DEBUG *** final index = ", index)
-        return index
+        # check if sth went wrong before
+        if index > len(initial_list):
+            return "This should never happen"
+        else:
+            return index
 
 
 def plugboard(letter):
@@ -146,76 +179,53 @@ def plugboard(letter):
     :param letter: the given letter (char)
     :return: letter: either the plugged or the given letter (char)
     """
-    # for test purpose the plug combination for A - F is:
-    # A-C, B-F, C-A, D-, E-, F-B (D and E not plugged)
-    if letter in "DE":
+    # In this case the plugboard's setting is the one of the 31th of a month,
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    # the plug combination is:
+    # A-H, B-L, C-X, D-I, E-R, F-K, G-U, N-P, O-Q, T-Y
+    # (J, M, S, V, W and Z not plugged)
+    if letter in "JMSVWZ":
         return letter
     elif letter in "A":
-        return "C"
+        return "H"
     elif letter in "B":
-        return "F"
+        return "L"
     elif letter in "C":
-        return "A"
+        return "X"
+    elif letter in "D":
+        return "I"
+    elif letter in "E":
+        return "R"
     elif letter in "F":
+        return "K"
+    elif letter in "G":
+        return "U"
+    elif letter in "N":
+        return "P"
+    elif letter in "O":
+        return "Q"
+    elif letter in "T":
+        return "Y"
+    elif letter in "H":
+        return "A"
+    elif letter in "L":
         return "B"
-    else:
-        return "This should never happen"
-
-
-def shift_first_rotor_encryption(initial_list, index):
-    """
-    represents the letter shift of the first rotor and returns the corresponding letter
-    :param initial_list: list on which the function operates to
-    :param index: the index of the actual letter
-    :return letter: letter
-    """
-
-    if index == 0:
-        return initial_list[index + 4]
-    elif index == 1:
-        return initial_list[index + 2]
-    elif index == 2:
-        return initial_list[index + 3]
-    elif index == 3:
-        return initial_list[index - 2]
-    elif index == 4:
-        return initial_list[index - 2]
-    elif index == 5:
-        return initial_list[index - 5]
-    else:
-        return "This should never happen"
-
-
-def shift_second_rotor_encryption(initial_list, index):
-    if index == 0:
-        return initial_list[index + 3]
-    elif index == 1:
-        return initial_list[index + 1]
-    elif index == 2:
-        return initial_list[index - 1]
-    elif index == 3:
-        return initial_list[index + 1]
-    elif index == 4:
-        return initial_list[index + 1]
-    elif index == 5:
-        return initial_list[index - 5]
-    else:
-        return "This should never happen"
-
-
-def shift_third_rotor_encryption(initial_list, index):
-    if index == 0:
-        return initial_list[index + 4]
-    elif index == 1:
-        return initial_list[index - 1]
-    elif index == 2:
-        return initial_list[index + 1]
-    elif index == 3:
-        return initial_list[index + 2]
-    elif index == 4:
-        return initial_list[index - 3]
-    elif index == 5:
-        return initial_list[index - 3]
+    elif letter in "X":
+        return "C"
+    elif letter in "I":
+        return "D"
+    elif letter in "R":
+        return "E"
+    elif letter in "K":
+        return "F"
+    elif letter in "U":
+        return "G"
+    elif letter in "P":
+        return "N"
+    elif letter in "Q":
+        return "O"
+    elif letter in "Y":
+        return "T"
     else:
         return "This should never happen"
 
@@ -226,20 +236,387 @@ def permutation_reflector(letter):
     :param letter: char
     :return: letter: char
     """
-    # for test purpose the reflector combination for A - F is:
-    # A-D, B-E, C-F, D-A, E-B, F-C
+    # In this case the reflector's setting is the one of roller 'A',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    # the permutation is the following:
+    # A-E, B-J, C-M, D-Z, F-L, G-Y, H-X, I-V, K-W, N-R, O-Q, P-U, S-T (and in the other direction)
     if letter in "A":
-        return "D"
-    elif letter in "B":
         return "E"
+    elif letter in "B":
+        return "J"
     elif letter in "C":
-        return "F"
+        return "M"
     elif letter in "D":
-        return "A"
+        return "Z"
     elif letter in "E":
-        return "B"
+        return "A"
     elif letter in "F":
+        return "L"
+    elif letter in "G":
+        return "Y"
+    elif letter in "H":
+        return "X"
+    elif letter in "I":
+        return "V"
+    elif letter in "J":
+        return "B"
+    elif letter in "K":
+        return "W"
+    elif letter in "L":
+        return "F"
+    elif letter in "M":
         return "C"
+    elif letter in "N":
+        return "R"
+    elif letter in "O":
+        return "Q"
+    elif letter in "P":
+        return "U"
+    elif letter in "Q":
+        return "O"
+    elif letter in "R":
+        return "N"
+    elif letter in "S":
+        return "T"
+    elif letter in "T":
+        return "S"
+    elif letter in "U":
+        return "P"
+    elif letter in "V":
+        return "I"
+    elif letter in "W":
+        return "K"
+    elif letter in "X":
+        return "H"
+    elif letter in "Y":
+        return "G"
+    elif letter in "Z":
+        return "D"
+    else:
+        return "This should never happen"
+
+
+# * functions representing the rotors * #
+# encryption
+def shift_first_rotor_encryption(initial_list, index):
+    """
+    represents the letter shift of the first rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'I',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    if index == 0:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index in (1, 7, 13):
+        return initial_list[(index + 9) % len(initial_list)]
+    elif index in (2, 14):
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index in (3, 12):
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index in (4, 16):
+        return initial_list[(index + 7) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index + 1) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 8:
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index == 9:
+        return initial_list[(index + 16) % len(initial_list)]
+    elif index in (10, 17):
+        return initial_list[(index + 3) % len(initial_list)]
+    elif index == 11:
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index == 18:
+        return initial_list[index % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index - 20) % len(initial_list)]
+    elif index == 21:
+        return initial_list[(index - 13) % len(initial_list)]
+    elif index == 22:
+        return initial_list[(index - 21) % len(initial_list)]
+    elif index == 23:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 24:
+        return initial_list[(index - 22) % len(initial_list)]
+    elif index == 25:
+        return initial_list[(index - 16) % len(initial_list)]
+    else:
+        return "This should never happen"
+
+
+def shift_second_rotor_encryption(initial_list, index):
+    """
+    represents the letter shift of the second rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'II',
+    # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
+    if index in (0, 16):
+        return initial_list[index]
+    elif index == 1:
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index in (2, 10):
+        return initial_list[(index + 1) % len(initial_list)]
+    elif index in (3, 18):
+        return initial_list[(index + 7) % len(initial_list)]
+    elif index == 4:
+        return initial_list[(index + 14) % len(initial_list)]
+    elif index in (5, 21):
+        return initial_list[(index + 3) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index + 11) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index == 8:
+        return initial_list[(index - 8) % len(initial_list)] #PB ici I donne A alors que A donne déjà A et et I devrait donner X
+    elif index == 9:
+        return initial_list[(index + 1) % len(initial_list)]
+    elif index == 11:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index == 12:
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index == 13:
+        return initial_list[(index + 6) % len(initial_list)]
+    elif index in (14, 23):
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index - 13) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index - 11) % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index - 5) % len(initial_list)]
+    elif index == 22:
+        return initial_list[(index - 17) % len(initial_list)]
+    elif index == 24:
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 25:
+        return initial_list[(index - 21) % len(initial_list)]
+    else:
+        return "This should never happen"
+
+
+def shift_third_rotor_encryption(initial_list, index):
+    """
+    represents the letter shift of the third rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'III',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    if index == 0:
+        return initial_list[(index + 1) % len(initial_list)]
+    elif index == 1:
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index == 2:
+        return initial_list[(index + 3) % len(initial_list)]
+    elif index == 3:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index in (4, 17):
+        return initial_list[(index + 5) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index + 6) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index == 8:
+        return initial_list[(index + 9) % len(initial_list)]
+    elif index in (9, 11, 14):
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index in (10, 12):
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index == 13:
+        return initial_list[index % len(initial_list)]
+    elif index in (15, 25):
+        return initial_list[(index - 11) % len(initial_list)]
+    elif index in (16, 24):
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index == 18:
+        return initial_list[(index - 12) % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 19) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 21:
+        return initial_list[(index - 9) % len(initial_list)]
+    elif index == 22:
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index == 23:
+        return initial_list[(index - 5) % len(initial_list)]
+    else:
+        return "This should never happen"
+
+
+# decryption
+def shift_first_rotor_decryption(initial_list, index):
+    """
+    represents the letter shift of the first rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'I',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    if index == 0:
+        return initial_list[(index + 20) % len(initial_list)]
+    elif index == 1:
+        return initial_list[(index + 21) % len(initial_list)]
+    elif index == 2:
+        return initial_list[(index + 22) % len(initial_list)]
+    elif index == 3:
+        return initial_list[(index + 3) % len(initial_list)]
+    elif index == 4:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index in (5, 14):
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index == 8:
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index == 9:
+        return initial_list[(index + 16) % len(initial_list)]
+    elif index in (10, 16, 22):
+        return initial_list[(index - 9) % len(initial_list)]
+    elif index in (11, 23):
+        return initial_list[(index - 7) % len(initial_list)]
+    elif index in (12, 24):
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index in (13, 20):
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index + 6) % len(initial_list)]
+    elif index == 18:
+        return initial_list[index % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index == 21:
+        return initial_list[(index - 13) % len(initial_list)]
+    elif index == 25:
+        return initial_list[(index - 16) % len(initial_list)]
+    else:
+        return "This should never happen"
+
+
+def shift_second_rotor_decryption(initial_list, index):
+    """
+    represents the letter shift of the second rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'II',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    if index in (0, 16):
+        return initial_list[index % len(initial_list)]
+    elif index == 1:
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 2:
+        return initial_list[(index + 13) % len(initial_list)]
+    elif index in (3, 11):
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 4:
+        return initial_list[(index + 21) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index + 17) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index + 11) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index in (8, 24):
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 9:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index in (10, 25):
+        return initial_list[(index - 7) % len(initial_list)]
+    elif index in (12, 21):
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index == 13:
+        return initial_list[(index + 6) % len(initial_list)]
+    elif index == 14:
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index + 5) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index - 11) % len(initial_list)]
+    elif index == 18:
+        return initial_list[(index - 14) % len(initial_list)]
+    elif index == 19:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index - 13) % len(initial_list)]
+    elif index == 22:
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 23:
+        return initial_list[(index + 8) % len(initial_list)]
+    else:
+        return "This should never happen"
+
+
+def shift_third_rotor_decryption(initial_list, index):
+    """
+    represents the letter shift of the third rotor and returns the corresponding letter
+    :param initial_list: list on which the function operates
+    :param index: the index of the actual letter
+    :return letter: letter
+    """
+    # In this case the rotor's shift is the one of roller 'III',
+    # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
+    if index == 0:
+        return initial_list[(index + 19) % len(initial_list)]
+    elif index == 1:
+        return initial_list[(index - 1) % len(initial_list)]
+    elif index == 2:
+        return initial_list[(index + 4) % len(initial_list)]
+    elif index == 3:
+        return initial_list[(index - 2) % len(initial_list)]
+    elif index in (4, 14):
+        return initial_list[(index + 11) % len(initial_list)]
+    elif index == 5:
+        return initial_list[(index - 3) % len(initial_list)]
+    elif index == 6:
+        return initial_list[(index + 12) % len(initial_list)]
+    elif index == 7:
+        return initial_list[(index - 4) % len(initial_list)]
+    elif index in (8, 16):
+        return initial_list[(index + 8) % len(initial_list)]
+    elif index in (9, 22):
+        return initial_list[(index - 5) % len(initial_list)]
+    elif index == 10:
+        return initial_list[(index + 10) % len(initial_list)]
+    elif index == 11:
+        return initial_list[(index - 6) % len(initial_list)]
+    elif index == 12:
+        return initial_list[(index + 9) % len(initial_list)]
+    elif index == 13:
+        return initial_list[index % len(initial_list)]
+    elif index == 15:
+        return initial_list[(index - 8) % len(initial_list)]
+    elif index == 17:
+        return initial_list[(index - 9) % len(initial_list)]
+    elif index == 18:
+        return initial_list[(index + 5) % len(initial_list)]
+    elif index in (19, 21, 24):
+        return initial_list[(index - 10) % len(initial_list)]
+    elif index == 20:
+        return initial_list[(index + 2) % len(initial_list)]
+    elif index in (23, 25):
+        return initial_list[(index - 13) % len(initial_list)]
     else:
         return "This should never happen"
 
@@ -252,69 +629,62 @@ def encrypt_enigma(text, key):
     :param key: user's key (string composed of three letter)
     :return text: encrypted text
     """
-    # ##################### KEY ??? ###############
     initial_list = create_initial_list()
-    # print("*** DEBUG *** list=", initial_list)
     offset_first_rotor = 0
     offset_second_rotor = 0
     offset_third_rotor = 0
+
+    # set the rotors according to the key
+    offset_first_rotor = (-1) * search_index(initial_list, key[0], offset_first_rotor)
+    offset_second_rotor = (-1) * search_index(initial_list, key[1], offset_second_rotor)
+    offset_third_rotor = (-1) * search_index(initial_list, key[2], offset_third_rotor)
     encrypted_text = ""
     index_of_letter = 0
 
     for letter in text:
         # ** forward path **
-        print("*** DEBUG *** encryption started: actual letter =", letter)
         # plugboard
         letter = plugboard(letter)
-        print("*** DEBUG *** after plugboard: actual letter =", letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_first_rotor)
         # first rotor
-        letter = shift_first_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after first rotor: actual letter =", letter)
+        letter = shift_first_rotor_encryption(initial_list, index_of_letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_second_rotor)
         # second rotor
-        letter = shift_second_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after second rotor: actual letter =", letter)
+        letter = shift_second_rotor_encryption(initial_list, index_of_letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_third_rotor)
         # third rotor
-        letter = shift_third_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after third rotor: actual letter =", letter)
+        letter = shift_third_rotor_encryption(initial_list, index_of_letter)
 
         # permutation reflector
         letter = permutation_reflector(letter)
-        print("*** DEBUG *** after reflector: actual letter =", letter)
 
         # ** return path **
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_third_rotor)
         # third rotor
-        letter = shift_third_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after third rotor: actual letter =", letter)
+        letter = shift_third_rotor_encryption(initial_list, index_of_letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_second_rotor)
         # second rotor
-        letter = shift_second_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after second rotor: actual letter =", letter)
+        letter = shift_second_rotor_encryption(initial_list, index_of_letter)
 
         # determine index
         index_of_letter = search_index(initial_list, letter, offset_first_rotor)
         # first rotor
-        letter = shift_first_rotor(initial_list, index_of_letter)
-        print("*** DEBUG *** after first rotor: actual letter =", letter)
+        letter = shift_first_rotor_encryption(initial_list, index_of_letter)
 
         # plugboard
         letter = plugboard(letter)
-        print("*** DEBUG *** after plugboard: actual letter =", letter)
 
+        # add encrypted letter to the encrypted text
         encrypted_text = encrypted_text + letter
-        print("***************************** DEBUG *** after all: actual text =", encrypted_text)
 
         # change offset variables
         offset_first_rotor -= 1
@@ -332,70 +702,98 @@ def encrypt_enigma(text, key):
                 pass
         else:
             pass
+
+    print("***** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text
 
-    # *** DECRYPTION *** #
-    def decrypt_enigma(text, key):
-        return 0
 
- def shift_first_rotor_decryption(initial_list, index):
+# *** DECRYPTION *** #
+def decrypt_enigma(text, key):
     """
-    represents the letter shift of the first rotor and returns the corresponding letter
-    :param initial_list: list on which the function operates to
-    :param index: the index of the actual letter
-    :return letter: letter
+    decrypts and returns the given text by using the principle of the Enigma machine
+    :param text: user's text (string)
+    :param key: user's key (string composed of three letter)
+    :return text: decrypted text
     """
+    initial_list = create_initial_list()
+    offset_first_rotor = 0
+    offset_second_rotor = 0
+    offset_third_rotor = 0
 
-    if index == 0:
-        return initial_list[index - 4]
-    elif index == 1:
-        return initial_list[index - 2]
-    elif index == 2:
-        return initial_list[index - 3]
-    elif index == 3:
-        return initial_list[index + 2]
-    elif index == 4:
-        return initial_list[index + 2]
-    elif index == 5:
-        return initial_list[index + 5]
-    else:
-        return "This should never happen"
+    # set the rotors according to the key
+    offset_first_rotor = (-1) * search_index(initial_list, key[0], offset_first_rotor)
+    offset_second_rotor = (-1) * search_index(initial_list, key[1], offset_second_rotor)
+    offset_third_rotor = (-1) * search_index(initial_list, key[2], offset_third_rotor)
+    decrypted_text = ""
+    index_of_letter = 0
 
-def shift_second_rotor_decryption(initial_list, index):
-    if index == 0:
-        return initial_list[index - 3]
-    elif index == 1:
-        return initial_list[index - 1]
-    elif index == 2:
-        return initial_list[index + 1]
-    elif index == 3:
-        return initial_list[index - 1]
-    elif index == 4:
-        return initial_list[index - 1]
-    elif index == 5:
-        return initial_list[index + 5]
-    else:
-        return "This should never happen"
+    for letter in text:
+        # ** forward path **
+        # plugboard
+        letter = plugboard(letter)
 
-def shift_third_rotor_decryption(initial_list, index):
-    if index == 0:
-        return initial_list[index - 4]
-    elif index == 1:
-        return initial_list[index + 1]
-    elif index == 2:
-        return initial_list[index - 1]
-    elif index == 3:
-        return initial_list[index - 2]
-    elif index == 4:
-        return initial_list[index + 3]
-    elif index == 5:
-        return initial_list[index + 3]
-    else:
-        return "This should never happen"
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_first_rotor)
+        # first rotor
+        letter = shift_first_rotor_decryption(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_second_rotor)
+        # second rotor
+        letter = shift_second_rotor_decryption(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_third_rotor)
+        # third rotor
+        letter = shift_third_rotor_decryption(initial_list, index_of_letter)
+
+        # permutation reflector
+        letter = permutation_reflector(letter)
+
+        # ** return path **
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_third_rotor)
+        # third rotor
+        letter = shift_third_rotor_decryption(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_second_rotor)
+        # second rotor
+        letter = shift_second_rotor_decryption(initial_list, index_of_letter)
+
+        # determine index
+        index_of_letter = search_index(initial_list, letter, offset_first_rotor)
+        # first rotor
+        letter = shift_first_rotor_decryption(initial_list, index_of_letter)
+
+        # plugboard
+        letter = plugboard(letter)
+
+        # add encrypted letter to the encrypted text
+        decrypted_text = decrypted_text + letter
+
+        # change offset variables
+        offset_first_rotor -= 1
+        if offset_first_rotor == ((-1) * len(initial_list)):
+            offset_first_rotor = 0
+            offset_second_rotor -= 1
+            if offset_second_rotor == ((-1) * len(initial_list)):
+                offset_second_rotor = 0
+                offset_third_rotor -= 1
+                if offset_third_rotor == ((-1) * len(initial_list)):
+                    offset_third_rotor = 0
+                else:
+                    pass
+            else:
+                pass
+        else:
+            pass
+    print("***** DEBUG *** after all: actual text =", decrypted_text)
+    return decrypted_text
 
 
-# ********** end ENIGMA ********** #
+# ********************************* end ENIGMA ********************************* #
 
 
-encrypt_enigma("ADECADECADEC", "")
-encrypt_enigma("FBDBBDACDECE", "")
+encrypt_enigma("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ", "AAA")
+decrypt_enigma("LFVYHDQJMUIGMZICGKGAYAJTUVUGCSUDHVGBCBTORZIJXZIHYMTW", "AAA")
