@@ -32,11 +32,11 @@ yes, I am lazy, but I'm a programmer.
 # screen_module: Rika
 
 # TODO:
-# envoyer mail
+# envoyer mail FAIT
 # guide d'utilisation (ensemble)
 # guide de maintenantance -> fonctions en détail (ensemble)
 # actualiser documentation (Rika)
-# modifier SCREEN_MODULE (Fathima)
+# modifier SCREEN_MODULE (Fathima)  FAIT
 # run()!!! (ensemble)
 # commentaires!! (chacune pour son propre code)
 # rapport sur les écarts entre objectif et réalisation et les raisons (ensemble)
