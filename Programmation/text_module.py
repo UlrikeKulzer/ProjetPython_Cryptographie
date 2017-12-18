@@ -58,8 +58,7 @@ def create_vigenere_table():
     :return:
     """
     # TODO voluntarily: change to range
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-                'V', 'W', 'X', 'Y', 'Z']
+    alphabet = [chr(x) for x in range(65, 91)]
     table = []
     for k in range(26):
         table += [alphabet[k:] + alphabet[:k]]
@@ -97,8 +96,7 @@ def encrypt_vigenere(text, key):
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
     # TODO voluntarily: change to range
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-                'V', 'W', 'X', 'Y', 'Z']
+    alphabet = [chr(x) for x in range(65, 91)]
     for i in range(len(text)):
         text_letter = repeated_key_table[i][0]
         key_letter = repeated_key_table[i][1]
@@ -119,8 +117,7 @@ def decrypt_vigenere(text, key):
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
     # TODO voluntarily: change to range
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-                'V', 'W', 'X', 'Y', 'Z']
+    alphabet = [chr(x) for x in range(65, 91)]
     for i in range(len(text)):
         letter_text = repeated_key_table[i][0]
         letter_key = repeated_key_table[i][1]
