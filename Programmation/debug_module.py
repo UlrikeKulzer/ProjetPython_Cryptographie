@@ -40,3 +40,6 @@ yes, I am lazy, but I'm a programmer.
 # run()!!! (ensemble)
 # commentaires!! (chacune pour son propre code)
 # rapport sur les écarts entre objectif et réalisation et les raisons (ensemble)
+
+
+
