@@ -6,10 +6,7 @@ This module is responsible for the program flow.
 
 
 import screen_module
-import screen_constants
-
-
-# import text_module
+import text_module
 
 
 def normalise_letter(x):
@@ -71,11 +68,22 @@ def run():
     :return: None
     """
     english = True
-    if input(screen_constants.LANGUAGE_SETTINGS) == 'f':
-        english = False
+    encryption = True
 
-    screen_module.show_quit_message(english)
-    # TODO: discuss execution oder
+    if screen_module.show_start_ask_language() == 'f':
+        english = False
+    if screen_module.show_main_menu(english) == 'd':
+        encryption = False
+    elif screen_module.show_main_menu(english) == 's':
+        if screen_module.show_language_settings() == 'f':
+            english = False
+    elif screen_module.show_main_menu() == 'q':
+        screen_module.show_quit_message()
+    else:
+        key = screen_module.show_ask_key(english, (screen_module.show_principles(english, encryption)))
+
+
+
 
 
 run()
