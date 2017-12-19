@@ -27,19 +27,19 @@ yes, I am lazy, but I'm a programmer.
 # print("***** DEBUG *** after all: actual text =", decrypted_text)
 
 # TODO Tests:
-# Enigma: Fathima + Léa
-# Vigenère + Cesar: Rika
-# screen_module: Rika
+#       # Enigma: Fathima + Léa
+#       # Vigenère + Cesar: Rika
+#       # screen_module: Rika
 
 # TODO:
-# envoyer mail FAIT
-# guide d'utilisation (ensemble)
-# guide de maintenantance -> fonctions en détail (ensemble)
-# actualiser documentation (Rika)
-# modifier SCREEN_MODULE (Fathima)  FAIT
-# run()!!! (ensemble)
-# commentaires!! (chacune pour son propre code)
-# rapport sur les écarts entre objectif et réalisation et les raisons (ensemble)
+#       # envoyer mail
+#       # guide d'utilisation (ensemble)
+#       # guide de maintenantance -> fonctions en détail (ensemble)
+#       # actualiser documentation (Rika)
+# FAIT  # modifier SCREEN_MODULE (Fathima)
+#       # run()!!! (ensemble)
+#       # commentaires!! (chacune pour son propre code)
+#       # rapport sur les écarts entre objectif et réalisation et les raisons (ensemble)
 
 
 
