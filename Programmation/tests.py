@@ -26,7 +26,7 @@ def test_caesar_encryption():
 
 
 # TODO test decryptage
-def test_caesar_encryption():
+def test_caesar_decryption():
     print("")
 
 
@@ -39,7 +39,7 @@ def test_create_table_of_vigenere():
     print(text_module.create_vigenere_table())
 
 
-def test_vigenere_encryptation():
+def test_vigenere_encryption():
     # TODO add description
     """
 
@@ -53,7 +53,7 @@ def test_vigenere_encryptation():
 
 
 # TODO test decryptage
-def test_vigenere_decryptation():
+def test_vigenere_decryption():
     print("")
 
 
@@ -94,4 +94,4 @@ def run_all_tests():
     test_format_and_normalise()
     test_create_table_of_vigenere()
     print(text_module.create_initial_list())
-    test_encrypt_enigma()
+    test_enigma()

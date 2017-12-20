@@ -191,13 +191,16 @@ Avant que le programme est fermé, il affichera un petit message de remerciement
 \begin{itemize}
 \item \textit{Avant de commencer le (de)cryptage :}\\
 On va créer une méthode qui formatera le texte (enlever les accents, les caractères spéciaux, les signes de ponctuation et les espaces, puis mettre tout en majuscule).\\
+% César
 \item \textit{(Dé)Cryptage César :}\\
 On compte transformer les lettres du texte en nombres par le système unicode, ensuite on additionne la clé (nombre) aux nombres obtenus par le système.On reconvertit alors les lettres en caractères et retourne le texte.
 Pour le décryptage, il suffit de soustraire au lieu d'additionner.\\
+% Vigenère
 \item \textit{(Dé)Cryptage Vigenère :}\\
 Dans un premier temps on crée une matrice de 26 x 26 lettres contenant l’alphabet représentant le tableau de Vigenère et une matrice à deux lignes pour le texte et la clé. Dans un deuxième temps on prend le texte et on insère tour à tour les caractères individuels dans la première ligne de la matrice et la clé dans la deuxième. Chaque lettre du texte doit être attribuée à un caractère de la clé (mot) ce qui est permis en répétant le mot tant qu’ils restent des lettres du texte.
 Le cryptage est fait caractère par un caractère. Pour trouver la lettre cryptée on regarde en premier la lettre du texte et on cherche la colonne de la matrice qui appartient à la lettre et on la mémorise. Par la suite on considère le caractère de la clé auquel la lettre du texte est attribuée et on cherche la ligne de la matrice qui appartient au caractère. Dès qu’on a trouvé les deux, la lettre de la matrice qui est enregistré sur cette case est la lettre cryptée laquelle est mémorisée dans une chaîne de caractère. Lorsqu’on a crypté toutes les lettres du texte, on retourne la chaîne de caractère qui est le texte crypté.
 Pour le décryptage, on possède la matrice à deux lignes avec le texte crypté sur une ligne et la clé répétée sur l’autre. Pour chaque lettre du texte crypté, on parcourt dans le tableau de Vigenère (matrice) la ligne correspondant à la lettre de la clé répétée et lorsqu’on  trouve la lettre cryptée cherchée on remonte la ligne pour obtenir le caractère décrypté correspondant à cette lettre. De la même manière que pour le cryptage on mémorise les lettres obtenues dans une chaîne de caractère ce qui permet d’avoir au final le message décrypté.\\
+% Enigma
 \item \textit{(Dé)Cryptage Enigma :}\\
 Pour commencer nous créons cinq listes : La première correspond au tableau de permutation, les trois suivantes aux rotors au milieu et la dernière au réflecteur. Au début de la programmation on choisit un décalage fixe ; si possible on essayera plus tard de changer le décalage automatiquement.
 Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
@@ -205,87 +208,142 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 \end{itemize}
 
 \newpage
-%Klassendiagramm
+
 \subsubsection{Structure du programme}
-%-----------------------------CHANGER!!
-\subsubsection{Diagramme de classes}
+% diagrammme
 \begin{figure}[tpbh]
 	\centering
-  \includegraphics[width=\textwidth, trim=25mm 53mm 35mm 35mm, clip]{./Diagrammes/diagrammeDeClasses.pdf}
+  \includegraphics[width=\textwidth, trim=0mm 20mm 0mm 0mm, clip]{./Diagrammes/diagrammeDeStructure.pdf}
   %TRIM = LINKS UNTEN RECHTS OBEN
-  \captionof{figure}{Diagramme de classes}
-	\label{img:class}
+  \captionof{figure}{Structure du programme en modules}
+	\label{img:structure}
 \end{figure}
+\vspace{0.7cm}
 
-\subsubsection{Explication du diagramme}
+{\Large \textbf{Explications :}}
 \vspace{0.3cm}
 \begin{itemize}
-\item \textit{Le module \textbf{Main}}\vspace{0.3cm}
+% main_module
+\item \textit{\textbf{main\_module:}}\vspace{0.2cm}
 \begin{itemize}
-\item \textbf{module}:
+\item \textbf{normalise\_letter(x)}:\\
+normalise une lettre si elle est par exemple un caractère spécial\\
+\item \textbf{format\_text(text)}:\\
+formate le texte, c'est-à-dire le texte donné est mis en majuscules, les virgules, espaces, chiffres, symboles, etc. sont enlevés et les caractères spéciaux sont normalisés\\
+\item \textbf{run()}:\\
 démarre le programme et contrôle son déroulement\\
-\end{itemize}\vspace{0.4cm}
-\item \textit{La classe \textbf{Text}}
-\vspace{0.3cm}
-\begin{itemize}
-\item \textbf{format(text: Text)}:
-formate le texte pour avoir un texte en majuscule sans virgules, espaces, chiffres, symboles, ...\\
-\item \textbf{encrypt(text: Text)}:
-appelle l'un des trois principes choisi par l'utilisateur pour crypter le texte\\
-\item \textbf{decrypt(text: Text)}:
-appelle l'un des trois principes choisi par l'utilisateur pour décrypter le texte\\
-\item \textbf{encrypt\_caesar(text: Text, key: int)}:
-crypte le texte formaté par la méthode César\\
-\item \textbf{decrypt\_caesar(text: Text, key: int)}:
-décrypte le texte formaté par la méthode César\\
-\item \textbf{encrypt\_vigenere(text: Text, key: string)}:
-crypte le texte formaté par la méthode Vigenère\\
-\item \textbf{decrypt\_vigenere(text: Text, key: string)}:
-décrypte le texte formaté par la méthode Vigenère\\
-\item \textbf{encrypt\_enigma(text: Text, key: string)}:
-crypte le texte formaté par la méthode Enigma\\
-\item \textbf{decrypt\_enigma(text: Text, key: string)}:
-décrypte le texte formaté par la méthode Enigma\\
-\vspace{0.5cm}
-\item \textit{méthodes utilisées pour le (dé)cryptage par <<Enigma>>:}
-\vspace{0.3cm}
-\begin{itemize}
-\item \textbf{search\_index(letter: char, alphabeth: list)}:
-cherche l'indice d'une lettre donnée dans une liste donnée\\
-\item \textbf{plugboard(letter: char)}:
-modélise le tableau de permutation, 10 lettres sont associées à dix autres lettres. Si la lettre donnée est associée à une autre lettre celle-ci va être retournée. Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-\item \textbf{shift\_first\_rotor(letter: char)}:
-modélise le premier rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_second\_rotor(letter: char)}:
-modélise le deuxième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_third\_rotor(letter: char)}:
-modélise le troisième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{permutation\_reflector(letter: char)}:
-modélise le réflecteur ; même principe que plugboard(letter), mais cette fois-ci toutes les lettres sont associées à une autre lettre\\
- \end{itemize}
- \end{itemize}
-\vspace{0.4cm}
+\end{itemize}\vspace{0.3cm}
 
-\item \textit{La classe \textbf{Screen}}\vspace{0.3cm}
+% screen_constants
+\item \textit{\textbf{screen\_constants:}}\vspace{0.2cm}
 \begin{itemize}
-\item \textbf{show\_start\_ask\_language()}:
+\item \textbf{START\_ASK\_LANGUAGE}:\\
+dialogue de démarrage (voir fig. \ref{SP})\\
+\item \textbf{LANGUAGE\_SETTINGS}:\\
+dialogue des paramètres de langue (voir fig. \ref{ESD} et \ref{FSD})\\
+\item \textbf{ENGLISH\_MAIN\_MENU} et \textbf{FRENCH\_MAIN\_MENU}:\\
+menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
+\item \textbf{ENGLISH\_PRINCIPLES\_ENCRYPTING} et\\
+\textbf{FRENCH\_PRINCIPLES\_ENCRYPTING}:\\
+dialogue de sélection du principe de cryptage (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
+\item \textbf{ENGLISH\_PRINCIPLES\_DECRYPTING} et\\
+\textbf{FRENCH\_PRINCIPLES\_DECRYPTING}:\\
+dialogue de sélection du principe de décryptage (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
+\item \textbf{ENGLISH\_ASK\_KEY\_CAESAR} et \textbf{FRENCH\_ASK\_KEY\_CAESAR}:\\
+dialogue de demande de la clé pour (dé)crypter par César (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+\item \textbf{ENGLISH\_ASK\_KEY\_VIGENERE} et \textbf{FRENCH\_ASK\_KEY\_VIGENERE}:\\
+dialogue de demande de la clé pour (dé)crypter par Vigenère (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+\item \textbf{ENGLISH\_ASK\_KEY\_ENIGMA} et \textbf{FRENCH\_ASK\_KEY\_ENIGMA}:\\
+dialogue de demande de la clé pour (dé)crypter par Enigma (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+\item \textbf{ENGLISH\_ASK\_TEXT} et \textbf{FRENCH\_ASK\_TEXT}:\\
+dialogue de demande du text à (dé)crypter (voir fig. \ref{EIT} et \ref{FIT})\\
+\item \textbf{ENGLISH\_ENCRYPTED\_TEXT} et \textbf{FRENCH\_ENCRYPTED\_TEXT}:\\
+dialogue du texte crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
+\item \textbf{ENGLISH\_DECRYPTED\_TEXT} et \textbf{FRENCH\_DECRYPTED\_TEXT}:\\
+dialogue du texte décrypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
+\item \textbf{ENGLISH\_HELP\_PRINCIPLES} et \textbf{FRENCH\_HELP\_PRINCIPLES}:\\
+dialogue d'aide (voir fig. \ref{FHM})\\
+\item \textbf{ENGLISH\_QUIT\_MESSAGE} et \textbf{FRENCH\_QUIT\_MESSAGE}:\\
+message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
+\end{itemize}\vspace{0.3cm}
+
+% screen_module
+\item \textit{\textbf{screen\_module:}}\vspace{0.2cm}
+\begin{itemize}
+\item \textbf{show\_start\_ask\_language()}:\\
 affiche le dialogue de démarrage (voir fig. \ref{SP})\\
-\item \textbf{show\_main\_menu()}:
-affiche le menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
-\item \textbf{show\_principles()}:
-affiche le dialogue de sélection du principe (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
-\item \textbf{show\_ask\_key()}:
-affiche le dialogue de demande de la clé pour (dé)crypter ce qui dépend de la choix du principe (César, Vigenère ou Enigma ; voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
-\item \textbf{show\_ask\_text()}:
-affiche le dialogue de demande du text à (dé)crypter\\(voir fig. \ref{EIT} et \ref{FIT})\\
-\item \textbf{show\_treated\_text()}:
-affiche le texte (dé)crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
-\item \textbf{show\_language\_settings()}:
+\item \textbf{show\_language\_settings()}:\\
 affiche les paramètres (voir fig. \ref{ESD} et \ref{FSD})\\
-\item \textbf{show\_help\_principles()}:
+\item \textbf{show\_main\_menu(english)}:\\
+affiche le menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
+\item \textbf{show\_principles(english, encrypting)}:\\
+affiche le dialogue de sélection du principe (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
+\item \textbf{show\_ask\_key(english, principle)}:\\
+affiche le dialogue de demande de la clé pour (dé)crypter ce qui dépend de la choix du principe (César, Vigenère ou Enigma ; voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+\item \textbf{show\_ask\_text(english)}:\\
+affiche le dialogue de demande du text à (dé)crypter\\(voir fig. \ref{EIT} et \ref{FIT})\\
+\item \textbf{show\_treated\_text(english, encrypting)}:\\
+affiche le texte (dé)crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
+\item \textbf{show\_help\_principles(english)}:\\
 affiche le dialogue de démarrage (voir fig. \ref{FHM})\\
-\item \textbf{show\_quit\_message()}:
+\item \textbf{show\_quit\_message(english)}:\\
 affiche le message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
+\end{itemize}\vspace{0.3cm}
+
+% text_module
+\item \textit{\textbf{text\_module:}}\vspace{0.2cm}
+\begin{itemize}
+\item \textbf{encrypt\_caesar(text, key)}:\\
+crypte le texte formaté par la méthode César\\
+\item \textbf{decrypt\_caesar(text, key)}:\\
+décrypte le texte formaté par la méthode César\\
+\item \textbf{create\_vigenere\_table()}:\\
+TODO\\
+\item \textbf{create\_table\_text\_key(text, key)}:\\
+TODO\\
+\item \textbf{encrypt\_vigenere(text, key)}:\\
+crypte le texte formaté par la méthode Vigenère\\
+\item \textbf{decrypt\_vigenere(text, key)}:\\
+décrypte le texte formaté par la méthode Vigenère\\
+\item \textbf{create\_initial\_list()}:\\
+TODO\\
+\item \textbf{search\_index(initial\_list, letter)}:\\
+cherche l'indice d'une lettre donnée dans une liste donnée\\
+\item \textbf{plugboard(letter)}:\\
+modélise le tableau de permutation, 10 lettres sont associées à dix autres lettres. Si la lettre donnée est associée à une autre lettre celle-ci va être retournée. Il y a six lettres qui ne sont associées à aucune autre lettre.\\
+\item \textbf{permutation\_reflector(letter: char)}:\\
+modélise le réflecteur ; même principe que plugboard(letter), mais cette fois-ci toutes les lettres sont associées à une autre lettre\\
+\item \textbf{shift\_first\_rotor(letter: char)}:\\
+modélise le premier rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
+\item \textbf{shift\_second\_rotor(letter: char)}:\\
+modélise le deuxième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
+\item \textbf{shift\_third\_rotor(letter: char)}:\\
+modélise le troisième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
+\item \textbf{enigma(text, key)}:\\
+(dé)crypte le texte formaté par la méthode Enigma\\
+\end{itemize}\vspace{0.3cm}
+
+% tests
+\item \textit{\textbf{tests:}}\vspace{0.2cm}
+\begin{itemize}
+\item \textbf{test\_caesar\_encryption()}:\\
+TODO\\
+\item \textbf{test\_caesar\_decryption()}:\\
+TODO\\
+\item \textbf{test\_create\_table\_of\_vigenere()}:\\
+TODO\\
+\item \textbf{test\_vigenere\_encryption()}:\\
+TODO\\
+\item \textbf{test\_vigenere\_decryption()}:\\
+TODO\\
+\item \textbf{test\_enigma()}:\\
+TODO\\
+\item \textbf{test\_format\_and\_normalise()}:\\
+TODO\\
+\item \textbf{test\_run()}:\\
+TODO\\
+\item \textbf{run\_all\_tests()}:\\
+TODO\\
 \end{itemize}
 \end{itemize}
 
@@ -401,18 +459,24 @@ affiche le message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
 \label{FHM}
 }
 
-
-%\begin{tabular}{ll} %l/c/r
- %  \textbf{Lehrstuhl} & Professor \\ 
-  % \textbf{Lehrstuhl} & Maier \\ 
-   %\textbf{Lehrstuhl} & M"uller \\ 
-   %\textbf{Lehrstuhl} & Schmidt \\ 
-% \end{tabular}
+\section{Code du programme}
+\subsection{main\_module}
 
 
+\subsection{screen\_constants}
 
 
-%(meist im CIE"=Normvalenzsystem)
+\subsection{screen\_module}
+
+
+\subsection{text\_module}
+
+
+\subsection{tests}
+
+
+
+
 
 %\begin{floatingfigure}[l]{5.3cm}
 %	\includegraphics[width=0.25\textwidth]{./Bilder/2venn.png}
