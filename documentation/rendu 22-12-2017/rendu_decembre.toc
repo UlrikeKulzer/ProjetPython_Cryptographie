@@ -19,8 +19,12 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Diff\IeC {\'e}rents \IeC {\'e}tats du programme}{5}{subsubsection.2.1.2}
 \contentsline {subsubsection}{\numberline {2.1.3}En d\IeC {\'e}tail et coup\IeC {\'e} en modules}{6}{subsubsection.2.1.3}
 \contentsline {subsubsection}{\numberline {2.1.4}Structure du programme}{7}{subsubsection.2.1.4}
-\contentsline {subsubsection}{\numberline {2.1.5}Diagramme de classes}{7}{subsubsection.2.1.5}
-\contentsline {subsubsection}{\numberline {2.1.6}Explication du diagramme}{7}{subsubsection.2.1.6}
-\contentsline {section}{\numberline {3}Interfaces utilisateurs}{10}{section.3}
-\contentsline {subsection}{\numberline {3.1}En anglais}{10}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}En fran\IeC {\c c}ais}{12}{subsection.3.2}
+\contentsline {section}{\numberline {3}Interfaces utilisateurs}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}En anglais}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}En fran\IeC {\c c}ais}{14}{subsection.3.2}
+\contentsline {section}{\numberline {4}Code du programme}{16}{section.4}
+\contentsline {subsection}{\numberline {4.1}main\_module}{16}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}screen\_constants}{16}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}screen\_module}{16}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}text\_module}{16}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}tests}{16}{subsection.4.5}
