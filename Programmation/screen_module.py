@@ -84,6 +84,7 @@ def show_ask_key(english, principle):
     key = char
     ' m ' to go back to the main menu
     ' r ' to go back to the previous menu
+    :param principle:
     :param english: boolean
      True if chosen language is english
      False if chosen language is french
