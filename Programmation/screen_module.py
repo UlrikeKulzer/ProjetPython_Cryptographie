@@ -42,7 +42,7 @@ def show_main_menu(english):
     if english:
         return input(screen_constants.ENGLISH_MAIN_MENU)
     #language chosen is french
-    elif english == False:
+    elif english== False :
         return input(screen_constants.FRENCH_MAIN_MENU)
     else:
         return "this should never happen"
@@ -190,4 +190,4 @@ def show_quit_message(english):
     elif english == False:
         print(screen_constants.FRENCH_QUIT_MESSAGE)
     else:
-        return "this should never happen"
+        return "this should never happen"<

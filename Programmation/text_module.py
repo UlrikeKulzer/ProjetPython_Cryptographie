@@ -73,7 +73,7 @@ def create_table_text_key(text, key):
     while len(repeated_key) < len(text):
         repeated_key += key
     list_key = []
-    # in a table of two lines, we add in the first line 
+    # in a table of two lines, we add in the first line
     for i in range(len(text)):
         list_temp = [text[i], repeated_key[i]]
         list_key.append(list_temp)
