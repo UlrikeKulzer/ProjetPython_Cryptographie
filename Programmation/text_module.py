@@ -302,7 +302,7 @@ def shift_first_rotor(return_path, index, offset):
     shift_list = [(ord(rotor1[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
     if return_path == False:
-        letter = alphabet[(index + (shift_list[index]) + offset) % len(alphabet)]
+        letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
 
         if letter.isalpha():
             return letter
@@ -310,8 +310,9 @@ def shift_first_rotor(return_path, index, offset):
             print("This should never happen")
             return -1
     elif return_path:
-        for x in range(len(rotor1)):
-            if rotor1[x] == letter:
+        for x in range(len(alphabet)):
+            if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
+                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -334,15 +335,16 @@ def shift_second_rotor(return_path, index, offset):
     shift_list = [(ord(rotor2[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
     if return_path == False:
-        letter = alphabet[(index + (shift_list[index]) + offset) % len(alphabet)]
+        letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
         else:
             print("This should never happen")
             return -1
     elif return_path:
-        for x in range(len(rotor2)):
-            if rotor2[x] == letter:
+        for x in range(len(alphabet)):
+            if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
+                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -365,15 +367,16 @@ def shift_third_rotor(return_path, index, offset):
     shift_list = [(ord(rotor3[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
     if return_path == False:
-        letter = alphabet[(index + (shift_list[index]) + offset) % len(alphabet)]
+        letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
         else:
             print("This should never happen")
             return -1
     elif return_path:
-        for x in range(len(rotor3)):
-            if rotor3[x] == letter:
+        for x in range(len(alphabet)):
+            if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
+                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -468,6 +471,8 @@ def enigma(text, key):
     print("***** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text  # ********************************* end ENIGMA ********************************* #
 
-enigma("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ", "AAA")
-enigma("LOSYSYVUUTCHREDISYODJVNKRECSYMMTEVHLGAIUXJFYHLQCBWCS", "AAA")
 
+clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
+chiffre = enigma(clair, "AAA")
+dechiffre =enigma(chiffre, "AAA")
+print(clair, chiffre, dechiffre,sep='\n')

@@ -169,10 +169,10 @@ def show_help_principles(english):
     """
     # language chosen is english
     if english:
-        print(screen_constants.ENGLISH_HELP_PRINCIPLES)
+        input(screen_constants.ENGLISH_HELP_PRINCIPLES)
     # language chosen is french
     elif english == False:
-        print(screen_constants.FRENCH_HELP_PRINCIPLES)
+        input(screen_constants.FRENCH_HELP_PRINCIPLES)
     else:
         return "this should never happen"
 
