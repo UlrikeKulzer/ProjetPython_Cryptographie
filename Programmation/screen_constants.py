@@ -85,7 +85,7 @@ It is a type of substitution cipher in which each letter in the plaintext
 is replaced by a letter some fixed number of positions down the alphabet.
 
 - Vigenère's cypher:
-This principle was invented in the 16th century by Blaise de Vigenère et is based on the use of Vigenère's table
+This principle was invented in the 16th century by Blaise de Vigenère et is based on the use of Vigenere's table
 (table which is filled twice by the alphabet). A key (a word) is repeated and put under the message and this way
 you can find the corresponding letters in the table.
 
