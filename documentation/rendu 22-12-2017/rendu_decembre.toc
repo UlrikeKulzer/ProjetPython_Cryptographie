@@ -10,9 +10,9 @@
 \contentsline {paragraph}{}{3}{paragraph*.5}
 \contentsline {paragraph}{}{3}{paragraph*.6}
 \contentsline {subsection}{\numberline {1.2}Fonctionnement du programme}{4}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {1.2.1}Cas de C\IeC {\'e}sar}{4}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Cas de Vigen\IeC {\`e}re}{4}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}Cas d\IeC {\textquoteright }enigma}{4}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.1}Accueil et choix de la langue}{4}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Crypter/D\IeC {\'e}crypter}{4}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Choix du principe}{4}{subsubsection.1.2.3}
 \contentsline {section}{\numberline {2}Guide de maintenance}{5}{section.2}
 \contentsline {subsection}{\numberline {2.1}Fonctionnalit\IeC {\'e}}{5}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}En g\IeC {\'e}n\IeC {\'e}ral}{5}{subsubsection.2.1.1}

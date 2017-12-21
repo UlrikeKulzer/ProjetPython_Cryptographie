@@ -39,8 +39,8 @@ Enter 'c' for Caesar's cypher,
 enter 'v' for Vigenere's cypher
 
 or enter 'e' for the decryption by the Enigma machine.
-E
-nter 'm' to go back to the main menu    :   """
+
+Enter 'm' to go back to the main menu    :   """
 
 ENGLISH_ASK_KEY_CAESAR = """        You chose <<Caesar>>:
 

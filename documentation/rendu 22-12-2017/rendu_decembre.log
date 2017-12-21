@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  20 DEC 2017 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  21 DEC 2017 17:05
 entering extended mode
 **./rendu_decembre.tex
 (rendu_decembre.tex
@@ -1400,8 +1400,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--136
 
  []
 
-[3 <./Pictures/enigma.jpg>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+[3 <./Pictures/enigma.jpg>]
+<./Pictures/interface/01_startScreen.png, id=158, 296.60812pt x 39.14626pt>
+File: ./Pictures/interface/01_startScreen.png Graphic file (type png)
+
+<use ./Pictures/interface/01_startScreen.png>
+Package pdftex.def Info: ./Pictures/interface/01_startScreen.png used on input 
+line 146.
+(pdftex.def)             Requested size: 296.60739pt x 39.14615pt.
+
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 146--147
+[][] 
+ []
+
+[4 <./Pictures/interface/01_startScreen.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 190--193
 
  []
 
@@ -1409,30 +1422,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
 pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDesEtats.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<./Diagrammes/diagrammeDesEtats.pdf, id=162, 844.65562pt x 596.98032pt>
+<./Diagrammes/diagrammeDesEtats.pdf, id=165, 844.65562pt x 596.98032pt>
 File: ./Diagrammes/diagrammeDesEtats.pdf Graphic file (type pdf)
 
 <use ./Diagrammes/diagrammeDesEtats.pdf>
 Package pdftex.def Info: ./Diagrammes/diagrammeDesEtats.pdf used on input line 
-182.
+196.
 (pdftex.def)             Requested size: 483.69684pt x 329.97363pt.
  [5 <./Diagrammes/diagrammeDesEtats.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
+Underfull \hbox (badness 10000) in paragraph at lines 206--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--199
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--204
+Underfull \hbox (badness 10000) in paragraph at lines 213--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--208
+Underfull \hbox (badness 10000) in paragraph at lines 218--222
 
  []
 
@@ -1440,55 +1453,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
 pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDeStructure.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Diagrammes/diagrammeDeStructure.pdf, id=184, 844.65562pt x 596.98032pt>
+<./Diagrammes/diagrammeDeStructure.pdf, id=187, 844.65562pt x 596.98032pt>
 File: ./Diagrammes/diagrammeDeStructure.pdf Graphic file (type pdf)
 
 <use ./Diagrammes/diagrammeDeStructure.pdf>
 Package pdftex.def Info: ./Diagrammes/diagrammeDeStructure.pdf used on input li
-ne 216.
+ne 230.
 (pdftex.def)             Requested size: 483.69684pt x 309.27975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--242
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
-
- []
-
-[7 <./Diagrammes/diagrammeDeStructure.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--254
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
 
  []
 
@@ -1502,23 +1485,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--258
 
  []
 
-
+[7 <./Diagrammes/diagrammeDeStructure.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 260--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--264
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
 
  []
 
@@ -1528,37 +1506,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--268
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--275
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--277
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
+Underfull \hbox (badness 10000) in paragraph at lines 272--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--287
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
 
  []
 
@@ -1573,37 +1551,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--291
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 
  []
 
@@ -1617,7 +1595,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
-[9]
+
 Underfull \hbox (badness 10000) in paragraph at lines 314--316
 
  []
@@ -1643,37 +1621,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--324
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--335
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 341--343
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 
  []
 
@@ -1682,206 +1660,228 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
-[11]
-<./Pictures/interface/01_startScreen.png, id=309, 296.60812pt x 39.14626pt>
-File: ./Pictures/interface/01_startScreen.png Graphic file (type png)
 
-<use ./Pictures/interface/01_startScreen.png>
-Package pdftex.def Info: ./Pictures/interface/01_startScreen.png used on input 
-line 355.
-(pdftex.def)             Requested size: 296.60739pt x 39.14615pt.
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 355--356
-[][] 
  []
 
 
-<./Pictures/interface/english/02_english_mainMenu.png, id=310, 380.17032pt x 54
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
+
+ []
+
+[11]
+<./Pictures/interface/english/02_english_mainMenu.png, id=311, 380.17032pt x 54
 .2025pt>
 File: ./Pictures/interface/english/02_english_mainMenu.png Graphic file (type p
 ng)
  <use ./Pictures/interface/english/02_english_mainMenu.png>
 Package pdftex.def Info: ./Pictures/interface/english/02_english_mainMenu.png u
-sed on input line 363.
+sed on input line 371.
 (pdftex.def)             Requested size: 380.16939pt x 54.20236pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 363--364
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 371--372
 [][] 
  []
 
-<./Pictures/interface/settingsDialogue.png, id=311, 230.36063pt x 27.10126pt>
+<./Pictures/interface/settingsDialogue.png, id=312, 230.36063pt x 27.10126pt>
 File: ./Pictures/interface/settingsDialogue.png Graphic file (type png)
 
 <use ./Pictures/interface/settingsDialogue.png>
 Package pdftex.def Info: ./Pictures/interface/settingsDialogue.png used on inpu
-t line 368.
+t line 376.
 (pdftex.def)             Requested size: 230.36005pt x 27.10118pt.
-
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 368--369
-[][] 
- []
-
-
-<./Pictures/interface/english/03_english_cryptage.png, id=312, 443.40656pt x 64
-.74188pt>
-File: ./Pictures/interface/english/03_english_cryptage.png Graphic file (type p
-ng)
- <use ./Pictures/interface/english/03_english_cryptage.png>
-Package pdftex.def Info: ./Pictures/interface/english/03_english_cryptage.png u
-sed on input line 372.
-(pdftex.def)             Requested size: 443.40547pt x 64.74171pt.
-
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 372--373
-[][] 
- []
-
-
-<./Pictures/interface/english/03_english_decryptage.png, id=313, 443.40656pt x 
-63.23625pt>
-File: ./Pictures/interface/english/03_english_decryptage.png Graphic file (type
- png)
- <use ./Pictures/interface/english/03_english_decryptage.png>
-Package pdftex.def Info: ./Pictures/interface/english/03_english_decryptage.png
- used on input line 376.
-(pdftex.def)             Requested size: 443.40547pt x 63.23608pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 376--377
 [][] 
  []
 
 
-<./Pictures/interface/english/04_english_cesar.png, id=314, 401.24907pt x 50.43
-843pt>
-File: ./Pictures/interface/english/04_english_cesar.png Graphic file (type png)
-
- <use ./Pictures/interface/english/04_english_cesar.png>
-Package pdftex.def Info: ./Pictures/interface/english/04_english_cesar.png used
- on input line 380.
-(pdftex.def)             Requested size: 401.24808pt x 50.4383pt.
+<./Pictures/interface/english/03_english_cryptage.png, id=313, 443.40656pt x 64
+.74188pt>
+File: ./Pictures/interface/english/03_english_cryptage.png Graphic file (type p
+ng)
+ <use ./Pictures/interface/english/03_english_cryptage.png>
+Package pdftex.def Info: ./Pictures/interface/english/03_english_cryptage.png u
+sed on input line 380.
+(pdftex.def)             Requested size: 443.40547pt x 64.74171pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 380--381
 [][] 
  []
 
 
-<./Pictures/interface/english/04_english_vigenere.png, id=315, 268.00125pt x 51
-.19125pt>
-File: ./Pictures/interface/english/04_english_vigenere.png Graphic file (type p
-ng)
- <use ./Pictures/interface/english/04_english_vigenere.png>
-Package pdftex.def Info: ./Pictures/interface/english/04_english_vigenere.png u
-sed on input line 384.
-(pdftex.def)             Requested size: 268.00058pt x 51.19112pt.
+<./Pictures/interface/english/03_english_decryptage.png, id=314, 443.40656pt x 
+63.23625pt>
+File: ./Pictures/interface/english/03_english_decryptage.png Graphic file (type
+ png)
+ <use ./Pictures/interface/english/03_english_decryptage.png>
+Package pdftex.def Info: ./Pictures/interface/english/03_english_decryptage.png
+ used on input line 384.
+(pdftex.def)             Requested size: 443.40547pt x 63.23608pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 384--385
 [][] 
  []
 
-[12 <./Pictures/interface/01_startScreen.png> <./Pictures/interface/english/02_
-english_mainMenu.png> <./Pictures/interface/settingsDialogue.png> <./Pictures/i
-nterface/english/03_english_cryptage.png> <./Pictures/interface/english/03_engl
-ish_decryptage.png> <./Pictures/interface/english/04_english_cesar.png>]
-<./Pictures/interface/english/04_english_enigma.png, id=326, 417.05812pt x 49.6
-8562pt>
-File: ./Pictures/interface/english/04_english_enigma.png Graphic file (type png
-)
- <use ./Pictures/interface/english/04_english_enigma.png>
-Package pdftex.def Info: ./Pictures/interface/english/04_english_enigma.png use
-d on input line 388.
-(pdftex.def)             Requested size: 417.0571pt x 49.6855pt.
+
+<./Pictures/interface/english/04_english_cesar.png, id=315, 401.24907pt x 50.43
+843pt>
+File: ./Pictures/interface/english/04_english_cesar.png Graphic file (type png)
+
+ <use ./Pictures/interface/english/04_english_cesar.png>
+Package pdftex.def Info: ./Pictures/interface/english/04_english_cesar.png used
+ on input line 388.
+(pdftex.def)             Requested size: 401.24808pt x 50.4383pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 388--389
 [][] 
  []
 
 
-<./Pictures/interface/english/05_english_insertText.png, id=327, 270.25969pt x 
-39.14626pt>
-File: ./Pictures/interface/english/05_english_insertText.png Graphic file (type
- png)
- <use ./Pictures/interface/english/05_english_insertText.png>
-Package pdftex.def Info: ./Pictures/interface/english/05_english_insertText.png
- used on input line 392.
-(pdftex.def)             Requested size: 270.25902pt x 39.14615pt.
+<./Pictures/interface/english/04_english_vigenere.png, id=316, 268.00125pt x 51
+.19125pt>
+File: ./Pictures/interface/english/04_english_vigenere.png Graphic file (type p
+ng)
+ <use ./Pictures/interface/english/04_english_vigenere.png>
+Package pdftex.def Info: ./Pictures/interface/english/04_english_vigenere.png u
+sed on input line 392.
+(pdftex.def)             Requested size: 268.00058pt x 51.19112pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 392--393
 [][] 
  []
 
-
-<./Pictures/interface/english/06_english_cryptage_showText.png, id=328, 191.967
-2pt x 24.09pt>
-File: ./Pictures/interface/english/06_english_cryptage_showText.png Graphic fil
-e (type png)
-
-<use ./Pictures/interface/english/06_english_cryptage_showText.png>
-Package pdftex.def Info: ./Pictures/interface/english/06_english_cryptage_showT
-ext.png used on input line 396.
-(pdftex.def)             Requested size: 191.96672pt x 24.08992pt.
+[12 <./Pictures/interface/english/02_english_mainMenu.png> <./Pictures/interfac
+e/settingsDialogue.png> <./Pictures/interface/english/03_english_cryptage.png> 
+<./Pictures/interface/english/03_english_decryptage.png> <./Pictures/interface/
+english/04_english_cesar.png> <./Pictures/interface/english/04_english_vigenere
+.png>]
+<./Pictures/interface/english/04_english_enigma.png, id=327, 417.05812pt x 49.6
+8562pt>
+File: ./Pictures/interface/english/04_english_enigma.png Graphic file (type png
+)
+ <use ./Pictures/interface/english/04_english_enigma.png>
+Package pdftex.def Info: ./Pictures/interface/english/04_english_enigma.png use
+d on input line 396.
+(pdftex.def)             Requested size: 417.0571pt x 49.6855pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 396--397
 [][] 
  []
 
 
-<./Pictures/interface/english/06_english_decryptage_showText.png, id=329, 191.9
-672pt x 24.84282pt>
-File: ./Pictures/interface/english/06_english_decryptage_showText.png Graphic f
-ile (type png)
-
-<use ./Pictures/interface/english/06_english_decryptage_showText.png>
-Package pdftex.def Info: ./Pictures/interface/english/06_english_decryptage_sho
-wText.png used on input line 400.
-(pdftex.def)             Requested size: 191.96672pt x 24.84274pt.
+<./Pictures/interface/english/05_english_insertText.png, id=328, 270.25969pt x 
+39.14626pt>
+File: ./Pictures/interface/english/05_english_insertText.png Graphic file (type
+ png)
+ <use ./Pictures/interface/english/05_english_insertText.png>
+Package pdftex.def Info: ./Pictures/interface/english/05_english_insertText.png
+ used on input line 400.
+(pdftex.def)             Requested size: 270.25902pt x 39.14615pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 400--401
 [][] 
  []
 
 
-<./Pictures/interface/english/07_english_quitMessage.png, id=330, 219.06844pt x
- 25.59563pt>
-File: ./Pictures/interface/english/07_english_quitMessage.png Graphic file (typ
-e png)
- <use ./Pictures/interface/english/07_english_quitMessage.png>
-Package pdftex.def Info: ./Pictures/interface/english/07_english_quitMessage.pn
-g used on input line 404.
-(pdftex.def)             Requested size: 219.06789pt x 25.59555pt.
+<./Pictures/interface/english/06_english_cryptage_showText.png, id=329, 191.967
+2pt x 24.09pt>
+File: ./Pictures/interface/english/06_english_cryptage_showText.png Graphic fil
+e (type png)
+
+<use ./Pictures/interface/english/06_english_cryptage_showText.png>
+Package pdftex.def Info: ./Pictures/interface/english/06_english_cryptage_showT
+ext.png used on input line 404.
+(pdftex.def)             Requested size: 191.96672pt x 24.08992pt.
 
 Overfull \hbox (18.54982pt too wide) in paragraph at lines 404--405
 [][] 
  []
 
-[13 <./Pictures/interface/english/04_english_vigenere.png> <./Pictures/interfac
-e/english/04_english_enigma.png> <./Pictures/interface/english/05_english_inser
-tText.png> <./Pictures/interface/english/06_english_cryptage_showText.png> <./P
-ictures/interface/english/06_english_decryptage_showText.png> <./Pictures/inter
-face/english/07_english_quitMessage.png>]
+
+<./Pictures/interface/english/06_english_decryptage_showText.png, id=330, 191.9
+672pt x 24.84282pt>
+File: ./Pictures/interface/english/06_english_decryptage_showText.png Graphic f
+ile (type png)
+
+<use ./Pictures/interface/english/06_english_decryptage_showText.png>
+Package pdftex.def Info: ./Pictures/interface/english/06_english_decryptage_sho
+wText.png used on input line 408.
+(pdftex.def)             Requested size: 191.96672pt x 24.84274pt.
+
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 408--409
+[][] 
+ []
+
+
+<./Pictures/interface/english/07_english_quitMessage.png, id=331, 219.06844pt x
+ 25.59563pt>
+File: ./Pictures/interface/english/07_english_quitMessage.png Graphic file (typ
+e png)
+ <use ./Pictures/interface/english/07_english_quitMessage.png>
+Package pdftex.def Info: ./Pictures/interface/english/07_english_quitMessage.pn
+g used on input line 412.
+(pdftex.def)             Requested size: 219.06789pt x 25.59555pt.
+
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 412--413
+[][] 
+ []
+
+[13 <./Pictures/interface/english/04_english_enigma.png> <./Pictures/interface/
+english/05_english_insertText.png> <./Pictures/interface/english/06_english_cry
+ptage_showText.png> <./Pictures/interface/english/06_english_decryptage_showTex
+t.png> <./Pictures/interface/english/07_english_quitMessage.png>]
 <./Pictures/interface/french/02_french_mainMenu.png, id=342, 454.69875pt x 65.4
 9469pt>
 File: ./Pictures/interface/french/02_french_mainMenu.png Graphic file (type png
 )
  <use ./Pictures/interface/french/02_french_mainMenu.png>
 Package pdftex.def Info: ./Pictures/interface/french/02_french_mainMenu.png use
-d on input line 412.
+d on input line 420.
 (pdftex.def)             Requested size: 454.69763pt x 65.4945pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 412--413
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 420--421
 [][] 
  []
 
 File: ./Pictures/interface/settingsDialogue.png Graphic file (type png)
 <use ./Pictures/interface/settingsDialogue.png>
 Package pdftex.def Info: ./Pictures/interface/settingsDialogue.png used on inpu
-t line 417.
+t line 425.
 (pdftex.def)             Requested size: 230.36005pt x 27.10118pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 417--418
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 425--426
 [][] 
  []
 
@@ -1892,10 +1892,10 @@ File: ./Pictures/interface/french/03_french_cryptage.png Graphic file (type png
 )
  <use ./Pictures/interface/french/03_french_cryptage.png>
 Package pdftex.def Info: ./Pictures/interface/french/03_french_cryptage.png use
-d on input line 421.
+d on input line 429.
 (pdftex.def)             Requested size: 379.41656pt x 63.23608pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 421--422
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 429--430
 [][] 
  []
 
@@ -1906,10 +1906,10 @@ File: ./Pictures/interface/french/03_french_decryptage.png Graphic file (type p
 ng)
  <use ./Pictures/interface/french/03_french_decryptage.png>
 Package pdftex.def Info: ./Pictures/interface/french/03_french_decryptage.png u
-sed on input line 425.
+sed on input line 433.
 (pdftex.def)             Requested size: 391.46153pt x 64.74171pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 425--426
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 433--434
 [][] 
  []
 
@@ -1919,10 +1919,10 @@ pt>
 File: ./Pictures/interface/french/04_french_cesar.png Graphic file (type png)
  <use ./Pictures/interface/french/04_french_cesar.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_cesar.png used o
-n input line 429.
+n input line 437.
 (pdftex.def)             Requested size: 356.07944pt x 52.69673pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 429--430
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 437--438
 [][] 
  []
 
@@ -1933,10 +1933,10 @@ File: ./Pictures/interface/french/04_french_vigenere.png Graphic file (type png
 )
  <use ./Pictures/interface/french/04_french_vigenere.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_vigenere.png use
-d on input line 433.
+d on input line 441.
 (pdftex.def)             Requested size: 303.38269pt x 51.19112pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 433--434
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 441--442
 [][] 
  []
 
@@ -1946,10 +1946,10 @@ Overfull \hbox (18.54982pt too wide) in paragraph at lines 433--434
 File: ./Pictures/interface/french/04_french_enigma.png Graphic file (type png)
  <use ./Pictures/interface/french/04_french_enigma.png>
 Package pdftex.def Info: ./Pictures/interface/french/04_french_enigma.png used 
-on input line 437.
+on input line 445.
 (pdftex.def)             Requested size: 404.25932pt x 51.94392pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 437--438
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 445--446
 [][] 
  []
 
@@ -1963,10 +1963,10 @@ File: ./Pictures/interface/french/05_french_insertText.png Graphic file (type p
 ng)
  <use ./Pictures/interface/french/05_french_insertText.png>
 Package pdftex.def Info: ./Pictures/interface/french/05_french_insertText.png u
-sed on input line 441.
+sed on input line 449.
 (pdftex.def)             Requested size: 303.38269pt x 38.39333pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 441--442
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 449--450
 [][] 
  []
 
@@ -1978,10 +1978,10 @@ File: ./Pictures/interface/french/06_french_cryptage_showText.png Graphic file
 
 <use ./Pictures/interface/french/06_french_cryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/french/06_french_cryptage_showTex
-t.png used on input line 445.
+t.png used on input line 453.
 (pdftex.def)             Requested size: 173.89925pt x 23.33711pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 445--446
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 453--454
 [][] 
  []
 
@@ -1993,10 +1993,10 @@ e (type png)
 
 <use ./Pictures/interface/french/06_french_decryptage_showText.png>
 Package pdftex.def Info: ./Pictures/interface/french/06_french_decryptage_showT
-ext.png used on input line 449.
+ext.png used on input line 457.
 (pdftex.def)             Requested size: 187.44984pt x 24.08992pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 449--450
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 457--458
 [][] 
  []
 
@@ -2007,10 +2007,10 @@ File: ./Pictures/interface/french/07_french_quitMessage.png Graphic file (type
 png)
  <use ./Pictures/interface/french/07_french_quitMessage.png>
 Package pdftex.def Info: ./Pictures/interface/french/07_french_quitMessage.png 
-used on input line 453.
+used on input line 461.
 (pdftex.def)             Requested size: 262.73091pt x 25.59555pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 453--454
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 461--462
 [][] 
  []
 
@@ -2021,10 +2021,10 @@ File: ./Pictures/interface/french/08_french_helpMenu.png Graphic file (type png
 )
  <use ./Pictures/interface/french/08_french_helpMenu.png>
 Package pdftex.def Info: ./Pictures/interface/french/08_french_helpMenu.png use
-d on input line 457.
+d on input line 465.
 (pdftex.def)             Requested size: 483.69684pt x 383.654pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 457--458
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 465--466
 [][] 
  []
 
@@ -2033,11 +2033,11 @@ ench/05_french_insertText.png> <./Pictures/interface/french/06_french_cryptage_
 showText.png> <./Pictures/interface/french/06_french_decryptage_showText.png> <
 ./Pictures/interface/french/07_french_quitMessage.png>] [16 <./Pictures/interfa
 ce/french/08_french_helpMenu.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 518.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 518.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 526.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 526.
  (rendu_decembre.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 518.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 518.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 526.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 526.
 
 
 Package rerunfilecheck Warning: File `rendu_decembre.out' has changed.
@@ -2045,46 +2045,31 @@ Package rerunfilecheck Warning: File `rendu_decembre.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `rendu_decembre.out':
-(rerunfilecheck)             Before: 7EAB251230FE87128F1141C1E41C2D84;1682
-(rerunfilecheck)             After:  E9BA1D0991F7F348C8EE12F4B59EE531;1618.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 518.
+(rerunfilecheck)             Before: E9BA1D0991F7F348C8EE12F4B59EE531;1618
+(rerunfilecheck)             After:  6B98EEF2F485DE05CF8D69AE7E4F8DC7;1636.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
  ) 
 Here is how much of TeX's memory you used:
- 22417 strings out of 493323
- 430715 string characters out of 3139062
+ 22411 strings out of 493323
+ 430576 string characters out of 3139062
  608342 words of memory out of 3000000
  25448 multiletter control sequences out of 15000+200000
  54040 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,7n,69p,8827b,537s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsubsection.3.3.5} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.3.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.3.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.3.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.3.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiK
-TeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmtt12.pfb>
-Output written on rendu_decembre.pdf (16 pages, 8156193 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx
+i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmtt12.pfb>
+Output written on rendu_decembre.pdf (16 pages, 8158285 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  354 words of extra memory for PDF output out of 10000 (max. 10000000)
 
