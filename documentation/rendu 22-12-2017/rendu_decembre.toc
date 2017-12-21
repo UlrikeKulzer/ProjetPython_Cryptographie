@@ -11,20 +11,14 @@
 \contentsline {paragraph}{}{3}{paragraph*.6}
 \contentsline {subsection}{\numberline {1.2}Fonctionnement du programme}{4}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Accueil et choix de la langue}{4}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Crypter/D\IeC {\'e}crypter}{4}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}Choix du principe}{4}{subsubsection.1.2.3}
-\contentsline {section}{\numberline {2}Guide de maintenance}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Fonctionnalit\IeC {\'e}}{5}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}En g\IeC {\'e}n\IeC {\'e}ral}{5}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Diff\IeC {\'e}rents \IeC {\'e}tats du programme}{5}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}En d\IeC {\'e}tail et coup\IeC {\'e} en modules}{6}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Structure du programme}{7}{subsubsection.2.1.4}
-\contentsline {section}{\numberline {3}Interfaces utilisateurs}{12}{section.3}
-\contentsline {subsection}{\numberline {3.1}En anglais}{12}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}En fran\IeC {\c c}ais}{14}{subsection.3.2}
-\contentsline {section}{\numberline {4}Code du programme}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}main\_module}{16}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}screen\_constants}{16}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}screen\_module}{16}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}text\_module}{16}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}tests}{16}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {1.2.2}Crypter/D\IeC {\'e}crypter}{5}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Choix du principe}{5}{subsubsection.1.2.3}
+\contentsline {section}{\numberline {2}Interfaces utilisateurs}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}En fran\IeC {\c c}ais}{7}{subsection.2.1}
+\contentsline {section}{\numberline {3}Guide de maintenance}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Fonctionnalit\IeC {\'e}}{10}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}En g\IeC {\'e}n\IeC {\'e}ral}{10}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Diff\IeC {\'e}rents \IeC {\'e}tats du programme}{10}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}En d\IeC {\'e}tail et coup\IeC {\'e} en modules}{11}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Structure du programme}{12}{subsubsection.3.1.4}
+\contentsline {section}{\numberline {4}Annexe: Code du programme}{16}{section.4}

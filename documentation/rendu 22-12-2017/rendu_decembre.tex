@@ -107,9 +107,9 @@ La cryptographie est utilisée depuis l'Antiquité mais certaines de ces méthod
 \begin{minipage}[t]{0.5\textwidth}
     \begin{itemize}
     \item \textit{celui de la machine Enigma :}\\
-    L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication secrète entre les différentes unités de l’armée allemande.
-La machine est constituée de cinq rotors dont un réflecteur, d’un clavier, d’un tableau de permutation et de lampes pour chaque lettre. Pour l’allumer il faut une batterie de 4,5 Volt.
-Le principe est simple : Lorsqu’on appuie sur une lettre du clavier, un courant électrique va être envoyé au tableau de permutation dans lequel la lettre entrée est échangée avec une autre lettre si elles sont connectées. Puis il passera la première fois par les quatre rotors : Dans chacun des trois rotors au milieu il y a un décalage des lettres qui s’opère. À la fin les lettres sont permutées encore une fois dans le réflecteur qui les renvoie par les rotors au tableau de permutation ce qui permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour chaque lettre on relève la lettre codée, on obtient alors notre message crypté.\\
+    L'Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication secrète entre les différentes unités de l'armée allemande.
+La machine est constituée de cinq rotors dont un réflecteur, d'un clavier, d'un tableau de permutation et de lampes pour chaque lettre. Pour l'allumer il faut une batterie de 4,5 Volt.
+Le principe est simple : Lorsqu'on appuie sur une lettre du clavier, un courant électrique va être envoyé au tableau de permutation dans lequel la lettre entrée est échangée avec une autre lettre si elles sont connectées. Puis il passera la première fois par les quatre rotors : Dans chacun des trois rotors au milieu il y a un décalage des lettres qui s'opère. À la fin les lettres sont permutées encore une fois dans le réflecteur qui les renvoie par les rotors au tableau de permutation ce qui permettra à une lampe correspondant à une lettre de s'allumer. Ainsi pour chaque lettre on relève la lettre codée, on obtient alors notre message crypté.\\
     \end{itemize}
   \end{minipage}
   \begin{minipage}[t]{0.5\linewidth}
@@ -139,35 +139,121 @@ Von William Warby from London, England - Enigma, CC BY 2.0,\\\url{https://common
 \subsection{Fonctionnement du programme}
 
 \subsubsection{Accueil et choix de la langue}
-Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "`main\_module"' et d'appuyer sur "`run"' -> "`run"' -> "`run main\_module"'.
+Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "`main\_module"' et d'appuyer sur "`run"' - "`run"' - "`run main\_module"'.
 Les instructions du programme seront affichées dans la console qui s'ouvre en bas de l'interface comme montrés ci dessous :
-
-{\fbox{\parbox{\textwidth}{\raggedright    %1
+\vspace{0.5cm}
+\\
+{\fbox{\parbox{\textwidth}{\raggedright
 \includegraphics{./Pictures/interface/01_startScreen.png}}}
 	\captionof{figure}{Écran d'accueil}
 	\label{SP}
 }
+\vspace{0.5cm}
+Vous venez d’entrer dans le programme Cryptographie, vous devez entrer la lettre ' f ' pour avoir les instructions en français et ' e ' pour les avoir en anglais.
+Si la lettre entrée est ' e ', les prochaines instructions seront donc en anglais. \\
+\\
+Note: Vous retrouverez les mêmes interfaces en français.\\
+\\
+Une nouvelle fenêtre va ensuite apparaître :
+\vspace{0.5cm}
+\\
+{\fbox{\parbox{\textwidth}{\raggedright
+\includegraphics{./Pictures/interface/english/02_english_mainMenu.png}}}	%2
+\captionof{figure}{Menu principal}
+\label{EMM}
+}
+\vspace{0.5cm}
 
-Vous venez d’entrer dans le programme Cryptographie, vous devez entrer la lettre ‘ f ‘ pour avoir les instructions en français et ‘ e ‘ pour les avoir en anglais.
-Ici la lettre entrée est ‘ e ’, les prochaines instructions seront donc en anglais. 
+Le programme demande maintenant ce que vous voulez faire, vous devez entrer ' c ' si vous voulez que le programme crypte votre texte ou ' d ' si vous voulez qu'il le décrypte.
+Si vous voulez changez de langue entrez ' s ' et si malheureusement vous voulez quitter le programme entrez ' q ' .\\
+Si la lettre entrée est ' s ' , une nouvelle fenêtre permettant de changer la langue va alors apparaitre.
+\vspace{0.5cm}
+\\
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/settingsDialogue.png}}}
+\captionof{figure}{Paramètres}
+\label{ESD}
+}
+\vspace{0.5cm}
 
-Note: Vous retrouverez les mêmes interfaces en français.
-
-
+Vous devez entrer la lettre ' f ' pour avoir les instructions en français et ' e ' pour les avoir en anglais.\\
+Si la lettre entrée est ' f ' les prochaines instructions seront donc en français.\\
+Vous reviendrez sur les instructions précédentes cette fois-ci en français.\\
 
 \subsubsection{Crypter/Décrypter}
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/02_french_mainMenu.png}}}
+\captionof{figure}{Menu principal}
+\label{FMM}
+}
+\vspace{0.5cm}
 
+Vous devez entrer ' c ' si vous voulez que le programme crypte votre texte ou ' d ' si vous voulez qu'il le décrypte.\\
+Si vous voulez changer de langue entrez ' s ' et si malheureusement vous voulez quitter le programme entrez ' q ' .\\
+\\
+Si la lettre entrée est ' c ' , le programme va donc être servi pour le cryptage d'un texte.\\
+Il existe trois méthodes par lesquelles le texte peut être crypté, nous allons donc détailler les différentes manières.
 
 \subsubsection{Choix du principe}
 
 \begin{itemize}
-\item César
+\item \textit{César:}\\
+Si vous avez choisi de crypter votre texte, il vous faut maintenant choisir quelle méthode vous voulez utiliser, trois choix s'offrent à vous.
+
+
+
+
 \item Vigenère
 \item Enigma
 
 \end{itemize}
 
-
+\newpage
+\section{Interfaces utilisateurs}
+\subsection{En français}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/settingsDialogue.png}}}		%14
+\captionof{figure}{Paramètres}
+\label{FSD}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_cryptage.png}}}	%15
+\captionof{figure}{Cryptage}
+\label{FCr}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_decryptage.png}}}	%16
+\captionof{figure}{Décryptage}
+\label{FD}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_cesar.png}}}		%17
+\captionof{figure}{Le chiffre de César}
+\label{FCe}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_vigenere.png}}}	%18
+\captionof{figure}{Le chiffre de Vigenère}
+\label{FV}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_enigma.png}}}		%19
+\captionof{figure}{Le cryptage par la machine Enigma}
+\label{FE}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/05_french_insertText.png}}}	%20
+\captionof{figure}{Entrée du texte}
+\label{FIT}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_cryptage_showText.png}}}		%21
+\captionof{figure}{Affichage du texte crypté}
+\label{FSCT}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_decryptage_showText.png}}}		%22
+\captionof{figure}{Affichage du texte décrypté}
+\label{FSDT}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/07_french_quitMessage.png}}}		%23
+\captionof{figure}{Sortie du programme}
+\label{FSQM}
+\vspace{1cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics[width=\textwidth]{./Pictures/interface/french/08_french_helpMenu.png}}}		%23
+\captionof{figure}{Aide}
+\label{FHM}
+}
 
 
 
@@ -362,125 +448,10 @@ TODO\\
 \end{itemize}
 
 
-\newpage
-\section{Interfaces utilisateurs}
-
-\subsection{En anglais}
-
-{\fbox{\parbox{\textwidth}{\raggedright
-\includegraphics{./Pictures/interface/english/02_english_mainMenu.png}}}	%2
-\captionof{figure}{Menu principal}
-\label{EMM}
-%\medskip
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/settingsDialogue.png}}}		%3
-\captionof{figure}{Paramètres}
-\label{ESD}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/03_english_cryptage.png}}}	%4
-\captionof{figure}{Cryptage}
-\label{ECr}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/03_english_decryptage.png}}}	%5
-\captionof{figure}{Décryptage}
-\label{ED}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/04_english_cesar.png}}}		%6
-\captionof{figure}{Le chiffre de César}
-\label{ECe}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/04_english_vigenere.png}}}	%7
-\captionof{figure}{Le chiffre de Vigenère}
-\label{EV}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/04_english_enigma.png}}}		%8
-\captionof{figure}{Le cryptage par la machine Enigma}
-\label{EE}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/05_english_insertText.png}}}		%9
-\captionof{figure}{Entrée du texte}
-\label{EIT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/06_english_cryptage_showText.png}}}		%10
-\captionof{figure}{Affichage du texte crypté}
-\label{ESCT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/06_english_decryptage_showText.png}}}		%11
-\captionof{figure}{Affichage du texte décrypté}
-\label{ESDT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/english/07_english_quitMessage.png}}}		%12
-\captionof{figure}{Sortie du programme}
-\label{ESQM}
-\vspace{1cm}
-}
-\newpage
-\subsection{En français}
-{\fbox{\parbox{\textwidth}{\raggedright
-\includegraphics{./Pictures/interface/french/02_french_mainMenu.png}}}	%13
-\captionof{figure}{Menu principal}
-\label{FMM}
-%\medskip
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/settingsDialogue.png}}}		%14
-\captionof{figure}{Paramètres}
-\label{FSD}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_cryptage.png}}}	%15
-\captionof{figure}{Cryptage}
-\label{FCr}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_decryptage.png}}}	%16
-\captionof{figure}{Décryptage}
-\label{FD}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_cesar.png}}}		%17
-\captionof{figure}{Le chiffre de César}
-\label{FCe}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_vigenere.png}}}	%18
-\captionof{figure}{Le chiffre de Vigenère}
-\label{FV}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_enigma.png}}}		%19
-\captionof{figure}{Le cryptage par la machine Enigma}
-\label{FE}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/05_french_insertText.png}}}	%20
-\captionof{figure}{Entrée du texte}
-\label{FIT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_cryptage_showText.png}}}		%21
-\captionof{figure}{Affichage du texte crypté}
-\label{FSCT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_decryptage_showText.png}}}		%22
-\captionof{figure}{Affichage du texte décrypté}
-\label{FSDT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/07_french_quitMessage.png}}}		%23
-\captionof{figure}{Sortie du programme}
-\label{FSQM}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics[width=\textwidth]{./Pictures/interface/french/08_french_helpMenu.png}}}		%23
-\captionof{figure}{Aide}
-\label{FHM}
-}
-
-\section{Code du programme}
-\subsection{main\_module}
 
 
-\subsection{screen\_constants}
+\section{Annexe: Code du programme}
 
-
-\subsection{screen\_module}
-
-
-\subsection{text\_module}
-
-
-\subsection{tests}
 
 
 
