@@ -2,7 +2,6 @@
 This module is in charge of the user interface, i.e. it shows the right text in the chosen language.
 """
 
-
 import screen_constants
 
 
@@ -38,11 +37,11 @@ def show_main_menu(english):
      False if chosen language is french
     :return: char
     """
-    #language chosen is english
+    # language chosen is english
     if english:
         return input(screen_constants.ENGLISH_MAIN_MENU)
-    #language chosen is french
-    elif english== False :
+    # language chosen is french
+    elif english == False:
         return input(screen_constants.FRENCH_MAIN_MENU)
     else:
         return "this should never happen"
@@ -67,24 +66,25 @@ def show_principles(english, encrypting):
     if english:
         if encrypting:
             return input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
-        if encrypting == false:
+        if encrypting == False:
             return input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
     # language chosen is french
     elif english == False:
         if encrypting:
             return input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
-        if encrypting == false:
+        if encrypting == False:
             return input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
     else:
         return "this should never happen"
 
 
-def show_ask_key(english):
+def show_ask_key(english, principle):
     """
     asks the key the user wants to use for the method his has chosen
     key = char
     ' m ' to go back to the main menu
     ' r ' to go back to the previous menu
+    :param principle:
     :param english: boolean
      True if chosen language is english
      False if chosen language is french
@@ -92,21 +92,21 @@ def show_ask_key(english):
     """
     # language chosen is english
     if english:
-        if caesar:
+        if principle == 'c':
             return input(screen_constants.ENGLISH_ASK_KEY_CAESAR)
-        elif vigenere:
+        elif principle == 'v':
             return input(screen_constants.ENGLISH_ASK_KEY_VIGENERE)
-        elif enigma:
+        elif principle == 'e':
             return input(screen_constants.ENGLISH_ASK_KEY_ENIGMA)
         else:
             return "this should never happen"
     # language chosen is french
     elif english == False:
-        if caesar:
+        if principle == 'c':
             return input(screen_constants.FRENCH_ASK_KEY_CAESAR)
-        elif vigenere:
+        elif principle == 'v':
             return input(screen_constants.FRENCH_ASK_KEY_VIGENERE)
-        elif enigma:
+        elif principle == 'e':
             return input(screen_constants.FRENCH_ASK_KEY_ENIGMA)
         else:
             return "this should never happen"
@@ -158,6 +158,7 @@ def show_treated_text(english, encrypting):
     else:
         return "this should never happen"
 
+
 def show_help_principles(english):
     """
     shows the help screen which give explanations on the different encryption methods
@@ -170,10 +171,11 @@ def show_help_principles(english):
     if english:
         print(screen_constants.ENGLISH_HELP_PRINCIPLES)
     # language chosen is french
-    elif english==False:
+    elif english == False:
         print(screen_constants.FRENCH_HELP_PRINCIPLES)
     else:
         return "this should never happen"
+
 
 def show_quit_message(english):
     """
@@ -190,4 +192,4 @@ def show_quit_message(english):
     elif english == False:
         print(screen_constants.FRENCH_QUIT_MESSAGE)
     else:
-        return "this should never happen"<
+        return "this should never happen"
