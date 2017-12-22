@@ -131,7 +131,7 @@ def decrypt_vigenere(text, key):
 
 # ********************************* begin ENIGMA ********************************* #
 # *** HELP FUNCTIONS *** #
-# * General functions * #
+# * Help functions * #
 def create_initial_list():
     """
     creates a list filled with the alphabet (capital letters)

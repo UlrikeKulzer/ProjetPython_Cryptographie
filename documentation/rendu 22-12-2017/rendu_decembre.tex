@@ -595,7 +595,7 @@ Appelle & aucun\\
 \textbf{\textit{Vigenère}}\\
 \textbf{create\_vigenere\_table} & (ligne 51)\\
 Déclaration & create\_vigenere\_table()\\
-Rôle & MISSING\\
+Rôle & crée un tableau modélisant le tableau de Vigenère\\
 Paramètre & aucun\\
 Retour & le tableau\\
 Appelé par & encrypt\_vigenere(text, key)\\
@@ -650,11 +650,17 @@ Appelle & aucun\\
 \textbf{search\_index} & (ligne X)\\
 Déclaration & search\_index(initial\_list, letter)\\
 Rôle & cherche l'indice d'une lettre donnée dans une liste de lettres donnée\\
-Paramètre & initial\_list : liste dans laquelle l'indice est cherché
+Paramètre & initial\_list : liste dans laquelle l'indice est cherché\\
  & letter: lettre donnée de laquelle on cherche l'indice\\
 Retour & int: indice de la lettre trouvé\\
 Appelé par & enigma(text, key)\\
 Appelle & aucun\\
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
 \cr
 \cr
 \textbf{plugboard} & (ligne X)\\
@@ -663,8 +669,10 @@ Rôle & modélise le tableau de permutation: dix lettres sont associées à\\
  & dix autres lettres. Si la lettre donnée est associée à\\
  & une autre lettre, celle-ci va être retournée.\\
  & Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-Paramètre & letter: la lettre donnée qui va être échangée si elle est liée à une autre lettre\\
-Retour & char: lettre correspondante à la lettre entrée ou la lettre elle-même\\
+Paramètre & letter: la lettre donnée qui va être échangée\\
+ & si elle est liée à une autre lettre\\
+Retour & char: lettre correspondante à la lettre entrée\\
+ & ou la lettre elle-même\\
 Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
@@ -684,39 +692,60 @@ Appelle & aucun\\
 Déclaration & shift\_first\_rotor(return\_path, index, offset)\\
 Rôle & modélise le premier rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & XXXXXXXX\\
-Retour & XXXXXXXX\\
+Paramètre & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
 Appelé par & enigma(text, key)\\
-Appelle & XXXXXXXX\\
+Appelle & aucun\\
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
 \cr
 \cr
 \textbf{shift\_second\_rotor} & (ligne X)\\
 Déclaration & shift\_second\_rotor(return\_path, index, offset)\\
 Rôle & modélise le deuxième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & XXXXXXXX\\
-Retour & XXXXXXXX\\
+Paramètre  & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
 Appelé par & enigma(text, key)\\
-Appelle & XXXXXXXX\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{shift\_third\_rotor} & (ligne X)\\
 Déclaration & shift\_third\_rotor(return\_path, index, offset)\\
 Rôle & modélise le troisième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & XXXXXXXX\\
-Retour & XXXXXXXX\\
+Paramètre  & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
 Appelé par & enigma(text, key)\\
-Appelle & XXXXXXXX\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{enigma} & (ligne X)\\
 Déclaration & enigma(text, key)\\
-Rôle & (dé)crypte le texte formaté par le principe de la machine Enigma\\
-Paramètre & XXXXXXXX\\
-Retour & XXXXXXXX\\
+Rôle & (dé)crypte le texte formaté par le principe\\
+ & de la machine Enigma\\
+Paramètre & text: le texte de l'utilisateur à traiter\\
+  & key: la clé donnée par l'utilisateur pour le traitement\\
+Retour & string: texte traité ((dé)crypté)\\
 Appelé par & run()\\
-Appelle & XXXXXXXX\\
+Appelle & toutes les fonctions d'aide d'Enigma (voir code du text\_module)\\
 \end{longtable}
 \vspace{0.5cm}
 
@@ -768,6 +797,14 @@ Appelle & toutes les fonctions de screen\_module\\
 \vspace{0.5cm}
 
 \newpage
+\section{Rapport sur les écarts entre objectif et réalisation}
+Nous comptions réaliser une interface graphique, ce que nous n'avons pas concrétisé faute de temps et de connaissance dans ce domaine. Nous voulions également pouvoir retourner au menu précédent à chaque interface mais cela s'est avéré impossible.\\
+\noindent\hspace*{3mm}
+Concernant Enigma nos positions ont souvent changé lors de la programmation. En effet, au départ on voulait demander à l'utilisateur de donner ses propres décalages pour les rotors mais cela ne fonctionnait pas : une lettre entrée pouvait ne pas être modifiée. De ce fait, nous avons dû prendre les vrais décalages historiques de la machine. Au début, nous avions également commencé à programmer en créant 5 listes que nous voulions modifier après chaque rotors ce qui s'avérait inutile et compliqué puisqu'une seule suffisait, le programme final comporte donc désormais qu'une seule liste contenant toutes les listes de l'alphabet. De plus, nous voulions créer des fonctions différentes pour le cryptage et le décryptage pour la méthode Enigma or un texte entré pour être crypté donnait un texte décrypté mais à partir de ce texte décrypté nous ne retrouvions pas le texte à crypter de départ. Nous nous sommes donc orientées vers une unique fonction capable de crypter ou décrypter un texte.\\
+\noindent\hspace*{3mm}
+Nous ne sommes pas parvenues à réaliser tous nos projets puisque nous voulions aussi programmer une nouvelle méthode de cryptage inspirée du livre Bitterblue\footnote{voir \url{https://fr.wikipedia.org/wiki/Kristin_Cashore}}, malheureusement nous n'avons pas eu le temps de concrétiser ce projet.
+\vspace{1cm}
+
 \section{Annexe: Code du programme}
 {\large
 \textit{L'ordre des modules:}
