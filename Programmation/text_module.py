@@ -2,6 +2,7 @@
 This module contains all functions with which the user's text can be treated.
 """
 
+
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):

@@ -66,6 +66,8 @@ def format_text(text):
         return text
 
 
+# IMPORTANT ANNOTATION:
+# at the moment the function "run()" is still under construction and NOT doing what it should do
 def run():
     """
     starts the program
