@@ -13,6 +13,7 @@
 \usepackage{tabularx,url}
 \usepackage[a4paper, left=2cm, textwidth=17cm, top=1.5cm]{geometry}
 \usepackage{hyperref}
+\usepackage{longtable}
 
 
 \titleformat*{\section}{\large\bfseries}
@@ -365,18 +366,19 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 \end{itemize}
 
 \newpage
-
 \subsubsection{Structure du programme}
-% diagrammme
-\begin{figure}[tpbh]
-	\centering
-  \includegraphics[width=\textwidth, trim=0mm 20mm 0mm 0mm, clip]{./Diagrammes/diagrammeDeStructure.pdf}
-  %TRIM = LINKS UNTEN RECHTS OBEN
-  \captionof{figure}{Structure du programme en modules}
-	\label{img:structure}
-\end{figure}
-\vspace{0.7cm}
+% diagrammme\\
 
+\begin{minipage}[c]{\textwidth}
+\centering
+    \includegraphics[width=\textwidth, trim=1mm 40mm 1mm 1mm, clip]{./Diagrammes/diagrammeDeStructure_main_modules.pdf}
+    %TRIM = LINKS UNTEN RECHTS OBEN
+    \captionof{figure}{Structure du programme en modules}
+    \label{img:structure}
+\end{minipage}
+
+
+\newpage
 \subsubsection{Explications des modules, constantes et fonctions}
 \vspace{0.3cm}
 \textbf{Explications du module \textit{screen\_constants} :}\\
@@ -416,13 +418,13 @@ message de sortie (voir fig. \ref{FSQM})\\
 \vspace{0.5cm}
 
 
-
+\newpage
 % screen_module
 \textbf{Explications du module \textit{screen\_module:}}\\
 Ce module est responsable de l'interface utilisateur, c'est-à-dire il montre le bon texte dans la langue choisie.
 \vspace{0.3cm}
 
-\begin{tabular}[t]{ll} 
+\begin{longtable}{ll} 
 \textbf{show\_start\_ask\_language} & (ligne 8) \\     
 Déclaration & show\_start\_ask\_language()\\
 Rôle & demande à l'utilisateur la langue qu'il veut utiliser au début\\
@@ -433,137 +435,153 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ' e ' pour l'anglais\\
 Appelé par & run()\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_language\_settings} & (ligne 18)\\
 Déclaration & show\_language\_settings()\\
-Rôle & demande à l’utilisateur la langue qu’il veut utiliser au cours\\
+Rôle & demande à l'utilisateur la langue qu'il veut utiliser au cours\\
  & du programme\\
 Paramètre & aucun\\
-Retour & la chaîne de caractère choisie par l’utilisateur:\\
+Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ‘ f ’ pour le français\\
- & ‘ e ‘ pour l’anglais\\
+ & ‘ e ‘ pour l'anglais\\
 Appelé par &  run()\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_main\_menu} & (ligne 28)\\
 Déclaration & show\_main\_menu(english)\\
-Rôle & demande à l’utilisateur ce qu’il veut utiliser la fonction cryptage\\
+Rôle & demande à l'utilisateur ce qu'il veut utiliser la fonction cryptage\\
  & ou décryptage du programme\\
 Paramètre & english: booléen \\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
-Retour & la chaîne de caractère choisie par l’utilisateur:\\
+Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'c' pour cryptage\\
  & 'd' pour décryptage\\
  & 's' pour changer de langue\\
  & 'q' pour quitter le programme\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+\cr 
+\cr 
+\cr
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_principles} & (ligne 50)\\
 Déclaration & show\_principles(english, encrypting)\\
-Rôle & demande à l’utilisateur la méthode qu’il veut utiliser pour (dé)crypter\\
+Rôle & demande à l'utilisateur la méthode qu'il veut utiliser\\
+ & pour (dé)crypter\\
 Paramètre & english: booléen\\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
  & encryption: booléen\\
- & True si l’utilisateur veut crypter\\
- & False s’il veut décrypter\\
-Retour & la chaîne de caractère choisie par l’utilisateur:\\
+ & True si l'utilisateur veut crypter\\
+ & False s'il veut décrypter\\
+Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'c' pour la méthode César\\
  & 'v' pour la méthode Vigenère\\
  & 'e' pour la méthode de la machine Enigma\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_ask\_key} & (ligne 81)\\
 Déclaration & show\_ask\_key(english, principle)\\
-Rôle & demande à l’utilisateur la clé pour la méthode qu’il veut utiliser\\
+Rôle & demande à l'utilisateur la clé pour la méthode qu'il veut utiliser\\
  & pour (dé)crypter\\
 Paramètre & english: booléen\\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
  & principle: char\\
- & ‘c’, ’v’ ou ‘e’ selon la méthode de (dé)cryptage qu’il a choisi\\
+ & ' c ', ' v ' ou ' e ' selon la méthode de (dé)cryptage qu'il a choisi\\
 Retour & la clé ou \\
- & 'm' pour retourner au menu principal\\
+ & ' m ' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_ask\_text} & (ligne 115)\\
 Déclaration & show\_ask\_text(english)\\
-Rôle & demande à l’utilisateur le texte qu’il veut (dé)crypter\\
+Rôle & demande à l'utilisateur le texte qu'il veut (dé)crypter\\
 Paramètre & english: booléen\\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
 Retour & la clé ou\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+\cr
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_treated\_text} & (ligne 135)\\
 Déclaration & show\_treated\_text(english, encrypting)\\
-Rôle & retourne le message d’affichage du texte (dé)crypté\\
+Rôle & retourne le message d'affichage du texte (dé)crypté\\
 Paramètre & english: booléen \\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
  & encryption: booléen\\
- & True si l’utilisateur veut crypter\\
- & False s’il veut décrypter\\
-Retour & le message d’affichage du texte (dé)crypté\\
+ & True si l'utilisateur veut crypter\\
+ & False s'il veut décrypter\\
+Retour & le message d'affichage du texte (dé)crypté\\
 Appelé par & run()   (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_help\_principles} & (ligne 162)\\
 Déclaration & show\_help\_principles(english)\\
-Rôle & Affiche une aide dans laquelle le principe de chaque méthode est expliquée\\
-         demande la saisie de ‘m’ pour retourner au menu principal\\
+Rôle & Affiche une aide dans laquelle le principe\\
+ & de chaque méthode est expliquée\\
+ & demande la saisie de ' m ' pour retourner au menu principal\\
 Paramètre & english: booléen \\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
-Retour & ‘m’ \\
+Retour & ' m ' \\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{tabular}[t]{ll} 
+%\end{tabular}
+%\vspace{0.5cm}
+\cr 
+\cr
+%\begin{tabular}[t]{ll} 
 \textbf{show\_quit\_message} & (ligne 180)\\
 Déclaration & show\_quit\_message(english)\\
-Rôle & Affiche un message de fin d’utilisation du programme\\
+Rôle & Affiche un message de fin d'utilisation du programme\\
 Paramètre & english: booléen \\
- & True si la langue choisie est l’anglais\\
+ & True si la langue choisie est l'anglais\\
  & False si la langue choisie est le français\\
 Retour & aucun\\
 Appelé par & run()     (attention à vérifier)\\
 Appelle & aucun\\
-\end{tabular}
+\end{longtable}
 \vspace{0.5cm}
 
 
-
+\newpage
 % text_module
 \textit{\textbf{text\_module:}}\vspace{0.2cm}
 \begin{itemize}
