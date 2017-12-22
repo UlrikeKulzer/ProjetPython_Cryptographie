@@ -3,10 +3,6 @@ This module contains all functions with which the user's text can be treated.
 """
 
 
-# TODO: COMMENT CODE!!!
-# -> rotors
-# -> enigma
-
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
