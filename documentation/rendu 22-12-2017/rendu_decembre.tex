@@ -509,7 +509,7 @@ Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
 \cr 
 \cr
-\textbf{show\_ask\_text} & (ligne 115)\\
+\textbf{show\_ask\_text} & (ligne 114)\\
 Déclaration & show\_ask\_text(english)\\
 Rôle & demande à l'utilisateur le texte qu'il veut (dé)crypter\\
 Paramètre & english: booléen\\
@@ -523,7 +523,7 @@ Appelle & aucun\\
 \cr
 \cr
 \cr
-\textbf{show\_treated\_text} & (ligne 135)\\
+\textbf{show\_treated\_text} & (ligne 133)\\
 Déclaration & show\_treated\_text(english, encrypting)\\
 Rôle & retourne le message d'affichage du texte (dé)crypté\\
 Paramètre & english: booléen \\
@@ -537,7 +537,7 @@ Appelé par & run()   (attention à vérifier)\\
 Appelle & aucun\\
 \cr 
 \cr
-\textbf{show\_help\_principles} & (ligne 162)\\
+\textbf{show\_help\_principles} & (ligne 166)\\
 Déclaration & show\_help\_principles(english)\\
 Rôle & Affiche une aide dans laquelle le principe\\
  & de chaque méthode est expliquée\\
@@ -550,7 +550,7 @@ Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
 \cr 
 \cr
-\textbf{show\_quit\_message} & (ligne 180)\\
+\textbf{show\_quit\_message} & (ligne 184)\\
 Déclaration & show\_quit\_message(english)\\
 Rôle & Affiche un message de fin d'utilisation du programme\\
 Paramètre & english: booléen \\
@@ -571,7 +571,7 @@ Ce module contient toutes les fonctions avec lesquelles le texte de l'utilisateu
 
 \begin{longtable}{ll} 
 \textbf{\textit{César}}\\
-\textbf{encrypt\_caesar} & (ligne 11)\\
+\textbf{encrypt\_caesar} & (ligne 7)\\
 Déclaration & encrypt\_caesar(text, key)\\
 Rôle & crypte le texte selon le principe de César\\
 Paramètre & text: le texte de l'utilisateur à crypter\\
@@ -581,7 +581,7 @@ Appelé par & run()     (attention à vérifier)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{decrypt\_caesar} & (ligne 29)\\
+\textbf{decrypt\_caesar} & (ligne 25)\\
 Déclaration & decrypt\_caesar(text, key)\\
 Rôle & crypte le texte selon le principe de César\\
 Paramètre & text: le texte de l'utilisateur à décrypter\\
@@ -593,7 +593,7 @@ Appelle & aucun\\
 \cr
 \cr
 \textbf{\textit{Vigenère}}\\
-\textbf{create\_vigenere\_table} & (ligne 51)\\
+\textbf{create\_vigenere\_table} & (ligne 47)\\
 Déclaration & create\_vigenere\_table()\\
 Rôle & crée un tableau modélisant le tableau de Vigenère\\
 Paramètre & aucun\\
@@ -603,7 +603,7 @@ Appelé par & encrypt\_vigenere(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{create\_table\_text\_key} & (ligne 63)\\
+\textbf{create\_table\_text\_key} & (ligne 60)\\
 Déclaration & create\_table\_text\_key(text, key)\\
 Rôle & crée un tableau avec deux lignes,\\
  & la première contenant le texte formaté et\\
@@ -616,7 +616,7 @@ Appelé par & encrypt\_vigenere(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{encrypt\_vigenere} & (ligne 84)\\
+\textbf{encrypt\_vigenere} & (ligne 82)\\
 Déclaration & encrypt\_vigenere(text, key)\\
 Rôle & crypte le texte selon le principe de Vigenère\\
 Paramètre & text: le texte de l'utilisateur à crypter\\
@@ -626,7 +626,7 @@ Appelé par & run()     (attention à vérifier)\\
 Appelle & create\_table\_text\_key\\
 \cr
 \cr
-\textbf{decrypt\_vigenere} & (ligne 104)\\
+\textbf{decrypt\_vigenere} & (ligne 103)\\
 Déclaration & decrypt\_vigenere(text, key)\\
 Rôle & décrypte le texte selon le principe de Vigenère\\
 Paramètre & text: le texte de l'utilisateur à décrypter\\
@@ -638,7 +638,7 @@ Appelle & create\_table\_text\_key\\
 \cr
 \cr
 \textbf{\textit{Enigma}}\\
-\textbf{create\_initial\_list} & (ligne X)\\
+\textbf{create\_initial\_list} & (ligne 130)\\
 Déclaration & create\_initial\_list()\\
 Rôle & crée une liste avec les lettres de l'alphabet\\
 Paramètre & aucun\\
@@ -647,7 +647,7 @@ Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{search\_index} & (ligne X)\\
+\textbf{search\_index} & (ligne 139)\\
 Déclaration & search\_index(initial\_list, letter)\\
 Rôle & cherche l'indice d'une lettre donnée dans une liste de lettres donnée\\
 Paramètre & initial\_list : liste dans laquelle l'indice est cherché\\
@@ -663,7 +663,7 @@ Appelle & aucun\\
 \cr
 \cr
 \cr
-\textbf{plugboard} & (ligne X)\\
+\textbf{plugboard} & (ligne 167)\\
 Déclaration & plugboard(letter)\\
 Rôle & modélise le tableau de permutation: dix lettres sont associées à\\
  & dix autres lettres. Si la lettre donnée est associée à\\
@@ -677,7 +677,7 @@ Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{permutation\_reflector} & (ligne X)\\
+\textbf{permutation\_reflector} & (ligne 225)\\
 Déclaration & permutation\_reflector(letter)\\
 Rôle & modélise le réflecteur :\\
  & même principe que plugboard(letter), mais cette fois-ci\\
@@ -688,7 +688,7 @@ Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{shift\_first\_rotor} & (ligne X)\\
+\textbf{shift\_first\_rotor} & (ligne 292)\\
 Déclaration & shift\_first\_rotor(return\_path, index, offset)\\
 Rôle & modélise le premier rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
@@ -711,7 +711,7 @@ Appelle & aucun\\
 \cr
 \cr
 \cr
-\textbf{shift\_second\_rotor} & (ligne X)\\
+\textbf{shift\_second\_rotor} & (ligne 327)\\
 Déclaration & shift\_second\_rotor(return\_path, index, offset)\\
 Rôle & modélise le deuxième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
@@ -724,7 +724,7 @@ Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{shift\_third\_rotor} & (ligne X)\\
+\textbf{shift\_third\_rotor} & (ligne 362)\\
 Déclaration & shift\_third\_rotor(return\_path, index, offset)\\
 Rôle & modélise le troisième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
@@ -737,7 +737,7 @@ Appelé par & enigma(text, key)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{enigma} & (ligne X)\\
+\textbf{enigma} & (ligne 398)\\
 Déclaration & enigma(text, key)\\
 Rôle & (dé)crypte le texte formaté par le principe\\
  & de la machine Enigma\\
@@ -760,7 +760,7 @@ Pour l'utilisation de ces fonctions il est nécessaire d'importer préalablement
 \vspace{0.3cm}
 
 \begin{longtable}{ll}
-\textbf{normalise\_letter} & (ligne 12)\\
+\textbf{normalise\_letter} & (ligne 10)\\
 Déclaration & normalise\_letter(x)\\
 Rôle & normalise la lettre donné si c'est un caractère spécial\\
  & (ex : lettre avec accent) ou retourne la lettre donnée\\
@@ -771,7 +771,7 @@ Appelé par & format\_texte (texte)\\
 Appelle & aucun\\
 \cr
 \cr
-\textbf{format\_text} & (ligne 42)\\
+\textbf{format\_text} & (ligne 43)\\
 Déclaration & format\_text(text)\\
 Rôle & formate le texte, c'est-à-dire le texte donné est mis en majuscules;\\
  & les virgules, espaces, chiffres, symboles, etc.\\
@@ -783,7 +783,7 @@ Appelé par & run()\\
 Appelle & normalise\_letter(x)\\
 \cr
 \cr
-\textbf{run} & (ligne 65)\\
+\textbf{run} & (ligne 69)\\
 Déclaration & run()\\
 Rôle & démarre le programme et contrôle son déroulement\\
 Paramètre & aucun\\

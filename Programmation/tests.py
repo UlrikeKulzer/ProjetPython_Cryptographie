@@ -2,11 +2,6 @@
 This module contains all functions which are used to test the program code.
 """
 
-# TODO: COMMENT CODE!!!
-# + test_run()
-# + test enigma + comment
-# + test vigenere table
-
 import main_module
 import text_module
 
@@ -81,19 +76,16 @@ def test_enigma():
     formatted_text2 = main_module.format_text(other_text)
     # check if decrypted encrypted text is equal to formatted text
     # encrypt
-    encrypt1 = enigma(formatted_text1, key1)
-    encrypt2 = enigma(formatted_text2, key2)
+    encrypt1 = text_module.enigma(formatted_text1, key1)
+    encrypt2 = text_module.enigma(formatted_text2, key2)
     # decrypt
-    decrypt1 = enigma(encrypt1, key1)
-    decrypt2 = enigma(encrypt2, key2)
-    if encrypt1 == decrypt1:
+    decrypt1 = text_module.enigma(encrypt1, key1)
+    decrypt2 = text_module.enigma(encrypt2, key2)
+    if encrypt1 == decrypt1 and encrypt2 == decrypt2:
         return True
     else:
         return False
-    if encrypt2 == decrypt2:
-        return True
-    else:
-        return False
+
 
 # *** tests for the main_module ***
 def test_format_and_normalise():
