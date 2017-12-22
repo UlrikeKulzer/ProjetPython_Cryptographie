@@ -109,14 +109,14 @@ def decrypt_vigenere(text, key):
     :param key:
     :return:
     """
-    table_of_vigenere = create_vigenere_table()
+    vigenere_table = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
     alphabet = [chr(x) for x in range(65, 91)]
     for i in range(len(text)):
         letter_text = repeated_key_table[i][0]
         letter_key = repeated_key_table[i][1]
-        list_temp = table_of_vigenere[alphabet.index(letter_key)]
+        list_temp = vigenere_table[alphabet.index(letter_key)]
         decrypted_text += alphabet[list_temp.index(letter_text)]
     return decrypted_text
 
