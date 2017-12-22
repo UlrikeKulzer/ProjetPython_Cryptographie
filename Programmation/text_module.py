@@ -4,7 +4,11 @@ This module contains all functions with which the user's text can be treated.
 
 
 # TODO: COMMENT CODE!!!
-
+# -> vigenere en- + decryption
+# -> rotors
+# -> enigma
+# TODO: tidy up
+# TODO: test enigma with diff. keys
 
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
@@ -55,7 +59,8 @@ def create_vigenere_table():
     """
     alphabet = [chr(x) for x in range(ord('A'),ord('Z')+1)]
     table = []
-    for k in range(len(alphabet)):
+    for k in range(len(alphabet)): # fill table
+        # alphabet is shifted -1 in each row and column
         table += [alphabet[k:] + alphabet[:k]]
     return table
 
@@ -110,7 +115,7 @@ def decrypt_vigenere(text, key):
     :param key: user's key (string)
     :return: text: decrypted text
     """
-    table_of_vigenere = create_vigenere_table()
+    vigenere_table = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
     alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
@@ -119,7 +124,7 @@ def decrypt_vigenere(text, key):
         letter_text = repeated_key_table[i][0]
         # lign corresponding to the letter of the key
         letter_key = repeated_key_table[i][1]
-        list_temp = table_of_vigenere[alphabet.index(letter_key)]
+        list_temp = vigenere_table[alphabet.index(letter_key)]
         decrypted_text += alphabet[list_temp.index(letter_text)]
     return decrypted_text
 
@@ -135,7 +140,7 @@ def create_initial_list():
     creates a list filled with the alphabet (capital letters)
     :return: list
     """
-    initial_list = [chr(x) for x in range(65, 91)]
+    initial_list = [chr(x) for x in range(65, 91)]  # fill list thanks to Ascii code
     return initial_list
 
 
@@ -154,9 +159,11 @@ def search_index(initial_list, letter):
 
     while i < len(initial_list):
         if initial_list[i] == letter:
+            # if the given letter is found in the list, set the index to the actual position
             index = i
         i += 1
     else:
+        # check if the index is out of range
         if (index < 0) or (index > len(initial_list)):
             index %= len(initial_list)
         # check if something went wrong before
@@ -294,6 +301,7 @@ def permutation_reflector(letter):
 def shift_first_rotor(return_path, index, offset):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
@@ -326,6 +334,7 @@ def shift_first_rotor(return_path, index, offset):
 def shift_second_rotor(return_path, index, offset):
     """
     represents the letter shift of the second rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
@@ -357,6 +366,7 @@ def shift_second_rotor(return_path, index, offset):
 def shift_third_rotor(return_path, index, offset):
     """
     represents the letter shift of the third rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
@@ -473,5 +483,5 @@ def enigma(text, key):
 
 clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
 chiffre = enigma(clair, "AAA")
-dechiffre =enigma(chiffre, "AAA")
-print(clair, chiffre, dechiffre,sep='\n')
+dechiffre = enigma(chiffre, "AAA")
+print(clair, chiffre, dechiffre, sep='\n')

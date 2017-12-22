@@ -83,7 +83,6 @@ def show_ask_key(english, principle):
     asks the key the user wants to use for the method his has chosen
     key = char
     ' m ' to go back to the main menu
-    ' r ' to go back to the previous menu
     :param principle:
     :param english: boolean
      True if chosen language is english
@@ -116,7 +115,6 @@ def show_ask_text(english):
     """
     asks the text that the user wants to decrypt/encrypt
     ' m ' to go back to the main menu
-    ' r ' to go back to the previous menu
     :param english: boolean
      True if chosen language is english
      False if chosen language is french
@@ -132,9 +130,11 @@ def show_ask_text(english):
         return "this should never happen"
 
 
-def show_treated_text(english, encrypting):
+def show_treated_text(english, encrypting, text):
     """
-    shows the decrypt/encrypt text
+    shows the decrypted/encrypted text
+    :param text: string
+    the user's en-/decrypted text
     :param english: boolean
      True if chosen language is english
      False if chosen language is french
@@ -146,15 +146,19 @@ def show_treated_text(english, encrypting):
     # language chosen is english
     if english:
         if encrypting:
-            print(screen_constants.ENGLISH_ENCRYPTED_TEXT)
+            print(screen_constants.ENGLISH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
         elif encrypting == False:
-            print(screen_constants.ENGLISH_DECRYPTED_TEXT)
+            print(screen_constants.ENGLISH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+        # tell user what to do in order to continue
+        return input(screen_constants.ENGLISH_CONTINUE)
     # language chosen is french
     if english == False:
         if encrypting:
-            print(screen_constants.FRENCH_ENCRYPTED_TEXT)
+            print(screen_constants.FRENCH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
         elif encrypting == False:
-            print(screen_constants.FRENCH_DECRYPTED_TEXT)
+            print(screen_constants.FRENCH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+        # tell user what to do in order to continue
+        return input(screen_constants.FRENCH_CONTINUE)
     else:
         return "this should never happen"
 
