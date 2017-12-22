@@ -484,4 +484,4 @@ def enigma(text, key):
 clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
 chiffre = enigma(clair, "AAA")
 dechiffre = enigma(chiffre, "AAA")
-print(clair, chiffre, dechiffre, sep='\n')
+#print(clair, chiffre, dechiffre, sep='\n')
