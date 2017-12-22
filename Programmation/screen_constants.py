@@ -3,25 +3,24 @@ This module contains all screen constants, i. e. all texts of the user interface
 """
 
 # constants for both languages
-START_ASK_LANGUAGE = """         Hello and welcome to the cryptography program
+START_ASK_LANGUAGE = """Hello and welcome to the cryptography program.
 
 Please select your language:             
 'f' for Français, 'e' for English. """
 
-LANGUAGE_SETTINGS = """         Please select your language:
-
+LANGUAGE_SETTINGS = """Please select your language:
 'f' for Français,   'e' for English.  """
 
 # English user interface
-ENGLISH_MAIN_MENU = """         What do you want to do - encrypt or decrypt a message?
+ENGLISH_MAIN_MENU = """What do you want to do - encrypt or decrypt a message?
 
-Enter 'c' for encrypting or 'd' for decrypting.
+Enter 'c' for encrypting
+or 'd' for decrypting.
 
 Enter 's' to change settings(language)
-
 or 'q' to exit :(    """
 
-ENGLISH_PRINCIPLES_ENCRYPTING = """         How do you want to encrypt your text?
+ENGLISH_PRINCIPLES_ENCRYPTING = """How do you want to encrypt your text?
 
 Enter 'c' for Caesar's cypher,
 enter 'v' for Vigenere's cypher
@@ -31,7 +30,7 @@ Enter 'h' to open the help which contains more information about the principles.
 
 Enter 'm' to go back to the main menu.   """
 
-ENGLISH_PRINCIPLES_DECRYPTING = """         How do you want to decrypt your text?
+ENGLISH_PRINCIPLES_DECRYPTING = """How do you want to decrypt your text?
 
 Enter 'c' for Caesar's cypher,
 enter 'v' for Vigenere's cypher
@@ -41,7 +40,7 @@ Enter 'h' to open the help which contains more information about the principles.
 
 Enter 'm' to go back to the main menu.   """
 
-ENGLISH_ASK_KEY_CAESAR = """        You chose <<Caesar>>:
+ENGLISH_ASK_KEY_CAESAR = """You chose <<Caesar>>:
 Please enter your key (a number between 1 and 25 included).
 
 Enter 'm' to go back to the main menu.   """
@@ -51,19 +50,23 @@ Please enter your key (a world).
 
 Enter 'm' to go back to the main menu.   """
 
-ENGLISH_ASK_KEY_ENIGMA = """        You chose <<Enigma>>:
+ENGLISH_ASK_KEY_ENIGMA = """You chose <<Enigma>>:
 Please enter your key (composed of three upper case letters).
 
 Enter 'm' to go back to the main menu.   """
 
-ENGLISH_ASK_TEXT = """      Please enter your text.
+ENGLISH_ASK_TEXT = """Please enter your text.
 
 Enter 'm' to go back to the main menu."""
 ENGLISH_ENCRYPTED_TEXT = """Here is your encrypted text:
 """
 ENGLISH_DECRYPTED_TEXT = """Here is your decrypted text:
 """
-ENGLISH_HELP_PRINCIPLES = """********************** HELP ***********************
+
+ENGLISH_CONTINUE = """
+Please enter 'm' to go back to the main menu."""
+
+ENGLISH_HELP_PRINCIPLES = """*********************************** HELP ***********************************
 
 These are explanations of the different encryption and decryption principles.
 
@@ -90,22 +93,21 @@ the corresponding lamp to the letter to light up.
 Enter 'm' to go back to the main menu.
 """
 
-ENGLISH_QUIT_MESSAGE = """      Thank you for using our program.
+ENGLISH_QUIT_MESSAGE = """Thank you for using our program.
 
 Good bye and have a nice day."""
 
 # French user interface
-FRENCH_MAIN_MENU = """          Bonjour et bienvenue sur le programme de cryptographie.
+FRENCH_MAIN_MENU = """Bonjour et bienvenue sur le programme de cryptographie.
 
 Que voulez vous faire-crypter ou décrypter un message?
-
-Insérez 'c' pour crypter ou 'd' pour décrypter.
+Insérez 'c' pour crypter
+ou 'd' pour décrypter.
 
 Insérez 's' pour changer les paramètres(langue)
-
 ou 'q' pour quitter le programme :(   """
 
-FRENCH_PRINCIPLES_ENCRYPTING = """         De quelle manière voulez-vous crypter votre texte?
+FRENCH_PRINCIPLES_ENCRYPTING = """De quelle manière voulez-vous crypter votre texte?
 
 Insérez 'c' pour le cryptage par la methode du chiffre de César,
 insérez 'v' pour le cryptage par la méthode du chiffre de Vigenère
@@ -116,7 +118,7 @@ sur les différents principes.
 
 Insérez 'm' pour retourner au menu principal.   """
 
-FRENCH_PRINCIPLES_DECRYPTING = """          De quelle manière voulez-vous décrypter votre texte?
+FRENCH_PRINCIPLES_DECRYPTING = """De quelle manière voulez-vous décrypter votre texte?
 
 Insérez 'c' pour le décryptage par la methode du chiffre de César,
 insérez 'v' pour le décryptage par la méthode du chiffre de Vigenère
@@ -127,22 +129,22 @@ sur les différents principes.
 
 Insérez 'm' pour retourner au menu principal.   """
 
-FRENCH_ASK_KEY_CAESAR = """         Vous avez choisi <<César>>:
+FRENCH_ASK_KEY_CAESAR = """Vous avez choisi <<César>>:
 Insérez votre clé (un nombre compris entre 1 et 25);
 
 Insérez 'm' pour retourner au menu principal.  """
 
-FRENCH_ASK_KEY_VIGENERE = """           Vous avez choisi <<Vigenère>>:
+FRENCH_ASK_KEY_VIGENERE = """Vous avez choisi <<Vigenère>>:
 Insérez votre clé (un mot).
 
 Insérez 'm' pour retourner au menu principal.   """
 
-FRENCH_ASK_KEY_ENIGMA = """     Vous avez choisi <<Enigma>>:
+FRENCH_ASK_KEY_ENIGMA = """Vous avez choisi <<Enigma>>:
 Insérez votre clé (composée de trois lettres enmajuscules).
 
 Insérez 'm' pour retourner au menu principal.   """
 
-FRENCH_ASK_TEXT = """       Insérez votre texte.
+FRENCH_ASK_TEXT = """Insérez votre texte.
 
 Insérez 'm' pour retourner au menu principal.   """
 
@@ -151,6 +153,9 @@ FRENCH_ENCRYPTED_TEXT = """Voici votre texte crypté:
 
 FRENCH_DECRYPTED_TEXT = """Voici votre texte décrypté:
 """
+
+FRENCH_CONTINUE = """
+Insérez 'm' pour retourner au menu principal."""
 
 FRENCH_HELP_PRINCIPLES = """
 *********************************** AIDE ***************************************
@@ -180,6 +185,6 @@ permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour ch
 
 Insérez 'm' pour retourner au menu principal."""
 
-FRENCH_QUIT_MESSAGE = """       Merci d'avoir utilisé notre programme.
+FRENCH_QUIT_MESSAGE = """Merci d'avoir utilisé notre programme.
 
 Bonne journée, au revoir."""

@@ -4,7 +4,11 @@ This module contains all functions with which the user's text can be treated.
 
 
 # TODO: COMMENT CODE!!!
-
+# -> vigenere en- + decryption
+# -> rotors
+# -> enigma
+# TODO: tidy up
+# TODO: test enigma with diff. keys
 
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
@@ -53,9 +57,10 @@ def create_vigenere_table():
     creates a table 26x26 with the alphabet that recreates the Vigenere table
     :return:
     """
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(65, 91)]  # fill list thanks to Ascii Code
     table = []
-    for k in range(26):
+    for k in range(26):  # fill table
+        # alphabet is shifted -1 in each row and column
         table += [alphabet[k:] + alphabet[:k]]
     return table
 
@@ -132,7 +137,7 @@ def create_initial_list():
     creates a list filled with the alphabet (capital letters)
     :return: list
     """
-    initial_list = [chr(x) for x in range(65, 91)]
+    initial_list = [chr(x) for x in range(65, 91)]  # fill list thanks to Ascii code
     return initial_list
 
 
@@ -151,9 +156,11 @@ def search_index(initial_list, letter):
 
     while i < len(initial_list):
         if initial_list[i] == letter:
+            # if the given letter is found in the list, set the index to the actual position
             index = i
         i += 1
     else:
+        # check if the index is out of range
         if (index < 0) or (index > len(initial_list)):
             index %= len(initial_list)
         # check if something went wrong before
@@ -474,5 +481,5 @@ def enigma(text, key):
 
 clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
 chiffre = enigma(clair, "AAA")
-dechiffre =enigma(chiffre, "AAA")
-print(clair, chiffre, dechiffre,sep='\n')
+dechiffre = enigma(chiffre, "AAA")
+print(clair, chiffre, dechiffre, sep='\n')

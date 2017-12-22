@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  22 DEC 2017 03:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  22 DEC 2017 05:03
 entering extended mode
 **./rendu_decembre.tex
 (rendu_decembre.tex
@@ -1652,23 +1652,48 @@ Overfull \hbox (18.54982pt too wide) in paragraph at lines 299--300
  []
 
 
-<./Pictures/interface/french/07_french_quitMessage.png, id=179, 260.47313pt x 4
+<./Pictures/interface/french/99_french_continue.png, id=179, 308.65312pt x 26.3
+4843pt>
+File: ./Pictures/interface/french/99_french_continue.png Graphic file (type png
+)
+ <use ./Pictures/interface/french/99_french_continue.png>
+Package pdftex.def Info: ./Pictures/interface/french/99_french_continue.png use
+d on input line 308.
+(pdftex.def)             Requested size: 308.65236pt x 26.34836pt.
+
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 308--309
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
+
+ []
+
+
+<./Pictures/interface/french/07_french_quitMessage.png, id=181, 260.47313pt x 4
 2.1575pt>
 File: ./Pictures/interface/french/07_french_quitMessage.png Graphic file (type 
 png)
  <use ./Pictures/interface/french/07_french_quitMessage.png>
 Package pdftex.def Info: ./Pictures/interface/french/07_french_quitMessage.png 
-used on input line 311.
+used on input line 320.
 (pdftex.def)             Requested size: 260.47249pt x 42.15738pt.
 
-Overfull \hbox (18.54982pt too wide) in paragraph at lines 311--312
+Overfull \hbox (18.54982pt too wide) in paragraph at lines 320--321
 [][] 
  []
 
 [9 <./Pictures/interface/french/06_french_cryptage_showText.png> <./Pictures/in
 terface/french/06_french_decryptage_showText.png> <./Pictures/interface/french/
-07_french_quitMessage.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 334--337
+99_french_continue.png> <./Pictures/interface/french/07_french_quitMessage.png>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 339--342
 
  []
 
@@ -1676,30 +1701,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--337
 
 pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDesEtats.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<./Diagrammes/diagrammeDesEtats.pdf, id=190, 844.65562pt x 596.98032pt>
+<./Diagrammes/diagrammeDesEtats.pdf, id=194, 844.65562pt x 596.98032pt>
 File: ./Diagrammes/diagrammeDesEtats.pdf Graphic file (type pdf)
 
 <use ./Diagrammes/diagrammeDesEtats.pdf>
 Package pdftex.def Info: ./Diagrammes/diagrammeDesEtats.pdf used on input line 
-340.
+345.
 (pdftex.def)             Requested size: 483.69684pt x 329.97363pt.
  [10 <./Diagrammes/diagrammeDesEtats.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 350--353
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--357
+Underfull \hbox (badness 10000) in paragraph at lines 358--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--362
+Underfull \hbox (badness 10000) in paragraph at lines 362--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--366
+Underfull \hbox (badness 10000) in paragraph at lines 367--371
 
  []
 
@@ -1708,51 +1733,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--366
 pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDeStructure_main_modules.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<./Diagrammes/diagrammeDeStructure_main_modules.pdf, id=212, 596.98032pt x 844.
+<./Diagrammes/diagrammeDeStructure_main_modules.pdf, id=216, 596.98032pt x 844.
 65562pt>
 File: ./Diagrammes/diagrammeDeStructure_main_modules.pdf Graphic file (type pdf
 )
  <use ./Diagrammes/diagrammeDeStructure_main_modules.pdf>
 Package pdftex.def Info: ./Diagrammes/diagrammeDeStructure_main_modules.pdf use
-d on input line 374.
+d on input line 379.
 (pdftex.def)             Requested size: 483.69684pt x 595.53036pt.
 
-Overfull \hbox (11.74983pt too wide) in paragraph at lines 372--379
+Overfull \hbox (11.74983pt too wide) in paragraph at lines 377--384
 []$[]$ 
  []
 
 [12 <./Diagrammes/diagrammeDeStructure_main_modules.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 389--391
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--393
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 393--395
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--398
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--401
+Underfull \hbox (badness 10000) in paragraph at lines 397--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
+Underfull \hbox (badness 10000) in paragraph at lines 399--402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--405
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
 
@@ -1786,47 +1801,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 415--417
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
+
+ []
+
 [13]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 427--455
+Overfull \hbox (13.04482pt too wide) in alignment at lines 431--459
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 455--487
+Overfull \hbox (13.04482pt too wide) in alignment at lines 459--491
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 487--512
+Overfull \hbox (13.04482pt too wide) in alignment at lines 491--516
  [] [] 
  []
 
 [14]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 512--544
+Overfull \hbox (13.04482pt too wide) in alignment at lines 516--548
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 544--574
+Overfull \hbox (13.04482pt too wide) in alignment at lines 548--578
  [] [] 
  []
 
 [15]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 574--580
+Overfull \hbox (13.04482pt too wide) in alignment at lines 578--584
  [] [] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 588--590
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 590--592
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 592--594
 
  []
@@ -1886,28 +1906,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--616
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--620
+
+ []
+
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 622--624
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 626--628
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--636
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 636--638
+Underfull \hbox (badness 10000) in paragraph at lines 630--632
 
  []
 
@@ -1946,38 +1966,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 650--652
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
+
+ []
+
 [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
  (rendu_decembre.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 706.
 Package rerunfilecheck Info: File `rendu_decembre.out' has not changed.
 (rerunfilecheck)             Checksum: 381D545DBBFC8C4050D58061A202F54A;1245.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 706.
+ )
+(\end occurred inside a group at level 1)
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
- ) 
+### simple group (level 1) entered at line 308 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 22418 strings out of 493323
- 428971 string characters out of 3139062
- 612522 words of memory out of 3000000
- 25475 multiletter control sequences out of 15000+200000
+ 22425 strings out of 493323
+ 429228 string characters out of 3139062
+ 612568 words of memory out of 3000000
+ 25480 multiletter control sequences out of 15000+200000
  51094 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,7n,69p,8827b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx
-i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmtt12.pfb>
-Output written on rendu_decembre.pdf (18 pages, 8136191 bytes).
+ 73i,7n,69p,8827b,588s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/P
+rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmtt12.pfb>
+Output written on rendu_decembre.pdf (18 pages, 8138388 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 310 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

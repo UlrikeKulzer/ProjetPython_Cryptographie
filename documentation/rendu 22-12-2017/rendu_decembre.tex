@@ -300,12 +300,21 @@ Enfin le programme s'exécute pour effectuer l'opération que vous lui avez dema
 \captionof{figure}{Affichage du texte décrypté}
 \label{FSDT}
 }
+\vspace{0.7cm}
+
+Sous le texte (dé)crypté il s'affichera la phrase suivante:
+
 \vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/99_french_continue.png}}}
+\captionof{figure}{Affichage du texte crypté}
+\label{FrCon}
+\vspace{0.7cm}
 
+Il faut insérer ' m ' pour retourner au menu principal.\\
 
-% ############################## HIER FEHLT DER ÜBERGANG!!!
+À partir de cela vous pouvez choisir, si vous voulez continuer ou quitter le programme (voir \ref{FMM}).\\
 
-Message de fin :
+Si ensuite la lettre entrée est ' q ', le message de fin s'affichera:
 
 \vspace{0.5cm}
 {\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/07_french_quitMessage.png}}}		%23
@@ -314,11 +323,7 @@ Message de fin :
 }
 
 
-
-
-
-
-
+% ########### guide de maintenance
 
 \newpage
 \section{Guide de maintenance}
@@ -380,7 +385,6 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 
 \newpage
 \subsubsection{Explications des modules, constantes et fonctions}
-\vspace{0.3cm}
 \textbf{Explications du module \textit{screen\_constants} :}\\
 Ce module contient toutes les constantes nécessaires pour le screen\_module, c'est-à-dire tous les textes de l'interface utilisateur.
 \vspace{0.3cm}
@@ -410,15 +414,15 @@ dialogue de demande du text à (dé)crypter (voir fig. \ref{FIT})\\
 dialogue du texte crypté (voir fig. \ref{FSCT})\\
 \item \textbf{ENGLISH\_DECRYPTED\_TEXT} et \textbf{FRENCH\_DECRYPTED\_TEXT}:\\
 dialogue du texte décrypté (voir fig. \ref{FSDT})\\
+\item \textbf{ENGLISH\_CONTINUE} et \textbf{FRENCH\_CONTINUE}:\\
+dialogue du pour continuer après avoir reçu le text (dé)crypté (voir fig. \ref{FrCon})\\
 \item \textbf{ENGLISH\_HELP\_PRINCIPLES} et \textbf{FRENCH\_HELP\_PRINCIPLES}:\\
 dialogue d'aide (voir fig. \ref{FHM})\\
 \item \textbf{ENGLISH\_QUIT\_MESSAGE} et \textbf{FRENCH\_QUIT\_MESSAGE}:\\
 message de sortie (voir fig. \ref{FSQM})\\
 \end{itemize}
-\vspace{0.5cm}
 
-
-\newpage
+%\newpage
 % screen_module
 \textbf{Explications du module \textit{screen\_module:}}\\
 Ce module est responsable de l'interface utilisateur, c'est-à-dire il montre le bon texte dans la langue choisie.
