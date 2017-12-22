@@ -72,22 +72,28 @@ def test_enigma():
     False if not (-> Something went wrong)
     """
     print("*** TEST_ENIGMA STARTED ***")
-    key = "AAA"
+    key1 = "AAA"
+    key2 = "ADB"
     original_text = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
+    other_text = "Ayant le choix ou d’être serf ou d’être libre, quitte la franchise et prend le joug, qui consent à son mal."
     # format text
-    formatted_text = main_module.format_text(original_text)
-    # encrypt text
-    encrypted_text = text_module.encrypt_vigenere(formatted_text, key)
+    formatted_text1 = main_module.format_text(original_text)
+    formatted_text2 = main_module.format_text(other_text)
     # check if decrypted encrypted text is equal to formatted text
-    if text_module.decrypt_enigma(encrypted_text, key) == formatted_text:
+    # encrypt
+    encrypt1 = enigma(formatted_text1, key1)
+    encrypt2 = enigma(formatted_text2, key2)
+    # decrypt
+    decrypt1 = enigma(encrypt1, key1)
+    decrypt2 = enigma(encrypt2, key2)
+    if encrypt1 == decrypt1:
         return True
     else:
         return False
-
-
-
-
-
+    if encrypt2 == decrypt2:
+        return True
+    else:
+        return False
 
 # *** tests for the main_module ***
 def test_format_and_normalise():
