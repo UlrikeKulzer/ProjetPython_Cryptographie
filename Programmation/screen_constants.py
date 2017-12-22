@@ -30,6 +30,8 @@ enter 'v' for Vigenere's cypher
 
 or enter 'e' for the encryption by the Enigma machine.
 
+Enter 'h' if you want more informations about each method of encryption
+
 Enter 'm' to go back to the main menu   :   """
 
 ENGLISH_PRINCIPLES_DECRYPTING = """         How do you want to decrypt your text?
@@ -39,8 +41,10 @@ Enter 'c' for Caesar's cypher,
 enter 'v' for Vigenere's cypher
 
 or enter 'e' for the decryption by the Enigma machine.
-E
-nter 'm' to go back to the main menu    :   """
+
+Enter 'h' if you want more informations about each method of decryption
+
+Enter 'm' to go back to the main menu    :   """
 
 ENGLISH_ASK_KEY_CAESAR = """        You chose <<Caesar>>:
 
@@ -50,7 +54,7 @@ Enter 'm' to go back to the main menu
 
 or 'r' to go back to the previous menu  :   """
 
-ENGLISH_ASK_KEY_VIGENERE = """You chose <<Vigenère>>:
+ENGLISH_ASK_KEY_VIGENERE = """You chose <<Vigenere>>:
 
 Please enter your key (a world).
 
@@ -84,8 +88,8 @@ This principle was invented by Julius Caesar for his private correspondence.
 It is a type of substitution cipher in which each letter in the plaintext
 is replaced by a letter some fixed number of positions down the alphabet.
 
-- Vigenère's cypher:
-This principle was invented in the 16th century by Blaise de Vigenère et is based on the use of Vigenere's table
+- Vigenere's cypher:
+This principle was invented in the 16th century by Blaise de Vigenere et is based on the use of Vigenere's table
 (table which is filled twice by the alphabet). A key (a word) is repeated and put under the message and this way
 you can find the corresponding letters in the table.
 
@@ -104,9 +108,9 @@ ENGLISH_QUIT_MESSAGE = """      Thank you for using our program.
 Good bye and have a nice day."""
 
 # French user interface
-FRENCH_MAIN_MENU = """          Bonjour.Bienvenue sur le programme de cryptographie.
+FRENCH_MAIN_MENU = """          Bonjour. Bienvenue sur le programme de cryptographie.
 
-Que voulez vous faire-crypter ou décrypter un message?
+Que voulez-vous faire -crypter ou décrypter un message?
 
 Insérez c pour crypter ou d pour décrypter.
 
@@ -122,6 +126,8 @@ insérez 'v' pour le cryptage par la méthode du chiffre de Vigenère
 
 ou insérez 'e' pour le cryptage par la méthode de la machine Enigma.
 
+Insérez 'h' si vous voulez plus d'informations sur les différentes méthodes de cryptage
+
 Insérez 'm' pour retourner au menu principal    :   """
 
 FRENCH_PRINCIPLES_DECRYPTING = """          De quelle manière voulez-vous décrypter votre texte?
@@ -131,6 +137,8 @@ Intérez 'c' pour le décryptage par la methode du chiffre de César,
 insérez 'v' pour le décryptage par la méthode du chiffre de Vigenère
 
 ou insérez 'e' pour le décryptage par la méthode de la machine Enigma.
+
+Insérez 'h' si vous voulez plus d'informations sur les différentes méthodes de décryptage
 
 Insérez 'm' pour retourner au menu principal    :   """
 
@@ -152,7 +160,7 @@ ou 'r' pour retourner au dernier menu   :   """
 
 FRENCH_ASK_KEY_ENIGMA = """     Vous avez choisi <<Enigma>>:
 
-Insérez votre clé (composée de trois lettres enmajuscules).
+Insérez votre clé (composée de trois lettres en majuscules).
 
 Insérez 'm' pour retourner au menu principal
 

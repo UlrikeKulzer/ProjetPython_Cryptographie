@@ -51,11 +51,11 @@ def decrypt_caesar(text, key):
 def create_vigenere_table():
     """
     creates a table 26x26 with the alphabet that recreates the Vigenere table
-    :return:
+    :return: the table
     """
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(ord('A'),ord('Z')+1)]
     table = []
-    for k in range(26):
+    for k in range(len(alphabet)):
         table += [alphabet[k:] + alphabet[:k]]
     return table
 
@@ -73,7 +73,8 @@ def create_table_text_key(text, key):
     while len(repeated_key) < len(text):
         repeated_key += key
     list_key = []
-    # in a table of two lines, we add in the first line
+    # in a table of two lines, we add in the first line the text and in the second line
+    # the repeated key(of the same length as the text)
     for i in range(len(text)):
         list_temp = [text[i], repeated_key[i]]
         list_key.append(list_temp)
@@ -82,7 +83,6 @@ def create_table_text_key(text, key):
 
 # *** ENCRYPTION *** #
 def encrypt_vigenere(text, key):
-    # TODO : comment
     """
     encrypts and returns the given text by using the principle of Vigenere
     :param text: user's text (string)
@@ -92,9 +92,11 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(ord('A'),ord('Z')+1)]
     for i in range(len(text)):
+        #column corresponding to the letter of the text
         text_letter = repeated_key_table[i][0]
+        #lign corresponding to the letter of the key
         key_letter = repeated_key_table[i][1]
         encrypted_text += table_of_vigenere[alphabet.index(text_letter)][alphabet.index(key_letter)]
     return encrypted_text
@@ -102,19 +104,20 @@ def encrypt_vigenere(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_vigenere(text, key):
-    # TODO add description
     """
-
-    :param text:
-    :param key:
-    :return:
+    decrypts and returns the given text by using the principle of Vigenere
+    :param text: user's text (string)
+    :param key: user's key (string)
+    :return: text: decrypted text
     """
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     for i in range(len(text)):
+        # column corresponding to the letter of the text
         letter_text = repeated_key_table[i][0]
+        # lign corresponding to the letter of the key
         letter_key = repeated_key_table[i][1]
         list_temp = table_of_vigenere[alphabet.index(letter_key)]
         decrypted_text += alphabet[list_temp.index(letter_text)]
@@ -312,7 +315,6 @@ def shift_first_rotor(return_path, index, offset):
     elif return_path:
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -344,7 +346,6 @@ def shift_second_rotor(return_path, index, offset):
     elif return_path:
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -376,7 +377,6 @@ def shift_third_rotor(return_path, index, offset):
     elif return_path:
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -468,7 +468,6 @@ def enigma(text, key):
         else:
             pass
 
-    print("***** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text  # ********************************* end ENIGMA ********************************* #
 
 

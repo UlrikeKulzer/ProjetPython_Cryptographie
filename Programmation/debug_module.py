@@ -32,12 +32,12 @@ yes, I am lazy, but I'm a programmer.
 
 # TODO:
 #  FAIT # envoyer mail
-#       # guide d'utilisation (ensemble)
+#  FAIT # guide d'utilisation (ensemble)
 #       # guide de maintenantance -> fonctions en détail (chacune pour ses méthodes)
-#       # actualiser documentation (Rika)
+# FAIT  # actualiser documentation (Rika)
 # FAIT  # modifier SCREEN_MODULE (Fathima)
 #       # run()!!! (Rika)
-#       # commentaires!! (chacune pour son propre code)
+# FAIT  # commentaires!! (chacune pour son propre code)
 #       # rapport sur les écarts entre objectif et réalisation et les raisons (ensemble)
 
 
