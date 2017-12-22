@@ -166,6 +166,7 @@ Une nouvelle fenêtre va ensuite apparaître :
 
 Le programme demande maintenant ce que vous voulez faire, vous devez entrer ' c ' si vous voulez que le programme crypte votre texte ou ' d ' si vous voulez qu'il le décrypte.
 Si vous voulez changez de langue entrez ' s ' et si malheureusement vous voulez quitter le programme entrez ' q ' .\\
+\newpage
 Si la lettre entrée est ' s ' , une nouvelle fenêtre permettant de changer la langue va alors apparaitre.
 \vspace{0.5cm}
 \\
@@ -193,66 +194,122 @@ Si vous voulez changer de langue entrez ' s ' et si malheureusement vous voulez 
 Si la lettre entrée est ' c ' , le programme va donc être servi pour le cryptage d'un texte.\\
 Il existe trois méthodes par lesquelles le texte peut être crypté, nous allons donc détailler les différentes manières.
 
-\subsubsection{Choix du principe}
-
-\begin{itemize}
-\item \textit{César:}\\
-Si vous avez choisi de crypter votre texte, il vous faut maintenant choisir quelle méthode vous voulez utiliser, trois choix s'offrent à vous.
-
-
-
-
-\item Vigenère
-\item Enigma
-
-\end{itemize}
 
 \newpage
-\section{Interfaces utilisateurs}
-\subsection{En français}
-{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/settingsDialogue.png}}}		%14
-\captionof{figure}{Paramètres}
-\label{FSD}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_cryptage.png}}}	%15
+\subsubsection{Choix du principe}
+Si vous avez choisi de crypter votre texte, il vous faut maintenant choisir quelle méthode vous voulez utiliser, trois choix s'offrent à vous.
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_cryptage.png}}}
 \captionof{figure}{Cryptage}
 \label{FCr}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_decryptage.png}}}	%16
+}
+\vspace{0.5cm}
+
+Vous devez entrer ' c ' si vous voulez que le programme crypte votre texte par la méthode du chiffre de César, ' v ' par la méthode du chiffre de Vigenère et enfin ' e ' par la méthode de la machine Enigma.\\
+Si tout autre fois vous voulez retourner au menu principal, entrez ' m '.\\
+\\
+De la même manière, si à l'interface précédente vous aviez choisi le mode décryptage, vous allez devoir choisir la méthode par laquelle vous voulez décrypter votre texte. Les commandes pour choisir la méthode de décryptage sont alors les mêmes que pour un texte à crypter : ' c ' pour César, ' v ' pour Vigenère, ' e ' pour Enigma et ' m ' pour retourner au menu principal.
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/03_french_decryptage.png}}}
 \captionof{figure}{Décryptage}
 \label{FD}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_cesar.png}}}		%17
-\captionof{figure}{Le chiffre de César}
-\label{FCe}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_vigenere.png}}}	%18
-\captionof{figure}{Le chiffre de Vigenère}
-\label{FV}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_enigma.png}}}		%19
-\captionof{figure}{Le cryptage par la machine Enigma}
-\label{FE}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/05_french_insertText.png}}}	%20
-\captionof{figure}{Entrée du texte}
-\label{FIT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_cryptage_showText.png}}}		%21
-\captionof{figure}{Affichage du texte crypté}
-\label{FSCT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_decryptage_showText.png}}}		%22
-\captionof{figure}{Affichage du texte décrypté}
-\label{FSDT}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/07_french_quitMessage.png}}}		%23
-\captionof{figure}{Sortie du programme}
-\label{FSQM}
-\vspace{1cm}
-\fbox{\parbox{\textwidth}{\raggedright\includegraphics[width=\textwidth]{./Pictures/interface/french/08_french_helpMenu.png}}}		%23
+}
+\vspace{0.5cm}
+
+Dans les deux cas vous pouvez consulter l'aide en entrant ' h ' qui vous rappellera les principes de cryptage utilisé pour les différentes méthodes César, Vigenère ou Enigma :
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics[width=\textwidth]{./Pictures/interface/french/08_french_helpMenu.png}}}
 \captionof{figure}{Aide}
 \label{FHM}
+}
+\vspace{1cm}
+
+%\newpage
+% diff. principes
+% César
+\textit{Le chiffre de César:}\\
+Imaginons que vous ayez choisi de crypter ou décrypter votre texte par la méthode du chiffre de César, l'interface suivante apparaîtra :
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_cesar.png}}}
+\captionof{figure}{Le chiffre de César}
+\label{FCe}
+}
+\vspace{0.5cm}
+
+Vous devez maintenant choisir la clé à utiliser pour (dé)crypter votre texte. Cette clé doit être un nombre compris entre 1 et 25 et correspondra au décalage de l'alphabet lors du (dé)cryptage de chaque lettre.
+Vous avez également la possibilité de retourner au menu principal en entrant ' m '.\\
+\vspace{0.5cm}
+
+\newpage
+% Vigenère
+\textit{Le chiffre de Vigenère:}\\
+Si votre choix se porte sur le (dé)cryptage par la méthode du chiffre de Vigenère, vous verrez alors le message suivant :
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_vigenere.png}}}
+\captionof{figure}{Le chiffre de Vigenère}
+\label{FV}
+}
+\vspace{0.5cm}
+
+Vous devez maintenant entrer la clé que vous souhaitez utiliser. Cette clé doit être un mot composé uniquement de lettres (minuscules ou majuscules) sans espace ni tiret. 
+Vous pouvez aussi entrer ' m ' si vous voulez retourner au menu principal.\\
+\vspace{0.5cm}
+
+% Enigma
+\textit{La machine Enigma:}\\
+Si vous avez sélectionné le (dé)cryptage par la méthode de la machine Enigma, le message suivant apparaîtra :
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/04_french_enigma.png}}}
+\captionof{figure}{Le cryptage par la machine Enigma}
+\label{FE}
+}
+\vspace{0.5cm}
+
+Le programme attend de vous que vous entriez la clé de (dé)cryptage. Cette clé doit se présenter sous la forme de trois lettres majuscules.\\
+Vous avez toujours, comme précédemment la possibilité de retourner au menu principal en entrant ' m '.
+\vspace{1cm}
+
+Quelle que soit la méthode de (dé)cryptage choisie vous serez confronté au message suivant qui vous indique d'entrer le texte à traiter. Il est important de savoir que dans le texte tous les caractères spéciaux seront normalisés et les chiffres et signes de ponctuation seront enlevés.\\
+% original :Ce texte ne devra comporter que des lettres minuscules, majuscules, avec ou sans accents. Aucun chiffre ou aucune ponctuation ne pourra être entrée.\\
+\\
+À ce stade vous pouvez aussi entrer ' m ' pour retourner au menu principal.
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/05_french_insertText.png}}}
+\captionof{figure}{Entrée du texte}
+\label{FIT}
+}
+\vspace{0.5cm}
+
+\newpage
+Enfin le programme s'exécute pour effectuer l'opération que vous lui avez demandé, et l'un des message suivant apparaîtra suivi de votre texte crypté ou décrypté.
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_cryptage_showText.png}}}
+\captionof{figure}{Affichage du texte crypté}
+\label{FSCT}
+\vspace{0.7cm}
+\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/06_french_decryptage_showText.png}}}
+\captionof{figure}{Affichage du texte décrypté}
+\label{FSDT}
+}
+\vspace{0.5cm}
+
+
+% ############################## HIER FEHLT DER ÜBERGANG!!!
+
+Message de fin :
+
+\vspace{0.5cm}
+{\fbox{\parbox{\textwidth}{\raggedright\includegraphics{./Pictures/interface/french/07_french_quitMessage.png}}}		%23
+\captionof{figure}{Sortie du programme}
+\label{FSQM}
 }
 
 
@@ -320,78 +377,195 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 \end{figure}
 \vspace{0.7cm}
 
-{\Large \textbf{Explications :}}
+\subsubsection{Explications des modules, constantes et fonctions}
 \vspace{0.3cm}
-\begin{itemize}
-% main_module
-\item \textit{\textbf{main\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{normalise\_letter(x)}:\\
-normalise une lettre si elle est par exemple un caractère spécial\\
-\item \textbf{format\_text(text)}:\\
-formate le texte, c'est-à-dire le texte donné est mis en majuscules, les virgules, espaces, chiffres, symboles, etc. sont enlevés et les caractères spéciaux sont normalisés\\
-\item \textbf{run()}:\\
-démarre le programme et contrôle son déroulement\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{screen\_constants} :}\\
+Ce module contient toutes les constantes nécessaires pour le screen\_module, c'est-à-dire tous les textes de l'interface utilisateur.
+\vspace{0.3cm}
 
-% screen_constants
-\item \textit{\textbf{screen\_constants:}}\vspace{0.2cm}
 \begin{itemize}
 \item \textbf{START\_ASK\_LANGUAGE}:\\
 dialogue de démarrage (voir fig. \ref{SP})\\
 \item \textbf{LANGUAGE\_SETTINGS}:\\
-dialogue des paramètres de langue (voir fig. \ref{ESD} et \ref{FSD})\\
+dialogue des paramètres de langue (voir fig. \ref{ESD})\\
 \item \textbf{ENGLISH\_MAIN\_MENU} et \textbf{FRENCH\_MAIN\_MENU}:\\
 menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
 \item \textbf{ENGLISH\_PRINCIPLES\_ENCRYPTING} et\\
 \textbf{FRENCH\_PRINCIPLES\_ENCRYPTING}:\\
-dialogue de sélection du principe de cryptage (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
+dialogue de sélection du principe de cryptage (voir fig. \ref{FCr})\\
 \item \textbf{ENGLISH\_PRINCIPLES\_DECRYPTING} et\\
 \textbf{FRENCH\_PRINCIPLES\_DECRYPTING}:\\
-dialogue de sélection du principe de décryptage (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
+dialogue de sélection du principe de décryptage (voir fig. \ref{FD})\\
 \item \textbf{ENGLISH\_ASK\_KEY\_CAESAR} et \textbf{FRENCH\_ASK\_KEY\_CAESAR}:\\
-dialogue de demande de la clé pour (dé)crypter par César (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+dialogue de demande de la clé pour (dé)crypter par César (voir fig. \ref{FCe})\\
 \item \textbf{ENGLISH\_ASK\_KEY\_VIGENERE} et \textbf{FRENCH\_ASK\_KEY\_VIGENERE}:\\
-dialogue de demande de la clé pour (dé)crypter par Vigenère (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+dialogue de demande de la clé pour (dé)crypter par Vigenère (voir fig. \ref{FV})\\
 \item \textbf{ENGLISH\_ASK\_KEY\_ENIGMA} et \textbf{FRENCH\_ASK\_KEY\_ENIGMA}:\\
-dialogue de demande de la clé pour (dé)crypter par Enigma (voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
+dialogue de demande de la clé pour (dé)crypter par Enigma (voir fig. \ref{FE})\\
 \item \textbf{ENGLISH\_ASK\_TEXT} et \textbf{FRENCH\_ASK\_TEXT}:\\
-dialogue de demande du text à (dé)crypter (voir fig. \ref{EIT} et \ref{FIT})\\
+dialogue de demande du text à (dé)crypter (voir fig. \ref{FIT})\\
 \item \textbf{ENGLISH\_ENCRYPTED\_TEXT} et \textbf{FRENCH\_ENCRYPTED\_TEXT}:\\
-dialogue du texte crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
+dialogue du texte crypté (voir fig. \ref{FSCT})\\
 \item \textbf{ENGLISH\_DECRYPTED\_TEXT} et \textbf{FRENCH\_DECRYPTED\_TEXT}:\\
-dialogue du texte décrypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
+dialogue du texte décrypté (voir fig. \ref{FSDT})\\
 \item \textbf{ENGLISH\_HELP\_PRINCIPLES} et \textbf{FRENCH\_HELP\_PRINCIPLES}:\\
 dialogue d'aide (voir fig. \ref{FHM})\\
 \item \textbf{ENGLISH\_QUIT\_MESSAGE} et \textbf{FRENCH\_QUIT\_MESSAGE}:\\
-message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
-\end{itemize}\vspace{0.3cm}
+message de sortie (voir fig. \ref{FSQM})\\
+\end{itemize}
+\vspace{0.5cm}
+
+
 
 % screen_module
-\item \textit{\textbf{screen\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{show\_start\_ask\_language()}:\\
-affiche le dialogue de démarrage (voir fig. \ref{SP})\\
-\item \textbf{show\_language\_settings()}:\\
-affiche les paramètres (voir fig. \ref{ESD} et \ref{FSD})\\
-\item \textbf{show\_main\_menu(english)}:\\
-affiche le menu principal (voir fig. \ref{EMM} et \ref{FMM})\\
-\item \textbf{show\_principles(english, encrypting)}:\\
-affiche le dialogue de sélection du principe (voir fig. \ref{ECr}, \ref{ED}, \ref{FCr} et \ref{FD})\\
-\item \textbf{show\_ask\_key(english, principle)}:\\
-affiche le dialogue de demande de la clé pour (dé)crypter ce qui dépend de la choix du principe (César, Vigenère ou Enigma ; voir fig. \ref{ECe}, \ref{EV}, \ref{EE}, \ref{FCe}, \ref{FV} et \ref{FE})\\
-\item \textbf{show\_ask\_text(english)}:\\
-affiche le dialogue de demande du text à (dé)crypter\\(voir fig. \ref{EIT} et \ref{FIT})\\
-\item \textbf{show\_treated\_text(english, encrypting)}:\\
-affiche le texte (dé)crypté (voir fig. \ref{ESCT}, \ref{ESDT}, \ref{FSCT} et \ref{FSDT})\\
-\item \textbf{show\_help\_principles(english)}:\\
-affiche le dialogue de démarrage (voir fig. \ref{FHM})\\
-\item \textbf{show\_quit\_message(english)}:\\
-affiche le message de sortie (voir fig. \ref{ESQM} et \ref{FSQM})\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{screen\_module:}}\\
+Ce module est responsable de l'interface utilisateur, c'est-à-dire il montre le bon texte dans la langue choisie.
+\vspace{0.3cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_start\_ask\_language} & (ligne 8) \\     
+Déclaration & show\_start\_ask\_language()\\
+Rôle & demande à l'utilisateur la langue qu'il veut utiliser au début\\
+ & du programme\\
+Paramètre & aucun\\
+Retour & la chaîne de caractère choisie par l'utilisateur:\\
+ & ' f ' pour le français\\
+ & ' e ' pour l'anglais\\
+Appelé par & run()\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_language\_settings} & (ligne 18)\\
+Déclaration & show\_language\_settings()\\
+Rôle & demande à l’utilisateur la langue qu’il veut utiliser au cours\\
+ & du programme\\
+Paramètre & aucun\\
+Retour & la chaîne de caractère choisie par l’utilisateur:\\
+ & ‘ f ’ pour le français\\
+ & ‘ e ‘ pour l’anglais\\
+Appelé par &  run()\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_main\_menu} & (ligne 28)\\
+Déclaration & show\_main\_menu(english)\\
+Rôle & demande à l’utilisateur ce qu’il veut utiliser la fonction cryptage\\
+ & ou décryptage du programme\\
+Paramètre & english: booléen \\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+Retour & la chaîne de caractère choisie par l’utilisateur:\\
+ & 'c' pour cryptage\\
+ & 'd' pour décryptage\\
+ & 's' pour changer de langue\\
+ & 'q' pour quitter le programme\\
+Appelé par & run()      (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_principles} & (ligne 50)\\
+Déclaration & show\_principles(english, encrypting)\\
+Rôle & demande à l’utilisateur la méthode qu’il veut utiliser pour (dé)crypter\\
+Paramètre & english: booléen\\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+ & encryption: booléen\\
+ & True si l’utilisateur veut crypter\\
+ & False s’il veut décrypter\\
+Retour & la chaîne de caractère choisie par l’utilisateur:\\
+ & 'c' pour la méthode César\\
+ & 'v' pour la méthode Vigenère\\
+ & 'e' pour la méthode de la machine Enigma\\
+ & 'm' pour retourner au menu principal\\
+Appelé par & run()       (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_ask\_key} & (ligne 81)\\
+Déclaration & show\_ask\_key(english, principle)\\
+Rôle & demande à l’utilisateur la clé pour la méthode qu’il veut utiliser\\
+ & pour (dé)crypter\\
+Paramètre & english: booléen\\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+ & principle: char\\
+ & ‘c’, ’v’ ou ‘e’ selon la méthode de (dé)cryptage qu’il a choisi\\
+Retour & la clé ou \\
+ & 'm' pour retourner au menu principal\\
+Appelé par & run()      (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_ask\_text} & (ligne 115)\\
+Déclaration & show\_ask\_text(english)\\
+Rôle & demande à l’utilisateur le texte qu’il veut (dé)crypter\\
+Paramètre & english: booléen\\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+Retour & la clé ou\\
+ & 'm' pour retourner au menu principal\\
+Appelé par & run()      (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_treated\_text} & (ligne 135)\\
+Déclaration & show\_treated\_text(english, encrypting)\\
+Rôle & retourne le message d’affichage du texte (dé)crypté\\
+Paramètre & english: booléen \\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+ & encryption: booléen\\
+ & True si l’utilisateur veut crypter\\
+ & False s’il veut décrypter\\
+Retour & le message d’affichage du texte (dé)crypté\\
+Appelé par & run()   (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_help\_principles} & (ligne 162)\\
+Déclaration & show\_help\_principles(english)\\
+Rôle & Affiche une aide dans laquelle le principe de chaque méthode est expliquée\\
+         demande la saisie de ‘m’ pour retourner au menu principal\\
+Paramètre & english: booléen \\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+Retour & ‘m’ \\
+Appelé par & run()       (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+\begin{tabular}[t]{ll} 
+\textbf{show\_quit\_message} & (ligne 180)\\
+Déclaration & show\_quit\_message(english)\\
+Rôle & Affiche un message de fin d’utilisation du programme\\
+Paramètre & english: booléen \\
+ & True si la langue choisie est l’anglais\\
+ & False si la langue choisie est le français\\
+Retour & aucun\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & aucun\\
+\end{tabular}
+\vspace{0.5cm}
+
+
 
 % text_module
-\item \textit{\textbf{text\_module:}}\vspace{0.2cm}
+\textit{\textbf{text\_module:}}\vspace{0.2cm}
 \begin{itemize}
 \item \textbf{encrypt\_caesar(text, key)}:\\
 crypte le texte formaté par la méthode César\\
@@ -423,8 +597,21 @@ modélise le troisième rotor, exécute le décalage des lettres par indices et 
 (dé)crypte le texte formaté par la méthode Enigma\\
 \end{itemize}\vspace{0.3cm}
 
+
+% main_module
+\textit{\textbf{main\_module:}}\vspace{0.2cm}
+\begin{itemize}
+\item \textbf{normalise\_letter(x)}:\\
+normalise une lettre si elle est par exemple un caractère spécial\\
+\item \textbf{format\_text(text)}:\\
+formate le texte, c'est-à-dire le texte donné est mis en majuscules, les virgules, espaces, chiffres, symboles, etc. sont enlevés et les caractères spéciaux sont normalisés\\
+\item \textbf{run()}:\\
+démarre le programme et contrôle son déroulement\\
+\end{itemize}\vspace{0.3cm}
+
+
 % tests
-\item \textit{\textbf{tests:}}\vspace{0.2cm}
+\textit{\textbf{tests:}}\vspace{0.2cm}
 \begin{itemize}
 \item \textbf{test\_caesar\_encryption()}:\\
 TODO\\
@@ -445,7 +632,7 @@ TODO\\
 \item \textbf{run\_all\_tests()}:\\
 TODO\\
 \end{itemize}
-\end{itemize}
+
 
 
 
