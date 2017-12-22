@@ -298,6 +298,7 @@ def permutation_reflector(letter):
 def shift_first_rotor(return_path, index, offset):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
@@ -331,6 +332,7 @@ def shift_first_rotor(return_path, index, offset):
 def shift_second_rotor(return_path, index, offset):
     """
     represents the letter shift of the second rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
@@ -363,6 +365,7 @@ def shift_second_rotor(return_path, index, offset):
 def shift_third_rotor(return_path, index, offset):
     """
     represents the letter shift of the third rotor and returns the corresponding letter
+    :param offset:
     :param return_path:
     :param index: the index of the actual letter
     :return letter: letter
