@@ -1,5 +1,6 @@
 """
 This module is responsible for the program flow.
+In addition it is in charge of the formatting of the user's text.
 """
 
 import screen_module

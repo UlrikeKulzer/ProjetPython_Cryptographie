@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  22 DEC 2017 05:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.17)  22 DEC 2017 09:52
 entering extended mode
 **./rendu_decembre.tex
 (rendu_decembre.tex
@@ -1730,272 +1730,170 @@ Underfull \hbox (badness 10000) in paragraph at lines 367--371
 
 [11]
 
-pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDeStructure_main_modules.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./Diagrammes/diagrammeDeStructure.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<./Diagrammes/diagrammeDeStructure.pdf, id=216, 596.98032pt x 844.65562pt>
+File: ./Diagrammes/diagrammeDeStructure.pdf Graphic file (type pdf)
 
-<./Diagrammes/diagrammeDeStructure_main_modules.pdf, id=216, 596.98032pt x 844.
-65562pt>
-File: ./Diagrammes/diagrammeDeStructure_main_modules.pdf Graphic file (type pdf
-)
- <use ./Diagrammes/diagrammeDeStructure_main_modules.pdf>
-Package pdftex.def Info: ./Diagrammes/diagrammeDeStructure_main_modules.pdf use
-d on input line 379.
-(pdftex.def)             Requested size: 483.69684pt x 595.53036pt.
+<use ./Diagrammes/diagrammeDeStructure.pdf>
+Package pdftex.def Info: ./Diagrammes/diagrammeDeStructure.pdf used on input li
+ne 379.
+(pdftex.def)             Requested size: 483.69684pt x 572.25496pt.
 
 Overfull \hbox (11.74983pt too wide) in paragraph at lines 377--384
 []$[]$ 
  []
 
-[12 <./Diagrammes/diagrammeDeStructure_main_modules.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+[12 <./Diagrammes/diagrammeDeStructure.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--397
+Underfull \hbox (badness 10000) in paragraph at lines 396--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--399
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--402
+Underfull \hbox (badness 10000) in paragraph at lines 400--403
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--405
+Underfull \hbox (badness 10000) in paragraph at lines 403--406
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--409
+Underfull \hbox (badness 10000) in paragraph at lines 408--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--413
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--419
+Underfull \hbox (badness 10000) in paragraph at lines 418--420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--421
+Underfull \hbox (badness 10000) in paragraph at lines 420--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--423
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
 
  []
 
 [13]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 431--459
+Overfull \hbox (13.04482pt too wide) in alignment at lines 433--456
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 459--491
+Overfull \hbox (13.04482pt too wide) in alignment at lines 456--484
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 491--516
+Overfull \hbox (13.04482pt too wide) in alignment at lines 484--506
  [] [] 
  []
 
 [14]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 516--548
+Overfull \hbox (13.04482pt too wide) in alignment at lines 506--532
  [] [] 
  []
 
 
-Overfull \hbox (13.04482pt too wide) in alignment at lines 548--578
+Overfull \hbox (13.04482pt too wide) in alignment at lines 532--556
  [] [] 
  []
 
 [15]
-Overfull \hbox (13.04482pt too wide) in alignment at lines 578--584
+Overfull \hbox (13.04482pt too wide) in alignment at lines 556--562
  [] [] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 592--594
-
+Overfull \hbox (2.35936pt too wide) in alignment at lines 572--598
+ [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--596
-
+Overfull \hbox (2.35936pt too wide) in alignment at lines 598--622
+ [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--598
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 598--600
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 600--602
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 602--604
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 604--606
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 606--608
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--610
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 610--612
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 614--616
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 616--618
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 618--620
-
+Overfull \hbox (2.35936pt too wide) in alignment at lines 622--647
+ [] [] 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 626--628
-
+Overfull \hbox (2.35936pt too wide) in alignment at lines 647--673
+ [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 628--630
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--632
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 638--640
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 640--642
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 642--644
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--646
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 646--648
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--650
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 650--652
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 652--654
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 654--656
-
+Overfull \hbox (2.35936pt too wide) in alignment at lines 673--697
+ [] [] 
  []
 
 [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
+Overfull \hbox (2.35936pt too wide) in alignment at lines 697--719
+ [] [] 
+ []
+
+[19] [20] [21] [22] [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 884.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 884.
  (rendu_decembre.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 706.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 884.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 884.
 Package rerunfilecheck Info: File `rendu_decembre.out' has not changed.
 (rerunfilecheck)             Checksum: 381D545DBBFC8C4050D58061A202F54A;1245.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 706.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 884.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 308 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 22425 strings out of 493323
- 429228 string characters out of 3139062
- 612568 words of memory out of 3000000
- 25480 multiletter control sequences out of 15000+200000
- 51094 words of font info for 37 fonts, out of 3000000 for 9000
+ 22442 strings out of 493323
+ 429282 string characters out of 3139062
+ 612676 words of memory out of 3000000
+ 25484 multiletter control sequences out of 15000+200000
+ 55312 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,7n,69p,8827b,588s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/P
@@ -2005,9 +1903,9 @@ public/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/lm/lmtt12.pfb>
-Output written on rendu_decembre.pdf (18 pages, 8138388 bytes).
+Output written on rendu_decembre.pdf (23 pages, 8146949 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
+ 341 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

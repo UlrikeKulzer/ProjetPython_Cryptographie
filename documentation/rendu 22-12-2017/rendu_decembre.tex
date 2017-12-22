@@ -65,7 +65,7 @@
 
 \setcounter{page}{1} % reset page counter to one for the first page, leave the title page out
 
-
+% ################### guide d'utilisateur #######################
 \newpage
 \section{Guide utilisateur}
 \subsection{Introduction}
@@ -323,7 +323,7 @@ Si ensuite la lettre entrée est ' q ', le message de fin s'affichera:
 }
 
 
-% ########### guide de maintenance
+% ################### guide de maintenance #######################
 
 \newpage
 \section{Guide de maintenance}
@@ -373,10 +373,10 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 \newpage
 \subsubsection{Structure du programme}
 % diagrammme\\
-
+\vspace{1cm}
 \begin{minipage}[c]{\textwidth}
 \centering
-    \includegraphics[width=\textwidth, trim=1mm 40mm 1mm 1mm, clip]{./Diagrammes/diagrammeDeStructure_main_modules.pdf}
+    \includegraphics[width=\textwidth, trim=1mm 50mm 1mm 1mm, clip]{./Diagrammes/diagrammeDeStructure.pdf}
     %TRIM = LINKS UNTEN RECHTS OBEN
     \captionof{figure}{Structure du programme en modules}
     \label{img:structure}
@@ -385,6 +385,7 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 
 \newpage
 \subsubsection{Explications des modules, constantes et fonctions}
+% ******* screen_constants *******
 \textbf{Explications du module \textit{screen\_constants} :}\\
 Ce module contient toutes les constantes nécessaires pour le screen\_module, c'est-à-dire tous les textes de l'interface utilisateur.
 \vspace{0.3cm}
@@ -422,6 +423,7 @@ dialogue d'aide (voir fig. \ref{FHM})\\
 message de sortie (voir fig. \ref{FSQM})\\
 \end{itemize}
 
+% ******* screen_module *******
 %\newpage
 % screen_module
 \textbf{Explications du module \textit{screen\_module:}}\\
@@ -439,11 +441,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ' e ' pour l'anglais\\
 Appelé par & run()\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_language\_settings} & (ligne 18)\\
 Déclaration & show\_language\_settings()\\
 Rôle & demande à l'utilisateur la langue qu'il veut utiliser au cours\\
@@ -454,11 +453,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ‘ e ‘ pour l'anglais\\
 Appelé par &  run()\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
-\cr
-%\begin{tabular}[t]{ll} 
+\cr 
 \textbf{show\_main\_menu} & (ligne 28)\\
 Déclaration & show\_main\_menu(english)\\
 Rôle & demande à l'utilisateur ce qu'il veut utiliser la fonction cryptage\\
@@ -473,15 +469,12 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'q' pour quitter le programme\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
 \cr 
 \cr 
 \cr
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_principles} & (ligne 50)\\
 Déclaration & show\_principles(english, encrypting)\\
 Rôle & demande à l'utilisateur la méthode qu'il veut utiliser\\
@@ -499,11 +492,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_ask\_key} & (ligne 81)\\
 Déclaration & show\_ask\_key(english, principle)\\
 Rôle & demande à l'utilisateur la clé pour la méthode qu'il veut utiliser\\
@@ -517,11 +507,8 @@ Retour & la clé ou \\
  & ' m ' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_ask\_text} & (ligne 115)\\
 Déclaration & show\_ask\_text(english)\\
 Rôle & demande à l'utilisateur le texte qu'il veut (dé)crypter\\
@@ -532,13 +519,10 @@ Retour & la clé ou\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
 \cr
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_treated\_text} & (ligne 135)\\
 Déclaration & show\_treated\_text(english, encrypting)\\
 Rôle & retourne le message d'affichage du texte (dé)crypté\\
@@ -551,11 +535,8 @@ Paramètre & english: booléen \\
 Retour & le message d'affichage du texte (dé)crypté\\
 Appelé par & run()   (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_help\_principles} & (ligne 162)\\
 Déclaration & show\_help\_principles(english)\\
 Rôle & Affiche une aide dans laquelle le principe\\
@@ -567,11 +548,8 @@ Paramètre & english: booléen \\
 Retour & ' m ' \\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_quit\_message} & (ligne 180)\\
 Déclaration & show\_quit\_message(english)\\
 Rôle & Affiche un message de fin d'utilisation du programme\\
@@ -584,83 +562,289 @@ Appelle & aucun\\
 \end{longtable}
 \vspace{0.5cm}
 
-
+% ******* text_module *******
 \newpage
 % text_module
-\textit{\textbf{text\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{encrypt\_caesar(text, key)}:\\
-crypte le texte formaté par la méthode César\\
-\item \textbf{decrypt\_caesar(text, key)}:\\
-décrypte le texte formaté par la méthode César\\
-\item \textbf{create\_vigenere\_table()}:\\
-TODO\\
-\item \textbf{create\_table\_text\_key(text, key)}:\\
-TODO\\
-\item \textbf{encrypt\_vigenere(text, key)}:\\
-crypte le texte formaté par la méthode Vigenère\\
-\item \textbf{decrypt\_vigenere(text, key)}:\\
-décrypte le texte formaté par la méthode Vigenère\\
-\item \textbf{create\_initial\_list()}:\\
-TODO\\
-\item \textbf{search\_index(initial\_list, letter)}:\\
-cherche l'indice d'une lettre donnée dans une liste donnée\\
-\item \textbf{plugboard(letter)}:\\
-modélise le tableau de permutation, 10 lettres sont associées à dix autres lettres. Si la lettre donnée est associée à une autre lettre celle-ci va être retournée. Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-\item \textbf{permutation\_reflector(letter: char)}:\\
-modélise le réflecteur ; même principe que plugboard(letter), mais cette fois-ci toutes les lettres sont associées à une autre lettre\\
-\item \textbf{shift\_first\_rotor(letter: char)}:\\
-modélise le premier rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_second\_rotor(letter: char)}:\\
-modélise le deuxième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_third\_rotor(letter: char)}:\\
-modélise le troisième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{enigma(text, key)}:\\
-(dé)crypte le texte formaté par la méthode Enigma\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{text\_module:}}\\
+Ce module contient toutes les fonctions avec lesquelles le texte de l'utilisateur peut-être traité.
+\vspace{0.3cm}
 
+\begin{longtable}{ll} 
+\textbf{\textit{César}}\\
+\textbf{encrypt\_caesar} & (ligne 11)\\
+Déclaration & encrypt\_caesar(text, key)\\
+Rôle & crypte le texte selon le principe de César\\
+Paramètre & text: le texte de l'utilisateur à crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{decrypt\_caesar} & (ligne 29)\\
+Déclaration & decrypt\_caesar(text, key)\\
+Rôle & crypte le texte selon le principe de César\\
+Paramètre & text: le texte de l'utilisateur à décrypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & aucun\\
+\cr
+\cr
+\cr
+\textbf{\textit{Vigenère}}\\
+\textbf{create\_vigenere\_table} & (ligne 51)\\
+Déclaration & create\_vigenere\_table()\\
+Rôle & MISSING\\
+Paramètre & aucun\\
+Retour & le tableau\\
+Appelé par & encrypt\_vigenere(text, key)\\
+ & decrypt\_vigenere(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{create\_table\_text\_key} & (ligne 63)\\
+Déclaration & create\_table\_text\_key(text, key)\\
+Rôle & crée un tableau avec deux lignes,\\
+ & la première contenant le texte formaté et\\
+ & la deuxième la clé répétée (même longueur que le texte)\\
+Paramètre & text: le texte de l'utilisateur à (dé)crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & le tableau\\
+Appelé par & encrypt\_vigenere(text, key)\\
+ & decrypt\_vigenere(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{encrypt\_vigenere} & (ligne 84)\\
+Déclaration & encrypt\_vigenere(text, key)\\
+Rôle & crypte le texte selon le principe de Vigenère\\
+Paramètre & text: le texte de l'utilisateur à crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & create\_table\_text\_key\\
+\cr
+\cr
+\textbf{decrypt\_vigenere} & (ligne 104)\\
+Déclaration & decrypt\_vigenere(text, key)\\
+Rôle & décrypte le texte selon le principe de Vigenère\\
+Paramètre & text: le texte de l'utilisateur à décrypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & create\_table\_text\_key\\
+\cr
+\cr
+\cr
+\textbf{\textit{Enigma}}\\
+\textbf{create\_initial\_list} & (ligne X)\\
+Déclaration & create\_initial\_list()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{search\_index} & (ligne X)\\
+Déclaration & search\_index(initial\_list, letter)\\
+Rôle & cherche l'indice d'une lettre donnée dans une liste donnée\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{plugboard} & (ligne X)\\
+Déclaration & plugboard(letter)\\
+Rôle & modélise le tableau de permutation: dix lettres sont associées à\\
+ & dix autres lettres. Si la lettre donnée est associée à\\
+ & une autre lettre, celle-ci va être retournée.\\
+ & Il y a six lettres qui ne sont associées à aucune autre lettre.\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{permutation\_reflector} & (ligne X)\\
+Déclaration & permutation\_reflector(letter)\\
+Rôle & modélise le réflecteur :\\
+ & même principe que plugboard(letter), mais cette fois-ci\\
+ & toutes les lettres sont associées à une autre lettre\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{shift\_first\_rotor} & (ligne X)\\
+Déclaration & shift\_first\_rotor(return\_path, index, offset)\\
+Rôle & modélise le premier rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{shift\_second\_rotor} & (ligne X)\\
+Déclaration & shift\_second\_rotor(return\_path, index, offset)\\
+Rôle & modélise le deuxième rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{shift\_third\_rotor} & (ligne X)\\
+Déclaration & shift\_third\_rotor(return\_path, index, offset)\\
+Rôle & modélise le troisième rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{enigma} & (ligne X)\\
+Déclaration & enigma(text, key)\\
+Rôle & (dé)crypte le texte formaté par le principe de la machine Enigma\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\end{longtable}
+\vspace{0.5cm}
 
+% ******* main_module *******
+\newpage
 % main_module
-\textit{\textbf{main\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{normalise\_letter(x)}:\\
-normalise une lettre si elle est par exemple un caractère spécial\\
-\item \textbf{format\_text(text)}:\\
-formate le texte, c'est-à-dire le texte donné est mis en majuscules, les virgules, espaces, chiffres, symboles, etc. sont enlevés et les caractères spéciaux sont normalisés\\
-\item \textbf{run()}:\\
-démarre le programme et contrôle son déroulement\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{main\_module:}}\\
+Ce module est responsable du déroulement du programme. De plus il s'occupe du formatage du texte de l'utilisateur.
+\vspace{0.3cm}
 
+\begin{longtable}{ll}
+\textbf{normalise\_letter} & (ligne X)\\
+Déclaration & normalise\_letter(x)\\
+Rôle & normalise une lettre si elle est par exemple un caractère spécial\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{format\_text} & (ligne X)\\
+Déclaration & format\_text(text)\\
+Rôle & formate le texte, c'est-à-dire le texte donné est mis en majuscules,\\
+ & les virgules, espaces, chiffres, symboles, etc.\\
+ & sont enlevés et les caractères spéciaux sont normalisés\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{run} & (ligne X)\\
+Déclaration & run()\\
+Rôle & démarre le programme et contrôle son déroulement\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\end{longtable}
+\vspace{0.5cm}
 
+% ******* Tests *******
+\newpage
 % tests
-\textit{\textbf{tests:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{test\_caesar\_encryption()}:\\
-TODO\\
-\item \textbf{test\_caesar\_decryption()}:\\
-TODO\\
-\item \textbf{test\_create\_table\_of\_vigenere()}:\\
-TODO\\
-\item \textbf{test\_vigenere\_encryption()}:\\
-TODO\\
-\item \textbf{test\_vigenere\_decryption()}:\\
-TODO\\
-\item \textbf{test\_enigma()}:\\
-TODO\\
-\item \textbf{test\_format\_and\_normalise()}:\\
-TODO\\
-\item \textbf{test\_run()}:\\
-TODO\\
-\item \textbf{run\_all\_tests()}:\\
-TODO\\
-\end{itemize}
+\textbf{Explications du module \textit{tests:}}\\
+Ce module contient toutes les fonctions qui sont utilisées pour tester le code du programme.
+\vspace{0.3cm}
 
-
-
-
+\begin{longtable}{ll}
+\textbf{\textit{tests text\_module}}\\
+\textbf{test\_caesar} & (ligne X)\\
+Déclaration & test\_caesar()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{test\_create\_vigenere\_table} & (ligne X)\\
+Déclaration & test\_create\_vigenere\_table()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{test\_vigenere} & (ligne X)\\
+Déclaration & test\_vigenere()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{test\_enigma} & (ligne X)\\
+Déclaration & test\_enigma()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\cr
+\textbf{\textit{tests main\_module}}\\
+\textbf{test\_format\_and\_normalise} & (ligne X)\\
+Déclaration & test\_format\_and\_normalise()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\textbf{test\_run} & (ligne X)\\
+Déclaration & test\_run()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\cr
+\cr
+\cr
+\textbf{\textit{lancer tous les tests}}\\
+\textbf{run\_all\_tests} & (ligne X)\\
+Déclaration & run\_all\_tests()\\
+Rôle & XXXXXXXX\\
+Paramètre & aucun\\
+Retour & XXXXXXXX\\
+Appelé par & XXXXXXXX\\
+Appelle & XXXXXXXX\\
+\end{longtable}
+\vspace{2cm}
 
 \section{Annexe: Code du programme}
-
+{\large
+\textit{L'ordre des modules:}
+\begin{enumerate}
+\item main\_module
+\item screen\_module
+\item screen\_constants
+\item text\_module
+\item tests
+\end{enumerate}
+}
 
 
 
@@ -679,12 +863,6 @@ TODO\\
 
 % "`Standard Definition Television"', HDTV für "`High Definition Television'".
 
-
-
-%\begin{tabular}[t]{lr}
-%Naher Osten & 65\%\\
-%Lateinamerika & 13\%\\
-%\end{tabular}\\
 
 %\begin{itemize}
 %\item \blindtext
