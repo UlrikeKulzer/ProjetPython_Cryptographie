@@ -9,8 +9,6 @@ This module contains all functions which are used to test the program code.
 
 import main_module
 import text_module
-import screen_module
-import screen_constants
 
 
 # *** tests for the text_module ***
@@ -74,7 +72,7 @@ def test_enigma():
     False if not (-> Something went wrong)
     """
     print("*** TEST_ENIGMA STARTED ***")
-    text_module.encrypt_enigma("A", "")
+    text_module.enigma("A", "")
 
 
 # *** tests for the main_module ***
@@ -85,9 +83,11 @@ def test_format_and_normalise():
     False if not (-> Something went wrong)
     """
     print("*** TEST_FORMAT_AND_NORMALISE STARTED ***")
-    original_text = "àâ test1t!? æ test2test,. ç test3test;+ èéêë test4test-% îï t5t$& ô test6test\"/ ùûü t7t{} ÿ t8t[] œ t9t= "
+    original_text = """àâ test1t!? æ test2test,. ç test3test;+ èéêë test4test-% îï t5t$& ô
+    test6test\"/ ùûü t7t{} ÿ t8t[] œ t9t= """
     # format text
     formatted_text = main_module.format_text(original_text)
+    print(formatted_text)
     # check if only capital letters
     if formatted_text.isalpha() and formatted_text.isupper():
         return True

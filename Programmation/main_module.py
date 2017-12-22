@@ -87,8 +87,8 @@ def run():
             if screen_module.show_language_settings() == 'f':  # change language to French
                 english = False
                 continue  # restart with the main menu (now in French)
-        elif screen_module.show_main_menu() == 'q':  # quit program
-            screen_module.show_quit_message()
+        elif screen_module.show_main_menu(english) == 'q':  # quit program
+            screen_module.show_quit_message(english)
             break  # stop program
 
         # set principle for en-/decryption

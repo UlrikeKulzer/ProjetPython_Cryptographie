@@ -4,11 +4,8 @@ This module contains all functions with which the user's text can be treated.
 
 
 # TODO: COMMENT CODE!!!
-# -> vigenere en- + decryption
 # -> rotors
 # -> enigma
-# TODO: tidy up
-# TODO: test enigma with diff. keys
 
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
@@ -57,9 +54,9 @@ def create_vigenere_table():
     creates a table 26x26 with the alphabet that recreates the Vigenere table
     :return: the table
     """
-    alphabet = [chr(x) for x in range(ord('A'),ord('Z')+1)]
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     table = []
-    for k in range(len(alphabet)): # fill table
+    for k in range(len(alphabet)):  # fill table
         # alphabet is shifted -1 in each row and column
         table += [alphabet[k:] + alphabet[:k]]
     return table
@@ -97,11 +94,11 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    alphabet = [chr(x) for x in range(ord('A'),ord('Z')+1)]
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     for i in range(len(text)):
-        #column corresponding to the letter of the text
+        # column corresponding to the letter of the text
         text_letter = repeated_key_table[i][0]
-        #lign corresponding to the letter of the key
+        # line corresponding to the letter of the key
         key_letter = repeated_key_table[i][1]
         encrypted_text += table_of_vigenere[alphabet.index(text_letter)][alphabet.index(key_letter)]
     return encrypted_text
@@ -147,7 +144,6 @@ def create_initial_list():
 def search_index(initial_list, letter):
     """
     searches the index of a given letter in the given list
-    :param offset: the rotor's offset of the enigma machine
     :param initial_list: list for searching
     :param letter: index of this letter is wanted
     :return: index of the letter
@@ -299,6 +295,7 @@ def permutation_reflector(letter):
 
 # * functions representing the rotors * #
 def shift_first_rotor(return_path, index, offset):
+    # TODO add description
     """
     represents the letter shift of the first rotor and returns the corresponding letter
     :param offset:
@@ -312,7 +309,7 @@ def shift_first_rotor(return_path, index, offset):
     rotor1 = 'EKMFLGDQVZNTOWYHXUSPAIBRCJ'
     shift_list = [(ord(rotor1[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
 
         if letter.isalpha():
@@ -332,6 +329,7 @@ def shift_first_rotor(return_path, index, offset):
 
 
 def shift_second_rotor(return_path, index, offset):
+    # TODO add description
     """
     represents the letter shift of the second rotor and returns the corresponding letter
     :param offset:
@@ -345,7 +343,7 @@ def shift_second_rotor(return_path, index, offset):
     rotor2 = 'AJDKSIRUXBLHWTMCQGZNPYFVOE'
     shift_list = [(ord(rotor2[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
@@ -364,6 +362,7 @@ def shift_second_rotor(return_path, index, offset):
 
 
 def shift_third_rotor(return_path, index, offset):
+    # TODO add description
     """
     represents the letter shift of the third rotor and returns the corresponding letter
     :param offset:
@@ -377,7 +376,7 @@ def shift_third_rotor(return_path, index, offset):
     rotor3 = 'BDFHJLCPRTXVZNYEIWGAKMUSQO'
     shift_list = [(ord(rotor3[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
@@ -479,9 +478,3 @@ def enigma(text, key):
             pass
 
     return encrypted_text  # ********************************* end ENIGMA ********************************* #
-
-
-clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
-chiffre = enigma(clair, "AAA")
-dechiffre = enigma(chiffre, "AAA")
-#print(clair, chiffre, dechiffre, sep='\n')

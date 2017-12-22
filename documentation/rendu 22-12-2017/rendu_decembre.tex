@@ -140,7 +140,7 @@ Von William Warby from London, England - Enigma, CC BY 2.0,\\\url{https://common
 \subsection{Fonctionnement du programme}
 
 \subsubsection{Accueil et choix de la langue}
-Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "`main\_module"' et d'appuyer sur "`run"' - "`run"' - "`run main\_module"'.
+Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "main\_module" et d'appuyer sur "run" - "run" - "run main\_module".
 Les instructions du programme seront affichées dans la console qui s'ouvre en bas de l'interface comme montrés ci dessous :
 \vspace{0.5cm}
 \\
@@ -364,9 +364,9 @@ Le cryptage est fait caractère par un caractère. Pour trouver la lettre crypt�
 Pour le décryptage, on possède la matrice à deux lignes avec le texte crypté sur une ligne et la clé répétée sur l’autre. Pour chaque lettre du texte crypté, on parcourt dans le tableau de Vigenère (matrice) la ligne correspondant à la lettre de la clé répétée et lorsqu’on  trouve la lettre cryptée cherchée on remonte la ligne pour obtenir le caractère décrypté correspondant à cette lettre. De la même manière que pour le cryptage on mémorise les lettres obtenues dans une chaîne de caractère ce qui permet d’avoir au final le message décrypté.\\
 % Enigma
 \item \textit{(Dé)Cryptage Enigma :}\\
-Pour commencer nous créons cinq listes : La première correspond au tableau de permutation, les trois suivantes aux rotors au milieu et la dernière au réflecteur. Au début de la programmation on choisit un décalage fixe ; si possible on essayera plus tard de changer le décalage automatiquement.
-Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
-On appelle ensuite des fonctions qui exécutent les décalages au niveau des trois rotors et après on utilise la fonction correspondant au réflecteur pour permuter les lettres. On repasse finalement à nouveau par les rotors et on obtient une certaine lettre. Si la lettre est connectée à une autre, on retourne l’autre lettre, sinon on garde la même, celle-ci est alors la lettre (dé)cryptée.\\
+Pour commencer nous créons une liste comportant les 26 lettres de l'alphabet. Nous créons ensuite une fonction qui recherche l'indice de chaque lettre du texte dans la liste. Une fois cet indice trouvé une nouvelle fonction lui appliquera un décalage, la lettre de départ sera donc échangée avec une nouvelle lettre.\\ 
+Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée et si elle ne l’est pas renvoie la lettre de départ.\\
+On appellera ensuite des fonctions qui exécuteront les décalages prédéfinis (décalages historiques de la vraie machine) au niveau des trois rotors et après on utilisera la fonction correspondant au réflecteur pour permuter les lettres. On repassera finalement à nouveau par les rotors et on obtiendra une certaine lettre. Si la lettre est connectée à une autre, on retournera l’autre lettre, sinon on gardera la même, celle-ci sera alors la lettre (dé)cryptée.\\
 \end{itemize}
 
 \newpage
@@ -421,6 +421,7 @@ dialogue d'aide (voir fig. \ref{FHM})\\
 \item \textbf{ENGLISH\_QUIT\_MESSAGE} et \textbf{FRENCH\_QUIT\_MESSAGE}:\\
 message de sortie (voir fig. \ref{FSQM})\\
 \end{itemize}
+
 
 % ******* screen_module *******
 %\newpage
@@ -639,20 +640,21 @@ Appelle & create\_table\_text\_key\\
 \textbf{\textit{Enigma}}\\
 \textbf{create\_initial\_list} & (ligne X)\\
 Déclaration & create\_initial\_list()\\
-Rôle & XXXXXXXX\\
+Rôle & crée une liste avec les lettres de l'alphabet\\
 Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Retour & initial\_list : la liste remplie avec les lettres de l'alphabet\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{search\_index} & (ligne X)\\
 Déclaration & search\_index(initial\_list, letter)\\
-Rôle & cherche l'indice d'une lettre donnée dans une liste donnée\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Rôle & cherche l'indice d'une lettre donnée dans une liste de lettres donnée\\
+Paramètre & initial\_list : liste dans laquelle l'indice est cherché
+ & letter: lettre donnée de laquelle on cherche l'indice\\
+Retour & int: indice de la lettre trouvé\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{plugboard} & (ligne X)\\
@@ -661,10 +663,10 @@ Rôle & modélise le tableau de permutation: dix lettres sont associées à\\
  & dix autres lettres. Si la lettre donnée est associée à\\
  & une autre lettre, celle-ci va être retournée.\\
  & Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Paramètre & letter: la lettre donnée qui va être échangée si elle est liée à une autre lettre\\
+Retour & char: lettre correspondante à la lettre entrée ou la lettre elle-même\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{permutation\_reflector} & (ligne X)\\
@@ -672,19 +674,19 @@ Déclaration & permutation\_reflector(letter)\\
 Rôle & modélise le réflecteur :\\
  & même principe que plugboard(letter), mais cette fois-ci\\
  & toutes les lettres sont associées à une autre lettre\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Paramètre & letter: la lettre donnée qui va être échangée\\
+Retour & char: lettre correspondante à la lettre entrée\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
 \cr
 \cr
 \textbf{shift\_first\_rotor} & (ligne X)\\
 Déclaration & shift\_first\_rotor(return\_path, index, offset)\\
 Rôle & modélise le premier rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & aucun\\
+Paramètre & XXXXXXXX\\
 Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
+Appelé par & enigma(text, key)\\
 Appelle & XXXXXXXX\\
 \cr
 \cr
@@ -692,9 +694,9 @@ Appelle & XXXXXXXX\\
 Déclaration & shift\_second\_rotor(return\_path, index, offset)\\
 Rôle & modélise le deuxième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & aucun\\
+Paramètre & XXXXXXXX\\
 Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
+Appelé par & enigma(text, key)\\
 Appelle & XXXXXXXX\\
 \cr
 \cr
@@ -702,18 +704,18 @@ Appelle & XXXXXXXX\\
 Déclaration & shift\_third\_rotor(return\_path, index, offset)\\
 Rôle & modélise le troisième rotor, exécute le décalage des lettres\\
  & par indices et retourne la lettre correspondante\\
-Paramètre & aucun\\
+Paramètre & XXXXXXXX\\
 Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
+Appelé par & enigma(text, key)\\
 Appelle & XXXXXXXX\\
 \cr
 \cr
 \textbf{enigma} & (ligne X)\\
 Déclaration & enigma(text, key)\\
 Rôle & (dé)crypte le texte formaté par le principe de la machine Enigma\\
-Paramètre & aucun\\
+Paramètre & XXXXXXXX\\
 Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
+Appelé par & run()\\
 Appelle & XXXXXXXX\\
 \end{longtable}
 \vspace{0.5cm}
@@ -722,117 +724,50 @@ Appelle & XXXXXXXX\\
 \newpage
 % main_module
 \textbf{Explications du module \textit{main\_module:}}\\
-Ce module est responsable du déroulement du programme. De plus il s'occupe du formatage du texte de l'utilisateur.
+Ce module est responsable du déroulement du programme. De plus il s'occupe du formatage du texte de l'utilisateur pour qu'il puisse être (dé)crypté par la suite.\\
+\\
+Pour l'utilisation de ces fonctions il est nécessaire d'importer préalablement les fichiers\\
+"screen\_module" et "text\_module".
 \vspace{0.3cm}
 
 \begin{longtable}{ll}
-\textbf{normalise\_letter} & (ligne X)\\
+\textbf{normalise\_letter} & (ligne 12)\\
 Déclaration & normalise\_letter(x)\\
-Rôle & normalise une lettre si elle est par exemple un caractère spécial\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Rôle & normalise la lettre donné si c'est un caractère spécial\\
+ & (ex : lettre avec accent) ou retourne la lettre donnée\\
+ & si celle-ci est déjà normalisé\\
+Paramètre & x: représente la lettre donnée en argument\\
+Retour & char: une lettre\\
+Appelé par & format\_texte (texte)\\
+Appelle & aucun\\
 \cr
 \cr
-\textbf{format\_text} & (ligne X)\\
+\textbf{format\_text} & (ligne 42)\\
 Déclaration & format\_text(text)\\
-Rôle & formate le texte, c'est-à-dire le texte donné est mis en majuscules,\\
+Rôle & formate le texte, c'est-à-dire le texte donné est mis en majuscules;\\
  & les virgules, espaces, chiffres, symboles, etc.\\
  & sont enlevés et les caractères spéciaux sont normalisés\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Paramètre & text:  texte donné en entrée par l'utilisateur et qui doit être formaté\\
+ & pour ensuite pouvoir être crypté ou décrypté\\
+Retour & string: le texte formaté\\
+Appelé par & run()\\
+Appelle & normalise\_letter(x)\\
 \cr
 \cr
-\textbf{run} & (ligne X)\\
+\textbf{run} & (ligne 65)\\
 Déclaration & run()\\
 Rôle & démarre le programme et contrôle son déroulement\\
 Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
+Retour & none\\
+Appelé par & aucun\\
+Appelle & toutes les fonctions de screen\_module\\
+ & format\_text(text)\\
+ & les fonction de traitement de texte ((dé)cryptage)\\
+ & dans text\_module
 \end{longtable}
 \vspace{0.5cm}
 
-% ******* Tests *******
 \newpage
-% tests
-\textbf{Explications du module \textit{tests:}}\\
-Ce module contient toutes les fonctions qui sont utilisées pour tester le code du programme.
-\vspace{0.3cm}
-
-\begin{longtable}{ll}
-\textbf{\textit{tests text\_module}}\\
-\textbf{test\_caesar} & (ligne X)\\
-Déclaration & test\_caesar()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\textbf{test\_create\_vigenere\_table} & (ligne X)\\
-Déclaration & test\_create\_vigenere\_table()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\textbf{test\_vigenere} & (ligne X)\\
-Déclaration & test\_vigenere()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\textbf{test\_enigma} & (ligne X)\\
-Déclaration & test\_enigma()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\cr
-\textbf{\textit{tests main\_module}}\\
-\textbf{test\_format\_and\_normalise} & (ligne X)\\
-Déclaration & test\_format\_and\_normalise()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\textbf{test\_run} & (ligne X)\\
-Déclaration & test\_run()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\cr
-\cr
-\cr
-\textbf{\textit{lancer tous les tests}}\\
-\textbf{run\_all\_tests} & (ligne X)\\
-Déclaration & run\_all\_tests()\\
-Rôle & XXXXXXXX\\
-Paramètre & aucun\\
-Retour & XXXXXXXX\\
-Appelé par & XXXXXXXX\\
-Appelle & XXXXXXXX\\
-\end{longtable}
-\vspace{2cm}
-
 \section{Annexe: Code du programme}
 {\large
 \textit{L'ordre des modules:}
