@@ -15,8 +15,7 @@ def encrypt_caesar(text, key):
     encrypted_text = ''
     for i in text:
         # if by adding the key to the number of the letter,we go beyond the numbers between A and Z
-        # we must go back to the beginning of the alphabet by using a modulo (26)
-        # ord('A') because each letter got a number starting 65=ord('A')
+        # we must go back to the beginning of the alphabet by using  - 26
         i = chr((ord(i) + key))
         if ord(i) > 90:
             i = chr(ord(i) - 26)
@@ -35,8 +34,7 @@ def decrypt_caesar(text, key):
     decrypted_text = ''
     for i in text:
         # if by removing the key to the number of the letter, we go beyond the numbers between A and Z
-        # we must go back to the beginning of the alphabet by using a modulo (26)
-        # ord('A') because each letter got a number starting 65=ord('A')
+        # we must go back to the beginning of the alphabet by using + 26
         i = chr((ord(i) - key))
         if ord(i) < 65:
             i = chr(ord(i) + 26)
@@ -76,7 +74,7 @@ def create_table_text_key(text, key):
         repeated_key += key
     list_key = []
     # in a table of two lines, we add in the first line the text and in the second line
-    # the repeated key(of the same length as the text)
+    # the repeated key (same length as the text)
     for i in range(len(text)):
         list_temp = [text[i], repeated_key[i]]
         list_key.append(list_temp)
