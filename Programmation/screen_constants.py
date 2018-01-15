@@ -2,23 +2,32 @@
 This module contains all screen constants, i. e. all texts of the user interface.
 """
 
-# constants for both languages
+#  ################ constants for both languages ################
 START_ASK_LANGUAGE = """Hello and welcome to the cryptography program.
 
 Please select your language:             
-'f' for Français, 'e' for English. """
+'f' for Français, 'e' for English.
+
+-----
+"""
 
 LANGUAGE_SETTINGS = """Please select your language:
-'f' for Français,   'e' for English.  """
+'f' for Français,   'e' for English.
 
-# English user interface
+-----
+"""
+
+#  ################ English user interface ################
 ENGLISH_MAIN_MENU = """What do you want to do - encrypt or decrypt a message?
 
 Enter 'c' for encrypting
 or 'd' for decrypting.
 
 Enter 's' to change settings(language)
-or 'q' to exit :(    """
+or 'q' to exit :(
+
+-----
+"""
 
 ENGLISH_PRINCIPLES_ENCRYPTING = """How do you want to encrypt your text?
 
@@ -28,7 +37,10 @@ or enter 'e' for the encryption by the Enigma machine.
 
 Enter 'h' to open the help which contains more information about the principles.
 
-Enter 'm' to go back to the main menu.   """
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_PRINCIPLES_DECRYPTING = """How do you want to decrypt your text?
 
@@ -38,33 +50,55 @@ or enter 'e' for the decryption by the Enigma machine.
 
 Enter 'h' to open the help which contains more information about the principles.
 
-Enter 'm' to go back to the main menu.   """
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_ASK_KEY_CAESAR = """You chose <<Caesar>>:
 Please enter your key (a number between 1 and 25 included).
 
-Enter 'm' to go back to the main menu.   """
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_ASK_KEY_VIGENERE = """You chose <<Vigenère>>:
 Please enter your key (a world).
 
-Enter 'm' to go back to the main menu.   """
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_ASK_KEY_ENIGMA = """You chose <<Enigma>>:
 Please enter your key (composed of three upper case letters).
 
-Enter 'm' to go back to the main menu.   """
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_ASK_TEXT = """Please enter your text.
 
-Enter 'm' to go back to the main menu."""
+Enter 'm' to go back to the main menu.
+
+-----
+"""
 ENGLISH_ENCRYPTED_TEXT = """Here is your encrypted text:
+
+
+-----
 """
 ENGLISH_DECRYPTED_TEXT = """Here is your decrypted text:
+
 """
 
 ENGLISH_CONTINUE = """
-Please enter 'm' to go back to the main menu."""
+Please press 'Enter' to go back to the main menu.
+
+-----
+"""
 
 ENGLISH_HELP_PRINCIPLES = """*********************************** HELP ***********************************
 
@@ -89,15 +123,15 @@ in which the entered letter is turned in another letter if they are connected. T
 the first four rotors: There is a letter shift in each of the three middle rotors which is executed. After this the
 letters are changed again in the reflector which sends them back through the rotors to the plugboard which permits
 the corresponding lamp to the letter to light up.
-
-Enter 'm' to go back to the main menu.
 """
 
 ENGLISH_QUIT_MESSAGE = """Thank you for using our program.
 
-Good bye and have a nice day."""
+Good bye and have a nice day.
 
-# French user interface
+"""
+
+#  ################ French user interface ################
 FRENCH_MAIN_MENU = """Bonjour et bienvenue sur le programme de cryptographie.
 
 Que voulez vous faire-crypter ou décrypter un message?
@@ -105,7 +139,10 @@ Insérez 'c' pour crypter
 ou 'd' pour décrypter.
 
 Insérez 's' pour changer les paramètres(langue)
-ou 'q' pour quitter le programme :(   """
+ou 'q' pour quitter le programme :(
+
+-----
+"""
 
 FRENCH_PRINCIPLES_ENCRYPTING = """De quelle manière voulez-vous crypter votre texte?
 
@@ -116,7 +153,10 @@ ou insérez 'e' pour le cryptage par la méthode de la machine Enigma.
 Insérez 'h' pour ouvrir l'aide dans laquelle il y a plus d'informations
 sur les différents principes.
 
-Insérez 'm' pour retourner au menu principal.   """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_PRINCIPLES_DECRYPTING = """De quelle manière voulez-vous décrypter votre texte?
 
@@ -127,35 +167,58 @@ ou insérez 'e' pour le décryptage par la méthode de la machine Enigma.
 Insérez 'h' pour ouvrir l'aide dans laquelle il y a plus d'informations
 sur les différents principes.
 
-Insérez 'm' pour retourner au menu principal.   """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_ASK_KEY_CAESAR = """Vous avez choisi <<César>>:
 Insérez votre clé (un nombre compris entre 1 et 25);
 
-Insérez 'm' pour retourner au menu principal.  """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_ASK_KEY_VIGENERE = """Vous avez choisi <<Vigenère>>:
 Insérez votre clé (un mot).
 
-Insérez 'm' pour retourner au menu principal.   """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_ASK_KEY_ENIGMA = """Vous avez choisi <<Enigma>>:
 Insérez votre clé (composée de trois lettres enmajuscules).
 
-Insérez 'm' pour retourner au menu principal.   """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_ASK_TEXT = """Insérez votre texte.
 
-Insérez 'm' pour retourner au menu principal.   """
+Insérez 'm' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_ENCRYPTED_TEXT = """Voici votre texte crypté:
+
+
+-----
 """
 
 FRENCH_DECRYPTED_TEXT = """Voici votre texte décrypté:
+
+-----
 """
 
 FRENCH_CONTINUE = """
-Insérez 'm' pour retourner au menu principal."""
+Appuyez sur 'Enter' pour retourner au menu principal.
+
+-----
+"""
 
 FRENCH_HELP_PRINCIPLES = """
 *********************************** AIDE ***************************************
@@ -182,9 +245,10 @@ autre lettre si elles sont connectées. Puis il passera la première fois par le
 lettres qui s’opère. À la fin les lettres sont permutées encore une fois dans
 leréflecteur qui les renvoie par les rotors au tableau de permutation ce qui
 permettra à une lampe correspondant à une lettre de s’allumer. Ainsi pour chaquelettre on relève la lettre codée, on obtient alors notre message crypté.
-
-Insérez 'm' pour retourner au menu principal."""
+"""
 
 FRENCH_QUIT_MESSAGE = """Merci d'avoir utilisé notre programme.
 
-Bonne journée, au revoir."""
+Bonne journée, au revoir.
+
+"""

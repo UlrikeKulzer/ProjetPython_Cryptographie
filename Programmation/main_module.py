@@ -3,6 +3,7 @@ This module is responsible for the program flow.
 In addition it is in charge of the formatting of the user's text.
 """
 
+import screen_constants
 import screen_module
 import text_module
 
@@ -80,23 +81,39 @@ def run():
     # set language
     if screen_module.show_start_ask_language() == 'f':
         english = False
-
     while True:
         # show main menu and set encryption variable
-        if screen_module.show_main_menu(english) == 'd':  # decryption
+        main_menu = screen_module.show_main_menu(english)
+        if main_menu == 'd':  # decryption
             encryption = False
-        elif screen_module.show_main_menu(english) == 's':  # settings
+        elif main_menu == 's':  # settings
             if screen_module.show_language_settings() == 'f':  # change language to French
                 english = False
                 continue  # restart with the main menu (now in French)
-        elif screen_module.show_main_menu(english) == 'q':  # quit program
+            else:
+                continue
+        elif main_menu == 'q':  # quit program
             screen_module.show_quit_message(english)
             break  # stop program
+        elif main_menu == 'c':
+            pass
+        else:
+            print("""
+            This is not a valid input, please try again.
+            """)
+            continue
 
         # set principle for en-/decryption
         principle = screen_module.show_principles(english, encryption)
         if principle == 'm':  # main menu
             continue  # go back to main menu
+        elif principle == 'h':  # show help
+            if english:
+                print(screen_constants.ENGLISH_HELP_PRINCIPLES)
+            elif not english:
+                print(screen_constants.FRENCH_HELP_PRINCIPLES)
+            if screen_module.show_continue(english):
+                continue
         else:
             # set key for en-/decryption
             key = screen_module.show_ask_key(english, principle)
@@ -123,9 +140,25 @@ def run():
                         text = text_module.enigma(text, key)
                     else:
                         return "This should never happen"
-                    screen_module.show_treated_text(english, encryption, text)
-                    # program waits for the user's input and goes back to the main menu, no matter what the input was
 
+                    # show en/decrypted text
+                    if english:  # language chosen is english
+                        if encryption:
+                            print(screen_constants.ENGLISH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
+                        elif not encryption:
+                            print(screen_constants.ENGLISH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+                        else:
+                            return "This should never happen"
+                    elif not english:  # language chosen is french
+                        if encryption:
+                            print(screen_constants.FRENCH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
+                        elif encryption is False:
+                            print(screen_constants.FRENCH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+                        else:
+                            return "This should never happen"
 
+                    # program waits for the user's input and goes back to the main menu
+                    if screen_module.show_continue(english):
+                        continue
 # start program
 run()

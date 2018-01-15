@@ -41,7 +41,7 @@ def show_main_menu(english):
     if english:
         return input(screen_constants.ENGLISH_MAIN_MENU)
     # language chosen is french
-    elif english is False:
+    elif not english:
         return input(screen_constants.FRENCH_MAIN_MENU)
     else:
         return "this should never happen"
@@ -69,11 +69,11 @@ def show_principles(english, encrypting):
         if encrypting is False:
             return input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
     # language chosen is french
-    elif english is False:
+    elif not english:
         if encrypting:
-            return input(screen_constants.ENGLISH_PRINCIPLES_ENCRYPTING)
+            return input(screen_constants.FRENCH_PRINCIPLES_ENCRYPTING)
         if encrypting is False:
-            return input(screen_constants.ENGLISH_PRINCIPLES_DECRYPTING)
+            return input(screen_constants.FRENCH_PRINCIPLES_DECRYPTING)
     else:
         return "this should never happen"
 
@@ -100,7 +100,7 @@ def show_ask_key(english, principle):
         else:
             return "this should never happen"
     # language chosen is french
-    elif english is False:
+    elif not english:
         if principle == 'c':
             return input(screen_constants.FRENCH_ASK_KEY_CAESAR)
         elif principle == 'v':
@@ -124,7 +124,7 @@ def show_ask_text(english):
     if english:
         return input(screen_constants.ENGLISH_ASK_TEXT)
     # language chosen is french
-    elif english is False:
+    elif not english:
         return input(screen_constants.FRENCH_ASK_TEXT)
     else:
         return "this should never happen"
@@ -143,27 +143,10 @@ def show_treated_text(english, encrypting, text):
     False if he wants to decrypt his text
     :return: char
     """
-    # language chosen is english
-    if english:
-        if encrypting:
-            print(screen_constants.ENGLISH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
-        elif encrypting is False:
-            print(screen_constants.ENGLISH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
-        # tell user what to do in order to continue
-        return input(screen_constants.ENGLISH_CONTINUE)
-    # language chosen is french
-    if english is False:
-        if encrypting:
-            print(screen_constants.FRENCH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
-        elif encrypting is False:
-            print(screen_constants.FRENCH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
-        # tell user what to do in order to continue
-        return input(screen_constants.FRENCH_CONTINUE)
-    else:
-        return "this should never happen"
 
 
-def show_help_principles(english):
+
+def show_continue(english):
     """
     shows the help screen which give explanations on the different encryption methods
     :param english: boolean
@@ -173,10 +156,10 @@ def show_help_principles(english):
     """
     # language chosen is english
     if english:
-        input(screen_constants.ENGLISH_HELP_PRINCIPLES)
+        input(screen_constants.ENGLISH_CONTINUE)
     # language chosen is french
-    elif english is False:
-        input(screen_constants.FRENCH_HELP_PRINCIPLES)
+    elif not english:
+        input(screen_constants.FRENCH_CONTINUE)
     else:
         return "this should never happen"
 
@@ -193,7 +176,7 @@ def show_quit_message(english):
     if english:
         print(screen_constants.ENGLISH_QUIT_MESSAGE)
     # language chosen is french
-    elif english is False:
+    elif not english:
         print(screen_constants.FRENCH_QUIT_MESSAGE)
     else:
         return "this should never happen"
