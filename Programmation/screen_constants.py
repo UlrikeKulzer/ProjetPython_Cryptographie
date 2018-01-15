@@ -6,7 +6,7 @@ This module contains all screen constants, i. e. all texts of the user interface
 START_ASK_LANGUAGE = """Hello and welcome to the cryptography program.
 
 Please select your language:             
-'f' for Français, 'e' for English.
+'f' for Français, or anything else to continue in English.
 
 -----
 """
@@ -14,6 +14,12 @@ Please select your language:
 LANGUAGE_SETTINGS = """Please select your language:
 'f' for Français,   'e' for English.
 
+-----
+"""
+
+INPUT_NOT_VALID = """
+
+This is not a valid input, please try again.
 -----
 """
 
@@ -64,7 +70,7 @@ Enter 'm' to go back to the main menu.
 """
 
 ENGLISH_ASK_KEY_VIGENERE = """You chose <<Vigenère>>:
-Please enter your key (a world).
+Please enter your key (a word).
 
 Enter 'm' to go back to the main menu.
 
@@ -83,15 +89,10 @@ ENGLISH_ASK_TEXT = """Please enter your text.
 
 Enter 'm' to go back to the main menu.
 
------
 """
 ENGLISH_ENCRYPTED_TEXT = """Here is your encrypted text:
-
-
------
 """
 ENGLISH_DECRYPTED_TEXT = """Here is your decrypted text:
-
 """
 
 ENGLISH_CONTINUE = """
@@ -189,7 +190,7 @@ Insérez 'm' pour retourner au menu principal.
 """
 
 FRENCH_ASK_KEY_ENIGMA = """Vous avez choisi <<Enigma>>:
-Insérez votre clé (composée de trois lettres enmajuscules).
+Insérez votre clé (composée de trois lettres en majuscules).
 
 Insérez 'm' pour retourner au menu principal.
 
@@ -204,14 +205,9 @@ Insérez 'm' pour retourner au menu principal.
 """
 
 FRENCH_ENCRYPTED_TEXT = """Voici votre texte crypté:
-
-
------
 """
 
 FRENCH_DECRYPTED_TEXT = """Voici votre texte décrypté:
-
------
 """
 
 FRENCH_CONTINUE = """
@@ -236,7 +232,7 @@ Il a été inventé au 16e siècle par Blaise de Vigenère et est basé sur le t
 correspondantes à partir du tableau.
 
 - Le principe de la machine Enigma :
-L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919.Elle a été utilisée durant la Seconde Guerre mondiale pour la communication
+L’Enigma est une machine de cryptographie inventée par Arthur Scherbius en 1919. Elle a été utilisée durant la Seconde Guerre mondiale pour la communication
 secrète entre les différentes unités de l’armée allemande.
 La machine est constituée de cinq rotors dont un réflecteur, d’un clavier,
 d’un tableau de permutation et de lampes pour chaque lettre.

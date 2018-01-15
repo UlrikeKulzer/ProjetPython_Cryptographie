@@ -17,7 +17,9 @@ def encrypt_caesar(text, key):
         # if by adding the key to the number of the letter,we go beyond the numbers between A and Z
         # we must go back to the beginning of the alphabet by using a modulo (26)
         # ord('A') because each letter got a number starting 65=ord('A')
-        i = chr((ord(i) + key) % 26 + ord('A'))
+        i = chr((ord(i) + key))
+        if ord(i) > 90:
+            i = chr(ord(i) - 26)
         encrypted_text += i
     return encrypted_text
 
@@ -35,7 +37,9 @@ def decrypt_caesar(text, key):
         # if by removing the key to the number of the letter, we go beyond the numbers between A and Z
         # we must go back to the beginning of the alphabet by using a modulo (26)
         # ord('A') because each letter got a number starting 65=ord('A')
-        i = chr((ord(i) - key) % 26 + ord('A'))
+        i = chr((ord(i) - key))
+        if ord(i) < 65:
+            i = chr(ord(i) + 26)
         decrypted_text += i
     return decrypted_text
 
@@ -479,3 +483,4 @@ def enigma(text, key):
             pass
 
     return encrypted_text  # ********************************* end ENIGMA ********************************* #
+

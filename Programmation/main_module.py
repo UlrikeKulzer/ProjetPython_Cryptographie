@@ -6,6 +6,23 @@ In addition it is in charge of the formatting of the user's text.
 import screen_constants
 import screen_module
 import text_module
+import ast  # to convert str to int
+
+
+def format_key(key):
+    key_list = [x for x in key]
+    i = 0
+    while i < len(key_list):
+        # check if character is a digit
+        if not key_list[i].isdigit():
+            # if character is not a digit it is replaced by ''
+            key_list[i] = ''
+        i += 1
+    else:
+        # join the characters to a str to transform it to an int
+        key = ''.join(key_list)
+        key = ast.literal_eval(key)  # key has to be transformed from str to int
+        return key
 
 
 def normalise_letter(x):
@@ -67,8 +84,6 @@ def format_text(text):
         return text
 
 
-# IMPORTANT ANNOTATION:
-# at the moment the function "run()" is still under construction and NOT doing what it should do
 def run():
     """
     starts the program
@@ -87,10 +102,15 @@ def run():
         if main_menu == 'd':  # decryption
             encryption = False
         elif main_menu == 's':  # settings
-            if screen_module.show_language_settings() == 'f':  # change language to French
+            language = screen_module.show_language_settings()
+            if language == 'f':  # change language to French
                 english = False
                 continue  # restart with the main menu (now in French)
+            elif language == 'e':  # change language to English
+                english = True
+                continue  # restart with the main menu (now in English)
             else:
+                print(screen_constants.INPUT_NOT_VALID)
                 continue
         elif main_menu == 'q':  # quit program
             screen_module.show_quit_message(english)
@@ -98,9 +118,7 @@ def run():
         elif main_menu == 'c':
             pass
         else:
-            print("""
-            This is not a valid input, please try again.
-            """)
+            print(screen_constants.INPUT_NOT_VALID)
             continue
 
         # set principle for en-/decryption
@@ -119,46 +137,64 @@ def run():
             key = screen_module.show_ask_key(english, principle)
             if key == 'm':  # main menu
                 continue  # go back to main menu
+
+            # format key if user failed
+            if principle == 'c':  # if chosen principle is Caesar
+                key = format_key(key)  # key is transformed into int
+
+            # check if key is valid
+            if principle == 'c' and (key > 25 or key < 1):
+                print(screen_constants.INPUT_NOT_VALID)
+                continue
+            elif principle == 'v' and not key.isalpha():
+                print(screen_constants.INPUT_NOT_VALID)
+                continue
+            elif principle == 'e' and (not key.isalpha() or len(key) != 3):
+                print(screen_constants.INPUT_NOT_VALID)
+                continue
+
+            # set text for en-/decryption
+            text = screen_module.show_ask_text(english)
+            if text == 'm':  # main menu
+                continue  # go back to main menu
             else:
-                # set text for en-/decryption
-                text = screen_module.show_ask_text(english)
-                if text == 'm':  # main menu
-                    continue  # go back to main menu
-                else:
-                    # call en-/decryption function
-                    if principle == 'c':
-                        if encryption:
-                            text = text_module.encrypt_caesar(text, key)
-                        else:
-                            text = text_module.decrypt_caesar(text, key)
-                    elif principle == 'v':
-                        if encryption:
-                            text = text_module.encrypt_vigenere(text, key)
-                        else:
-                            text = text_module.decrypt_vigenere(text, key)
-                    elif principle == 'e':
-                        text = text_module.enigma(text, key)
+                # format text
+                text = format_text(text)
+                # call en-/decryption function
+                if principle == 'c':
+                    if encryption:
+                        text = text_module.encrypt_caesar(text, key)
                     else:
-                        return "This should never happen"
+                        text = text_module.decrypt_caesar(text, key)
+                elif principle == 'v':
+                    if encryption:
+                        text = text_module.encrypt_vigenere(text, key)
+                    else:
+                        text = text_module.decrypt_vigenere(text, key)
+                elif principle == 'e':
+                    text = text_module.enigma(text, key)
+                else:
+                    return "This should never happen"
 
-                    # show en/decrypted text
-                    if english:  # language chosen is english
-                        if encryption:
-                            print(screen_constants.ENGLISH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
-                        elif not encryption:
-                            print(screen_constants.ENGLISH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
-                        else:
-                            return "This should never happen"
-                    elif not english:  # language chosen is french
-                        if encryption:
-                            print(screen_constants.FRENCH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
-                        elif encryption is False:
-                            print(screen_constants.FRENCH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
-                        else:
-                            return "This should never happen"
+        # show en/decrypted text
+        if english:  # language chosen is english
+            if encryption:
+                print(screen_constants.ENGLISH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
+            elif not encryption:
+                print(screen_constants.ENGLISH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+            else:
+                return "This should never happen"
+        elif not english:  # language chosen is french
+            if encryption:
+                print(screen_constants.FRENCH_ENCRYPTED_TEXT + "\n" + text)  # print encrypted text
+            elif encryption is False:
+                print(screen_constants.FRENCH_DECRYPTED_TEXT + "\n" + text)  # print decrypted text
+            else:
+                return "This should never happen"
 
-                    # program waits for the user's input and goes back to the main menu
-                    if screen_module.show_continue(english):
-                        continue
-# start program
+        # program waits for the user's input and goes back to the main menu
+        if screen_module.show_continue(english):
+            continue  # start program
+
+
 run()
