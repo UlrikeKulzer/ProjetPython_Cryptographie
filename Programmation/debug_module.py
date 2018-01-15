@@ -34,4 +34,13 @@ yes, I am lazy, but I'm a programmer.
 # print("*** DEBUG *** language = french")
 # print("*** DEBUG *** quit")
 # print("*** DEBUG *** encryption")
-#
+# print("debug key =", key)
+
+# print(encrypt_vigenere("JADOREECOUTERLARADIOTOUTELAJOURNEE", "musique"))
+# print(decrypt_vigenere("VUVWHYIOIMBULPMLSLYIXAOLMBUNAOJVUY", "musique"))
+# J'adore écouter la radio toute la journée
+# musique
+# VUVWHYIOIMBULPMLSLYIXAOLMBUNAOJVUY
+# print("debug text =", text)
+# ULM
+# J'en ai marre de ce programme!
