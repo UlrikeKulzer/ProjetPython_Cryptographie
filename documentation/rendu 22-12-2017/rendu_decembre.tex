@@ -65,7 +65,7 @@
 
 \setcounter{page}{1} % reset page counter to one for the first page, leave the title page out
 
-
+% ################### guide d'utilisateur #######################
 \newpage
 \section{Guide utilisateur}
 \subsection{Introduction}
@@ -140,7 +140,7 @@ Von William Warby from London, England - Enigma, CC BY 2.0,\\\url{https://common
 \subsection{Fonctionnement du programme}
 
 \subsubsection{Accueil et choix de la langue}
-Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "`main\_module"' et d'appuyer sur "`run"' - "`run"' - "`run main\_module"'.
+Pour exécuter notre programme, il est nécessaire de l'ouvrir avec le logiciel Pycharm, d'aller dans le fichier "main\_module" et d'appuyer sur "run" - "run" - "run main\_module".
 Les instructions du programme seront affichées dans la console qui s'ouvre en bas de l'interface comme montrés ci dessous :
 \vspace{0.5cm}
 \\
@@ -276,8 +276,7 @@ Le programme attend de vous que vous entriez la clé de (dé)cryptage. Cette cl�
 Vous avez toujours, comme précédemment la possibilité de retourner au menu principal en entrant ' m '.
 \vspace{1cm}
 
-Quelle que soit la méthode de (dé)cryptage choisie vous serez confronté au message suivant qui vous indique d'entrer le texte à traiter. Il est important de savoir que dans le texte tous les caractères spéciaux seront normalisés et les chiffres et signes de ponctuation seront enlevés.\\
-% original :Ce texte ne devra comporter que des lettres minuscules, majuscules, avec ou sans accents. Aucun chiffre ou aucune ponctuation ne pourra être entrée.\\
+Quelle que soit la méthode de (dé)cryptage choisie vous serez confronté au message suivant qui vous indique d'entrer le texte à traiter. Notez que, dans le texte, tous les caractères spéciaux seront normalisés (c'est-à-dire les accents seront enlevés) et les chiffres et signes de ponctuation seront enlevés.\\
 \\
 À ce stade vous pouvez aussi entrer ' m ' pour retourner au menu principal.
 
@@ -323,7 +322,7 @@ Si ensuite la lettre entrée est ' q ', le message de fin s'affichera:
 }
 
 
-% ########### guide de maintenance
+% ################### guide de maintenance #######################
 
 \newpage
 \section{Guide de maintenance}
@@ -365,18 +364,18 @@ Le cryptage est fait caractère par un caractère. Pour trouver la lettre crypt�
 Pour le décryptage, on possède la matrice à deux lignes avec le texte crypté sur une ligne et la clé répétée sur l’autre. Pour chaque lettre du texte crypté, on parcourt dans le tableau de Vigenère (matrice) la ligne correspondant à la lettre de la clé répétée et lorsqu’on  trouve la lettre cryptée cherchée on remonte la ligne pour obtenir le caractère décrypté correspondant à cette lettre. De la même manière que pour le cryptage on mémorise les lettres obtenues dans une chaîne de caractère ce qui permet d’avoir au final le message décrypté.\\
 % Enigma
 \item \textit{(Dé)Cryptage Enigma :}\\
-Pour commencer nous créons cinq listes : La première correspond au tableau de permutation, les trois suivantes aux rotors au milieu et la dernière au réflecteur. Au début de la programmation on choisit un décalage fixe ; si possible on essayera plus tard de changer le décalage automatiquement.
-Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée.
-On appelle ensuite des fonctions qui exécutent les décalages au niveau des trois rotors et après on utilise la fonction correspondant au réflecteur pour permuter les lettres. On repasse finalement à nouveau par les rotors et on obtient une certaine lettre. Si la lettre est connectée à une autre, on retourne l’autre lettre, sinon on garde la même, celle-ci est alors la lettre (dé)cryptée.\\
+Pour commencer nous créons une liste comportant les 26 lettres de l'alphabet. Nous créons ensuite une fonction qui recherche l'indice de chaque lettre du texte dans la liste. Une fois cet indice trouvé une nouvelle fonction lui appliquera un décalage, la lettre de départ sera donc échangée avec une nouvelle lettre.\\ 
+Pour les connecteurs, il y en aura dix ainsi 20 lettres seront connectées entre elles et six qui ne le seront pas. Nous allons créer une fonction qui, si la lettre est connectée, va retourner la lettre associée et si elle ne l’est pas renvoie la lettre de départ.\\
+On appellera ensuite des fonctions qui exécuteront les décalages prédéfinis (décalages historiques de la vraie machine) au niveau des trois rotors et après on utilisera la fonction correspondant au réflecteur pour permuter les lettres. On repassera finalement à nouveau par les rotors et on obtiendra une certaine lettre. Si la lettre est connectée à une autre, on retournera l’autre lettre, sinon on gardera la même, celle-ci sera alors la lettre (dé)cryptée.\\
 \end{itemize}
 
 \newpage
-\subsubsection{Structure du programme}
-% diagrammme\\
-
+\subsection{Structure du programme}
+% diagrammme
+\vspace{1cm}
 \begin{minipage}[c]{\textwidth}
 \centering
-    \includegraphics[width=\textwidth, trim=1mm 40mm 1mm 1mm, clip]{./Diagrammes/diagrammeDeStructure_main_modules.pdf}
+    \includegraphics[width=\textwidth, trim=1mm 50mm 1mm 1mm, clip]{./Diagrammes/diagrammeDeStructure.pdf}
     %TRIM = LINKS UNTEN RECHTS OBEN
     \captionof{figure}{Structure du programme en modules}
     \label{img:structure}
@@ -385,6 +384,7 @@ On appelle ensuite des fonctions qui exécutent les décalages au niveau des tro
 
 \newpage
 \subsubsection{Explications des modules, constantes et fonctions}
+% ******* screen_constants *******
 \textbf{Explications du module \textit{screen\_constants} :}\\
 Ce module contient toutes les constantes nécessaires pour le screen\_module, c'est-à-dire tous les textes de l'interface utilisateur.
 \vspace{0.3cm}
@@ -422,6 +422,8 @@ dialogue d'aide (voir fig. \ref{FHM})\\
 message de sortie (voir fig. \ref{FSQM})\\
 \end{itemize}
 
+
+% ******* screen_module *******
 %\newpage
 % screen_module
 \textbf{Explications du module \textit{screen\_module:}}\\
@@ -439,11 +441,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ' e ' pour l'anglais\\
 Appelé par & run()\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_language\_settings} & (ligne 18)\\
 Déclaration & show\_language\_settings()\\
 Rôle & demande à l'utilisateur la langue qu'il veut utiliser au cours\\
@@ -454,11 +453,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & ‘ e ‘ pour l'anglais\\
 Appelé par &  run()\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
-\cr
-%\begin{tabular}[t]{ll} 
+\cr 
 \textbf{show\_main\_menu} & (ligne 28)\\
 Déclaration & show\_main\_menu(english)\\
 Rôle & demande à l'utilisateur ce qu'il veut utiliser la fonction cryptage\\
@@ -473,15 +469,12 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'q' pour quitter le programme\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
 \cr 
 \cr 
 \cr
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_principles} & (ligne 50)\\
 Déclaration & show\_principles(english, encrypting)\\
 Rôle & demande à l'utilisateur la méthode qu'il veut utiliser\\
@@ -499,11 +492,8 @@ Retour & la chaîne de caractère choisie par l'utilisateur:\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
 \textbf{show\_ask\_key} & (ligne 81)\\
 Déclaration & show\_ask\_key(english, principle)\\
 Rôle & demande à l'utilisateur la clé pour la méthode qu'il veut utiliser\\
@@ -517,12 +507,9 @@ Retour & la clé ou \\
  & ' m ' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
-\textbf{show\_ask\_text} & (ligne 115)\\
+\textbf{show\_ask\_text} & (ligne 114)\\
 Déclaration & show\_ask\_text(english)\\
 Rôle & demande à l'utilisateur le texte qu'il veut (dé)crypter\\
 Paramètre & english: booléen\\
@@ -532,14 +519,11 @@ Retour & la clé ou\\
  & 'm' pour retourner au menu principal\\
 Appelé par & run()      (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
 \cr
 \cr
-%\begin{tabular}[t]{ll} 
-\textbf{show\_treated\_text} & (ligne 135)\\
+\textbf{show\_treated\_text} & (ligne 133)\\
 Déclaration & show\_treated\_text(english, encrypting)\\
 Rôle & retourne le message d'affichage du texte (dé)crypté\\
 Paramètre & english: booléen \\
@@ -551,12 +535,9 @@ Paramètre & english: booléen \\
 Retour & le message d'affichage du texte (dé)crypté\\
 Appelé par & run()   (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
-\textbf{show\_help\_principles} & (ligne 162)\\
+\textbf{show\_help\_principles} & (ligne 166)\\
 Déclaration & show\_help\_principles(english)\\
 Rôle & Affiche une aide dans laquelle le principe\\
  & de chaque méthode est expliquée\\
@@ -567,12 +548,9 @@ Paramètre & english: booléen \\
 Retour & ' m ' \\
 Appelé par & run()       (attention à vérifier)\\
 Appelle & aucun\\
-%\end{tabular}
-%\vspace{0.5cm}
 \cr 
 \cr
-%\begin{tabular}[t]{ll} 
-\textbf{show\_quit\_message} & (ligne 180)\\
+\textbf{show\_quit\_message} & (ligne 184)\\
 Déclaration & show\_quit\_message(english)\\
 Rôle & Affiche un message de fin d'utilisation du programme\\
 Paramètre & english: booléen \\
@@ -584,83 +562,260 @@ Appelle & aucun\\
 \end{longtable}
 \vspace{0.5cm}
 
-
+% ******* text_module *******
 \newpage
 % text_module
-\textit{\textbf{text\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{encrypt\_caesar(text, key)}:\\
-crypte le texte formaté par la méthode César\\
-\item \textbf{decrypt\_caesar(text, key)}:\\
-décrypte le texte formaté par la méthode César\\
-\item \textbf{create\_vigenere\_table()}:\\
-TODO\\
-\item \textbf{create\_table\_text\_key(text, key)}:\\
-TODO\\
-\item \textbf{encrypt\_vigenere(text, key)}:\\
-crypte le texte formaté par la méthode Vigenère\\
-\item \textbf{decrypt\_vigenere(text, key)}:\\
-décrypte le texte formaté par la méthode Vigenère\\
-\item \textbf{create\_initial\_list()}:\\
-TODO\\
-\item \textbf{search\_index(initial\_list, letter)}:\\
-cherche l'indice d'une lettre donnée dans une liste donnée\\
-\item \textbf{plugboard(letter)}:\\
-modélise le tableau de permutation, 10 lettres sont associées à dix autres lettres. Si la lettre donnée est associée à une autre lettre celle-ci va être retournée. Il y a six lettres qui ne sont associées à aucune autre lettre.\\
-\item \textbf{permutation\_reflector(letter: char)}:\\
-modélise le réflecteur ; même principe que plugboard(letter), mais cette fois-ci toutes les lettres sont associées à une autre lettre\\
-\item \textbf{shift\_first\_rotor(letter: char)}:\\
-modélise le premier rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_second\_rotor(letter: char)}:\\
-modélise le deuxième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{shift\_third\_rotor(letter: char)}:\\
-modélise le troisième rotor, exécute le décalage des lettres par indices et retourne la lettre correspondante\\
-\item \textbf{enigma(text, key)}:\\
-(dé)crypte le texte formaté par la méthode Enigma\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{text\_module:}}\\
+Ce module contient toutes les fonctions avec lesquelles le texte de l'utilisateur peut-être traité.
+\vspace{0.3cm}
 
+\begin{longtable}{ll} 
+\textbf{\textit{César}}\\
+\textbf{encrypt\_caesar} & (ligne 7)\\
+Déclaration & encrypt\_caesar(text, key)\\
+Rôle & crypte le texte selon le principe de César\\
+Paramètre & text: le texte de l'utilisateur à crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{decrypt\_caesar} & (ligne 25)\\
+Déclaration & decrypt\_caesar(text, key)\\
+Rôle & crypte le texte selon le principe de César\\
+Paramètre & text: le texte de l'utilisateur à décrypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & aucun\\
+\cr
+\cr
+\cr
+\textbf{\textit{Vigenère}}\\
+\textbf{create\_vigenere\_table} & (ligne 47)\\
+Déclaration & create\_vigenere\_table()\\
+Rôle & crée un tableau modélisant le tableau de Vigenère\\
+Paramètre & aucun\\
+Retour & le tableau\\
+Appelé par & encrypt\_vigenere(text, key)\\
+ & decrypt\_vigenere(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{create\_table\_text\_key} & (ligne 60)\\
+Déclaration & create\_table\_text\_key(text, key)\\
+Rôle & crée un tableau avec deux lignes,\\
+ & la première contenant le texte formaté et\\
+ & la deuxième la clé répétée (même longueur que le texte)\\
+Paramètre & text: le texte de l'utilisateur à (dé)crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & le tableau\\
+Appelé par & encrypt\_vigenere(text, key)\\
+ & decrypt\_vigenere(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{encrypt\_vigenere} & (ligne 82)\\
+Déclaration & encrypt\_vigenere(text, key)\\
+Rôle & crypte le texte selon le principe de Vigenère\\
+Paramètre & text: le texte de l'utilisateur à crypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & create\_table\_text\_key\\
+\cr
+\cr
+\textbf{decrypt\_vigenere} & (ligne 103)\\
+Déclaration & decrypt\_vigenere(text, key)\\
+Rôle & décrypte le texte selon le principe de Vigenère\\
+Paramètre & text: le texte de l'utilisateur à décrypter\\
+ & key: la clé de l'utilisateur\\
+Retour & char:  le texte crypté\\
+Appelé par & run()     (attention à vérifier)\\
+Appelle & create\_table\_text\_key\\
+\cr
+\cr
+\cr
+\textbf{\textit{Enigma}}\\
+\textbf{create\_initial\_list} & (ligne 130)\\
+Déclaration & create\_initial\_list()\\
+Rôle & crée une liste avec les lettres de l'alphabet\\
+Paramètre & aucun\\
+Retour & initial\_list : la liste remplie avec les lettres de l'alphabet\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{search\_index} & (ligne 139)\\
+Déclaration & search\_index(initial\_list, letter)\\
+Rôle & cherche l'indice d'une lettre donnée dans une liste de lettres donnée\\
+Paramètre & initial\_list : liste dans laquelle l'indice est cherché\\
+ & letter: lettre donnée de laquelle on cherche l'indice\\
+Retour & int: indice de la lettre trouvé\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\textbf{plugboard} & (ligne 167)\\
+Déclaration & plugboard(letter)\\
+Rôle & modélise le tableau de permutation: dix lettres sont associées à\\
+ & dix autres lettres. Si la lettre donnée est associée à\\
+ & une autre lettre, celle-ci va être retournée.\\
+ & Il y a six lettres qui ne sont associées à aucune autre lettre.\\
+Paramètre & letter: la lettre donnée qui va être échangée\\
+ & si elle est liée à une autre lettre\\
+Retour & char: lettre correspondante à la lettre entrée\\
+ & ou la lettre elle-même\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{permutation\_reflector} & (ligne 225)\\
+Déclaration & permutation\_reflector(letter)\\
+Rôle & modélise le réflecteur :\\
+ & même principe que plugboard(letter), mais cette fois-ci\\
+ & toutes les lettres sont associées à une autre lettre\\
+Paramètre & letter: la lettre donnée qui va être échangée\\
+Retour & char: lettre correspondante à la lettre entrée\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{shift\_first\_rotor} & (ligne 292)\\
+Déclaration & shift\_first\_rotor(return\_path, index, offset)\\
+Rôle & modélise le premier rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\cr
+\textbf{shift\_second\_rotor} & (ligne 327)\\
+Déclaration & shift\_second\_rotor(return\_path, index, offset)\\
+Rôle & modélise le deuxième rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre  & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{shift\_third\_rotor} & (ligne 362)\\
+Déclaration & shift\_third\_rotor(return\_path, index, offset)\\
+Rôle & modélise le troisième rotor, exécute le décalage des lettres\\
+ & par indices et retourne la lettre correspondante\\
+Paramètre  & return\_path : booléen pour indiquer\\
+ & si c'est le chemin de retour après le réflecteur\\
+ & index: indice de la lettre donnée\\
+  & offset: indique le décalage dans le rotor\\
+Retour & char: lettre échangée par le décalage du rotor\\
+Appelé par & enigma(text, key)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{enigma} & (ligne 398)\\
+Déclaration & enigma(text, key)\\
+Rôle & (dé)crypte le texte formaté par le principe\\
+ & de la machine Enigma\\
+Paramètre & text: le texte de l'utilisateur à traiter\\
+  & key: la clé donnée par l'utilisateur pour le traitement\\
+Retour & string: texte traité ((dé)crypté)\\
+Appelé par & run()\\
+Appelle & toutes les fonctions d'aide d'Enigma (voir code du text\_module)\\
+\end{longtable}
+\vspace{0.5cm}
 
+% ******* main_module *******
+\newpage
 % main_module
-\textit{\textbf{main\_module:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{normalise\_letter(x)}:\\
-normalise une lettre si elle est par exemple un caractère spécial\\
-\item \textbf{format\_text(text)}:\\
-formate le texte, c'est-à-dire le texte donné est mis en majuscules, les virgules, espaces, chiffres, symboles, etc. sont enlevés et les caractères spéciaux sont normalisés\\
-\item \textbf{run()}:\\
-démarre le programme et contrôle son déroulement\\
-\end{itemize}\vspace{0.3cm}
+\textbf{Explications du module \textit{main\_module:}}\\
+Ce module est responsable du déroulement du programme. De plus il s'occupe du formatage du texte de l'utilisateur pour qu'il puisse être (dé)crypté par la suite.\\
+\\
+Pour l'utilisation de ces fonctions il est nécessaire d'importer préalablement les fichiers\\
+"screen\_module" et "text\_module".
+\vspace{0.3cm}
 
+\begin{longtable}{ll}
+\textbf{normalise\_letter} & (ligne 10)\\
+Déclaration & normalise\_letter(x)\\
+Rôle & normalise la lettre donné si c'est un caractère spécial\\
+ & (ex : lettre avec accent) ou retourne la lettre donnée\\
+ & si celle-ci est déjà normalisé\\
+Paramètre & x: représente la lettre donnée en argument\\
+Retour & char: une lettre\\
+Appelé par & format\_texte (texte)\\
+Appelle & aucun\\
+\cr
+\cr
+\textbf{format\_text} & (ligne 43)\\
+Déclaration & format\_text(text)\\
+Rôle & formate le texte, c'est-à-dire le texte donné est mis en majuscules;\\
+ & les virgules, espaces, chiffres, symboles, etc.\\
+ & sont enlevés et les caractères spéciaux sont normalisés\\
+Paramètre & text:  texte donné en entrée par l'utilisateur et qui doit être formaté\\
+ & pour ensuite pouvoir être crypté ou décrypté\\
+Retour & string: le texte formaté\\
+Appelé par & run()\\
+Appelle & normalise\_letter(x)\\
+\cr
+\cr
+\textbf{run} & (ligne 69)\\
+Déclaration & run()\\
+Rôle & démarre le programme et contrôle son déroulement\\
+Paramètre & aucun\\
+Retour & none\\
+Appelé par & aucun\\
+Appelle & toutes les fonctions de screen\_module\\
+ & format\_text(text)\\
+ & les fonction de traitement de texte ((dé)cryptage)\\
+ & dans text\_module
+\end{longtable}
+\vspace{0.5cm}
 
-% tests
-\textit{\textbf{tests:}}\vspace{0.2cm}
-\begin{itemize}
-\item \textbf{test\_caesar\_encryption()}:\\
-TODO\\
-\item \textbf{test\_caesar\_decryption()}:\\
-TODO\\
-\item \textbf{test\_create\_table\_of\_vigenere()}:\\
-TODO\\
-\item \textbf{test\_vigenere\_encryption()}:\\
-TODO\\
-\item \textbf{test\_vigenere\_decryption()}:\\
-TODO\\
-\item \textbf{test\_enigma()}:\\
-TODO\\
-\item \textbf{test\_format\_and\_normalise()}:\\
-TODO\\
-\item \textbf{test\_run()}:\\
-TODO\\
-\item \textbf{run\_all\_tests()}:\\
-TODO\\
-\end{itemize}
-
-
-
-
+\newpage
+\section{Rapport sur les écarts entre objectif et réalisation}
+Nous comptions réaliser une interface graphique, ce que nous n'avons pas concrétisé faute de temps et de connaissance dans ce domaine. Nous voulions également pouvoir retourner au menu précédent à chaque interface mais cela s'est avéré impossible.\\
+\noindent\hspace*{3mm}
+Concernant Enigma nos positions ont souvent changé lors de la programmation. En effet, au départ on voulait demander à l'utilisateur de donner ses propres décalages pour les rotors mais cela ne fonctionnait pas : une lettre entrée pouvait ne pas être modifiée. De ce fait, nous avons dû prendre les vrais décalages historiques de la machine. Au début, nous avions également commencé à programmer en créant 5 listes que nous voulions modifier après chaque rotors ce qui s'avérait inutile et compliqué puisqu'une seule suffisait, le programme final comporte donc désormais qu'une seule liste contenant toutes les listes de l'alphabet. De plus, nous voulions créer des fonctions différentes pour le cryptage et le décryptage pour la méthode Enigma or un texte entré pour être crypté donnait un texte décrypté mais à partir de ce texte décrypté nous ne retrouvions pas le texte à crypter de départ. Nous nous sommes donc orientées vers une unique fonction capable de crypter ou décrypter un texte.\\
+\noindent\hspace*{3mm}
+Nous ne sommes pas parvenues à réaliser tous nos projets puisque nous voulions aussi programmer une nouvelle méthode de cryptage inspirée du livre Bitterblue\footnote{voir \url{https://fr.wikipedia.org/wiki/Kristin_Cashore}}, malheureusement nous n'avons pas eu le temps de concrétiser ce projet.
+\vspace{1cm}
 
 \section{Annexe: Code du programme}
-
+{\large
+\textit{L'ordre des modules:}
+\begin{enumerate}
+\item main\_module
+\item screen\_module
+\item screen\_constants
+\item text\_module
+\item tests
+\end{enumerate}
+}
 
 
 
@@ -679,12 +834,6 @@ TODO\\
 
 % "`Standard Definition Television"', HDTV für "`High Definition Television'".
 
-
-
-%\begin{tabular}[t]{lr}
-%Naher Osten & 65\%\\
-%Lateinamerika & 13\%\\
-%\end{tabular}\\
 
 %\begin{itemize}
 %\item \blindtext

@@ -2,15 +2,8 @@
 This module contains all functions which are used to test the program code.
 """
 
-# TODO: COMMENT CODE!!!
-# + test_run()
-# + test enigma + comment
-# + test vigenere table
-
 import main_module
 import text_module
-import screen_module
-import screen_constants
 
 
 # *** tests for the text_module ***
@@ -74,7 +67,24 @@ def test_enigma():
     False if not (-> Something went wrong)
     """
     print("*** TEST_ENIGMA STARTED ***")
-    text_module.encrypt_enigma("A", "")
+    key1 = "AAA"
+    key2 = "ADB"
+    original_text = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
+    other_text = "Ayant le choix ou d’être serf ou d’être libre, quitte la franchise et prend le joug, qui consent à son mal."
+    # format text
+    formatted_text1 = main_module.format_text(original_text)
+    formatted_text2 = main_module.format_text(other_text)
+    # check if decrypted encrypted text is equal to formatted text
+    # encrypt
+    encrypt1 = text_module.enigma(formatted_text1, key1)
+    encrypt2 = text_module.enigma(formatted_text2, key2)
+    # decrypt
+    decrypt1 = text_module.enigma(encrypt1, key1)
+    decrypt2 = text_module.enigma(encrypt2, key2)
+    if encrypt1 == decrypt1 and encrypt2 == decrypt2:
+        return True
+    else:
+        return False
 
 
 # *** tests for the main_module ***
@@ -85,9 +95,11 @@ def test_format_and_normalise():
     False if not (-> Something went wrong)
     """
     print("*** TEST_FORMAT_AND_NORMALISE STARTED ***")
-    original_text = "àâ test1t!? æ test2test,. ç test3test;+ èéêë test4test-% îï t5t$& ô test6test\"/ ùûü t7t{} ÿ t8t[] œ t9t= "
+    original_text = """àâ test1t!? æ test2test,. ç test3test;+ èéêë test4test-% îï t5t$& ô
+    test6test\"/ ùûü t7t{} ÿ t8t[] œ t9t= """
     # format text
     formatted_text = main_module.format_text(original_text)
+    print(formatted_text)
     # check if only capital letters
     if formatted_text.isalpha() and formatted_text.isupper():
         return True

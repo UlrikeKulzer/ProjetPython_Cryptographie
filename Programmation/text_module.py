@@ -3,13 +3,6 @@ This module contains all functions with which the user's text can be treated.
 """
 
 
-# TODO: COMMENT CODE!!!
-# -> vigenere en- + decryption
-# -> rotors
-# -> enigma
-# TODO: tidy up
-# TODO: test enigma with diff. keys
-
 # ********************************* begin CAESAR ********************************* #
 # *** ENCRYPTION *** #
 def encrypt_caesar(text, key):
@@ -55,11 +48,11 @@ def decrypt_caesar(text, key):
 def create_vigenere_table():
     """
     creates a table 26x26 with the alphabet that recreates the Vigenere table
-    :return:
+    :return: the table
     """
-    alphabet = [chr(x) for x in range(65, 91)]  # fill list thanks to Ascii Code
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     table = []
-    for k in range(26):  # fill table
+    for k in range(len(alphabet)):  # fill table
         # alphabet is shifted -1 in each row and column
         table += [alphabet[k:] + alphabet[:k]]
     return table
@@ -78,7 +71,8 @@ def create_table_text_key(text, key):
     while len(repeated_key) < len(text):
         repeated_key += key
     list_key = []
-    # in a table of two lines, we add in the first line
+    # in a table of two lines, we add in the first line the text and in the second line
+    # the repeated key(of the same length as the text)
     for i in range(len(text)):
         list_temp = [text[i], repeated_key[i]]
         list_key.append(list_temp)
@@ -87,7 +81,6 @@ def create_table_text_key(text, key):
 
 # *** ENCRYPTION *** #
 def encrypt_vigenere(text, key):
-    # TODO : comment
     """
     encrypts and returns the given text by using the principle of Vigenere
     :param text: user's text (string)
@@ -97,9 +90,11 @@ def encrypt_vigenere(text, key):
     table_of_vigenere = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     encrypted_text = ""
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     for i in range(len(text)):
+        # column corresponding to the letter of the text
         text_letter = repeated_key_table[i][0]
+        # line corresponding to the letter of the key
         key_letter = repeated_key_table[i][1]
         encrypted_text += table_of_vigenere[alphabet.index(text_letter)][alphabet.index(key_letter)]
     return encrypted_text
@@ -107,19 +102,20 @@ def encrypt_vigenere(text, key):
 
 # *** DECRYPTION *** #
 def decrypt_vigenere(text, key):
-    # TODO add description
     """
-
-    :param text:
-    :param key:
-    :return:
+    decrypts and returns the given text by using the principle of Vigenere
+    :param text: user's text (string)
+    :param key: user's key (string)
+    :return: text: decrypted text
     """
     vigenere_table = create_vigenere_table()
     repeated_key_table = create_table_text_key(text, key)
     decrypted_text = ""
-    alphabet = [chr(x) for x in range(65, 91)]
+    alphabet = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
     for i in range(len(text)):
+        # column corresponding to the letter of the text
         letter_text = repeated_key_table[i][0]
+        # lign corresponding to the letter of the key
         letter_key = repeated_key_table[i][1]
         list_temp = vigenere_table[alphabet.index(letter_key)]
         decrypted_text += alphabet[list_temp.index(letter_text)]
@@ -131,7 +127,7 @@ def decrypt_vigenere(text, key):
 
 # ********************************* begin ENIGMA ********************************* #
 # *** HELP FUNCTIONS *** #
-# * General functions * #
+# * Help functions * #
 def create_initial_list():
     """
     creates a list filled with the alphabet (capital letters)
@@ -144,7 +140,6 @@ def create_initial_list():
 def search_index(initial_list, letter):
     """
     searches the index of a given letter in the given list
-    :param offset: the rotor's offset of the enigma machine
     :param initial_list: list for searching
     :param letter: index of this letter is wanted
     :return: index of the letter
@@ -298,7 +293,8 @@ def permutation_reflector(letter):
 def shift_first_rotor(return_path, index, offset):
     """
     represents the letter shift of the first rotor and returns the corresponding letter
-    :param return_path:
+    :param offset: int: represents the physical rotation of the rotor
+    :param return_path: boolean: True if it's the return path (after the reflector) or False if it's the forward path
     :param index: the index of the actual letter
     :return letter: letter
     """
@@ -306,20 +302,21 @@ def shift_first_rotor(return_path, index, offset):
     # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     rotor1 = 'EKMFLGDQVZNTOWYHXUSPAIBRCJ'
+    # shift_list calculates the shift of each letter between the alphabet and rotor1
     shift_list = [(ord(rotor1[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
+        # assigns a new letter given the shift and the offset
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
-
         if letter.isalpha():
             return letter
         else:
             print("This should never happen")
             return -1
     elif return_path:
+        # sweeps the alphabet and tests for each letter
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -331,7 +328,8 @@ def shift_first_rotor(return_path, index, offset):
 def shift_second_rotor(return_path, index, offset):
     """
     represents the letter shift of the second rotor and returns the corresponding letter
-    :param return_path:
+    :param offset: int: represents the physical rotation of the rotor
+    :param return_path: boolean: True if it's the return path (after the reflector) or False if it's the forward path
     :param index: the index of the actual letter
     :return letter: letter
     """
@@ -339,9 +337,11 @@ def shift_second_rotor(return_path, index, offset):
     # for more information see 'https://de.wikipedia.org/wiki/Enigma_(Maschine)'
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     rotor2 = 'AJDKSIRUXBLHWTMCQGZNPYFVOE'
+    # shift_list calculates the shift of each letter between the alphabet and rotor2
     shift_list = [(ord(rotor2[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
+        # assigns a new letter given the shift and the offset
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
@@ -349,9 +349,9 @@ def shift_second_rotor(return_path, index, offset):
             print("This should never happen")
             return -1
     elif return_path:
+        # sweeps the alphabet and tests for each letter
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -363,7 +363,8 @@ def shift_second_rotor(return_path, index, offset):
 def shift_third_rotor(return_path, index, offset):
     """
     represents the letter shift of the third rotor and returns the corresponding letter
-    :param return_path:
+    :param offset: int: represents the physical rotation of the rotor
+    :param return_path: boolean: True if it's the return path (after the reflector) or False if it's the forward path
     :param index: the index of the actual letter
     :return letter: letter
     """
@@ -371,9 +372,11 @@ def shift_third_rotor(return_path, index, offset):
     # for more information see 'https://en.wikipedia.org/wiki/Enigma_rotor_details'
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     rotor3 = 'BDFHJLCPRTXVZNYEIWGAKMUSQO'
+    # shift_list calculates the shift of each letter between the alphabet and rotor3
     shift_list = [(ord(rotor3[i]) - ord(alphabet[i])) % len(alphabet) for i in range(len(alphabet))]
     letter = alphabet[index]
-    if return_path == False:
+    if return_path is False:
+        # assigns a new letter given the shift and the offset
         letter = alphabet[(index + shift_list[(index + offset) % len(alphabet)]) % len(alphabet)]
         if letter.isalpha():
             return letter
@@ -381,9 +384,9 @@ def shift_third_rotor(return_path, index, offset):
             print("This should never happen")
             return -1
     elif return_path:
+        # sweeps the alphabet and tests for each letter
         for x in range(len(alphabet)):
             if letter == alphabet[(x + shift_list[(x + offset) % len(alphabet)]) % len(alphabet)]:
-                # la même formule qu'à l'aller avec x et un test ==
                 letter = alphabet[x]
                 return letter
             else:
@@ -475,11 +478,4 @@ def enigma(text, key):
         else:
             pass
 
-    print("***** DEBUG *** after all: actual text =", encrypted_text)
     return encrypted_text  # ********************************* end ENIGMA ********************************* #
-
-
-clair = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ"
-chiffre = enigma(clair, "AAA")
-dechiffre = enigma(chiffre, "AAA")
-print(clair, chiffre, dechiffre, sep='\n')
