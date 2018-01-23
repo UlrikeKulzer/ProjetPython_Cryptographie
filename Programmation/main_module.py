@@ -130,8 +130,8 @@ def run():
                 print(screen_constants.ENGLISH_HELP_PRINCIPLES)
             elif not english:
                 print(screen_constants.FRENCH_HELP_PRINCIPLES)
-            if screen_module.show_continue(english):
-                continue
+            screen_module.show_continue(english)
+            continue
         else:
             # set key for en-/decryption
             key = screen_module.show_ask_key(english, principle)
